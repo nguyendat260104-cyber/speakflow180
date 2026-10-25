@@ -1,6 +1,13 @@
 // SpeakFlow 180 - Service Worker
-const CACHE_NAME = 'speakflow180-v9';
-const ASSETS = ['/', '/index.html'];
+const CACHE_NAME = 'speakflow180-v10';
+const ASSETS = [
+  '/',
+  '/index.html',
+  '/manifest.json',
+  '/apple-touch-icon.png',
+  '/icon-192.png',
+  '/icon-512.png'
+];
 
 self.addEventListener('install', event => {
   event.waitUntil(
