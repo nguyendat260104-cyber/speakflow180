@@ -1,5 +1,645 @@
 [
   {
+    "id": "bbc_6min_01",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "What should you eat for a better night’s sleep?",
+    "description": "<p>Have you ever had the feeling of lying awake at night, unable to get to sleep? Many of us know what it is like to struggle with sleep, especially if we have drunk too much tea or coffee before bed! But did you know that your sleep quality can be affected by other parts of your diet too? Georgie and Phil discuss this and teach you some new vocabulary.</p><p>Get a free transcript and quiz at bbclearningenglish.com (currently experiencing technical issues).</p><p>Sign up for our email newsletter for tips and updates: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p><p>Follow us on social media @bbclearningenglish</p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0phyzz9.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "vocab": [
+      {
+        "w": "vital",
+        "ipa": "/ˈvaɪtl/",
+        "m": "vô cùng quan trọng, sống còn"
+      },
+      {
+        "w": "disrupt",
+        "ipa": "/dɪsˈrʌpt/",
+        "m": "làm gián đoạn, phá vỡ nhịp"
+      },
+      {
+        "w": "optimum",
+        "ipa": "/ˈɒptɪməm/",
+        "m": "tối ưu, lý tưởng nhất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"What should you eat for a better night’s sleep?\".\n<p>Have you ever had the feeling of lying awake at night, unable to get to sleep? Many of us know what it is like to struggle with sleep, especially if we have drunk too much tea or coffee before bed! But did you know that your sleep quality can be affected by other parts of your diet too? Georgie and Phil discuss this and teach you some new vocabulary.</p><p>Get a free transcript and quiz at bbclearningenglish.com (currently experiencing technical issues).</p><p>Sign up for our email newsletter for tips and updates: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p><p>Follow us on social media @bbclearningenglish</p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: What should you eat for a better night’s sleep?."
+  },
+  {
+    "id": "bbc_6min_02",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Why has gold got so expensive?",
+    "description": "<p>Many of us own jewellery or other items that are gold coloured, but do you own anything that is made from real gold? Gold is a precious metal, which means that there is a limited supply in the world. This not only makes it expensive, but also means that it holds a relatively stable value. So, why are investors interested in it, and should the rest of us start buying more of it? Georgie and Phil discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261015\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261015</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0pgs15w.mp3",
+    "localAudioUrl": "/audio/bbc_gold_sample.mp3",
+    "vocab": [
+      {
+        "w": "inflation hedge",
+        "ipa": "/ɪnˈfleɪʃn hedʒ/",
+        "m": "hàng rào chống lạm phát"
+      },
+      {
+        "w": "precious metal",
+        "ipa": "/ˈpreʃəs ˈmetl/",
+        "m": "kim loại quý"
+      },
+      {
+        "w": "scarcity",
+        "ipa": "/ˈskeəsəti/",
+        "m": "sự khan hiếm"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Why has gold got so expensive?\".\n<p>Many of us own jewellery or other items that are gold coloured, but do you own anything that is made from real gold? Gold is a precious metal, which means that there is a limited supply in the world. This not only makes it expensive, but also means that it holds a relatively stable value. So, why are investors interested in it, and should the rest of us start buying more of it? Georgie and Phil discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261015\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261015</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why has gold got so expensive?."
+  },
+  {
+    "id": "bbc_6min_03",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Are people drinking less alcohol?",
+    "description": "<p>In recent generations many people have chosen to stop drinking alcohol. Surveys from the UK suggest that 16 to 24-year-olds are more likely to be non-drinkers than the older generations. Many people are sharing their experience of drinking less alcohol or being completely sober on social media. Some people have been saying that they want to go out more to drink and have fun with friends, but they have concerns about fitness and wellness. Georgie and Neil discuss this and teach you some new vocabulary. </p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): </p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261008\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261008</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0pfllv6.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "moderation",
+        "ipa": "/ˌmɒdəˈreɪʃn/",
+        "m": "sự chừng mực, điều độ"
+      },
+      {
+        "w": "peer pressure",
+        "ipa": "/ˈpɪə preʃə/",
+        "m": "áp lực đồng trang lứa"
+      },
+      {
+        "w": "well-being",
+        "ipa": "/ˈwel biːɪŋ/",
+        "m": "sức khỏe tinh thần & thể chất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Are people drinking less alcohol?\".\n<p>In recent generations many people have chosen to stop drinking alcohol. Surveys from the UK suggest that 16 to 24-year-olds are more likely to be non-drinkers than the older generations. Many people are sharing their experience of drinking less alcohol or being completely sober on social media. Some people have been saying that they want to go out more to drink and have fun with friends, but they have concerns about fitness and wellness. Georgie and Neil discuss this and teach you some new vocabulary. </p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): </p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261008\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261008</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Are people drinking less alcohol?."
+  },
+  {
+    "id": "bbc_6min_04",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Why does heartbreak hurt so much?",
+    "description": "<p>Anyone who has had their heart broken will know how horrible it feels. But did you know that the pain you feel is not just imaginary – it registers in the same part of the brain that processes physical pain. So, why do we feel this pain? And if it feels so bad, what is the point of being in love in the first place? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261001\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261001</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0pdc7mz.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "resilience",
+        "ipa": "/rɪˈzɪliəns/",
+        "m": "khả năng phục hồi, kiên cường"
+      },
+      {
+        "w": "vulnerability",
+        "ipa": "/ˌvʌlnərəˈbɪləti/",
+        "m": "sự tổn thương, dễ suy sụp"
+      },
+      {
+        "w": "bounce back",
+        "ipa": "/baʊns bæk/",
+        "m": "vực dậy sau thất bại"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Why does heartbreak hurt so much?\".\n<p>Anyone who has had their heart broken will know how horrible it feels. But did you know that the pain you feel is not just imaginary – it registers in the same part of the brain that processes physical pain. So, why do we feel this pain? And if it feels so bad, what is the point of being in love in the first place? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261001\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261001</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why does heartbreak hurt so much?."
+  },
+  {
+    "id": "bbc_6min_05",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "6 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Why do we itch?",
+    "description": "<p>Feeling itchy is unpleasant, and the feeling of finally scratching that itch can be very satisfying! But why do we feel itchy in the first place? And is it possible to catch an itch from someone else? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260924\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260924</a></p><p>Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0pc618w.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "vital",
+        "ipa": "/ˈvaɪtl/",
+        "m": "vô cùng quan trọng, sống còn"
+      },
+      {
+        "w": "disrupt",
+        "ipa": "/dɪsˈrʌpt/",
+        "m": "làm gián đoạn, phá vỡ nhịp"
+      },
+      {
+        "w": "optimum",
+        "ipa": "/ˈɒptɪməm/",
+        "m": "tối ưu, lý tưởng nhất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Why do we itch?\".\n<p>Feeling itchy is unpleasant, and the feeling of finally scratching that itch can be very satisfying! But why do we feel itchy in the first place? And is it possible to catch an itch from someone else? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260924\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260924</a></p><p>Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why do we itch?."
+  },
+  {
+    "id": "bbc_6min_06",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "6 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Is rejection good for us?",
+    "description": "<p>How would you feel about going up to a stranger on the street and asking them for a cheeky favour? If the idea makes you nervous, then don't worry – you are not alone! But recently, some people have been filming themselves doing this, as part of a social media trend called 'rejection therapy'. It's not an officially recognised form of therapy, but some have found that it improves their confidence. Georgie and Neil discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260917\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260917</a></p><p>Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0pb0qlf.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "inflation hedge",
+        "ipa": "/ɪnˈfleɪʃn hedʒ/",
+        "m": "hàng rào chống lạm phát"
+      },
+      {
+        "w": "precious metal",
+        "ipa": "/ˈpreʃəs ˈmetl/",
+        "m": "kim loại quý"
+      },
+      {
+        "w": "scarcity",
+        "ipa": "/ˈskeəsəti/",
+        "m": "sự khan hiếm"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Is rejection good for us?\".\n<p>How would you feel about going up to a stranger on the street and asking them for a cheeky favour? If the idea makes you nervous, then don't worry – you are not alone! But recently, some people have been filming themselves doing this, as part of a social media trend called 'rejection therapy'. It's not an officially recognised form of therapy, but some have found that it improves their confidence. Georgie and Neil discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260917\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260917</a></p><p>Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Is rejection good for us?."
+  },
+  {
+    "id": "bbc_6min_07",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Can apps teach you a language?",
+    "description": "<p>Have you ever used Duolingo, Babbel, Busuu or perhaps another language-learning app? How did you get on? Some people love the convenience of these apps – you can learn on the go, like during your commute to work, rather than committing to a certain time each week, like learning in a class. But are they teaching the languages effectively? Neil and Pippa discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260910\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260910</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0p8w5by.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "moderation",
+        "ipa": "/ˌmɒdəˈreɪʃn/",
+        "m": "sự chừng mực, điều độ"
+      },
+      {
+        "w": "peer pressure",
+        "ipa": "/ˈpɪə preʃə/",
+        "m": "áp lực đồng trang lứa"
+      },
+      {
+        "w": "well-being",
+        "ipa": "/ˈwel biːɪŋ/",
+        "m": "sức khỏe tinh thần & thể chất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Can apps teach you a language?\".\n<p>Have you ever used Duolingo, Babbel, Busuu or perhaps another language-learning app? How did you get on? Some people love the convenience of these apps – you can learn on the go, like during your commute to work, rather than committing to a certain time each week, like learning in a class. But are they teaching the languages effectively? Neil and Pippa discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260910\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260910</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Can apps teach you a language?."
+  },
+  {
+    "id": "bbc_6min_08",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Climate change and extreme weather",
+    "description": "<p>Every year we see damage, death and destruction caused by hurricanes, cyclones and typhoons - tropical storms. Is climate change making this impact worse? Climate change may be making this destruction worse. Phil is joined by BBC weather presenter and meteorologist Sarah Keith-Lucas to learn more about this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260903\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260903</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0p7p91r.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "resilience",
+        "ipa": "/rɪˈzɪliəns/",
+        "m": "khả năng phục hồi, kiên cường"
+      },
+      {
+        "w": "vulnerability",
+        "ipa": "/ˌvʌlnərəˈbɪləti/",
+        "m": "sự tổn thương, dễ suy sụp"
+      },
+      {
+        "w": "bounce back",
+        "ipa": "/baʊns bæk/",
+        "m": "vực dậy sau thất bại"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Climate change and extreme weather\".\n<p>Every year we see damage, death and destruction caused by hurricanes, cyclones and typhoons - tropical storms. Is climate change making this impact worse? Climate change may be making this destruction worse. Phil is joined by BBC weather presenter and meteorologist Sarah Keith-Lucas to learn more about this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260903\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260903</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Climate change and extreme weather."
+  },
+  {
+    "id": "bbc_6min_09",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "How do we describe smells?",
+    "description": "<p>What is the worst smell in the world? And what is the best smell? Are there any smells that you like, but that your friends or family hate? Smells are all around us all the time, but the English language is often quite general in the way it describes smells, as opposed to other senses like sounds or tastes. But why is this? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260827\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260827</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0p6j2hz.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "vital",
+        "ipa": "/ˈvaɪtl/",
+        "m": "vô cùng quan trọng, sống còn"
+      },
+      {
+        "w": "disrupt",
+        "ipa": "/dɪsˈrʌpt/",
+        "m": "làm gián đoạn, phá vỡ nhịp"
+      },
+      {
+        "w": "optimum",
+        "ipa": "/ˈɒptɪməm/",
+        "m": "tối ưu, lý tưởng nhất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"How do we describe smells?\".\n<p>What is the worst smell in the world? And what is the best smell? Are there any smells that you like, but that your friends or family hate? Smells are all around us all the time, but the English language is often quite general in the way it describes smells, as opposed to other senses like sounds or tastes. But why is this? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260827\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260827</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: How do we describe smells?."
+  },
+  {
+    "id": "bbc_6min_10",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Sharing the road with driverless cars",
+    "description": "<p>Imagine crossing a road and turning to see a car heading towards you... without a driver! While this might seem scary, driverless cars are already operating safely in many cities around the world. These autonomous cars contain huge amounts of technology to help them drive alongside other road users carefully. But will humans behave as carefully around them? Can we communicate clearly with these 'robotaxis', or are we simply incompatible? Phil and Pippa discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260820\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260820</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a> \nSubscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0p5h6cg.mp3",
+    "localAudioUrl": "/audio/bbc_driverless_sample.mp3",
+    "vocab": [
+      {
+        "w": "inflation hedge",
+        "ipa": "/ɪnˈfleɪʃn hedʒ/",
+        "m": "hàng rào chống lạm phát"
+      },
+      {
+        "w": "precious metal",
+        "ipa": "/ˈpreʃəs ˈmetl/",
+        "m": "kim loại quý"
+      },
+      {
+        "w": "scarcity",
+        "ipa": "/ˈskeəsəti/",
+        "m": "sự khan hiếm"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Sharing the road with driverless cars\".\n<p>Imagine crossing a road and turning to see a car heading towards you... without a driver! While this might seem scary, driverless cars are already operating safely in many cities around the world. These autonomous cars contain huge amounts of technology to help them drive alongside other road users carefully. But will humans behave as carefully around them? Can we communicate clearly with these 'robotaxis', or are we simply incompatible? Phil and Pippa discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260820\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260820</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a> \nSubscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Sharing the road with driverless cars."
+  },
+  {
+    "id": "bbc_6min_11",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Who does the housework?",
+    "description": "<p>Unloading the dishwasher, mopping the floor, cleaning the loo... what is your most hated household chore? We all know there are jobs around the house which have to be done regularly, even if they are sometimes boring or unpleasant. But who tends to do the most amount of jobs in your household? And is there anyone who isn't pulling their weight...? Pippa and Neil discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260813\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260813</a></p><p>Practise your listening with The Listening Room here:</p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0p4779b.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "moderation",
+        "ipa": "/ˌmɒdəˈreɪʃn/",
+        "m": "sự chừng mực, điều độ"
+      },
+      {
+        "w": "peer pressure",
+        "ipa": "/ˈpɪə preʃə/",
+        "m": "áp lực đồng trang lứa"
+      },
+      {
+        "w": "well-being",
+        "ipa": "/ˈwel biːɪŋ/",
+        "m": "sức khỏe tinh thần & thể chất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Who does the housework?\".\n<p>Unloading the dishwasher, mopping the floor, cleaning the loo... what is your most hated household chore? We all know there are jobs around the house which have to be done regularly, even if they are sometimes boring or unpleasant. But who tends to do the most amount of jobs in your household? And is there anyone who isn't pulling their weight...? Pippa and Neil discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260813\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260813</a></p><p>Practise your listening with The Listening Room here:</p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Who does the housework?."
+  },
+  {
+    "id": "bbc_6min_12",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "How do climate scientists make predictions?",
+    "description": "<p>Across the world, climate change is already beginning to change the way we live our lives. But how big will that change be and what kinds of change will occur? These are the kinds of questions that scientists have been asking for decades. So, how exactly do they try to find answers to such complex questions about the future? Understanding where we are heading might help humanity prepare for the consequences of climate change. Phil and Pippa discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260806\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260806</a></p><p>Practise your listening with The Listening Room here:</p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0p2ygrc.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "resilience",
+        "ipa": "/rɪˈzɪliəns/",
+        "m": "khả năng phục hồi, kiên cường"
+      },
+      {
+        "w": "vulnerability",
+        "ipa": "/ˌvʌlnərəˈbɪləti/",
+        "m": "sự tổn thương, dễ suy sụp"
+      },
+      {
+        "w": "bounce back",
+        "ipa": "/baʊns bæk/",
+        "m": "vực dậy sau thất bại"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"How do climate scientists make predictions?\".\n<p>Across the world, climate change is already beginning to change the way we live our lives. But how big will that change be and what kinds of change will occur? These are the kinds of questions that scientists have been asking for decades. So, how exactly do they try to find answers to such complex questions about the future? Understanding where we are heading might help humanity prepare for the consequences of climate change. Phil and Pippa discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260806\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260806</a></p><p>Practise your listening with The Listening Room here:</p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: How do climate scientists make predictions?."
+  },
+  {
+    "id": "bbc_6min_13",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "The Enhanced Games",
+    "description": "<p>What would the world of athletics look like if athletes were allowed to take drugs? Pippa and Neil discuss the Enhanced Games. </p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260730\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260730</a></p><p>Practise your listening with The Listening Room here: </p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0p1q8ns.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "vital",
+        "ipa": "/ˈvaɪtl/",
+        "m": "vô cùng quan trọng, sống còn"
+      },
+      {
+        "w": "disrupt",
+        "ipa": "/dɪsˈrʌpt/",
+        "m": "làm gián đoạn, phá vỡ nhịp"
+      },
+      {
+        "w": "optimum",
+        "ipa": "/ˈɒptɪməm/",
+        "m": "tối ưu, lý tưởng nhất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"The Enhanced Games\".\n<p>What would the world of athletics look like if athletes were allowed to take drugs? Pippa and Neil discuss the Enhanced Games. </p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260730\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260730</a></p><p>Practise your listening with The Listening Room here: </p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: The Enhanced Games."
+  },
+  {
+    "id": "bbc_6min_14",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Children in warzones",
+    "description": "<p>The most recent figure from 2024 says that 520 million children are living in conflict zones. That's about one in every five children worldwide. Some of the discussions in this episode will be about death and trauma. Neil and Becca hear from a journalist who has spent some time with children in warzones and discuss the topic in simpler English.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260723\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260723</a></p><p>Practise your listening with The Listening Room here:\n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here:\n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0ny2jn5.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "inflation hedge",
+        "ipa": "/ɪnˈfleɪʃn hedʒ/",
+        "m": "hàng rào chống lạm phát"
+      },
+      {
+        "w": "precious metal",
+        "ipa": "/ˈpreʃəs ˈmetl/",
+        "m": "kim loại quý"
+      },
+      {
+        "w": "scarcity",
+        "ipa": "/ˈskeəsəti/",
+        "m": "sự khan hiếm"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Children in warzones\".\n<p>The most recent figure from 2024 says that 520 million children are living in conflict zones. That's about one in every five children worldwide. Some of the discussions in this episode will be about death and trauma. Neil and Becca hear from a journalist who has spent some time with children in warzones and discuss the topic in simpler English.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260723\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260723</a></p><p>Practise your listening with The Listening Room here:\n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here:\n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Children in warzones."
+  },
+  {
+    "id": "bbc_6min_15",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "6 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "What's in a footballer's brain?",
+    "description": "<p>Football players are faster than ever before. But in a game where every tiny decision counts, elite clubs are turning to neuroscience to understand how players can think, decide and perform even faster. Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260716\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260716</a></p><p>Practise your listening with The Listening Room here:\n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here:\n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0ny289g.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "moderation",
+        "ipa": "/ˌmɒdəˈreɪʃn/",
+        "m": "sự chừng mực, điều độ"
+      },
+      {
+        "w": "peer pressure",
+        "ipa": "/ˈpɪə preʃə/",
+        "m": "áp lực đồng trang lứa"
+      },
+      {
+        "w": "well-being",
+        "ipa": "/ˈwel biːɪŋ/",
+        "m": "sức khỏe tinh thần & thể chất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"What's in a footballer's brain?\".\n<p>Football players are faster than ever before. But in a game where every tiny decision counts, elite clubs are turning to neuroscience to understand how players can think, decide and perform even faster. Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260716\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260716</a></p><p>Practise your listening with The Listening Room here:\n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here:\n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: What's in a footballer's brain?."
+  },
+  {
+    "id": "bbc_6min_16",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "6 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Should we cycle more?",
+    "description": "<p>When did you learn to ride a bike? Perhaps you learnt as a child and have not cycled for a long time. Well don't worry, you can pick it up again quickly – it's just like riding a bike! And if you have never cycled, it's not too late to start. With new cycle tracks and electric bikes, cycling is becoming more and more accessible. Neil and Becca discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709</a></p><p>Practise your listening with The Listening Room here: \n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: \n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0nxqqhc.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "resilience",
+        "ipa": "/rɪˈzɪliəns/",
+        "m": "khả năng phục hồi, kiên cường"
+      },
+      {
+        "w": "vulnerability",
+        "ipa": "/ˌvʌlnərəˈbɪləti/",
+        "m": "sự tổn thương, dễ suy sụp"
+      },
+      {
+        "w": "bounce back",
+        "ipa": "/baʊns bæk/",
+        "m": "vực dậy sau thất bại"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Should we cycle more?\".\n<p>When did you learn to ride a bike? Perhaps you learnt as a child and have not cycled for a long time. Well don't worry, you can pick it up again quickly – it's just like riding a bike! And if you have never cycled, it's not too late to start. With new cycle tracks and electric bikes, cycling is becoming more and more accessible. Neil and Becca discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709</a></p><p>Practise your listening with The Listening Room here: \n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: \n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Should we cycle more?."
+  },
+  {
+    "id": "bbc_6min_17",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Rude emails",
+    "description": "<p>What is the rudest email you have ever received? We all deal with emails on a daily basis, but sometimes people can write them too quickly, without thinking enough about how it makes the other person feel. Is there anything that people write in emails which you find impolite? And have you ever sent a rude email yourself...? Phil and Becca discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260702\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260702</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0nwb722.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "vital",
+        "ipa": "/ˈvaɪtl/",
+        "m": "vô cùng quan trọng, sống còn"
+      },
+      {
+        "w": "disrupt",
+        "ipa": "/dɪsˈrʌpt/",
+        "m": "làm gián đoạn, phá vỡ nhịp"
+      },
+      {
+        "w": "optimum",
+        "ipa": "/ˈɒptɪməm/",
+        "m": "tối ưu, lý tưởng nhất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Rude emails\".\n<p>What is the rudest email you have ever received? We all deal with emails on a daily basis, but sometimes people can write them too quickly, without thinking enough about how it makes the other person feel. Is there anything that people write in emails which you find impolite? And have you ever sent a rude email yourself...? Phil and Becca discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260702\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260702</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Rude emails."
+  },
+  {
+    "id": "bbc_6min_18",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Stress-free family meals",
+    "description": "<p>Are you a fussy eater? Many of us remember foods that we used to hate as children – some of us still do hate those foods! But what can parents do to help encourage their children to eat a healthy diet, without turning every dinner into disaster? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260625\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260625</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0ntzw6q.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "inflation hedge",
+        "ipa": "/ɪnˈfleɪʃn hedʒ/",
+        "m": "hàng rào chống lạm phát"
+      },
+      {
+        "w": "precious metal",
+        "ipa": "/ˈpreʃəs ˈmetl/",
+        "m": "kim loại quý"
+      },
+      {
+        "w": "scarcity",
+        "ipa": "/ˈskeəsəti/",
+        "m": "sự khan hiếm"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Stress-free family meals\".\n<p>Are you a fussy eater? Many of us remember foods that we used to hate as children – some of us still do hate those foods! But what can parents do to help encourage their children to eat a healthy diet, without turning every dinner into disaster? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260625\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260625</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Stress-free family meals."
+  },
+  {
+    "id": "bbc_6min_19",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "Limiting screen time for children",
+    "description": "<p>Many parents worry that their children spend too much time on screens. Governments around the world, such as in the UK, Australia and China, are introducing online safety measures to limit the amount of screen time for children or prevent them accessing social media. Neil and Becca talk about their own screen time and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260618\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260618</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0nsp04k.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "moderation",
+        "ipa": "/ˌmɒdəˈreɪʃn/",
+        "m": "sự chừng mực, điều độ"
+      },
+      {
+        "w": "peer pressure",
+        "ipa": "/ˈpɪə preʃə/",
+        "m": "áp lực đồng trang lứa"
+      },
+      {
+        "w": "well-being",
+        "ipa": "/ˈwel biːɪŋ/",
+        "m": "sức khỏe tinh thần & thể chất"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Limiting screen time for children\".\n<p>Many parents worry that their children spend too much time on screens. Governments around the world, such as in the UK, Australia and China, are introducing online safety measures to limit the amount of screen time for children or prevent them accessing social media. Neil and Becca talk about their own screen time and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260618\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260618</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Limiting screen time for children."
+  },
+  {
+    "id": "bbc_6min_20",
+    "channel": "BBC Learning English (6 Minute English)",
+    "channelIcon": "🇬🇧",
+    "category": "bbc",
+    "duration": "7 phút",
+    "accent": "Bản Xứ (British RP)",
+    "level": "B1 - B2",
+    "title": "How advertisers make us spend money",
+    "description": "<p>What was the last thing you bought? And can you remember why you bought that particular thing, rather than something else? We all like to think we make rational, independent choices when we buy things, but advertisers are constantly trying different strategies to influence us to behave differently. Pippa and Phil discuss this and teach you some new vocabulary. </p><p>Listen to natural English conversations with Real Easy English: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/real-easy-english\">https://www.bbc.co.uk/learningenglish/english/features/real-easy-english</a></p><p>Learn English from the news: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/learning-english-from-the-news_2026\">https://www.bbc.co.uk/learningenglish/english/features/learning-english-from-the-news_2026</a></p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260611\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260611</a></p>",
+    "audioUrl": "http://open.live.bbc.co.uk/mediaselector/6/redir/version/2.0/mediaset/audio-nondrm-download-rss-low/proto/http/vpid/p0nrcdc1.mp3",
+    "localAudioUrl": null,
+    "vocab": [
+      {
+        "w": "resilience",
+        "ipa": "/rɪˈzɪliəns/",
+        "m": "khả năng phục hồi, kiên cường"
+      },
+      {
+        "w": "vulnerability",
+        "ipa": "/ˌvʌlnərəˈbɪləti/",
+        "m": "sự tổn thương, dễ suy sụp"
+      },
+      {
+        "w": "bounce back",
+        "ipa": "/baʊns bæk/",
+        "m": "vực dậy sau thất bại"
+      }
+    ],
+    "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"How advertisers make us spend money\".\n<p>What was the last thing you bought? And can you remember why you bought that particular thing, rather than something else? We all like to think we make rational, independent choices when we buy things, but advertisers are constantly trying different strategies to influence us to behave differently. Pippa and Phil discuss this and teach you some new vocabulary. </p><p>Listen to natural English conversations with Real Easy English: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/real-easy-english\">https://www.bbc.co.uk/learningenglish/english/features/real-easy-english</a></p><p>Learn English from the news: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/learning-english-from-the-news_2026\">https://www.bbc.co.uk/learningenglish/english/features/learning-english-from-the-news_2026</a></p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260611\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260611</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: How advertisers make us spend money."
+  },
+  {
     "id": "ft_01",
     "channel": "Fintech Insider by 11:FS",
     "channelIcon": "🏦",
@@ -420,6 +1060,105 @@
       }
     ],
     "shadowingSentence": "When delivering constructive feedback, anchor your observations to specific behaviors and business outcomes."
+  },
+  {
+    "id": "voa_01",
+    "channel": "VOA Learning English",
+    "channelIcon": "🇺🇸",
+    "category": "general_fluency",
+    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
+    "title": "How Data Centers Are Transitioning to Clean Energy and Advanced Liquid Cooling",
+    "duration": "15 phút",
+    "level": "A2 - B1",
+    "accent": "US (Clear Slow Pronunciation)",
+    "audioUrl": "https://learningenglish.voanews.com",
+    "description": "Bản tin khoa học công nghệ của đài VOA với tốc độ đọc chuẩn mực, phát âm rõ từng âm tiết: các trung tâm dữ liệu khổng lồ của thế giới đang chuyển đổi sang năng lượng sạch và công nghệ làm mát bằng chất lỏng ra sao.",
+    "transcript": "Announcer: From Washington, this is VOA Learning English. Today we report on the massive growth of computer data centers around the world.\nReporter: Cloud computing and artificial intelligence require enormous amounts of electrical energy. To address climate concerns, major technology companies are building data centers powered by geothermal and solar energy.\nAnnouncer: In addition, engineers are developing liquid cooling systems that submerge servers in non-conductive fluids, reducing energy consumption by forty percent.",
+    "vocab": [
+      {
+        "w": "data center",
+        "ipa": "/ˈdeɪtə ˈsentər/",
+        "m": "trung tâm dữ liệu lưu trữ máy chủ"
+      },
+      {
+        "w": "geothermal energy",
+        "ipa": "/ˌdʒiːəʊˈθɜːml/",
+        "m": "năng lượng địa nhiệt sạch"
+      },
+      {
+        "w": "liquid cooling",
+        "ipa": "/ˈlɪkwɪd ˈkuːlɪŋ/",
+        "m": "hệ thống làm mát linh kiện bằng chất lỏng"
+      },
+      {
+        "w": "submerge",
+        "ipa": "/səbˈmɜːdʒ/",
+        "m": "nhấn chìm hoàn toàn vào trong chất lỏng"
+      }
+    ],
+    "shadowingSentence": "Engineers are developing liquid cooling systems that reduce server energy consumption by forty percent."
+  },
+  {
+    "id": "luke_01",
+    "channel": "Luke's English Podcast",
+    "channelIcon": "🎙️",
+    "category": "general_fluency",
+    "duration": "35 phút",
+    "accent": "Bản Xứ (London / UK)",
+    "level": "B1 - C1",
+    "title": "Debating Skills & Expressing Strong Opinions Politely",
+    "description": "Comedian and English teacher Luke Thompson explores how to debate respectfully in English, disagree without sounding rude, and use persuasive rhetorical questions.",
+    "audioUrl": "https://sphinx.acast.com/p/open/s/62b0ada25c7ea10012f541cb/e/6ab1a4e31f5b87e535045952/media.mp3",
+    "vocab": [
+      {
+        "w": "respectfully disagree",
+        "ipa": "/rɪˈspektfəli dɪsəˈɡriː/",
+        "m": "bất đồng một cách lịch sự"
+      },
+      {
+        "w": "nuanced argument",
+        "ipa": "/ˈnjuːɑːnst ˈɑːɡjumənt/",
+        "m": "lập luận tinh tế, nhiều góc cạnh"
+      },
+      {
+        "w": "rhetorical question",
+        "ipa": "/rɪˈtɒrɪkl ˈkwestʃən/",
+        "m": "câu hỏi tu từ"
+      }
+    ],
+    "transcript": "Hello and welcome to Luke's English Podcast. Today we are talking about debating skills in English. How do you express your opinion when you disagree strongly, but you want to keep the discussion friendly and professional? Let's break it down together.",
+    "shadowingSentence": "I see your point, but from an architectural perspective, we need to consider long-term maintainability."
+  },
+  {
+    "id": "luke_02",
+    "channel": "Luke's English Podcast",
+    "channelIcon": "🎙️",
+    "category": "general_fluency",
+    "duration": "30 phút",
+    "accent": "Bản Xứ (London / UK)",
+    "level": "B1 - B2",
+    "title": "Natural English Idioms & Phrasal Verbs in Conversation",
+    "description": "Learn the most common British idioms and phrasal verbs that native speakers use every day when hanging out, drinking coffee, or chatting with colleagues.",
+    "audioUrl": "https://sphinx.acast.com/p/open/s/62b0ada25c7ea10012f541cb/e/6ad08241e53019e890ba53ef/media.mp3",
+    "vocab": [
+      {
+        "w": "touch base",
+        "ipa": "/tʌtʃ beɪs/",
+        "m": "liên lạc ngắn để cập nhật tình hình"
+      },
+      {
+        "w": "circle back",
+        "ipa": "/ˈsɜːkl bæk/",
+        "m": "quay lại bàn sau khi có thông tin"
+      },
+      {
+        "w": "out of the loop",
+        "ipa": "/aʊt əv ðə luːp/",
+        "m": "không được nắm bắt thông tin"
+      }
+    ],
+    "transcript": "Welcome back to the podcast. Today we are diving into phrasal verbs that native speakers use without even thinking about them. From touching base to circling back and keeping everyone in the loop.",
+    "shadowingSentence": "Let's touch base tomorrow morning to circle back on the deployment status."
   },
   {
     "id": "bc_1_1",
@@ -1880,111 +2619,5 @@
       }
     ],
     "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 10."
-  },
-  {
-    "id": "bbc_01",
-    "channel": "BBC 6 Minute English",
-    "channelIcon": "🇬🇧",
-    "category": "general_fluency",
-    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
-    "title": "Can Artificial Intelligence Replace Computer Programmers and Writers?",
-    "duration": "6 phút",
-    "level": "A2 - B1",
-    "accent": "UK (British English)",
-    "audioUrl": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
-    "description": "Cuộc trò chuyện súc tích 6 phút của đài BBC về trí tuệ nhân tạo (AI): liệu AI có thể thay thế lập trình viên và người viết nội dung, cùng 6 từ vựng đắt giá nhất.",
-    "transcript": "Neil: Hello and welcome to 6 Minute English. I'm Neil.\nBeth: And I'm Beth. In this programme, we're asking: can artificial intelligence replace human creativity?\nNeil: Modern AI models can write software code, draft contracts, and even compose classical music in seconds.\nBeth: But experts argue that AI lacks emotional intelligence and true contextual understanding. It predicts patterns rather than generating original thought.",
-    "vocab": [
-      {
-        "w": "artificial intelligence",
-        "ipa": "/ˌɑːtɪˈfɪʃl ɪnˈtelɪdʒəns/",
-        "m": "trí tuệ nhân tạo (AI)"
-      },
-      {
-        "w": "emotional intelligence",
-        "ipa": "/ɪˌməʊʃənl ɪnˈtelɪdʒəns/",
-        "m": "trí thông minh cảm xúc (EQ)"
-      },
-      {
-        "w": "contextual understanding",
-        "ipa": "/kənˈtekstʃuəl/",
-        "m": "sự thấu hiểu ngữ cảnh thực tế"
-      },
-      {
-        "w": "predict patterns",
-        "ipa": "/prɪˈdɪkt ˈpætənz/",
-        "m": "dự đoán các quy luật lặp lại dựa trên dữ liệu"
-      }
-    ],
-    "shadowingSentence": "Artificial intelligence predicts patterns rather than generating original creative thought."
-  },
-  {
-    "id": "voa_01",
-    "channel": "VOA Learning English",
-    "channelIcon": "🇺🇸",
-    "category": "general_fluency",
-    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
-    "title": "How Data Centers Are Transitioning to Clean Energy and Advanced Liquid Cooling",
-    "duration": "15 phút",
-    "level": "A2 - B1",
-    "accent": "US (Clear Slow Pronunciation)",
-    "audioUrl": "https://learningenglish.voanews.com",
-    "description": "Bản tin khoa học công nghệ của đài VOA với tốc độ đọc chuẩn mực, phát âm rõ từng âm tiết: các trung tâm dữ liệu khổng lồ của thế giới đang chuyển đổi sang năng lượng sạch và công nghệ làm mát bằng chất lỏng ra sao.",
-    "transcript": "Announcer: From Washington, this is VOA Learning English. Today we report on the massive growth of computer data centers around the world.\nReporter: Cloud computing and artificial intelligence require enormous amounts of electrical energy. To address climate concerns, major technology companies are building data centers powered by geothermal and solar energy.\nAnnouncer: In addition, engineers are developing liquid cooling systems that submerge servers in non-conductive fluids, reducing energy consumption by forty percent.",
-    "vocab": [
-      {
-        "w": "data center",
-        "ipa": "/ˈdeɪtə ˈsentər/",
-        "m": "trung tâm dữ liệu lưu trữ máy chủ"
-      },
-      {
-        "w": "geothermal energy",
-        "ipa": "/ˌdʒiːəʊˈθɜːml/",
-        "m": "năng lượng địa nhiệt sạch"
-      },
-      {
-        "w": "liquid cooling",
-        "ipa": "/ˈlɪkwɪd ˈkuːlɪŋ/",
-        "m": "hệ thống làm mát linh kiện bằng chất lỏng"
-      },
-      {
-        "w": "submerge",
-        "ipa": "/səbˈmɜːdʒ/",
-        "m": "nhấn chìm hoàn toàn vào trong chất lỏng"
-      }
-    ],
-    "shadowingSentence": "Engineers are developing liquid cooling systems that reduce server energy consumption by forty percent."
-  },
-  {
-    "id": "luke_01",
-    "channel": "Luke's English Podcast",
-    "channelIcon": "🎙️",
-    "category": "general_fluency",
-    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
-    "title": "Natural English Idioms & Phrasal Verbs Used in Fast Workplace Conversations",
-    "duration": "30 phút",
-    "level": "B1 - B2",
-    "accent": "UK (Award-winning Teacher Luke Thompson)",
-    "audioUrl": "https://teacherluke.co.uk",
-    "description": "Thầy giáo Luke Thompson giải thích cặn kẽ cách người bản xứ sử dụng thành ngữ và cụm động từ tự nhiên trong giao tiếp đời thực và công ty công nghệ mà không có trong sách giáo khoa.",
-    "transcript": "Luke: Hello listeners! Welcome to Luke's English Podcast. Today we are looking at real spoken idioms that make you sound like a genuine native speaker.\nGuest: Many non-native speakers translate directly from their mother tongue. But in English, phrases like 'touch base' or 'circle back' convey nuanced collaboration without sounding confrontational.\nLuke: Let's break down five idioms you can use in your very next sprint meeting!",
-    "vocab": [
-      {
-        "w": "touch base",
-        "ipa": "/tʌtʃ beɪs/",
-        "m": "liên hệ ngắn gọn để cập nhật thông tin tình hình"
-      },
-      {
-        "w": "circle back",
-        "ipa": "/ˈsɜːkl bæk/",
-        "m": "quay trở lại thảo luận một chủ đề sau đó"
-      },
-      {
-        "w": "confrontational",
-        "ipa": "/ˌkɒnfrənˈteɪʃənl/",
-        "m": "có tính chất đối đầu, căng thẳng"
-      }
-    ],
-    "shadowingSentence": "Let's touch base tomorrow morning to circle back on the database deployment status."
   }
 ]
