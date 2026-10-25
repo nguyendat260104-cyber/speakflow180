@@ -1,0 +1,50 @@
+// SpeakFlow 180 - Service Worker
+const CACHE_NAME = 'speakflow180-v9';
+const ASSETS = ['/', '/index.html'];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
+  // Network first for API calls & dynamic sync
+  if (event.request.url.includes('generativelanguage.googleapis.com') ||
+      event.request.url.includes('api.groq.com') ||
+      event.request.url.includes('api.github.com') ||
+      event.request.url.includes('/api/')) return;
+  event.respondWith(
+    fetch(event.request)
+      .then(resp => {
+        const clone = resp.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        return resp;
+      })
+      .catch(() => caches.match(event.request))
+  );
+});
+
+// Push notification handler
+self.addEventListener('push', event => {
+  const data = event.data?.json() || { title: 'SpeakFlow 180', body: 'Đến giờ học tiếng Anh buổi tối rồi! 🔥' };
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      icon: '/manifest.json',
+      badge: '/manifest.json',
+      vibrate: [200, 100, 200]
+    })
+  );
+});

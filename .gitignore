@@ -1,0 +1,6 @@
+.vercel
+*.bak
+*.bc_backup
+.env
+.env.local
+node_modules
