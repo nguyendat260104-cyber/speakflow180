@@ -1,0 +1,27 @@
+{
+  "userId": "nguyendat.devops_fintech.vn",
+  "user": {
+    "name": "Nguyễn Minh Tuấn",
+    "email": "nguyendat.devops@fintech.vn",
+    "role": "💻 IT Vận Hành & DevOps"
+  },
+  "lastSynced": "2026-10-25T12:11:56.216Z",
+  "stats": {
+    "streak": 7,
+    "xp": 450,
+    "vocabCount": 2,
+    "activeTab": "tab-dashboard"
+  },
+  "state": {
+    "streak": 7,
+    "xp": 450,
+    "vocabVault": [
+      {
+        "word": "latency"
+      },
+      {
+        "word": "kubernetes"
+      }
+    ]
+  }
+}
