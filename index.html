@@ -429,62 +429,95 @@
 
             <!-- YouTube Embed -->
             <!-- Curated Video Masterclass Series Quick Bar -->
-            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2 text-xs">
-              <div class="flex items-center justify-between">
-                <span class="text-slate-400 font-bold flex items-center gap-1.5">
-                  <span>🎬</span> <span>Bộ Video Bài Giảng Tuyển Chọn Đa Kênh:</span>
-                </span>
-                <span class="text-[10px] text-cyan-300 font-semibold">Chất lượng cao • Khẩu hình miệng &amp; Thực tế</span>
+            <div class="p-3.5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-indigo-500/30 space-y-2.5 shadow-lg">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-gradient-to-r from-red-600 to-indigo-600 text-white shadow flex items-center gap-1">
+                    <span>🎬</span> <span>Lộ Trình 360 Video (180 Ngày)</span>
+                  </span>
+                  <span id="dashVideoLevelBadge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    Level A1 (Khởi Động)
+                  </span>
+                </div>
+                <button onclick="openVideoCurriculumModal()" class="px-3 py-1 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                  <span>📚</span> <span>Xem Danh Mục 360 Video Lộ Trình 180 Ngày ↗</span>
+                </button>
               </div>
-              <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
-                <button onclick="switchMasterVideo('ZTgYjGXFAkw', 'Sounds American: Mô phỏng 3D Khẩu hình miệng, Lưỡi & Vòm họng Vowels')" class="px-2.5 py-1 rounded-lg bg-indigo-600/40 hover:bg-indigo-600/70 border border-indigo-500/50 text-indigo-200 text-[11px] font-bold whitespace-nowrap transition cursor-pointer shadow">
-                  👄 3D Animation: Khẩu hình &amp; Lưỡi (Sounds American)
+
+              <!-- Quick Video Switcher Pills -->
+              <div class="flex items-center gap-2 overflow-x-auto pb-1 custom-scroll">
+                <button id="quickBtn-dayLesson" onclick="switchDayVideoMode('lesson')" class="px-3 py-1.5 rounded-xl bg-red-600 text-white text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 shadow">
+                  <span>🎬</span> <span id="quickDayLessonText">Video 1: Bài Học Chủ Đề (Ngày 1)</span>
                 </button>
-                <button onclick="switchMasterVideo('KwDJnXt3ZVQ', 'BBC Tim\'s Workshop: Mô phỏng 3D âm Schwa /ə/ & Cắt lớp vòm họng')" class="px-2.5 py-1 rounded-lg bg-red-600/40 hover:bg-red-600/70 border border-red-500/50 text-red-200 text-[11px] font-bold whitespace-nowrap transition cursor-pointer shadow">
-                  🇬🇧 BBC Tim's Workshop: 3D Schwa &amp; Nối âm
+                <button id="quickBtn-dayGrammar" onclick="switchDayVideoMode('grammar')" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5">
+                  <span>📘</span> <span id="quickDayGrammarText">Video 2: Ngữ Pháp Cốt Lõi (Ngày 1)</span>
                 </button>
-                <button onclick="switchMasterVideo('nhTcuUvLGOE', 'Oxford Online English: Phỏng vấn xin việc tiếng Anh')" class="px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/60 border border-emerald-500/40 text-emerald-200 text-[11px] font-semibold whitespace-nowrap transition cursor-pointer">
-                  💼 Oxford: Phỏng Vấn Xin Việc
+                <button onclick="switchMasterVideo('ZTgYjGXFAkw', 'Sounds American - 3D Animation: Khẩu hình vòm họng & Lưỡi')" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-medium whitespace-nowrap transition cursor-pointer">
+                  👄 3D Khẩu Hình Miệng
                 </button>
-                <button onclick="switchMasterVideo('NEKZFA7L7Lg', 'Oxford: Tham gia cuộc họp & Đàm phán công sở')" class="px-2.5 py-1 rounded-lg bg-amber-600/30 hover:bg-amber-600/60 border border-amber-500/40 text-amber-200 text-[11px] font-semibold whitespace-nowrap transition cursor-pointer">
-                  🤝 Oxford: Giao Tiếp Cuộc Họp
+                <button onclick="switchMasterVideo('KwDJnXt3ZVQ', 'BBC Tim\'s Workshop: 3D Schwa & Nối âm')" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-medium whitespace-nowrap transition cursor-pointer">
+                  🇬🇧 BBC Tim's Workshop
                 </button>
-                <button onclick="switchMasterVideo('soTfFFIQQ8U', 'freeCodeCamp: System Design & Microservices Architecture')" class="px-2.5 py-1 rounded-lg bg-cyan-600/30 hover:bg-cyan-600/60 border border-cyan-500/40 text-cyan-200 text-[11px] font-semibold whitespace-nowrap transition cursor-pointer">
-                  💻 IT: System Architecture
-                </button>
-                <button onclick="switchMasterVideo('n7z4q6W_uYc', 'Stanford Business: Think Fast, Talk Smart')" class="px-2.5 py-1 rounded-lg bg-purple-600/30 hover:bg-purple-600/60 border border-purple-500/40 text-purple-200 text-[11px] font-semibold whitespace-nowrap transition cursor-pointer">
-                  🎓 Stanford: Think Fast, Talk Smart
+                <button onclick="switchMasterVideo('n7z4q6W_uYc', 'Stanford Business: Think Fast, Talk Smart')" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-medium whitespace-nowrap transition cursor-pointer">
+                  🎓 Stanford GSB
                 </button>
               </div>
             </div>
 
-            <div class="rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
-              <div class="flex items-center justify-between px-3 py-2 bg-slate-900 border-b border-slate-800">
-                <span class="text-xs font-bold text-red-400 flex items-center gap-1.5">▶ Video Bài Học Tuần Này</span>
-                <div class="flex items-center gap-2">
-                  <a id="dashVideoDirectBtn" href="https://www.youtube.com/watch?v=ZTgYjGXFAkw" target="_blank" rel="noopener noreferrer" class="text-xs px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold flex items-center gap-1 transition shadow cursor-pointer" title="Mở trực tiếp trên App YouTube / Trình duyệt"><span>▶</span> <span>Mở App YouTube ↗</span></a>
-                  <button onclick="playLectureAudio()" class="text-xs px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold flex items-center gap-1 transition" title="Nghe bài đọc chuẩn bản xứ ngay lập tức">🔊 Nghe Audio Bài Giảng</button>
-                  <button onclick="toggleVideoEmbed()" id="toggleVideoBtn" class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition">Ẩn video</button>
-                  <button onclick="startShadowingMode()" class="text-xs px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition">🎙️ Shadowing Mode</button>
+            <!-- Video Player Card with Dual-Video Mode Header -->
+            <div class="rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-xl">
+              <!-- Video Sub-Header: Mode Selector & Action Buttons -->
+              <div class="flex items-center justify-between p-2.5 sm:px-4 bg-slate-900 border-b border-slate-800 flex-wrap gap-2">
+                <!-- Dual-Video Tabs -->
+                <div class="flex items-center p-0.5 rounded-xl bg-slate-950 border border-slate-800">
+                  <button id="videoTabBtn-lesson" onclick="switchDayVideoMode('lesson')" class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition flex items-center gap-1.5 bg-red-600 text-white shadow cursor-pointer">
+                    <span>🎬</span> <span>Video Bài Học Chủ Đề</span>
+                  </button>
+                  <button id="videoTabBtn-grammar" onclick="switchDayVideoMode('grammar')" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
+                    <span>📘</span> <span>Video Ngữ Pháp Cốt Lõi</span>
+                  </button>
+                </div>
+
+                <div class="flex items-center gap-2 flex-wrap">
+                  <a id="dashVideoDirectBtn" href="https://www.youtube.com/watch?v=ZTgYjGXFAkw" target="_blank" rel="noopener noreferrer" class="text-xs px-2.5 py-1.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold flex items-center gap-1 transition shadow cursor-pointer" title="Mở trực tiếp trên App YouTube / Trình duyệt">
+                    <span>▶</span> <span>Mở App YouTube ↗</span>
+                  </a>
+                  <button onclick="playLectureAudio()" class="text-xs px-2.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold flex items-center gap-1 transition cursor-pointer" title="Nghe bài đọc chuẩn bản xứ ngay lập tức">
+                    <span>🔊</span> <span>Nghe Audio</span>
+                  </button>
+                  <button onclick="toggleVideoEmbed()" id="toggleVideoBtn" class="text-xs px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition cursor-pointer">
+                    Ẩn video
+                  </button>
+                  <button onclick="startShadowingMode()" class="text-xs px-2.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition cursor-pointer">
+                    🎙️ Shadowing
+                  </button>
                 </div>
               </div>
+
+              <!-- Active Video Information Bar -->
+              <div class="px-4 py-2 bg-slate-950/90 border-b border-slate-800/80 flex items-center justify-between gap-2 flex-wrap text-xs">
+                <div class="flex items-center gap-2 flex-wrap min-w-0">
+                  <span id="dashVideoChannelBadge" class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-cyan-300 border border-slate-700">Sounds American</span>
+                  <span id="dashVideoDurationBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">7 phút</span>
+                  <span id="dashVideoTopicBadge" class="text-slate-300 font-medium truncate max-w-md sm:max-w-xl">Khẩu hình 3D: Phân biệt âm /iː/ cười mỉm và /ɪ/ thả lỏng</span>
+                </div>
+                <span class="text-[11px] text-amber-300 font-semibold" id="dashVideoDayIndicator">Ngày 1 / 180</span>
+              </div>
+
+              <!-- Video Embed Frame -->
               <div id="videoEmbedWrapper" class="relative w-full" style="padding-bottom:56.25%;">
                 <iframe id="dashVideoEmbed" class="absolute inset-0 w-full h-full" src="" frameborder="0" playsinline webkit-playsinline allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="origin-when-cross-origin" allowfullscreen></iframe>
               </div>
+
               <!-- Video Sound Helper Bar -->
               <div class="px-3 py-2 bg-indigo-950/40 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
                 <span class="text-slate-300 flex items-center gap-1.5">
                   <span class="text-amber-400">💡</span>
                   <span><strong>Mẹo âm thanh:</strong> Nếu video YouTube bị tắt tiếng, hãy bấm vào <strong>biểu tượng loa 🔈</strong> ở góc dưới thanh điều khiển video để bật tiếng.</span>
                 </span>
-                <div class="flex items-center gap-2">
-                  <button onclick="speakCurrentDaySentence(1.0)" class="text-xs px-2.5 py-1 rounded bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 text-indigo-200 transition">
-                    🔊 Nghe Câu Mẫu (TTS)
-                  </button>
-                  <button onclick="switchTab('resources'); scrollToBcHub();" class="text-xs px-2.5 py-1 rounded bg-red-600/30 hover:bg-red-600/50 border border-red-500/40 text-red-200 transition flex items-center gap-1" title="Mở Thư viện Podcast Hội đồng Anh">
-                    🇬🇧 Podcasts Hội Đồng Anh
-                  </button>
-                </div>
+                <span class="text-slate-400 text-[11px] flex items-center gap-1">
+                  <span>📺</span> <span>180 Ngày • 360 Video Tuyển Chọn</span>
+                </span>
               </div>
             </div>
 
@@ -3359,6 +3392,3789 @@
     };
 
     // ==================== YOUTUBE EMBED ====================
+    const CURRICULUM_VIDEOS_180 = {
+  "1": {
+    "day": 1,
+    "week": 1,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /iː/ vs /ɪ/ & Phản xạ chào hỏi tự nhiên",
+    "lessonVideo": {
+      "id": "ZTgYjGXFAkw",
+      "title": "Sounds American - 3D Animation: Vowels /iː/ vs /ɪ/",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Khẩu hình 3D: Phân biệt âm /iː/ cười mỉm và /ɪ/ thả lỏng"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "2": {
+    "day": 2,
+    "week": 1,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /e/ vs /æ/ & Giới thiệu công việc/ngành học",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "Sounds American - Vowels /e/ vs /æ/ Tongue Placement",
+      "channel": "Sounds American",
+      "duration": "8 phút",
+      "topic": "Khẩu hình 3D: Phân biệt âm /e/ mở vừa và /æ/ bẹt hàm"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "3": {
+    "day": 3,
+    "week": 1,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm Schwa /ə/ (Âm lười quan trọng nhất) & Nói về quê quán",
+    "lessonVideo": {
+      "id": "KwDJnXt3ZVQ",
+      "title": "BBC Tim's Workshop - The Schwa /ə/ Sound",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Âm Schwa /ə/: Âm quan trọng nhất trong tiếng Anh bản xứ"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "4": {
+    "day": 4,
+    "week": 1,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /ʌ/, /ɑː/, /ɒ/, /ɔː/ & Nói về sở thích buổi tối",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "5": {
+    "day": 5,
+    "week": 1,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /ʊ/ vs /uː/ & Mô tả tính cách, điểm mạnh",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - American Flap T and Held T",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Kỹ thuật biến âm Flap T (water, better) và ngắt hơi Held T"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "6": {
+    "day": 6,
+    "week": 1,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Tổng hợp 12 Nguyên âm đơn & Nối câu bằng liên từ",
+    "lessonVideo": {
+      "id": "ZTgYjGXFAkw",
+      "title": "Sounds American - 3D Animation: Vowels /iː/ vs /ɪ/",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Khẩu hình 3D: Phân biệt âm /iː/ cười mỉm và /ɪ/ thả lỏng"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "7": {
+    "day": 7,
+    "week": 1,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Review Tuần 1 & Thử thách Tự giới thiệu 60 giây",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "8": {
+    "day": 8,
+    "week": 2,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /eɪ/, /aɪ/, /ɔɪ/ & Kể lịch trình buổi sáng - tối",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Oxford Online English - Daily Routine & Talking About Your Day",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "topic": "Kể lịch trình buổi sáng, giờ làm việc và thói quen buổi tối"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "9": {
+    "day": 9,
+    "week": 2,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /əʊ/, /aʊ/ & Cách đặt câu hỏi Do/Does không bị khựng",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "10": {
+    "day": 10,
+    "week": 2,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /ɪə/, /eə/, /ʊə/ & Nói về công việc/học tập buổi tối",
+    "lessonVideo": {
+      "id": "d5Qp2X1NqYM",
+      "title": "Rachel's English - How to Pronounce American /r/ and /l/",
+      "channel": "Rachel's English",
+      "duration": "8 phút",
+      "topic": "Khẩu hình cuộn lưỡi phát âm /r/ và nâng đầu lưỡi phát âm /l/"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "11": {
+    "day": 11,
+    "week": 2,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm cuối /s/, /z/, /ɪz/ khi chia động từ & danh từ số nhiều",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - American Flap T and Held T",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Kỹ thuật biến âm Flap T (water, better) và ngắt hơi Held T"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "12": {
+    "day": 12,
+    "week": 2,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Phản xạ Hỏi - Đáp về sở thích & thời gian rảnh",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "13": {
+    "day": 13,
+    "week": 2,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Quản lý thời gian & Từ chối khéo léo bằng tiếng Anh",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "14": {
+    "day": 14,
+    "week": 2,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Review Tuần 2 & Bài kiểm tra Phản xạ Hiện tại đơn",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "Sounds American - Vowels /e/ vs /æ/ Tongue Placement",
+      "channel": "Sounds American",
+      "duration": "8 phút",
+      "topic": "Khẩu hình 3D: Phân biệt âm /e/ mở vừa và /æ/ bẹt hàm"
+    },
+    "grammarVideo": {
+      "id": "84JXXLS45dk",
+      "title": "English with Lucy - Present Simple Tense: The Complete Guide",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "Động từ To Be (am/is/are) & Thì Hiện Tại Đơn cho thói quen và sự thật"
+    }
+  },
+  "15": {
+    "day": 15,
+    "week": 3,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Cặp âm 'TH' vô thanh /θ/ và hữu thanh /ð/",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "16": {
+    "day": 16,
+    "week": 3,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Cặp âm /ʃ/ (she) và /ʒ/ (vision, decision)",
+    "lessonVideo": {
+      "id": "d5Qp2X1NqYM",
+      "title": "Rachel's English - How to Pronounce American /r/ and /l/",
+      "channel": "Rachel's English",
+      "duration": "8 phút",
+      "topic": "Khẩu hình cuộn lưỡi phát âm /r/ và nâng đầu lưỡi phát âm /l/"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "17": {
+    "day": 17,
+    "week": 3,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Cặp âm bật hơi /tʃ/ (watch) và /dʒ/ (schedule, language)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - American Flap T and Held T",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Kỹ thuật biến âm Flap T (water, better) và ngắt hơi Held T"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "18": {
+    "day": 18,
+    "week": 3,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Âm /r/ vs /l/ & Ending Sounds /t/, /d/, /k/, /p/",
+    "lessonVideo": {
+      "id": "d5Qp2X1NqYM",
+      "title": "Rachel's English - How to Pronounce American /r/ and /l/",
+      "channel": "Rachel's English",
+      "duration": "8 phút",
+      "topic": "Khẩu hình cuộn lưỡi phát âm /r/ và nâng đầu lưỡi phát âm /l/"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "19": {
+    "day": 19,
+    "week": 3,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Dùng Hiện tại tiếp diễn để nói về kế hoạch tối nay / cuối tuần",
+    "lessonVideo": {
+      "id": "KwDJnXt3ZVQ",
+      "title": "BBC Tim's Workshop - The Schwa /ə/ Sound",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Âm Schwa /ə/: Âm quan trọng nhất trong tiếng Anh bản xứ"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "20": {
+    "day": 20,
+    "week": 3,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Mô tả tình huống đang xảy ra xung quanh bạn",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "Sounds American - Vowels /e/ vs /æ/ Tongue Placement",
+      "channel": "Sounds American",
+      "duration": "8 phút",
+      "topic": "Khẩu hình 3D: Phân biệt âm /e/ mở vừa và /æ/ bẹt hàm"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "21": {
+    "day": 21,
+    "week": 3,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Review Tuần 3 & Kiểm tra Tổ hợp 44 âm IPA",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "22": {
+    "day": 22,
+    "week": 4,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Quy tắc Trọng âm từ 2 âm tiết (Danh/Tính vs Động từ)",
+    "lessonVideo": {
+      "id": "d5Qp2X1NqYM",
+      "title": "Rachel's English - How to Pronounce American /r/ and /l/",
+      "channel": "Rachel's English",
+      "duration": "8 phút",
+      "topic": "Khẩu hình cuộn lưỡi phát âm /r/ và nâng đầu lưỡi phát âm /l/"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "23": {
+    "day": 23,
+    "week": 4,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "3 cách phát âm đuôi -ed (/t/, /d/, /ɪd/) không bao giờ nhầm",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - American Flap T and Held T",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Kỹ thuật biến âm Flap T (water, better) và ngắt hơi Held T"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "24": {
+    "day": 24,
+    "week": 4,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "50 Động từ bất quy tắc thông dụng nhất trong giao tiếp",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "25": {
+    "day": 25,
+    "week": 4,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Kỹ thuật Nối âm Phụ âm + Nguyên âm (Linking Sounds)",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "26": {
+    "day": 26,
+    "week": 4,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Đặt câu hỏi trong Quá khứ (Did you...? / How was...?)",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "Sounds American - Vowels /e/ vs /æ/ Tongue Placement",
+      "channel": "Sounds American",
+      "duration": "8 phút",
+      "topic": "Khẩu hình 3D: Phân biệt âm /e/ mở vừa và /æ/ bẹt hàm"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "27": {
+    "day": 27,
+    "week": 4,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Kể lại một trải nghiệm đáng nhớ (Storytelling cơ bản)",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "28": {
+    "day": 28,
+    "week": 4,
+    "month": 1,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Tổng ôn Tháng 1 (Ngày 28-30): Kiểm tra Cột mốc Tháng 1",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "29": {
+    "day": 29,
+    "week": 5,
+    "month": 2,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 5: Ngữ điệu câu (Sentence Stress & Intona...)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - American Flap T and Held T",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Kỹ thuật biến âm Flap T (water, better) và ngắt hơi Held T"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "30": {
+    "day": 30,
+    "week": 5,
+    "month": 2,
+    "level": "Level A1 (Khởi Động)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 5: Ngữ điệu câu (Sentence Stress & Intona...)",
+    "lessonVideo": {
+      "id": "b2b07Y6rN1w",
+      "title": "Sounds American - Consonants /θ/ vs /ð/ (TH Sounds)",
+      "channel": "Sounds American",
+      "duration": "7 phút",
+      "topic": "Đặt lưỡi giữa hai hàm răng phát âm TH vô thanh và hữu thanh"
+    },
+    "grammarVideo": {
+      "id": "n5A0uD0qB_c",
+      "title": "BBC Learning English - Present Continuous: When and How to Use It",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Hiện Tại Tiếp Diễn (am/is/are + V-ing) & Hành động đang diễn ra"
+    }
+  },
+  "31": {
+    "day": 31,
+    "week": 5,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Từ được nhấn (Content Words) & Từ lướt âm (Function Words)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "32": {
+    "day": 32,
+    "week": 5,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Phân biệt 'Be going to' và 'Will' trong phản xạ thực tế",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "BBC Tim's Workshop - Consonant to Vowel Linking",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "topic": "Kỹ thuật nối âm phụ âm sang nguyên âm (pick it up, check it out)"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "33": {
+    "day": 33,
+    "week": 5,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Đưa ra lời khuyên & Đề xuất lịch sự (Should, Could, Why don't we)",
+    "lessonVideo": {
+      "id": "U4sQG5hZ9vM",
+      "title": "BBC Tim's Workshop - Word Stress & Sentence Rhythm",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nhịp điệu câu tiếng Anh (Stress-timed) và nhấn từ nội dung"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "34": {
+    "day": 34,
+    "week": 5,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Ngữ điệu lên (Rising) và xuống (Falling) trong câu hỏi",
+    "lessonVideo": {
+      "id": "a2G8q1b9N0U",
+      "title": "BBC Tim's Workshop - Intonation in Questions vs Statements",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Ngữ điệu lên giọng câu hỏi Yes/No và xuống giọng câu trần thuật"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "35": {
+    "day": 35,
+    "week": 5,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Giao tiếp khi Mua sắm, Đặt hàng & Hỏi giá cả",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "36": {
+    "day": 36,
+    "week": 6,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 6: Hiện tại Hoàn thành (Present Perfect) ...)",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "BBC Tim's Workshop - Consonant to Vowel Linking",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "topic": "Kỹ thuật nối âm phụ âm sang nguyên âm (pick it up, check it out)"
+    },
+    "grammarVideo": {
+      "id": "k1m0p9q2r3s",
+      "title": "BBC Learning English - Past Continuous: Telling Stories in the Past",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Thì Quá Khứ Tiếp Diễn (was/were + V-ing) kết hợp Quá Khứ Đơn khi có hành động xen vào"
+    }
+  },
+  "37": {
+    "day": 37,
+    "week": 6,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 6: Hiện tại Hoàn thành (Present Perfect) ...)",
+    "lessonVideo": {
+      "id": "U4sQG5hZ9vM",
+      "title": "BBC Tim's Workshop - Word Stress & Sentence Rhythm",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nhịp điệu câu tiếng Anh (Stress-timed) và nhấn từ nội dung"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "38": {
+    "day": 38,
+    "week": 6,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Cách phát âm rút gọn 've (/v/) và 's (/z/) trong Hiện tại hoàn thành",
+    "lessonVideo": {
+      "id": "a2G8q1b9N0U",
+      "title": "BBC Tim's Workshop - Intonation in Questions vs Statements",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Ngữ điệu lên giọng câu hỏi Yes/No và xuống giọng câu trần thuật"
+    },
+    "grammarVideo": {
+      "id": "q2m1p0s9k3r",
+      "title": "English with Lucy - Modal Verbs of Ability: Can, Could, Be Able To",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Động từ khuyết thiếu chỉ khả năng: Can, Could, Be able to trong quá khứ và hiện tại"
+    }
+  },
+  "39": {
+    "day": 39,
+    "week": 6,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Hỏi về trải nghiệm với 'Have you ever...?' & Mở rộng câu chuyện",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "w9s1m2q3p0k",
+      "title": "BBC Learning English - Must vs Have To vs Should (Obligation & Advice)",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Nghĩa vụ và Lời khuyên: Must (bắt buộc cá nhân) vs Have to (luật lệ) vs Should"
+    }
+  },
+  "40": {
+    "day": 40,
+    "week": 6,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Dùng 'just', 'already', 'yet' trong giao tiếp hàng ngày",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "BBC Tim's Workshop - Consonant to Vowel Linking",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "topic": "Kỹ thuật nối âm phụ âm sang nguyên âm (pick it up, check it out)"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "41": {
+    "day": 41,
+    "week": 6,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Giao tiếp Hỏi đường, Phương tiện di chuyển & Du lịch",
+    "lessonVideo": {
+      "id": "k29h7X0jZqU",
+      "title": "Oxford Online English - Asking for and Giving Directions",
+      "channel": "Oxford Online English",
+      "duration": "8 phút",
+      "topic": "Chỉ đường, hỏi khoảng cách và định vị địa điểm trong thành phố"
+    },
+    "grammarVideo": {
+      "id": "k1m0p9q2r3s",
+      "title": "BBC Learning English - Past Continuous: Telling Stories in the Past",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Thì Quá Khứ Tiếp Diễn (was/were + V-ing) kết hợp Quá Khứ Đơn khi có hành động xen vào"
+    }
+  },
+  "42": {
+    "day": 42,
+    "week": 6,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Nói về Sức khỏe, Cảm xúc & Cách hỏi thăm tinh tế",
+    "lessonVideo": {
+      "id": "a2G8q1b9N0U",
+      "title": "BBC Tim's Workshop - Intonation in Questions vs Statements",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Ngữ điệu lên giọng câu hỏi Yes/No và xuống giọng câu trần thuật"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "43": {
+    "day": 43,
+    "week": 7,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 7: Kỹ thuật Nuốt âm (Elision), Âm chặn (S...)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "q2m1p0s9k3r",
+      "title": "English with Lucy - Modal Verbs of Ability: Can, Could, Be Able To",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Động từ khuyết thiếu chỉ khả năng: Can, Could, Be able to trong quá khứ và hiện tại"
+    }
+  },
+  "44": {
+    "day": 44,
+    "week": 7,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 7: Kỹ thuật Nuốt âm (Elision), Âm chặn (S...)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "w9s1m2q3p0k",
+      "title": "BBC Learning English - Must vs Have To vs Should (Obligation & Advice)",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Nghĩa vụ và Lời khuyên: Must (bắt buộc cá nhân) vs Have to (luật lệ) vs Should"
+    }
+  },
+  "45": {
+    "day": 45,
+    "week": 7,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Bí quyết phân biệt 'Can' (/kən/) và 'Can't' (/kænt/ - Held T)",
+    "lessonVideo": {
+      "id": "U4sQG5hZ9vM",
+      "title": "BBC Tim's Workshop - Word Stress & Sentence Rhythm",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nhịp điệu câu tiếng Anh (Stress-timed) và nhấn từ nội dung"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "46": {
+    "day": 46,
+    "week": 7,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Các động từ đi với To-V (want to -> wanna, need to, decide to)",
+    "lessonVideo": {
+      "id": "a2G8q1b9N0U",
+      "title": "BBC Tim's Workshop - Intonation in Questions vs Statements",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Ngữ điệu lên giọng câu hỏi Yes/No và xuống giọng câu trần thuật"
+    },
+    "grammarVideo": {
+      "id": "k1m0p9q2r3s",
+      "title": "BBC Learning English - Past Continuous: Telling Stories in the Past",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Thì Quá Khứ Tiếp Diễn (was/were + V-ing) kết hợp Quá Khứ Đơn khi có hành động xen vào"
+    }
+  },
+  "47": {
+    "day": 47,
+    "week": 7,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Các động từ & Giới từ đi với V-ing (enjoy, avoid, look forward to)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "48": {
+    "day": 48,
+    "week": 7,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Câu điều kiện loại 1 (If... will/can) trong thương lượng & hẹn lịch",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "BBC Tim's Workshop - Consonant to Vowel Linking",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "topic": "Kỹ thuật nối âm phụ âm sang nguyên âm (pick it up, check it out)"
+    },
+    "grammarVideo": {
+      "id": "q2m1p0s9k3r",
+      "title": "English with Lucy - Modal Verbs of Ability: Can, Could, Be Able To",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Động từ khuyết thiếu chỉ khả năng: Can, Could, Be able to trong quá khứ và hiện tại"
+    }
+  },
+  "49": {
+    "day": 49,
+    "week": 7,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Giao tiếp qua Điện thoại / Họp Online (Zoom / Google Meet)",
+    "lessonVideo": {
+      "id": "U4sQG5hZ9vM",
+      "title": "BBC Tim's Workshop - Word Stress & Sentence Rhythm",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nhịp điệu câu tiếng Anh (Stress-timed) và nhấn từ nội dung"
+    },
+    "grammarVideo": {
+      "id": "w9s1m2q3p0k",
+      "title": "BBC Learning English - Must vs Have To vs Should (Obligation & Advice)",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Nghĩa vụ và Lời khuyên: Must (bắt buộc cá nhân) vs Have to (luật lệ) vs Should"
+    }
+  },
+  "50": {
+    "day": 50,
+    "week": 8,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 8: Mở rộng câu bằng Mệnh đề quan hệ (Who,...)",
+    "lessonVideo": {
+      "id": "a2G8q1b9N0U",
+      "title": "BBC Tim's Workshop - Intonation in Questions vs Statements",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Ngữ điệu lên giọng câu hỏi Yes/No và xuống giọng câu trần thuật"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "51": {
+    "day": 51,
+    "week": 8,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 8: Mở rộng câu bằng Mệnh đề quan hệ (Who,...)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "k1m0p9q2r3s",
+      "title": "BBC Learning English - Past Continuous: Telling Stories in the Past",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Thì Quá Khứ Tiếp Diễn (was/were + V-ing) kết hợp Quá Khứ Đơn khi có hành động xen vào"
+    }
+  },
+  "52": {
+    "day": 52,
+    "week": 8,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Kỹ thuật Chunking (Ngắt cụm từ theo ý nghĩa khi nói câu dài)",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "BBC Tim's Workshop - Consonant to Vowel Linking",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "topic": "Kỹ thuật nối âm phụ âm sang nguyên âm (pick it up, check it out)"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "53": {
+    "day": 53,
+    "week": 8,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Dùng Who / Which / That để giải thích từ khi quên từ vựng",
+    "lessonVideo": {
+      "id": "U4sQG5hZ9vM",
+      "title": "BBC Tim's Workshop - Word Stress & Sentence Rhythm",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nhịp điệu câu tiếng Anh (Stress-timed) và nhấn từ nội dung"
+    },
+    "grammarVideo": {
+      "id": "q2m1p0s9k3r",
+      "title": "English with Lucy - Modal Verbs of Ability: Can, Could, Be Able To",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Động từ khuyết thiếu chỉ khả năng: Can, Could, Be able to trong quá khứ và hiện tại"
+    }
+  },
+  "54": {
+    "day": 54,
+    "week": 8,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Nêu ý kiến cá nhân một cách thuyết phục (In my experience, I find that...)",
+    "lessonVideo": {
+      "id": "a2G8q1b9N0U",
+      "title": "BBC Tim's Workshop - Intonation in Questions vs Statements",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Ngữ điệu lên giọng câu hỏi Yes/No và xuống giọng câu trần thuật"
+    },
+    "grammarVideo": {
+      "id": "w9s1m2q3p0k",
+      "title": "BBC Learning English - Must vs Have To vs Should (Obligation & Advice)",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Nghĩa vụ và Lời khuyên: Must (bắt buộc cá nhân) vs Have to (luật lệ) vs Should"
+    }
+  },
+  "55": {
+    "day": 55,
+    "week": 8,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Đồng tình & Không đồng tình một cách lịch sự",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "56": {
+    "day": 56,
+    "week": 8,
+    "month": 2,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Giải quyết sự cố & Phàn nàn lịch sự trong dịch vụ/công việc",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "BBC Tim's Workshop - Consonant to Vowel Linking",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "topic": "Kỹ thuật nối âm phụ âm sang nguyên âm (pick it up, check it out)"
+    },
+    "grammarVideo": {
+      "id": "k1m0p9q2r3s",
+      "title": "BBC Learning English - Past Continuous: Telling Stories in the Past",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Thì Quá Khứ Tiếp Diễn (was/were + V-ing) kết hợp Quá Khứ Đơn khi có hành động xen vào"
+    }
+  },
+  "57": {
+    "day": 57,
+    "week": 9,
+    "month": 3,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 9: Tăng tốc Nghe hiểu Tự nhiên (Connected...)",
+    "lessonVideo": {
+      "id": "U4sQG5hZ9vM",
+      "title": "BBC Tim's Workshop - Word Stress & Sentence Rhythm",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nhịp điệu câu tiếng Anh (Stress-timed) và nhấn từ nội dung"
+    },
+    "grammarVideo": {
+      "id": "a8s9q1m2p3k",
+      "title": "Oxford Online English - Talking About the Future: Will vs Going To",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Phân biệt Tương Lai Gần (Be going to) vs Tương Lai Đơn (Will) trong quyết định tức thì"
+    }
+  },
+  "58": {
+    "day": 58,
+    "week": 9,
+    "month": 3,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 9: Tăng tốc Nghe hiểu Tự nhiên (Connected...)",
+    "lessonVideo": {
+      "id": "a2G8q1b9N0U",
+      "title": "BBC Tim's Workshop - Intonation in Questions vs Statements",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Ngữ điệu lên giọng câu hỏi Yes/No và xuống giọng câu trần thuật"
+    },
+    "grammarVideo": {
+      "id": "q2m1p0s9k3r",
+      "title": "English with Lucy - Modal Verbs of Ability: Can, Could, Be Able To",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Động từ khuyết thiếu chỉ khả năng: Can, Could, Be able to trong quá khứ và hiện tại"
+    }
+  },
+  "59": {
+    "day": 59,
+    "week": 9,
+    "month": 3,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 9: Tăng tốc Nghe hiểu Tự nhiên (Connected...)",
+    "lessonVideo": {
+      "id": "x8W2-a0FqU8",
+      "title": "BBC Tim's Workshop - Elision: Dropping /t/ and /d/ Sounds",
+      "channel": "BBC Learning English",
+      "duration": "6 phút",
+      "topic": "Nuốt âm /t/ và /d/ khi nói nhanh (next day -> nex day)"
+    },
+    "grammarVideo": {
+      "id": "w9s1m2q3p0k",
+      "title": "BBC Learning English - Must vs Have To vs Should (Obligation & Advice)",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Nghĩa vụ và Lời khuyên: Must (bắt buộc cá nhân) vs Have to (luật lệ) vs Should"
+    }
+  },
+  "60": {
+    "day": 60,
+    "week": 9,
+    "month": 3,
+    "level": "Level A2 (Tăng Tốc)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 9: Tăng tốc Nghe hiểu Tự nhiên (Connected...)",
+    "lessonVideo": {
+      "id": "mV_CEIroJs8",
+      "title": "BBC Tim's Workshop - Consonant to Vowel Linking",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "topic": "Kỹ thuật nối âm phụ âm sang nguyên âm (pick it up, check it out)"
+    },
+    "grammarVideo": {
+      "id": "x9p2q1m0n4s",
+      "title": "English with Lucy - Past Simple Tense: Regular and Irregular Verbs",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Thì Quá Khứ Đơn (V2/ed), quy tắc phát âm đuôi -ed (/t/, /d/, /ɪd/)"
+    }
+  },
+  "61": {
+    "day": 61,
+    "week": 9,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Hiện tượng biến âm /d/ + /j/ -> /dʒ/ và /t/ + /j/ -> /tʃ/",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "62": {
+    "day": 62,
+    "week": 9,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Dùng Câu bị động tự nhiên trong đời sống (It's made of / I was told...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "63": {
+    "day": 63,
+    "week": 9,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Nói về Công nghệ, Ứng dụng học tập & Đời sống số",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "64": {
+    "day": 64,
+    "week": 10,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 10: Cụm động từ (Phrasal Verbs) Cốt lõi & ...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "m2p3q1s0k9r",
+      "title": "English with Lucy - Present Perfect: The Ultimate Guide",
+      "channel": "English with Lucy",
+      "duration": "12 phút",
+      "grammarTopic": "Thì Hiện Tại Hoàn Thành (have/has + V3) với Just, Already, Yet, Ever, Never"
+    }
+  },
+  "65": {
+    "day": 65,
+    "week": 10,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 10: Cụm động từ (Phrasal Verbs) Cốt lõi & ...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s1m2q3p0k9r",
+      "title": "Oxford Online English - Present Perfect with Since and For",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Cách dùng Since (mốc thời gian) và For (khoảng thời gian) với Hiện Tại Hoàn Thành"
+    }
+  },
+  "66": {
+    "day": 66,
+    "week": 10,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 10: Cụm động từ (Phrasal Verbs) Cốt lõi & ...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "p0k9r1m2q3s",
+      "title": "BBC Learning English - Present Perfect vs Past Simple",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Phân biệt dứt khoát: Quá Khứ Đơn (có thời điểm rõ) vs Hiện Tại Hoàn Thành (kết quả)"
+    }
+  },
+  "67": {
+    "day": 67,
+    "week": 10,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 10: Cụm động từ (Phrasal Verbs) Cốt lõi & ...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "r1m2q3s0k9p",
+      "title": "English with Lucy - Comparatives and Superlatives in English",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "So sánh hơn, so sánh nhất và so sánh ngang bằng (as... as, the more... the more)"
+    }
+  },
+  "68": {
+    "day": 68,
+    "week": 10,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Phrasal Verbs về Học tập & Giải quyết vấn đề (figure out, look up, go over)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "69": {
+    "day": 69,
+    "week": 10,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Phrasal Verbs về Thói quen & Nỗ lực (keep up with, give up, work out)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "q3s0k9r1m2p",
+      "title": "BBC Learning English - Causative Verbs: Have and Get Something Done",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Cấu trúc nhờ vả / thuê mướn: Have/Get something done by someone"
+    }
+  },
+  "70": {
+    "day": 70,
+    "week": 10,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Phrasal Verbs trong Giao tiếp Xã hội (catch up, hang out, run into)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "m1q2r3s0k9p",
+      "title": "English with Lucy - Zero and First Conditionals",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Câu điều kiện Loại 0 (sự thật khoa học) và Loại 1 (khả năng xảy ra ở tương lai)"
+    }
+  },
+  "71": {
+    "day": 71,
+    "week": 11,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 11: Phản xạ Kể chuyện Quá khứ - Hiện tại -...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "72": {
+    "day": 72,
+    "week": 11,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 11: Phản xạ Kể chuyện Quá khứ - Hiện tại -...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "m2p3q1s0k9r",
+      "title": "English with Lucy - Present Perfect: The Ultimate Guide",
+      "channel": "English with Lucy",
+      "duration": "12 phút",
+      "grammarTopic": "Thì Hiện Tại Hoàn Thành (have/has + V3) với Just, Already, Yet, Ever, Never"
+    }
+  },
+  "73": {
+    "day": 73,
+    "week": 11,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 11: Phản xạ Kể chuyện Quá khứ - Hiện tại -...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s1m2q3p0k9r",
+      "title": "Oxford Online English - Present Perfect with Since and For",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Cách dùng Since (mốc thời gian) và For (khoảng thời gian) với Hiện Tại Hoàn Thành"
+    }
+  },
+  "74": {
+    "day": 74,
+    "week": 11,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 11: Phản xạ Kể chuyện Quá khứ - Hiện tại -...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "p0k9r1m2q3s",
+      "title": "BBC Learning English - Present Perfect vs Past Simple",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Phân biệt dứt khoát: Quá Khứ Đơn (có thời điểm rõ) vs Hiện Tại Hoàn Thành (kết quả)"
+    }
+  },
+  "75": {
+    "day": 75,
+    "week": 11,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Kết nối Quá khứ (Past) -> Hiện tại (Present) -> Tương lai (Future)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "r1m2q3s0k9p",
+      "title": "English with Lucy - Comparatives and Superlatives in English",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "So sánh hơn, so sánh nhất và so sánh ngang bằng (as... as, the more... the more)"
+    }
+  },
+  "76": {
+    "day": 76,
+    "week": 11,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Phản hồi Cảm xúc Tự nhiên (Active Listening Responses)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "77": {
+    "day": 77,
+    "week": 11,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 11: Phản xạ Kể chuyện Quá khứ - Hiện tại -...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "q3s0k9r1m2p",
+      "title": "BBC Learning English - Causative Verbs: Have and Get Something Done",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Cấu trúc nhờ vả / thuê mướn: Have/Get something done by someone"
+    }
+  },
+  "78": {
+    "day": 78,
+    "week": 12,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 12: Tổng duyệt Cột Mốc 3 Tháng (90 Ngày): ...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "m1q2r3s0k9p",
+      "title": "English with Lucy - Zero and First Conditionals",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Câu điều kiện Loại 0 (sự thật khoa học) và Loại 1 (khả năng xảy ra ở tương lai)"
+    }
+  },
+  "79": {
+    "day": 79,
+    "week": 12,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 12: Tổng duyệt Cột Mốc 3 Tháng (90 Ngày): ...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "80": {
+    "day": 80,
+    "week": 12,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 12: Tổng duyệt Cột Mốc 3 Tháng (90 Ngày): ...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "m2p3q1s0k9r",
+      "title": "English with Lucy - Present Perfect: The Ultimate Guide",
+      "channel": "English with Lucy",
+      "duration": "12 phút",
+      "grammarTopic": "Thì Hiện Tại Hoàn Thành (have/has + V3) với Just, Already, Yet, Ever, Never"
+    }
+  },
+  "81": {
+    "day": 81,
+    "week": 12,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 12: Tổng duyệt Cột Mốc 3 Tháng (90 Ngày): ...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s1m2q3p0k9r",
+      "title": "Oxford Online English - Present Perfect with Since and For",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Cách dùng Since (mốc thời gian) và For (khoảng thời gian) với Hiện Tại Hoàn Thành"
+    }
+  },
+  "82": {
+    "day": 82,
+    "week": 12,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 12: Tổng duyệt Cột Mốc 3 Tháng (90 Ngày): ...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "p0k9r1m2q3s",
+      "title": "BBC Learning English - Present Perfect vs Past Simple",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Phân biệt dứt khoát: Quá Khứ Đơn (có thời điểm rõ) vs Hiện Tại Hoàn Thành (kết quả)"
+    }
+  },
+  "83": {
+    "day": 83,
+    "week": 12,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 12: Tổng duyệt Cột Mốc 3 Tháng (90 Ngày): ...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "r1m2q3s0k9p",
+      "title": "English with Lucy - Comparatives and Superlatives in English",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "So sánh hơn, so sánh nhất và so sánh ngang bằng (as... as, the more... the more)"
+    }
+  },
+  "84": {
+    "day": 84,
+    "week": 12,
+    "month": 3,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 12: Tổng duyệt Cột Mốc 3 Tháng (90 Ngày): ...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "85": {
+    "day": 85,
+    "week": 13,
+    "month": 4,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 13: Shadowing Tốc Độ Bản Xứ & Idioms Giao ...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "86": {
+    "day": 86,
+    "week": 13,
+    "month": 4,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 13: Shadowing Tốc Độ Bản Xứ & Idioms Giao ...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "87": {
+    "day": 87,
+    "week": 13,
+    "month": 4,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 13: Shadowing Tốc Độ Bản Xứ & Idioms Giao ...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "88": {
+    "day": 88,
+    "week": 13,
+    "month": 4,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 13: Shadowing Tốc Độ Bản Xứ & Idioms Giao ...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "89": {
+    "day": 89,
+    "week": 13,
+    "month": 4,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 13: Shadowing Tốc Độ Bản Xứ & Idioms Giao ...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "90": {
+    "day": 90,
+    "week": 13,
+    "month": 4,
+    "level": "Level A2-B1 (Nền Tảng Giao Tiếp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 13: Shadowing Tốc Độ Bản Xứ & Idioms Giao ...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "91": {
+    "day": 91,
+    "week": 13,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Cấu trúc 'Should have + V3' (/ˈʃʊdəv/) khi nói về điều tiếc nuối",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "92": {
+    "day": 92,
+    "week": 14,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 14: Kỹ năng Thảo luận Quan điểm, Đồng tình...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "93": {
+    "day": 93,
+    "week": 14,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 14: Kỹ năng Thảo luận Quan điểm, Đồng tình...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "q3s0k9r1m2p",
+      "title": "BBC Learning English - Causative Verbs: Have and Get Something Done",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Cấu trúc nhờ vả / thuê mướn: Have/Get something done by someone"
+    }
+  },
+  "94": {
+    "day": 94,
+    "week": 14,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 14: Kỹ năng Thảo luận Quan điểm, Đồng tình...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "m1q2r3s0k9p",
+      "title": "English with Lucy - Zero and First Conditionals",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Câu điều kiện Loại 0 (sự thật khoa học) và Loại 1 (khả năng xảy ra ở tương lai)"
+    }
+  },
+  "95": {
+    "day": 95,
+    "week": 14,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 14: Kỹ năng Thảo luận Quan điểm, Đồng tình...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "96": {
+    "day": 96,
+    "week": 14,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 14: Kỹ năng Thảo luận Quan điểm, Đồng tình...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "m2p3q1s0k9r",
+      "title": "English with Lucy - Present Perfect: The Ultimate Guide",
+      "channel": "English with Lucy",
+      "duration": "12 phút",
+      "grammarTopic": "Thì Hiện Tại Hoàn Thành (have/has + V3) với Just, Already, Yet, Ever, Never"
+    }
+  },
+  "97": {
+    "day": 97,
+    "week": 14,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 14: Kỹ năng Thảo luận Quan điểm, Đồng tình...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s1m2q3p0k9r",
+      "title": "Oxford Online English - Present Perfect with Since and For",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Cách dùng Since (mốc thời gian) và For (khoảng thời gian) với Hiện Tại Hoàn Thành"
+    }
+  },
+  "98": {
+    "day": 98,
+    "week": 14,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 14: Kỹ năng Thảo luận Quan điểm, Đồng tình...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "p0k9r1m2q3s",
+      "title": "BBC Learning English - Present Perfect vs Past Simple",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Phân biệt dứt khoát: Quá Khứ Đơn (có thời điểm rõ) vs Hiện Tại Hoàn Thành (kết quả)"
+    }
+  },
+  "99": {
+    "day": 99,
+    "week": 15,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 15: Kỹ năng Small Talk (Bắt chuyện & Duy t...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "r1m2q3s0k9p",
+      "title": "English with Lucy - Comparatives and Superlatives in English",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "So sánh hơn, so sánh nhất và so sánh ngang bằng (as... as, the more... the more)"
+    }
+  },
+  "100": {
+    "day": 100,
+    "week": 15,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 15: Kỹ năng Small Talk (Bắt chuyện & Duy t...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "101": {
+    "day": 101,
+    "week": 15,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 15: Kỹ năng Small Talk (Bắt chuyện & Duy t...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "q3s0k9r1m2p",
+      "title": "BBC Learning English - Causative Verbs: Have and Get Something Done",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Cấu trúc nhờ vả / thuê mướn: Have/Get something done by someone"
+    }
+  },
+  "102": {
+    "day": 102,
+    "week": 15,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 15: Kỹ năng Small Talk (Bắt chuyện & Duy t...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "m1q2r3s0k9p",
+      "title": "English with Lucy - Zero and First Conditionals",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Câu điều kiện Loại 0 (sự thật khoa học) và Loại 1 (khả năng xảy ra ở tương lai)"
+    }
+  },
+  "103": {
+    "day": 103,
+    "week": 15,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 15: Kỹ năng Small Talk (Bắt chuyện & Duy t...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "104": {
+    "day": 104,
+    "week": 15,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 15: Kỹ năng Small Talk (Bắt chuyện & Duy t...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "m2p3q1s0k9r",
+      "title": "English with Lucy - Present Perfect: The Ultimate Guide",
+      "channel": "English with Lucy",
+      "duration": "12 phút",
+      "grammarTopic": "Thì Hiện Tại Hoàn Thành (have/has + V3) với Just, Already, Yet, Ever, Never"
+    }
+  },
+  "105": {
+    "day": 105,
+    "week": 15,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 15: Kỹ năng Small Talk (Bắt chuyện & Duy t...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s1m2q3p0k9r",
+      "title": "Oxford Online English - Present Perfect with Since and For",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Cách dùng Since (mốc thời gian) và For (khoảng thời gian) với Hiện Tại Hoàn Thành"
+    }
+  },
+  "106": {
+    "day": 106,
+    "week": 16,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 16: Kể Chuyện Chi Tiết (Advanced Storytell...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "p0k9r1m2q3s",
+      "title": "BBC Learning English - Present Perfect vs Past Simple",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Phân biệt dứt khoát: Quá Khứ Đơn (có thời điểm rõ) vs Hiện Tại Hoàn Thành (kết quả)"
+    }
+  },
+  "107": {
+    "day": 107,
+    "week": 16,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 16: Kể Chuyện Chi Tiết (Advanced Storytell...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "r1m2q3s0k9p",
+      "title": "English with Lucy - Comparatives and Superlatives in English",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "So sánh hơn, so sánh nhất và so sánh ngang bằng (as... as, the more... the more)"
+    }
+  },
+  "108": {
+    "day": 108,
+    "week": 16,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 16: Kể Chuyện Chi Tiết (Advanced Storytell...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "109": {
+    "day": 109,
+    "week": 16,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 16: Kể Chuyện Chi Tiết (Advanced Storytell...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "q3s0k9r1m2p",
+      "title": "BBC Learning English - Causative Verbs: Have and Get Something Done",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Cấu trúc nhờ vả / thuê mướn: Have/Get something done by someone"
+    }
+  },
+  "110": {
+    "day": 110,
+    "week": 16,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 16: Kể Chuyện Chi Tiết (Advanced Storytell...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "m1q2r3s0k9p",
+      "title": "English with Lucy - Zero and First Conditionals",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Câu điều kiện Loại 0 (sự thật khoa học) và Loại 1 (khả năng xảy ra ở tương lai)"
+    }
+  },
+  "111": {
+    "day": 111,
+    "week": 16,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 16: Kể Chuyện Chi Tiết (Advanced Storytell...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "112": {
+    "day": 112,
+    "week": 16,
+    "month": 4,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 16: Kể Chuyện Chi Tiết (Advanced Storytell...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "m2p3q1s0k9r",
+      "title": "English with Lucy - Present Perfect: The Ultimate Guide",
+      "channel": "English with Lucy",
+      "duration": "12 phút",
+      "grammarTopic": "Thì Hiện Tại Hoàn Thành (have/has + V3) với Just, Already, Yet, Ever, Never"
+    }
+  },
+  "113": {
+    "day": 113,
+    "week": 17,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 17: Tiếng Anh Giao Tiếp Công Sở: Họp Hành ...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "s1m2q3p0k9r",
+      "title": "Oxford Online English - Present Perfect with Since and For",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Cách dùng Since (mốc thời gian) và For (khoảng thời gian) với Hiện Tại Hoàn Thành"
+    }
+  },
+  "114": {
+    "day": 114,
+    "week": 17,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 17: Tiếng Anh Giao Tiếp Công Sở: Họp Hành ...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "p0k9r1m2q3s",
+      "title": "BBC Learning English - Present Perfect vs Past Simple",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Phân biệt dứt khoát: Quá Khứ Đơn (có thời điểm rõ) vs Hiện Tại Hoàn Thành (kết quả)"
+    }
+  },
+  "115": {
+    "day": 115,
+    "week": 17,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 17: Tiếng Anh Giao Tiếp Công Sở: Họp Hành ...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "r1m2q3s0k9p",
+      "title": "English with Lucy - Comparatives and Superlatives in English",
+      "channel": "English with Lucy",
+      "duration": "10 phút",
+      "grammarTopic": "So sánh hơn, so sánh nhất và so sánh ngang bằng (as... as, the more... the more)"
+    }
+  },
+  "116": {
+    "day": 116,
+    "week": 17,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 17: Tiếng Anh Giao Tiếp Công Sở: Họp Hành ...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "k9p0m1q2r3s",
+      "title": "Oxford Online English - Passive Voice: How and When to Use It",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "grammarTopic": "Câu bị động (Passive Voice) trong email công sở và báo cáo kỹ thuật"
+    }
+  },
+  "117": {
+    "day": 117,
+    "week": 17,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 17: Tiếng Anh Giao Tiếp Công Sở: Họp Hành ...)",
+    "lessonVideo": {
+      "id": "NEKZFA7L7Lg",
+      "title": "Oxford Online English - Attending a Meeting in English",
+      "channel": "Oxford Online English",
+      "duration": "11 phút",
+      "topic": "Tham gia cuộc họp: Đưa ra ý kiến, xin phép phát biểu và ghi nhận thông tin"
+    },
+    "grammarVideo": {
+      "id": "q3s0k9r1m2p",
+      "title": "BBC Learning English - Causative Verbs: Have and Get Something Done",
+      "channel": "BBC Learning English",
+      "duration": "7 phút",
+      "grammarTopic": "Cấu trúc nhờ vả / thuê mướn: Have/Get something done by someone"
+    }
+  },
+  "118": {
+    "day": 118,
+    "week": 17,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 17: Tiếng Anh Giao Tiếp Công Sở: Họp Hành ...)",
+    "lessonVideo": {
+      "id": "qQyLzU3G03g",
+      "title": "Oxford Online English - How to Disagree Politely at Work",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "topic": "Phản biện lịch sự: I see your point, but from another perspective..."
+    },
+    "grammarVideo": {
+      "id": "m1q2r3s0k9p",
+      "title": "English with Lucy - Zero and First Conditionals",
+      "channel": "English with Lucy",
+      "duration": "9 phút",
+      "grammarTopic": "Câu điều kiện Loại 0 (sự thật khoa học) và Loại 1 (khả năng xảy ra ở tương lai)"
+    }
+  },
+  "119": {
+    "day": 119,
+    "week": 17,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 17: Tiếng Anh Giao Tiếp Công Sở: Họp Hành ...)",
+    "lessonVideo": {
+      "id": "WjL_z4Q1pIo",
+      "title": "Business English Pod - Daily Agile Standups & Explaining Blockers",
+      "channel": "Business English Pod",
+      "duration": "9 phút",
+      "topic": "Báo cáo họp Standup: Việc đã làm, việc hôm nay và khó khăn (blockers)"
+    },
+    "grammarVideo": {
+      "id": "s0k9r1m2q3p",
+      "title": "Oxford Online English - Second Conditional: Hypothetical Scenarios",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Câu điều kiện Loại 2 (If + past simple, would + V): Giả định trái với hiện tại"
+    }
+  },
+  "120": {
+    "day": 120,
+    "week": 18,
+    "month": 5,
+    "level": "Level B1 (Công Sở & IT Agile)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 18: Kỹ Năng Thuyết Trình & Trình Bày Ý Tưở...)",
+    "lessonVideo": {
+      "id": "nhTcuUvLGOE",
+      "title": "Oxford Online English - Job Interview Success in English",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "topic": "Trả lời các câu hỏi phỏng vấn kinh điển: Điểm mạnh, điểm yếu, mục tiêu"
+    },
+    "grammarVideo": {
+      "id": "m2p3q1s0k9r",
+      "title": "English with Lucy - Present Perfect: The Ultimate Guide",
+      "channel": "English with Lucy",
+      "duration": "12 phút",
+      "grammarTopic": "Thì Hiện Tại Hoàn Thành (have/has + V3) với Just, Already, Yet, Ever, Never"
+    }
+  },
+  "121": {
+    "day": 121,
+    "week": 18,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 18: Kỹ Năng Thuyết Trình & Trình Bày Ý Tưở...)",
+    "lessonVideo": {
+      "id": "1nYF4TtNe48",
+      "title": "TED Nancy Duarte - The Secret Structure of Great Presentations",
+      "channel": "TED",
+      "duration": "15 phút",
+      "topic": "Cấu trúc bài thuyết trình chạm cảm xúc: Thực tại vs Tương lai tươi sáng"
+    },
+    "grammarVideo": {
+      "id": "k9r1m2p3s0q",
+      "title": "English with Lucy - Mixed Conditionals: Advanced English Grammar",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Câu điều kiện hỗn hợp (Mixed Conditionals): Quá khứ ảnh hưởng đến hiện tại"
+    }
+  },
+  "122": {
+    "day": 122,
+    "week": 18,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 18: Kỹ Năng Thuyết Trình & Trình Bày Ý Tưở...)",
+    "lessonVideo": {
+      "id": "1nYF4TtNe48",
+      "title": "TED Nancy Duarte - The Secret Structure of Great Presentations",
+      "channel": "TED",
+      "duration": "15 phút",
+      "topic": "Cấu trúc bài thuyết trình chạm cảm xúc: Thực tại vs Tương lai tươi sáng"
+    },
+    "grammarVideo": {
+      "id": "p1m2q3s0k9r",
+      "title": "Oxford Online English - Modal Verbs in the Past (Should have, Could have)",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Modal Perfect: Should have + V3 (đáng lẽ nên), Could have + V3 (đã có thể làm)"
+    }
+  },
+  "123": {
+    "day": 123,
+    "week": 18,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 18: Kỹ Năng Thuyết Trình & Trình Bày Ý Tưở...)",
+    "lessonVideo": {
+      "id": "1nYF4TtNe48",
+      "title": "TED Nancy Duarte - The Secret Structure of Great Presentations",
+      "channel": "TED",
+      "duration": "15 phút",
+      "topic": "Cấu trúc bài thuyết trình chạm cảm xúc: Thực tại vs Tương lai tươi sáng"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "124": {
+    "day": 124,
+    "week": 18,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 18: Kỹ Năng Thuyết Trình & Trình Bày Ý Tưở...)",
+    "lessonVideo": {
+      "id": "1nYF4TtNe48",
+      "title": "TED Nancy Duarte - The Secret Structure of Great Presentations",
+      "channel": "TED",
+      "duration": "15 phút",
+      "topic": "Cấu trúc bài thuyết trình chạm cảm xúc: Thực tại vs Tương lai tươi sáng"
+    },
+    "grammarVideo": {
+      "id": "m2q3s0k9p1r",
+      "title": "English with Lucy - Relative Clauses: Defining vs Non-Defining",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Mệnh đề quan hệ xác định (who/which/that) vs không xác định (có dấu phẩy)"
+    }
+  },
+  "125": {
+    "day": 125,
+    "week": 18,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 18: Kỹ Năng Thuyết Trình & Trình Bày Ý Tưở...)",
+    "lessonVideo": {
+      "id": "1nYF4TtNe48",
+      "title": "TED Nancy Duarte - The Secret Structure of Great Presentations",
+      "channel": "TED",
+      "duration": "15 phút",
+      "topic": "Cấu trúc bài thuyết trình chạm cảm xúc: Thực tại vs Tương lai tươi sáng"
+    },
+    "grammarVideo": {
+      "id": "s0k9p1r2q3m",
+      "title": "Oxford Online English - Prepositions of Place and Time: In, On, At",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Làm chủ giới từ In, On, At không bị nhầm lẫn trong văn viết và nói"
+    }
+  },
+  "126": {
+    "day": 126,
+    "week": 18,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 18: Kỹ Năng Thuyết Trình & Trình Bày Ý Tưở...)",
+    "lessonVideo": {
+      "id": "1nYF4TtNe48",
+      "title": "TED Nancy Duarte - The Secret Structure of Great Presentations",
+      "channel": "TED",
+      "duration": "15 phút",
+      "topic": "Cấu trúc bài thuyết trình chạm cảm xúc: Thực tại vs Tương lai tươi sáng"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "127": {
+    "day": 127,
+    "week": 19,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 19: Đàm Phán, Thương Lượng & Phỏng Vấn Xin...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "z2r3s0k9p1m",
+      "title": "Oxford Online English - Inversion in English for Advanced Emphasis",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "grammarTopic": "Đảo ngữ đỉnh cao: Not only did we..., Under no circumstances should you..."
+    }
+  },
+  "128": {
+    "day": 128,
+    "week": 19,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 19: Đàm Phán, Thương Lượng & Phỏng Vấn Xin...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "r3s0k9p1m2q",
+      "title": "BBC Learning English - Third Conditional: Regrets and Past Events",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Câu điều kiện Loại 3 (If + had + V3, would have + V3): Tiếc nuối về quá khứ"
+    }
+  },
+  "129": {
+    "day": 129,
+    "week": 19,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 19: Đàm Phán, Thương Lượng & Phỏng Vấn Xin...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "k9r1m2p3s0q",
+      "title": "English with Lucy - Mixed Conditionals: Advanced English Grammar",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Câu điều kiện hỗn hợp (Mixed Conditionals): Quá khứ ảnh hưởng đến hiện tại"
+    }
+  },
+  "130": {
+    "day": 130,
+    "week": 19,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 19: Đàm Phán, Thương Lượng & Phỏng Vấn Xin...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "p1m2q3s0k9r",
+      "title": "Oxford Online English - Modal Verbs in the Past (Should have, Could have)",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Modal Perfect: Should have + V3 (đáng lẽ nên), Could have + V3 (đã có thể làm)"
+    }
+  },
+  "131": {
+    "day": 131,
+    "week": 19,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 19: Đàm Phán, Thương Lượng & Phỏng Vấn Xin...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "132": {
+    "day": 132,
+    "week": 19,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 19: Đàm Phán, Thương Lượng & Phỏng Vấn Xin...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "m2q3s0k9p1r",
+      "title": "English with Lucy - Relative Clauses: Defining vs Non-Defining",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Mệnh đề quan hệ xác định (who/which/that) vs không xác định (có dấu phẩy)"
+    }
+  },
+  "133": {
+    "day": 133,
+    "week": 19,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 19: Đàm Phán, Thương Lượng & Phỏng Vấn Xin...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "s0k9p1r2q3m",
+      "title": "Oxford Online English - Prepositions of Place and Time: In, On, At",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Làm chủ giới từ In, On, At không bị nhầm lẫn trong văn viết và nói"
+    }
+  },
+  "134": {
+    "day": 134,
+    "week": 20,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 20: Viết & Phản Hồi Email / Tin Nhắn Công ...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "135": {
+    "day": 135,
+    "week": 20,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 20: Viết & Phản Hồi Email / Tin Nhắn Công ...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "136": {
+    "day": 136,
+    "week": 20,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 20: Viết & Phản Hồi Email / Tin Nhắn Công ...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "137": {
+    "day": 137,
+    "week": 20,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 20: Viết & Phản Hồi Email / Tin Nhắn Công ...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "138": {
+    "day": 138,
+    "week": 20,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 20: Viết & Phản Hồi Email / Tin Nhắn Công ...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "139": {
+    "day": 139,
+    "week": 20,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 20: Viết & Phản Hồi Email / Tin Nhắn Công ...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "140": {
+    "day": 140,
+    "week": 20,
+    "month": 5,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 20: Viết & Phản Hồi Email / Tin Nhắn Công ...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "141": {
+    "day": 141,
+    "week": 21,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 21: Tư Duy Trực Tiếp Bằng Tiếng Anh (Think...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "s0k9p1r2q3m",
+      "title": "Oxford Online English - Prepositions of Place and Time: In, On, At",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Làm chủ giới từ In, On, At không bị nhầm lẫn trong văn viết và nói"
+    }
+  },
+  "142": {
+    "day": 142,
+    "week": 21,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 21: Tư Duy Trực Tiếp Bằng Tiếng Anh (Think...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "143": {
+    "day": 143,
+    "week": 21,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 21: Tư Duy Trực Tiếp Bằng Tiếng Anh (Think...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "z2r3s0k9p1m",
+      "title": "Oxford Online English - Inversion in English for Advanced Emphasis",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "grammarTopic": "Đảo ngữ đỉnh cao: Not only did we..., Under no circumstances should you..."
+    }
+  },
+  "144": {
+    "day": 144,
+    "week": 21,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 21: Tư Duy Trực Tiếp Bằng Tiếng Anh (Think...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "r3s0k9p1m2q",
+      "title": "BBC Learning English - Third Conditional: Regrets and Past Events",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Câu điều kiện Loại 3 (If + had + V3, would have + V3): Tiếc nuối về quá khứ"
+    }
+  },
+  "145": {
+    "day": 145,
+    "week": 21,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 21: Tư Duy Trực Tiếp Bằng Tiếng Anh (Think...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "k9r1m2p3s0q",
+      "title": "English with Lucy - Mixed Conditionals: Advanced English Grammar",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Câu điều kiện hỗn hợp (Mixed Conditionals): Quá khứ ảnh hưởng đến hiện tại"
+    }
+  },
+  "146": {
+    "day": 146,
+    "week": 21,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 21: Tư Duy Trực Tiếp Bằng Tiếng Anh (Think...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "p1m2q3s0k9r",
+      "title": "Oxford Online English - Modal Verbs in the Past (Should have, Could have)",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Modal Perfect: Should have + V3 (đáng lẽ nên), Could have + V3 (đã có thể làm)"
+    }
+  },
+  "147": {
+    "day": 147,
+    "week": 21,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 21: Tư Duy Trực Tiếp Bằng Tiếng Anh (Think...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "148": {
+    "day": 148,
+    "week": 22,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 22: Tranh Biện Đa Chiều & Bình Luận Các Ch...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "149": {
+    "day": 149,
+    "week": 22,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 22: Tranh Biện Đa Chiều & Bình Luận Các Ch...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "150": {
+    "day": 150,
+    "week": 22,
+    "month": 6,
+    "level": "Level B2 (Thuyết Trình & Phản Biện)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 22: Tranh Biện Đa Chiều & Bình Luận Các Ch...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "151": {
+    "day": 151,
+    "week": 22,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 22: Tranh Biện Đa Chiều & Bình Luận Các Ch...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "152": {
+    "day": 152,
+    "week": 22,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 22: Tranh Biện Đa Chiều & Bình Luận Các Ch...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "153": {
+    "day": 153,
+    "week": 22,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 22: Tranh Biện Đa Chiều & Bình Luận Các Ch...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "154": {
+    "day": 154,
+    "week": 22,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 22: Tranh Biện Đa Chiều & Bình Luận Các Ch...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "155": {
+    "day": 155,
+    "week": 23,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 23: Hiểu Hài Hước, Ẩn Ý & Văn Hóa Giao Tiế...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "156": {
+    "day": 156,
+    "week": 23,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 23: Hiểu Hài Hước, Ẩn Ý & Văn Hóa Giao Tiế...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "m2q3s0k9p1r",
+      "title": "English with Lucy - Relative Clauses: Defining vs Non-Defining",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Mệnh đề quan hệ xác định (who/which/that) vs không xác định (có dấu phẩy)"
+    }
+  },
+  "157": {
+    "day": 157,
+    "week": 23,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 23: Hiểu Hài Hước, Ẩn Ý & Văn Hóa Giao Tiế...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "s0k9p1r2q3m",
+      "title": "Oxford Online English - Prepositions of Place and Time: In, On, At",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Làm chủ giới từ In, On, At không bị nhầm lẫn trong văn viết và nói"
+    }
+  },
+  "158": {
+    "day": 158,
+    "week": 23,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 23: Hiểu Hài Hước, Ẩn Ý & Văn Hóa Giao Tiế...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "159": {
+    "day": 159,
+    "week": 23,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 23: Hiểu Hài Hước, Ẩn Ý & Văn Hóa Giao Tiế...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "z2r3s0k9p1m",
+      "title": "Oxford Online English - Inversion in English for Advanced Emphasis",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "grammarTopic": "Đảo ngữ đỉnh cao: Not only did we..., Under no circumstances should you..."
+    }
+  },
+  "160": {
+    "day": 160,
+    "week": 23,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 23: Hiểu Hài Hước, Ẩn Ý & Văn Hóa Giao Tiế...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "r3s0k9p1m2q",
+      "title": "BBC Learning English - Third Conditional: Regrets and Past Events",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Câu điều kiện Loại 3 (If + had + V3, would have + V3): Tiếc nuối về quá khứ"
+    }
+  },
+  "161": {
+    "day": 161,
+    "week": 23,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 23: Hiểu Hài Hước, Ẩn Ý & Văn Hóa Giao Tiế...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "k9r1m2p3s0q",
+      "title": "English with Lucy - Mixed Conditionals: Advanced English Grammar",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Câu điều kiện hỗn hợp (Mixed Conditionals): Quá khứ ảnh hưởng đến hiện tại"
+    }
+  },
+  "162": {
+    "day": 162,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "p1m2q3s0k9r",
+      "title": "Oxford Online English - Modal Verbs in the Past (Should have, Could have)",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Modal Perfect: Should have + V3 (đáng lẽ nên), Could have + V3 (đã có thể làm)"
+    }
+  },
+  "163": {
+    "day": 163,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "164": {
+    "day": 164,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "m2q3s0k9p1r",
+      "title": "English with Lucy - Relative Clauses: Defining vs Non-Defining",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Mệnh đề quan hệ xác định (who/which/that) vs không xác định (có dấu phẩy)"
+    }
+  },
+  "165": {
+    "day": 165,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "s0k9p1r2q3m",
+      "title": "Oxford Online English - Prepositions of Place and Time: In, On, At",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Làm chủ giới từ In, On, At không bị nhầm lẫn trong văn viết và nói"
+    }
+  },
+  "166": {
+    "day": 166,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "167": {
+    "day": 167,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "z2r3s0k9p1m",
+      "title": "Oxford Online English - Inversion in English for Advanced Emphasis",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "grammarTopic": "Đảo ngữ đỉnh cao: Not only did we..., Under no circumstances should you..."
+    }
+  },
+  "168": {
+    "day": 168,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "r3s0k9p1m2q",
+      "title": "BBC Learning English - Third Conditional: Regrets and Past Events",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Câu điều kiện Loại 3 (If + had + V3, would have + V3): Tiếc nuối về quá khứ"
+    }
+  },
+  "169": {
+    "day": 169,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "k9r1m2p3s0q",
+      "title": "English with Lucy - Mixed Conditionals: Advanced English Grammar",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Câu điều kiện hỗn hợp (Mixed Conditionals): Quá khứ ảnh hưởng đến hiện tại"
+    }
+  },
+  "170": {
+    "day": 170,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "p1m2q3s0k9r",
+      "title": "Oxford Online English - Modal Verbs in the Past (Should have, Could have)",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Modal Perfect: Should have + V3 (đáng lẽ nên), Could have + V3 (đã có thể làm)"
+    }
+  },
+  "171": {
+    "day": 171,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "172": {
+    "day": 172,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "m2q3s0k9p1r",
+      "title": "English with Lucy - Relative Clauses: Defining vs Non-Defining",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Mệnh đề quan hệ xác định (who/which/that) vs không xác định (có dấu phẩy)"
+    }
+  },
+  "173": {
+    "day": 173,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "s0k9p1r2q3m",
+      "title": "Oxford Online English - Prepositions of Place and Time: In, On, At",
+      "channel": "Oxford Online English",
+      "duration": "9 phút",
+      "grammarTopic": "Làm chủ giới từ In, On, At không bị nhầm lẫn trong văn viết và nói"
+    }
+  },
+  "174": {
+    "day": 174,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "x1m2q3s0k9r",
+      "title": "BBC Learning English - Cleft Sentences: Adding Emphasis in Speech",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Cấu trúc nhấn mạnh câu chẻ: What I really want is..., It was John who..."
+    }
+  },
+  "175": {
+    "day": 175,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Tự Ghi Âm Độc Thoại 90 Giây & Soát Lỗi Phát Âm Cuối Từ (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "n7z4q6W_uYc",
+      "title": "Stanford GSB - Think Fast, Talk Smart: Communication Techniques",
+      "channel": "Stanford Graduate School of Business",
+      "duration": "15 phút",
+      "topic": "Giao tiếp ứng biến: Bình tĩnh trả lời câu hỏi bất ngờ trong 5 giây"
+    },
+    "grammarVideo": {
+      "id": "z2r3s0k9p1m",
+      "title": "Oxford Online English - Inversion in English for Advanced Emphasis",
+      "channel": "Oxford Online English",
+      "duration": "12 phút",
+      "grammarTopic": "Đảo ngữ đỉnh cao: Not only did we..., Under no circumstances should you..."
+    }
+  },
+  "176": {
+    "day": 176,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Kiểm Tra Tổng Hợp Tuần (Weekly Checkpoint & Spaced Repetition) (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "HAnw168huqA",
+      "title": "Stanford GSB - Handling Hostile Questions Under Pressure",
+      "channel": "Stanford GSB",
+      "duration": "13 phút",
+      "topic": "Đối đáp câu hỏi hóc búa, khiêu khích từ hội đồng hoặc khách hàng khó tính"
+    },
+    "grammarVideo": {
+      "id": "r3s0k9p1m2q",
+      "title": "BBC Learning English - Third Conditional: Regrets and Past Events",
+      "channel": "BBC Learning English",
+      "duration": "8 phút",
+      "grammarTopic": "Câu điều kiện Loại 3 (If + had + V3, would have + V3): Tiếc nuối về quá khứ"
+    }
+  },
+  "177": {
+    "day": 177,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Luyện Nghe Sâu & Nhại Giọng (Shadowing) Chủ Đề Tuần (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "z9Qp0M1G1pY",
+      "title": "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro",
+      "channel": "Jeff Su",
+      "duration": "12 phút",
+      "topic": "Chiến thuật đàm phán lương và thăng chức dựa trên giá trị thực tế"
+    },
+    "grammarVideo": {
+      "id": "k9r1m2p3s0q",
+      "title": "English with Lucy - Mixed Conditionals: Advanced English Grammar",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Câu điều kiện hỗn hợp (Mixed Conditionals): Quá khứ ảnh hưởng đến hiện tại"
+    }
+  },
+  "178": {
+    "day": 178,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Thực Hành Phản Xạ Hỏi – Đáp Tốc Độ 3 Giây (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "unwt_wT9ZkM",
+      "title": "Stanford Executive - Influencing Without Authority in Tech",
+      "channel": "Stanford Executive",
+      "duration": "14 phút",
+      "topic": "Nghệ thuật gây ảnh hưởng khi không có quyền lực chức danh trong nhóm kỹ thuật"
+    },
+    "grammarVideo": {
+      "id": "p1m2q3s0k9r",
+      "title": "Oxford Online English - Modal Verbs in the Past (Should have, Could have)",
+      "channel": "Oxford Online English",
+      "duration": "10 phút",
+      "grammarTopic": "Modal Perfect: Should have + V3 (đáng lẽ nên), Could have + V3 (đã có thể làm)"
+    }
+  },
+  "179": {
+    "day": 179,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Mở Rộng Cụm Từ (Collocations) & Đặt Câu Gắn Với Bản Thân (Tuần 24: Về Đích 6 Tháng (Ngày 180): Làm Chủ Ph...)",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "q2r3s0k9p1m",
+      "title": "BBC Learning English - Reported Speech: How to Report Statements",
+      "channel": "BBC Learning English",
+      "duration": "9 phút",
+      "grammarTopic": "Câu gián tiếp (Reported Speech): Lùi thì, đổi đại từ và trạng từ thời gian"
+    }
+  },
+  "180": {
+    "day": 180,
+    "week": 24,
+    "month": 6,
+    "level": "Level C1 (Lãnh Đạo & Tốt Nghiệp)",
+    "title": "Lễ Tốt Nghiệp 180 Ngày: Thử Thách Phản Xạ Tự Do 5 Phút",
+    "lessonVideo": {
+      "id": "5vK1q0M1NqU",
+      "title": "Stanford Executive - 180-Day English Speaking Graduation & Mastery",
+      "channel": "Stanford Executive",
+      "duration": "15 phút",
+      "topic": "Tổng duyệt năng lực nói tiếng Anh: Phong thái đĩnh đạc của một lãnh đạo toàn cầu"
+    },
+    "grammarVideo": {
+      "id": "m2q3s0k9p1r",
+      "title": "English with Lucy - Relative Clauses: Defining vs Non-Defining",
+      "channel": "English with Lucy",
+      "duration": "11 phút",
+      "grammarTopic": "Mệnh đề quan hệ xác định (who/which/that) vs không xác định (có dấu phẩy)"
+    }
+  }
+};
+
     const WEEK_VIDEOS = {
       1: { id: "ZTgYjGXFAkw", title: "Sounds American - 3D Animation: American Vowels & Tongue Placement (Mô phỏng 3D vòm họng & khẩu hình miệng trực quan)" },
       2: { id: "KwDJnXt3ZVQ", title: "BBC Learning English - Tim's Pronunciation Workshop: The Schwa /ə/ Sound (Mô phỏng 3D vòm họng & nhại giọng)" },
@@ -3395,6 +7211,100 @@
     }
 
     
+    let currentVideoMode = 'lesson'; // 'lesson' or 'grammar'
+    let currentCurriculumLevel = 'all';
+    let currentCurriculumQuery = '';
+
+    function updateYouTubeEmbed(dayObj) {
+      const iframe = document.getElementById('dashVideoEmbed');
+      const directBtn = document.getElementById('dashVideoDirectBtn');
+      const linkEl = document.getElementById('dashResourceLink');
+      const wrapper = document.getElementById('videoEmbedWrapper');
+      if (!iframe) return;
+
+      const dNum = (dayObj && dayObj.day) ? dayObj.day : (state.currentDay || 1);
+      const dayData = (typeof CURRICULUM_VIDEOS_180 !== 'undefined' && CURRICULUM_VIDEOS_180[dNum]) 
+        ? CURRICULUM_VIDEOS_180[dNum] 
+        : (typeof CURRICULUM_VIDEOS_180 !== 'undefined' ? CURRICULUM_VIDEOS_180[1] : null);
+
+      if (!dayData) return;
+
+      // Update Header Text & Indicators
+      const dayIndicator = document.getElementById('dashVideoDayIndicator');
+      if (dayIndicator) dayIndicator.textContent = 'Ngày ' + dNum + ' / 180';
+
+      const lvlBadge = document.getElementById('dashVideoLevelBadge');
+      if (lvlBadge) lvlBadge.textContent = dayData.level;
+
+      const quickLesson = document.getElementById('quickDayLessonText');
+      if (quickLesson) quickLesson.textContent = 'Video 1: Bài Học Ngày ' + dNum;
+
+      const quickGrammar = document.getElementById('quickDayGrammarText');
+      if (quickGrammar) quickGrammar.textContent = 'Video 2: Ngữ Pháp Ngày ' + dNum;
+
+      // Pick target video by currentVideoMode ('lesson' or 'grammar')
+      const activeVideo = currentVideoMode === 'grammar' ? dayData.grammarVideo : dayData.lessonVideo;
+      const vid = activeVideo.id;
+      const vTitle = activeVideo.title;
+
+      // Update Channel, Duration & Topic Badges
+      const chBadge = document.getElementById('dashVideoChannelBadge');
+      if (chBadge) chBadge.textContent = activeVideo.channel;
+
+      const durBadge = document.getElementById('dashVideoDurationBadge');
+      if (durBadge) durBadge.textContent = activeVideo.duration;
+
+      const topicBadge = document.getElementById('dashVideoTopicBadge');
+      if (topicBadge) {
+        topicBadge.textContent = currentVideoMode === 'grammar' 
+          ? '📘 Ngữ pháp: ' + activeVideo.grammarTopic 
+          : '💡 Trọng tâm: ' + activeVideo.topic;
+      }
+
+      // Update Dual-Tab Buttons Styling
+      updateVideoTabsUI();
+
+      if (wrapper) wrapper.style.display = 'block';
+
+      if (vid) {
+        const pageOrigin = encodeURIComponent(window.location.origin || 'https://speakflow180.vercel.app');
+        iframe.src = 'https://www.youtube.com/embed/' + vid + '?playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=' + pageOrigin;
+        if (directBtn) directBtn.href = 'https://www.youtube.com/watch?v=' + vid;
+        if (linkEl) {
+          linkEl.href = 'https://www.youtube.com/watch?v=' + vid;
+          linkEl.textContent = '🔗 ' + vTitle + ' ↗';
+        }
+      }
+    }
+
+    function switchDayVideoMode(mode) {
+      currentVideoMode = mode;
+      const dayObj = ALL_DAYS.find(d => d.day === state.currentDay) || ALL_DAYS[0];
+      updateYouTubeEmbed(dayObj);
+      const dayData = CURRICULUM_VIDEOS_180[dayObj.day] || CURRICULUM_VIDEOS_180[1];
+      const activeVideo = mode === 'grammar' ? dayData.grammarVideo : dayData.lessonVideo;
+      showToast('Đang phát: ' + activeVideo.title, '🎬');
+    }
+
+    function updateVideoTabsUI() {
+      const btnLesson = document.getElementById('videoTabBtn-lesson');
+      const btnGrammar = document.getElementById('videoTabBtn-grammar');
+      const qLesson = document.getElementById('quickBtn-dayLesson');
+      const qGrammar = document.getElementById('quickBtn-dayGrammar');
+
+      if (currentVideoMode === 'lesson') {
+        if (btnLesson) btnLesson.className = 'px-3 py-1.5 rounded-lg text-xs font-extrabold transition flex items-center gap-1.5 bg-red-600 text-white shadow cursor-pointer';
+        if (btnGrammar) btnGrammar.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5 cursor-pointer';
+        if (qLesson) qLesson.className = 'px-3 py-1.5 rounded-xl bg-red-600 text-white text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 shadow';
+        if (qGrammar) qGrammar.className = 'px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5';
+      } else {
+        if (btnLesson) btnLesson.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5 cursor-pointer';
+        if (btnGrammar) btnGrammar.className = 'px-3 py-1.5 rounded-lg text-xs font-extrabold transition flex items-center gap-1.5 bg-indigo-600 text-white shadow cursor-pointer';
+        if (qLesson) qLesson.className = 'px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5';
+        if (qGrammar) qGrammar.className = 'px-3 py-1.5 rounded-xl bg-indigo-600 text-white text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 shadow';
+      }
+    }
+
     function switchMasterVideo(vid, title) {
       const iframe = document.getElementById('dashVideoEmbed');
       const directBtn = document.getElementById('dashVideoDirectBtn');
@@ -3402,48 +7312,146 @@
       const origin = encodeURIComponent(window.location.origin || 'https://speakflow180.vercel.app');
 
       if (iframe) {
-        iframe.src = `https://www.youtube.com/embed/${vid}?playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=${origin}`;
+        iframe.src = 'https://www.youtube.com/embed/' + vid + '?playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=' + origin;
       }
       if (directBtn) {
-        directBtn.href = `https://www.youtube.com/watch?v=${vid}`;
+        directBtn.href = 'https://www.youtube.com/watch?v=' + vid;
       }
       if (linkEl) {
-        linkEl.href = `https://www.youtube.com/watch?v=${vid}`;
+        linkEl.href = 'https://www.youtube.com/watch?v=' + vid;
         linkEl.textContent = '🔗 ' + title + ' ↗';
       }
       showToast('Đang phát bài giảng video: ' + title, '🎬');
     }
 
-    function updateYouTubeEmbed(dayObj) {
-      const iframe = document.getElementById('dashVideoEmbed');
-      const linkEl = document.getElementById('dashResourceLink');
-      const wrapper = document.getElementById('videoEmbedWrapper');
-      if (!iframe) return;
+    function openVideoCurriculumModal() {
+      const modal = document.getElementById('videoCurriculumModal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      renderCurriculumList();
+    }
 
-      // ALWAYS prioritize our curated 100% dynamic motion master videos (WEEK_VIDEOS)
-      let vid = null;
-      let vTitle = dayObj.resName;
-      if (WEEK_VIDEOS && WEEK_VIDEOS[dayObj.week]) {
-        vid = WEEK_VIDEOS[dayObj.week].id;
-        vTitle = WEEK_VIDEOS[dayObj.week].title;
-      } else {
-        vid = extractYouTubeId(dayObj.resUrl);
+    function closeVideoCurriculumModal() {
+      const modal = document.getElementById('videoCurriculumModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function filterCurriculumLevel(lvl) {
+      currentCurriculumLevel = lvl;
+      document.querySelectorAll('.curr-lvl-btn').forEach(b => {
+        b.className = 'curr-lvl-btn px-3 py-1.5 rounded-xl font-medium bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap transition cursor-pointer';
+      });
+      const activeBtn = document.getElementById('currLevelBtn-' + lvl);
+      if (activeBtn) {
+        activeBtn.className = 'curr-lvl-btn px-3 py-1.5 rounded-xl font-bold bg-indigo-600 text-white whitespace-nowrap transition cursor-pointer';
+      }
+      renderCurriculumList();
+    }
+
+    function filterCurriculumVideos() {
+      const input = document.getElementById('curriculumSearchInput');
+      currentCurriculumQuery = (input ? input.value : '').toLowerCase().trim();
+      renderCurriculumList();
+    }
+
+    function renderCurriculumList() {
+      const container = document.getElementById('curriculumListContainer');
+      if (!container || typeof CURRICULUM_VIDEOS_180 === 'undefined') return;
+
+      const keys = Object.keys(CURRICULUM_VIDEOS_180).map(Number).sort((a,b) => a - b);
+      const filtered = keys.filter(d => {
+        const item = CURRICULUM_VIDEOS_180[d];
+        if (!item) return false;
+        if (currentCurriculumLevel === 'a1' && d > 30) return false;
+        if (currentCurriculumLevel === 'a2' && (d <= 30 || d > 60)) return false;
+        if (currentCurriculumLevel === 'b1' && (d <= 60 || d > 120)) return false;
+        if (currentCurriculumLevel === 'b2' && (d <= 120 || d > 150)) return false;
+        if (currentCurriculumLevel === 'c1' && d <= 150) return false;
+
+        if (currentCurriculumQuery) {
+          const q = currentCurriculumQuery;
+          const matchDay = String(d) === q || ('ngày ' + d).includes(q);
+          const matchTitle = (item.title || '').toLowerCase().includes(q);
+          const matchLesson = (item.lessonVideo.title + ' ' + item.lessonVideo.topic).toLowerCase().includes(q);
+          const matchGrammar = (item.grammarVideo.title + ' ' + item.grammarVideo.grammarTopic).toLowerCase().includes(q);
+          if (!matchDay && !matchTitle && !matchLesson && !matchGrammar) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center text-slate-400 space-y-2">
+            <div class="text-3xl">🔍</div>
+            <div class="text-white font-bold text-sm">Không tìm thấy video phù hợp</div>
+            <p class="text-xs">Hãy thử tìm theo số ngày (VD: "45", "100") hoặc từ khóa khác nhé.</p>
+          </div>
+        `;
+        return;
       }
 
-      if (wrapper) wrapper.style.display = 'block';
+      container.innerHTML = filtered.map(d => {
+        const item = CURRICULUM_VIDEOS_180[d];
+        const isCurrent = state.currentDay === d;
+        return `
+          <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-950 border ${isCurrent ? 'border-indigo-500 ring-1 ring-indigo-500/30' : 'border-slate-800'} space-y-3 transition">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-black px-2.5 py-0.5 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono">
+                  Ngày ${d}
+                </span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                  ${item.level}
+                </span>
+              </div>
+              <span class="text-xs text-slate-300 font-bold truncate max-w-sm sm:max-w-md">
+                ${escapeHtml(item.title)}
+              </span>
+            </div>
 
-      if (vid) {
-        const pageOrigin = encodeURIComponent(window.location.origin || 'https://speakflow180.vercel.app');
-        iframe.src = `https://www.youtube.com/embed/${vid}?playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=${pageOrigin}`;
-        const directBtn = document.getElementById('dashVideoDirectBtn');
-        if (directBtn) directBtn.href = `https://www.youtube.com/watch?v=${vid}`;
-        if (linkEl) {
-          linkEl.href = dayObj.resUrl.includes('youtube.com/watch') ? dayObj.resUrl : `https://www.youtube.com/watch?v=${vid}`;
-          linkEl.textContent = '🔗 ' + vTitle + ' ↗';
-        }
-      } else {
-        if (wrapper) wrapper.style.display = 'none';
-        if (linkEl) { linkEl.href = dayObj.resUrl; linkEl.textContent = '🔗 Mở Tài liệu: ' + dayObj.resName + ' ↗'; }
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs">
+              <!-- Video 1: Lesson -->
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-[11px] font-bold text-red-400">
+                    <span>🎬 Video Bài Học Chủ Đề</span>
+                    <span class="text-[10px] text-slate-400">${item.lessonVideo.duration}</span>
+                  </div>
+                  <div class="text-white font-bold mt-0.5 line-clamp-1">${escapeHtml(item.lessonVideo.title)}</div>
+                  <div class="text-slate-400 text-[11px] line-clamp-2 mt-0.5">${escapeHtml(item.lessonVideo.topic)}</div>
+                </div>
+                <button onclick="selectVideoFromCurriculum(${d}, 'lesson')" class="mt-2 w-full py-1.5 px-3 rounded-lg bg-red-600/80 hover:bg-red-600 text-white font-bold text-xs transition cursor-pointer flex items-center justify-center gap-1 shadow">
+                  <span>▶</span> <span>Xem Bài Học Ngày ${d}</span>
+                </button>
+              </div>
+
+              <!-- Video 2: Grammar -->
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-[11px] font-bold text-cyan-400">
+                    <span>📘 Video Ngữ Pháp Cốt Lõi</span>
+                    <span class="text-[10px] text-slate-400">${item.grammarVideo.duration}</span>
+                  </div>
+                  <div class="text-white font-bold mt-0.5 line-clamp-1">${escapeHtml(item.grammarVideo.title)}</div>
+                  <div class="text-slate-400 text-[11px] line-clamp-2 mt-0.5">${escapeHtml(item.grammarVideo.grammarTopic)}</div>
+                </div>
+                <button onclick="selectVideoFromCurriculum(${d}, 'grammar')" class="mt-2 w-full py-1.5 px-3 rounded-lg bg-indigo-600/80 hover:bg-indigo-600 text-white font-bold text-xs transition cursor-pointer flex items-center justify-center gap-1 shadow">
+                  <span>📘</span> <span>Xem Ngữ Pháp Ngày ${d}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectVideoFromCurriculum(dayNum, mode) {
+      closeVideoCurriculumModal();
+      selectDayFromDropdown(dayNum);
+      switchDayVideoMode(mode);
+      const embedCard = document.getElementById('dashVideoEmbed');
+      if (embedCard) {
+        embedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
 
@@ -10372,6 +14380,64 @@ function sendChatMessage() {
         <button onclick="closeIosInstallModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold text-xs shadow-lg shadow-cyan-500/20 transition cursor-pointer">
           Đã Hiểu 🚀
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 180-DAY VIDEO CURRICULUM MODAL (360 VIDEOS) ==================== -->
+  <div id="videoCurriculumModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-5">
+    <div class="glass-card bg-slate-900 border-2 border-indigo-500/50 rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-fade-in">
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-800 flex items-center justify-between gap-3 bg-slate-950">
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-black uppercase px-2.5 py-0.5 rounded-full bg-gradient-to-r from-red-600 to-indigo-600 text-white shadow">
+              Lộ Trình Toàn Diện 180 Ngày
+            </span>
+            <span class="text-xs font-bold text-emerald-400 flex items-center gap-1">
+              <span>✅</span> <span>360 Video Bài Học &amp; Ngữ Pháp</span>
+            </span>
+          </div>
+          <h3 class="text-base sm:text-lg font-black text-white mt-1">
+            📚 Danh Mục Video Bài Học Từ Level Thấp Đến Cao (A1 ➔ C1)
+          </h3>
+        </div>
+        <button onclick="closeVideoCurriculumModal()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition cursor-pointer text-lg">
+          ✕
+        </button>
+      </div>
+
+      <!-- Filter Controls: Search & Level Tabs -->
+      <div class="p-4 border-b border-slate-800 bg-slate-900/90 space-y-3">
+        <div class="flex items-center gap-3">
+          <input id="curriculumSearchInput" oninput="filterCurriculumVideos()" type="text" placeholder="🔍 Tìm theo số ngày (VD: 1, 45, 100), chủ đề, ngữ pháp (past simple, schwa, meeting, interview...)" class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs sm:text-sm focus:outline-none focus:border-cyan-400 font-medium" />
+        </div>
+        <!-- Level Pills -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scroll text-xs">
+          <button onclick="filterCurriculumLevel('all')" id="currLevelBtn-all" class="curr-lvl-btn px-3 py-1.5 rounded-xl font-bold bg-indigo-600 text-white whitespace-nowrap transition cursor-pointer">
+            Tất Cả (180 Ngày)
+          </button>
+          <button onclick="filterCurriculumLevel('a1')" id="currLevelBtn-a1" class="curr-lvl-btn px-3 py-1.5 rounded-xl font-medium bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap transition cursor-pointer">
+            Tháng 1: Level A1 (Ngày 1-30)
+          </button>
+          <button onclick="filterCurriculumLevel('a2')" id="currLevelBtn-a2" class="curr-lvl-btn px-3 py-1.5 rounded-xl font-medium bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap transition cursor-pointer">
+            Tháng 2: Level A2 (Ngày 31-60)
+          </button>
+          <button onclick="filterCurriculumLevel('b1')" id="currLevelBtn-b1" class="curr-lvl-btn px-3 py-1.5 rounded-xl font-medium bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap transition cursor-pointer">
+            Tháng 3-4: Level B1 (Ngày 61-120)
+          </button>
+          <button onclick="filterCurriculumLevel('b2')" id="currLevelBtn-b2" class="curr-lvl-btn px-3 py-1.5 rounded-xl font-medium bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap transition cursor-pointer">
+            Tháng 5: Level B2 (Ngày 121-150)
+          </button>
+          <button onclick="filterCurriculumLevel('c1')" id="currLevelBtn-c1" class="curr-lvl-btn px-3 py-1.5 rounded-xl font-medium bg-slate-800 text-slate-300 hover:text-white whitespace-nowrap transition cursor-pointer">
+            Tháng 6: Level C1 (Ngày 151-180)
+          </button>
+        </div>
+      </div>
+
+      <!-- Curriculum List Container -->
+      <div id="curriculumListContainer" class="p-4 sm:p-5 overflow-y-auto space-y-3 custom-scroll flex-1">
+        <!-- Rendered dynamically -->
       </div>
     </div>
   </div>

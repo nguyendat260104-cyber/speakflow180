@@ -1,5 +1,5 @@
 // SpeakFlow 180 - Service Worker
-const CACHE_NAME = 'speakflow180-v18';
+const CACHE_NAME = 'speakflow180-v19';
 const ASSETS = [
   '/',
   '/index.html',
