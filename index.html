@@ -1264,49 +1264,127 @@
           Người mất gốc nhẹ thường thất bại vì ôm quá nhiều tài liệu rời rạc. Dưới đây là <strong>8 nguồn tài liệu chuẩn quốc tế duy nhất</strong> bạn cần trong suốt 6 tháng, kèm hướng dẫn sử dụng tối ưu trong 45–60 phút buổi tối.
         </p>
       </div>
-      <!-- British Council LearnEnglish Podcasts Interactive Studio -->
-      <div id="bcPodcastsHub" class="glass-card rounded-2xl p-5 sm:p-6 space-y-5 border-2 border-indigo-500/50 bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 shadow-2xl">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-4">
-          <div class="space-y-1.5">
+      <!-- ==================== GLOBAL MULTI-CHANNEL PODCASTS STUDIO ==================== -->
+      <div id="globalPodcastStudio" class="glass-card rounded-3xl p-5 sm:p-7 space-y-6 border-2 border-indigo-500/50 bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 shadow-2xl relative overflow-hidden">
+        
+        <!-- Ambient decorative glow -->
+        <div class="absolute -top-32 -right-32 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+          <div class="space-y-2">
             <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-red-600/25 text-red-300 border border-red-500/40 flex items-center gap-1">
-                <span>🇬🇧</span> British Council Official
+              <span class="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-gradient-to-r from-cyan-600 to-indigo-600 text-white shadow-md flex items-center gap-1.5">
+                <span>🎙️</span> <span>Kho Podcasts Luyện Nghe Đa Nguồn</span>
               </span>
-              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">LearnEnglish Podcasts</span>
-              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">A2 • B1 • B2</span>
+              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Dài 6 – 40 Phút</span>
+              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">FinTech • IT DevOps • HBR • BBC</span>
             </div>
-            <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
-              🎙️ Thư Viện Podcasts Hội Đồng Anh (LearnEnglish)
+            <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
+              <span>🎧 Thư Viện Podcasts Tiếng Anh Chuyên Sâu Quốc Tế</span>
             </h2>
             <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
-              Nguồn tài liệu luyện nghe và phản xạ hội thoại đời thực kinh điển nhất thế giới từ Hội đồng Anh. Đi theo hành trình của sinh viên Carolina tại Anh cùng 2 người dẫn chương trình Tess &amp; Ravi, tích hợp sẵn kịch bản đối thoại, từ vựng trọng tâm, phát âm chuẩn Anh-Anh (UK) và bài tập phản xạ.
+              Tuyển tập các podcast chất lượng cao từ các kênh công nghệ tài chính, vận hành hệ thống và kinh doanh hàng đầu thế giới. Tích hợp sẵn <strong>trình phát audio thông minh</strong> (chỉnh tốc độ, tua 10s), <strong>kịch bản song ngữ (transcript)</strong>, <strong>sổ tay từ vựng ⭐</strong> và <strong>luyện shadowing</strong> đuổi theo người bản xứ.
             </p>
           </div>
-          <a href="https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-indigo-600 hover:from-red-500 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm shadow-lg whitespace-nowrap self-start lg:self-center transition flex items-center gap-2">
-            <span>🌐 Trang Chủ Podcasts British Council ↗</span>
-          </a>
+          <div class="flex items-center gap-2 flex-wrap self-start lg:self-center">
+            <span class="text-xs text-slate-400 font-mono">Đã lưu trữ: <strong id="podcastTotalBadge" class="text-cyan-300">24 tập</strong></span>
+          </div>
         </div>
 
-        <!-- Series Filter Bar -->
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="text-xs font-bold text-slate-400">Chọn Series:</span>
-          <button onclick="filterBcSeries(1)" id="bcSeriesBtn-1" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow transition">Series 1 (10 Tập A2-B1)</button>
-          <button onclick="filterBcSeries(2)" id="bcSeriesBtn-2" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Series 2 (Hội thoại B1)</button>
-          <button onclick="filterBcSeries(3)" id="bcSeriesBtn-3" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Series 3 (Văn hóa &amp; Xã hội B1-B2)</button>
-          <button onclick="filterBcSeries(4)" id="bcSeriesBtn-4" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Series 4 (Giao tiếp B2)</button>
+        <!-- Filter Controls Bar -->
+        <div class="space-y-3">
+          <!-- Category Filter Pills -->
+          <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+            <span class="text-xs font-bold text-slate-400 shrink-0">Chủ đề:</span>
+            <button onclick="filterPodcastCategory('all')" id="pcCatBtn-all" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow transition cursor-pointer">
+              🌟 Tất Cả Kênh
+            </button>
+            <button onclick="filterPodcastCategory('fintech')" id="pcCatBtn-fintech" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🏦</span> <span>FinTech &amp; Ngân Hàng Số</span>
+            </button>
+            <button onclick="filterPodcastCategory('it_devops')" id="pcCatBtn-it_devops" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>💻</span> <span>IT DevOps, SRE &amp; Cloud</span>
+            </button>
+            <button onclick="filterPodcastCategory('workplace')" id="pcCatBtn-workplace" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🏢</span> <span>Công Sở &amp; Quản Lý (HBR)</span>
+            </button>
+            <button onclick="filterPodcastCategory('british_council')" id="pcCatBtn-british_council" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🇬🇧</span> <span>Hội Đồng Anh (Carolina)</span>
+            </button>
+            <button onclick="filterPodcastCategory('general_fluency')" id="pcCatBtn-general_fluency" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🎙️</span> <span>BBC 6-Min &amp; VOA</span>
+            </button>
+          </div>
+
+          <!-- Secondary Filters: Duration & Search -->
+          <div class="flex items-center justify-between gap-3 flex-wrap pt-1 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400 font-semibold">Thời lượng:</span>
+              <button onclick="filterPodcastDuration('all')" id="pcDurBtn-all" class="pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-cyan-600/30 border border-cyan-500/50 text-cyan-300 transition">Mọi độ dài</button>
+              <button onclick="filterPodcastDuration('short')" id="pcDurBtn-short" class="pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">⚡ Ngắn (6-15p)</button>
+              <button onclick="filterPodcastDuration('long')" id="pcDurBtn-long" class="pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">⏳ Dài (20-40p)</button>
+            </div>
+            <div class="flex-1 max-w-xs min-w-[200px]">
+              <input id="podcastSearchInput" oninput="handlePodcastSearch(this.value)" type="text" placeholder="🔍 Tìm theo từ khóa (latency, bank, cloud...)" class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 font-medium"/>
+            </div>
+          </div>
         </div>
 
-        <!-- Episode Selector -->
-        <div class="space-y-1.5">
-          <label class="text-xs font-bold text-cyan-300 flex items-center justify-between">
-            <span>🎧 Chọn Tập Bài Học Trong Series Đang Chọn:</span>
-            <span id="bcEpCountLabel" class="text-slate-400 font-normal text-[11px]">10 tập</span>
-          </label>
-          <select id="bcEpisodeSelect" onchange="selectBcEpisode(parseInt(this.value, 10))" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-indigo-500 font-medium"></select>
+        <!-- Integrated Smart Podcast Player Card (Sticky or Top) -->
+        <div id="podcastPlayerCard" class="p-4 sm:p-5 rounded-2xl bg-slate-950 border-2 border-cyan-500/40 space-y-3.5 shadow-xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+            <div class="flex items-center gap-3">
+              <div id="pcPlayerIcon" class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-600 to-indigo-600 flex items-center justify-center text-xl shrink-0 shadow-lg">🎙️</div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span id="pcPlayerChannel" class="text-[11px] font-bold text-cyan-300 uppercase tracking-wider">Fintech Insider by 11:FS</span>
+                  <span id="pcPlayerDuration" class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-mono">28 phút</span>
+                  <span id="pcPlayerAccent" class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">UK / US</span>
+                </div>
+                <h4 id="pcPlayerTitle" class="text-sm sm:text-base font-extrabold text-white mt-0.5 line-clamp-1">
+                  The Architecture of Open Banking, APIs &amp; Core Banking Modernization
+                </h4>
+              </div>
+            </div>
+            <!-- Audio controls -->
+            <div class="flex items-center gap-2 self-start sm:self-center shrink-0">
+              <button onclick="rewindPodcast(10)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold transition cursor-pointer" title="Tua lùi 10 giây">
+                ⏪ 10s
+              </button>
+              <button id="btnPlayPodcast" onclick="togglePlayActivePodcast()" class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white text-xs sm:text-sm font-black shadow-lg shadow-emerald-500/25 transition cursor-pointer flex items-center gap-1.5">
+                <span id="pcPlayIcon">▶</span> <span id="pcPlayText">Nghe Ngay</span>
+              </button>
+              <button onclick="forwardPodcast(10)" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold transition cursor-pointer" title="Tua tới 10 giây">
+                10s ⏩
+              </button>
+              <select id="pcSpeedSelect" onchange="changePodcastSpeed(this.value)" class="px-2 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-cyan-300 text-xs font-bold focus:outline-none cursor-pointer">
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1.0x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Progress Bar & Time labels -->
+          <div class="space-y-1">
+            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden cursor-pointer" onclick="seekPodcast(event)">
+              <div id="pcProgressBar" class="h-full bg-gradient-to-r from-cyan-400 to-indigo-500 w-0 transition-all duration-200"></div>
+            </div>
+            <div class="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+              <span id="pcCurrentTime">00:00</span>
+              <span id="pcTotalTime">28:00</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Active Episode Interactive Panel -->
-        <div id="bcEpisodePanel" class="space-y-4"></div>
+        <!-- Podcasts Episodes Grid -->
+        <div id="podcastsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated dynamically -->
+        </div>
+
       </div>
 
       <!-- British Council Community Discussions Hub Banner -->
@@ -5421,353 +5499,1259 @@ function sendChatMessage() {
       }
     }
 
-    // ==================== BRITISH COUNCIL PODCASTS HUB ====================
-    const BC_PODCASTS_DATA = [
-      // ========== SERIES 1 (A2 - B1) ==========
+    // ==================== GLOBAL MULTI-CHANNEL PODCASTS STUDIO ENGINE ====================
+    const GLOBAL_PODCASTS_DATA = [
+  {
+    "id": "ft_01",
+    "channel": "Fintech Insider by 11:FS",
+    "channelIcon": "🏦",
+    "category": "fintech",
+    "categoryName": "Tài Chính & Ngân Hàng Số",
+    "title": "The Architecture of Open Banking, APIs & Core Banking Modernization",
+    "duration": "28 phút",
+    "level": "B1 - B2",
+    "accent": "UK / US (International)",
+    "audioUrl": "https://traffic.libsyn.com/secure/fintechinsider/Fintech_Insider_Open_Banking_Clip.mp3",
+    "description": "Khám phá cách các ngân hàng truyền thống chuyển đổi hệ thống lõi (Core Banking) sang kiến trúc Microservices và Open Banking API để kết nối ví điện tử và cổng thanh toán thời gian thực.",
+    "transcript": "Host: Welcome to Fintech Insider! Today we are discussing one of the most critical transformations in financial services: modernizing legacy core banking systems.\nGuest: Absolutely. Many legacy banks are still running on mainframes built decades ago. When you introduce instant payments and real-time fraud monitoring, these monolithic architectures struggle with latency and throughput.\nHost: What is the primary bottleneck when integrating third-party payment gateways via Open Banking APIs?\nGuest: The bottleneck is usually transaction reconciliation and token authentication. You cannot afford a single millisecond of unrecorded state change during high-volume peak hours.",
+    "vocab": [
       {
-        series: 1, ep: 1,
-        title: "Tập 1: Giới thiệu bản thân, Angelina Jolie & Carolina tới Anh",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-01",
-        summary: "Tess và Ravi mở màn chuỗi Podcast, chia sẻ về sở thích, việc người nổi tiếng làm thiện nguyện và sự xuất hiện của Carolina - sinh viên quốc tế bắt đầu học tập tại Anh.",
-        script: "Tess: Hello and welcome to LearnEnglish Podcast. My name is Tess.\nRavi: And I'm Ravi. Today we're talking about celebrities who do good things. We're going to discuss Angelina Jolie and her charity work with the United Nations.\nCarolina: Excuse me, where can I find the coach to Newcastle? This is my first time in the United Kingdom.",
-        vocab: [
-          { w: "charity", ipa: "/ˈtʃærəti/", m: "tổ chức từ thiện" },
-          { w: "introduce", ipa: "/ˌɪntrəˈdjuːs/", m: "giới thiệu bản thân / người khác" },
-          { w: "in person", ipa: "/ɪn ˈpɜːsn/", m: "gặp mặt trực tiếp ngoài đời" },
-          { w: "coach", ipa: "/kəʊtʃ/", m: "xe khách đường dài liên tỉnh" }
-        ],
-        grammarTip: "Cách giới thiệu người thứ ba tự nhiên: 'Susan, this is Paul. Paul, this is Susan.' (Không dùng 'He is Paul').",
-        quiz: { q: "Khi muốn giới thiệu một người bạn với người khác trong buổi gặp mặt, câu nào chuẩn nhất?", opts: ["He is Paul, see him.", "This is Paul, my friend from university.", "Paul is this one.", "I make Paul introduce."], ans: 1, exp: "'This is + [Tên]' là cấu trúc chuẩn mực và tự nhiên nhất khi giới thiệu ai đó." }
+        "w": "core banking",
+        "ipa": "/kɔː ˈbæŋkɪŋ/",
+        "m": "hệ thống ngân hàng lõi vận hành tài khoản và sổ cái"
       },
       {
-        series: 1, ep: 2,
-        title: "Tập 2: Kế hoạch cuối tuần, Điệu Tango Argentina & Sự cố sân bay",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-02",
-        summary: "Ravi và Tess bàn về các chuyến đi nghỉ cuối tuần (weekend away), ca sĩ Shakira, vũ điệu Tango tại Buenos Aires và tình huống Carolina tìm hành lý thất lạc ở sân bay.",
-        script: "Tess: What are your plans for the weekend, Ravi?\nRavi: I love taking a weekend away to relax and unwind. Have you ever thought of traveling to South America?\nCarolina: Excuse me, where is the baggage reclaim area? I've been waiting for half an hour, but my suitcase hasn't arrived.",
-        vocab: [
-          { w: "weekend away", ipa: "/ˌwiːkend əˈweɪ/", m: "kỳ nghỉ ngắn ngày cuối tuần" },
-          { w: "baggage reclaim", ipa: "/ˈbæɡɪdʒ rɪˈkleɪm/", m: "khu vực nhận lại hành lý ký gửi" },
-          { w: "unwind", ipa: "/ˌʌnˈwaɪnd/", m: "thư giãn, xả hơi sau chuỗi ngày bận rộn" },
-          { w: "suitcase", ipa: "/ˈsuːtkeɪs/", m: "va li hành lý" }
-        ],
-        grammarTip: "Hỏi thông tin lịch sự ở nơi công cộng: 'Excuse me, could you tell me where [địa điểm] is?'",
-        quiz: { q: "Để hỏi đường đến khu vực lấy hành lý ở sân bay, câu nào lịch sự nhất?", opts: ["Where baggage?", "Could you please tell me where the baggage reclaim is?", "Give me my suitcase now.", "Show baggage area please."], ans: 1, exp: "Cấu trúc gián tiếp 'Could you please tell me where... is?' thể hiện sự tôn trọng và chuẩn mực." }
+        "w": "reconciliation",
+        "ipa": "/ˌrekənsɪliˈeɪʃn/",
+        "m": "đối soát số liệu và khớp lệnh giao dịch"
       },
       {
-        series: 1, ep: 3,
-        title: "Tập 3: Thiền định, Thám hiểm không gian & Phân biệt Say vs Tell",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-03",
-        summary: "Khám phá lợi ích của thiền định giúp giảm căng thẳng, ước mơ du hành vũ trụ, cuộc trò chuyện giữa Carolina và giáo viên hướng dẫn, cùng bí quyết dùng Say và Tell không bao giờ nhầm.",
-        script: "Tess: Do you ever meditate, Ravi? It really helps clear my head after a stressful week.\nRavi: I usually play football to blow off steam. But meditation sounds very peaceful.\nCarolina: Could you give me some advice on which modules I should choose for this term?",
-        vocab: [
-          { w: "meditate", ipa: "/ˈmedɪteɪt/", m: "ngồi thiền, tịnh tâm" },
-          { w: "clear my head", ipa: "/klɪər maɪ hed/", m: "giúp đầu óc thanh thản, minh mẫn" },
-          { w: "give advice", ipa: "/ɡɪv ədˈvaɪs/", m: "đưa ra lời khuyên (advice là danh từ không đếm được)" },
-          { w: "blow off steam", ipa: "/bləʊ ɒf stiːm/", m: "giải tỏa căng thẳng, xả stress" }
-        ],
-        grammarTip: "Quy tắc Say vs Tell: 'Say something (to somebody)' nhưng 'Tell somebody something'. (VD: Tell me the truth, đừng nói Tell to me).",
-        quiz: { q: "Chọn câu đúng ngữ pháp giữa 'say' và 'tell':", opts: ["She said me that she was busy.", "She told to me about her trip.", "She told me that she was busy.", "She said about the news to me."], ans: 2, exp: "Động từ 'tell' đi trực tiếp với tân ngữ chỉ người: 'tell someone something'." }
+        "w": "latency",
+        "ipa": "/ˈleɪtnsi/",
+        "m": "độ trễ phản hồi trong luồng xử lý giao dịch"
       },
       {
-        series: 1, ep: 4,
-        title: "Tập 4: Cảm xúc, Huyền thoại Bob Marley & Bày tỏ sự đồng cảm",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-04",
-        summary: "Thảo luận về sức mạnh của âm nhạc đối với tâm trạng qua các ca khúc của Bob Marley, so sánh sách và phim ảnh, và cách nói lời an ủi, chia sẻ bằng tiếng Anh.",
-        script: "Ravi: Music has a huge impact on our emotions. Listening to Bob Marley always puts me in a good mood.\nTess: Absolutely! Whenever I feel down, upbeat music turns my day around.\nCarolina: I'm really sorry to hear that you lost your wallet. Let me know if you need anything.",
-        vocab: [
-          { w: "in a good mood", ipa: "/ɪn ə ɡʊd muːd/", m: "tâm trạng vui vẻ, thoải mái" },
-          { w: "feel down", ipa: "/fiːl daʊn/", m: "cảm thấy buồn rầu, chán chường" },
-          { w: "turn around", ipa: "/tɜːn əˈraʊnd/", m: "xoay chuyển tình thế (từ xấu thành tốt)" },
-          { w: "sympathy", ipa: "/ˈsɪmpəθi/", m: "sự cảm thông, lời an ủi" }
-        ],
-        grammarTip: "Bày tỏ sự chia sẻ lịch sự: 'I'm so sorry to hear that.' hoặc 'That must be really tough for you.'",
-        quiz: { q: "Khi nghe tin bạn mình vừa gặp chuyện buồn, câu an ủi tinh tế nhất là:", opts: ["Never mind, don't cry.", "I'm really sorry to hear that. Is there anything I can do?", "Why are you sad?", "Stop thinking about it."], ans: 1, exp: "'I'm really sorry to hear that' là câu cửa miệng trang trọng và chân thành nhất trong tiếng Anh." }
+        "w": "token authentication",
+        "ipa": "/ˈtəʊkən ɔːˌθentɪˈkeɪʃn/",
+        "m": "xác thực danh tính qua mã token bảo mật"
       },
       {
-        series: 1, ep: 5,
-        title: "Tập 5: Sở thích, Rafael Nadal & Kể về thói quen cũ (Used to)",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-05",
-        summary: "Nói về sở thích thời thơ ấu, tinh thần thi đấu bền bỉ của Rafael Nadal, Carolina tham gia các câu lạc bộ sinh viên tại trường đại học và cấu trúc 'Used to'.",
-        script: "Tess: Did you have any sports hobbies growing up, Ravi?\nRavi: I used to play tennis every afternoon! I always wanted to move across the court like Rafael Nadal.\nCarolina: I'm planning to sign up for the student film club to meet new friends.",
-        vocab: [
-          { w: "used to + V", ipa: "/ˈjuːst tuː/", m: "từng làm gì trong quá khứ (nay không còn nữa)" },
-          { w: "determination", ipa: "/dɪˌtɜːmɪˈneɪʃn/", m: "lòng kiên định, sự quyết tâm" },
-          { w: "sign up for", ipa: "/saɪn ʌp fɔːr/", m: "đăng ký tham gia một câu lạc bộ / khóa học" },
-          { w: "growing up", ipa: "/ˈɡrəʊɪŋ ʌp/", m: "trong giai đoạn lớn lên / thời niên thiếu" }
-        ],
-        grammarTip: "Dùng 'used to + động từ nguyên mẫu' cho hành động lặp đi lặp lại trong quá khứ đã chấm dứt hoàn toàn ở hiện tại.",
-        quiz: { q: "Để nói 'Hồi nhỏ tôi từng bơi lội mỗi sáng cuối tuần (giờ không bơi nữa)', câu nào đúng?", opts: ["I use to swim every weekend.", "I used to swim every weekend when I was young.", "I was used to swim.", "I am using to swim."], ans: 1, exp: "'used to + V nguyên mẫu' diễn tả thói quen trong quá khứ." }
-      },
-      {
-        series: 1, ep: 6,
-        title: "Tập 6: Ẩm thực, Đầu bếp Jamie Oliver & Gọi món tại Nhà hàng",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-06",
-        summary: "Nghệ thuật nấu ăn tại nhà đơn giản lấy cảm hứng từ đầu bếp Jamie Oliver, sự mê tín trong các nền văn hóa và kịch bản đi chợ, gọi món của Carolina.",
-        script: "Ravi: Cooking fresh ingredients at home is much more rewarding than eating fast food.\nTess: Jamie Oliver showed everyone that home cooking can be quick and budget-friendly.\nCarolina: Excuse me, waiter, could we get the bill, please? Can we pay separately by credit card?",
-        vocab: [
-          { w: "fresh ingredients", ipa: "/freʃ ɪnˈɡriːdiənts/", m: "nguyên liệu tươi sống" },
-          { w: "budget-friendly", ipa: "/ˈbʌdʒɪt ˈfrendli/", m: "hợp túi tiền, tiết kiệm chi phí" },
-          { w: "the bill", ipa: "/ðə bɪl/", m: "hóa đơn thanh toán (Anh-Mỹ: check)" },
-          { w: "pay separately", ipa: "/peɪ ˈseprətli/", m: "thanh toán riêng / chia tiền (split the bill)" }
-        ],
-        grammarTip: "Giao tiếp lịch sự khi thanh toán: 'Could we have the bill, please?' hoặc 'Can we split the bill?'",
-        quiz: { q: "Khi đi ăn cùng bạn bè và muốn đề nghị 'Chúng ta cưa đôi / chia tiền nhé', bạn nói:", opts: ["Let's cut money.", "Can we split the bill?", "Divide the cash please.", "Pay half half."], ans: 1, exp: "'Split the bill' (hoặc 'go Dutch') là thành ngữ chuẩn mực khi chia tiền ăn uống." }
-      },
-      {
-        series: 1, ep: 7,
-        title: "Tập 7: Giao thông, Tàu điện ngầm London & Hỏi đường di chuyển",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-07",
-        summary: "Kinh nghiệm đi lại trên hệ thống tàu điện ngầm London (Tube), câu khẩu hiệu 'Mind the gap', và cách hỏi hướng tàu, chuyển tuyến ga xe lửa chính xác.",
-        script: "Tess: The London Underground is historic, but you really have to pay attention to line transfers.\nRavi: And never forget the famous announcement: 'Mind the gap between the train and the platform!'\nCarolina: Does this train go directly to Central Station or do I have to change at the next stop?",
-        vocab: [
-          { w: "mind the gap", ipa: "/maɪnd ðə ɡæp/", m: "chú ý khoảng trống giữa cửa tàu và sân ga" },
-          { w: "change trains", ipa: "/tʃeɪndʒ treɪnz/", m: "chuyển sang chuyến tàu khác" },
-          { w: "platform", ipa: "/ˈplætfɔːm/", m: "ke ga / sân ga đón tàu" },
-          { w: "direct service", ipa: "/dəˈrekt ˈsɜːvɪs/", m: "chuyến đi thẳng không cần đổi chặng" }
-        ],
-        grammarTip: "Hỏi tàu thẳng hay đổi tuyến: 'Is it a direct train, or do I need to change?'",
-        quiz: { q: "Để hỏi nhân viên nhà ga xem chuyến tàu này có đi thẳng không hay phải đổi ga:", opts: ["Is this train straight?", "Is this a direct train, or do I need to change?", "Do you go fast?", "Where train stop?"], ans: 1, exp: "'direct train' (tàu đi thẳng) và 'change trains' (đổi tàu) là cặp từ chuẩn khi đi tàu." }
-      },
-      {
-        series: 1, ep: 8,
-        title: "Tập 8: Nghề nghiệp mơ ước, Phỏng vấn xin việc & Tác phong công sở",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-08",
-        summary: "Hồi ức về công việc đầu tiên trong đời, tiêu chuẩn tác phong chuyên nghiệp nơi công sở và Carolina tham gia phỏng vấn xin việc làm thêm bán thời gian.",
-        script: "Ravi: My very first job was working as an assistant in a local bookshop on weekends.\nTess: Customer service teaches you how to stay calm and communicate with different personalities.\nCarolina: I am punctual, fast-learning, and I have good interpersonal communication skills.",
-        vocab: [
-          { w: "punctual", ipa: "/ˈpʌŋktʃuəl/", m: "đúng giờ, không bao giờ trễ hẹn" },
-          { w: "interpersonal skills", ipa: "/ˌɪntəˈpɜːsənl skɪlz/", m: "kỹ năng giao tiếp ứng xử giữa người với người" },
-          { w: "fast-learning", ipa: "/fɑːst ˈlɜːnɪŋ/", m: "khả năng tiếp thu kiến thức nhanh" },
-          { w: "part-time job", ipa: "/ˌpɑːt ˈtaɪm dʒɒb/", m: "công việc làm thêm bán thời gian" }
-        ],
-        grammarTip: "Mẫu câu phỏng vấn điểm mạnh: 'I consider myself reliable, adaptable and eager to learn new skills.'",
-        quiz: { q: "Từ nào mô tả người 'luôn luôn đến đúng giờ hẹn' trong môi trường làm việc?", opts: ["Punctual", "Patient", "Polite", "Proud"], ans: 0, exp: "'Punctual' có nghĩa là luôn đúng giờ (on time)." }
-      },
-      {
-        series: 1, ep: 9,
-        title: "Tập 9: Công nghệ, Điện thoại di động & Kỹ thuật Nêu ý kiến",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-09",
-        summary: "Tranh luận về thói quen sử dụng điện thoại thông minh, tình huống dở khóc dở cười khi điện thoại hết pin và các mẫu câu bày tỏ quan điểm cá nhân mạch lạc.",
-        script: "Tess: I think smartphones are wonderful, but people look at their screens far too often during meals.\nRavi: From my perspective, staying connected with friends around the world is an incredible benefit.\nCarolina: In my opinion, setting boundaries with technology is essential for our mental well-being.",
-        vocab: [
-          { w: "from my perspective", ipa: "/frəm maɪ pəˈspektɪv/", m: "từ góc nhìn / quan điểm của tôi" },
-          { w: "stay connected", ipa: "/steɪ kəˈnektɪd/", m: "duy trì kết nối liên lạc" },
-          { w: "set boundaries", ipa: "/set ˈbaʊndriz/", m: "đặt ra giới hạn, ranh giới lành mạnh" },
-          { w: "well-being", ipa: "/ˈwel biːɪŋ/", m: "sức khỏe tinh thần và thể chất" }
-        ],
-        grammarTip: "Cụm từ nêu quan điểm tự nhiên thay cho 'I think': 'From my point of view...', 'In my view...', 'Personally, I believe...'",
-        quiz: { q: "Cụm từ nào mở đầu câu để nêu quan điểm một cách học thuật và lịch sự?", opts: ["From my perspective, ...", "My brain says ...", "Listen to my word, ...", "I am right that ..."], ans: 0, exp: "'From my perspective' (từ góc nhìn của tôi) là cụm từ B1/B2 rất hay dùng trong thảo luận." }
-      },
-      {
-        series: 1, ep: 10,
-        title: "Tập 10: Lễ hội, Phong tục nước Anh & Đúc kết chặng đường A2-B1",
-        level: "A2 - B1",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-010",
-        summary: "Tổng kết chuỗi 10 tập Series 1, khám phá nét văn hóa lễ hội truyền thống của xứ sở sương mù và lời khuyên giúp duy trì phản xạ giao tiếp lâu dài.",
-        script: "Ravi: Here we are at the finale of Series 1! Time really flies when you practice consistently.\nTess: To all our learners worldwide: keep speaking, recording, and never fear making mistakes.\nCarolina: Looking back on this semester, my English fluency has improved tremendously!",
-        vocab: [
-          { w: "time flies", ipa: "/taɪm flaɪz/", m: "thời gian trôi qua nhanh như chớp" },
-          { w: "consistently", ipa: "/kənˈsɪstəntli/", m: "một cách kiên trì, đều đặn mỗi ngày" },
-          { w: "tremendously", ipa: "/trəˈmendəsli/", m: "vô cùng nhiều, vượt bậc" },
-          { w: "fluency", ipa: "/ˈfluːənsi/", m: "sự trôi chảy, lưu loát" }
-        ],
-        grammarTip: "Cụm thành ngữ 'Time flies when you're having fun' (Thời gian trôi rất nhanh khi ta vui vẻ/hăng say).",
-        quiz: { q: "Thành ngữ 'Time flies' mang hàm ý gì trong cuộc trò chuyện?", opts: ["Thời gian bay trên trời", "Thời gian trôi qua rất nhanh", "Đồng hồ bị hỏng", "Không còn thời gian"], ans: 1, exp: "'Time flies' = thời gian trôi qua vùn vụt." }
-      },
-      // ========== SERIES 2 (B1 INTERMEDIATE) ==========
-      {
-        series: 2, ep: 1,
-        title: "Series 2 - Tập 1: Ở chung nhà trọ (Flatmates) & Đàm phán việc nhà",
-        level: "B1 Intermediate",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-01",
-        summary: "Thử thách sống chung căn hộ cùng bạn bè quốc tế, phân chia việc nhà công bằng và cách trao đổi khi có bất đồng quan điểm mà không gây căng thẳng.",
-        script: "Tess: Sharing a flat with friends is fun, but agreeing on who does the washing-up can get tricky!\nRavi: Good communication and clear house rules save friendships.\nCarolina: Would you mind taking out the rubbish tonight? I did the cleaning yesterday.",
-        vocab: [
-          { w: "flatmate", ipa: "/ˈflætmeɪt/", m: "bạn cùng thuê chung một căn hộ" },
-          { w: "house rules", ipa: "/haʊs ruːlz/", m: "nội quy chung trong nhà" },
-          { w: "washing-up", ipa: "/ˌwɒʃɪŋ ˈʌp/", m: "việc rửa chén bát sau bữa ăn" },
-          { w: "would you mind + V-ing", ipa: "/wʊd juː maɪnd/", m: "bạn có phiền khi làm việc này không?" }
-        ],
-        grammarTip: "Cấu trúc nhờ vả lịch sự bậc nhất: 'Would you mind + V-ing...?' (Trả lời đồng ý giúp: 'Not at all, I'd be happy to!').",
-        quiz: { q: "Sau cấu trúc nhờ vả 'Would you mind...', động từ chia thế nào?", opts: ["V-ing", "To-V", "V nguyên mẫu", "V-ed"], ans: 0, exp: "'Would you mind + V-ing' (VD: Would you mind closing the window?)." }
-      },
-      {
-        series: 2, ep: 3,
-        title: "Series 2 - Tập 3: Lối sống lành mạnh, Thể thao & Cân bằng cuộc sống",
-        level: "B1 Intermediate",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-03",
-        summary: "Các phương pháp giữ gìn vóc dáng, giải tỏa căng thẳng sau giờ làm việc và câu chuyện về các môn thể thao mạo hiểm.",
-        script: "Ravi: Balancing work commitments with physical exercise is tough, but it boosts mental clarity.\nTess: Even a twenty-minute brisk walk every evening makes a noticeable difference.\nCarolina: I try to stick to a balanced diet and drink plenty of water throughout the day.",
-        vocab: [
-          { w: "mental clarity", ipa: "/ˈmentl ˈklærəti/", m: "sự sáng suốt, minh mẫn của tâm trí" },
-          { w: "brisk walk", ipa: "/brɪsk wɔːk/", m: "đi bộ nhanh, rảo bước tập thể dục" },
-          { w: "stick to a diet", ipa: "/stɪk tuː ə ˈdaɪət/", m: "duy trì chế độ ăn uống khoa học" },
-          { w: "commitment", ipa: "/kəˈmɪtmənt/", m: "nhiệm vụ, cam kết trách nhiệm" }
-        ],
-        grammarTip: "Collocation 'make a difference' (tạo nên sự khác biệt / có tác động tích cực rõ rệt).",
-        quiz: { q: "Cụm từ nào có nghĩa là 'đi bộ nhanh để rèn luyện sức khỏe'?", opts: ["Brisk walk", "Lazy walk", "Sleep walk", "Heavy walk"], ans: 0, exp: "'Brisk walk' là đi bộ với tốc độ nhanh, tăng nhịp tim tốt cho sức khỏe." }
-      },
-      // ========== SERIES 3 (B1 - B2) ==========
-      {
-        series: 3, ep: 1,
-        title: "Series 3 - Tập 1: Bản sắc văn hóa, Đa dạng ẩm thực & Xã hội hiện đại",
-        level: "B1 - B2",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-01",
-        summary: "Bức tranh đa sắc tộc tại các đô thị lớn của Vương quốc Anh, sự hòa quyện ẩm thực thế giới và cách giới thiệu bản sắc quê hương.",
-        script: "Tess: Cities like London and Manchester are melting pots of cultures, accents and cuisines.\nRavi: You can walk down one street and taste authentic food from five different continents!\nCarolina: Being able to share my traditional family recipes with friends here makes me feel at home.",
-        vocab: [
-          { w: "melting pot", ipa: "/ˈmeltɪŋ pɒt/", m: "nơi giao thoa hòa hợp của nhiều nền văn hóa" },
-          { w: "authentic", ipa: "/ɔːˈθentɪk/", m: "chính gốc, chuẩn vị nguyên bản" },
-          { w: "cuisine", ipa: "/kwɪˈziːn/", m: "nền ẩm thực đặc trưng" },
-          { w: "feel at home", ipa: "/fiːl æt həʊm/", m: "cảm thấy thoải mái, ấm cúng như ở nhà" }
-        ],
-        grammarTip: "Thành ngữ 'melting pot' miêu tả một xã hội đa văn hóa nơi mọi người từ khắp nơi hòa nhập cùng nhau.",
-        quiz: { q: "Thuật ngữ 'melting pot' được dùng trong ngữ cảnh xã hội mang nghĩa gì?", opts: ["Nồi nấu kim loại", "Nơi hội tụ, giao thoa nhiều nền văn hóa", "Một món súp nóng", "Trời mùa hè nóng bức"], ans: 1, exp: "'Melting pot' là biểu tượng của xã hội đa văn hóa hội nhập." }
-      },
-      // ========== SERIES 4 (B1 - B2 ADVANCED) ==========
-      {
-        series: 4, ep: 1,
-        title: "Series 4 - Tập 1: Giao tiếp quán Pub, Hài hước kiểu Anh & Thành ngữ tự nhiên",
-        level: "B1 - B2",
-        bcUrl: "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-01",
-        summary: "Văn hóa xã giao trong quán Pub truyền thống nước Anh, phong cách nói đùa tế nhị (dry humour) và các thành ngữ tiếng Anh tự nhiên.",
-        script: "Ravi: The local pub in Britain isn't just about drinks; it's a social hub where communities gather.\nTess: British humour relies heavily on sarcasm, understatement, and not taking oneself too seriously.\nCarolina: It took me a while to get the jokes, but now I thoroughly enjoy the banter!",
-        vocab: [
-          { w: "social hub", ipa: "/ˈsəʊʃl hʌb/", m: "trung tâm gặp gỡ giao lưu xã hội" },
-          { w: "understatement", ipa: "/ˈʌndəsteɪtmənt/", m: "cách nói giảm nói tránh đặc trưng kiểu Anh" },
-          { w: "banter", ipa: "/ˈbæntər/", m: "những lời đùa vui vẻ, thân mật giữa bạn bè" },
-          { w: "sarcasm", ipa: "/ˈsɑːkæzəm/", m: "sự châm biếm, mỉa mai hóm hỉnh" }
-        ],
-        grammarTip: "Từ 'banter' là danh từ không đếm được miêu tả những câu nói đùa vui vẻ, trêu chọc thân mật giữa những người bạn thân.",
-        quiz: { q: "Từ 'banter' trong văn hóa giao tiếp hàng ngày của người Anh có nghĩa là gì?", opts: ["Tranh cãi gay gắt", "Những câu trêu đùa vui vẻ, thân thiện", "Thuyết trình trang trọng", "Khen ngợi quá lời"], ans: 1, exp: "'Banter' là văn hóa nói chuyện trêu đùa vui vẻ không ác ý giữa bạn bè." }
+        "w": "throughput",
+        "ipa": "/ˈθruːpʊt/",
+        "m": "thông lượng, số lượng giao dịch xử lý trên mỗi giây (TPS)"
       }
-    ];
+    ],
+    "shadowingSentence": "When integrating instant payments, legacy monolithic architectures struggle with latency and high throughput."
+  },
+  {
+    "id": "ft_02",
+    "channel": "Bloomberg Surveillance & Markets",
+    "channelIcon": "📈",
+    "category": "fintech",
+    "categoryName": "Tài Chính & Ngân Hàng Số",
+    "title": "Global Inflation, Central Bank Interest Rates & Foreign Exchange Volatility",
+    "duration": "22 phút",
+    "level": "B2",
+    "accent": "US (New York)",
+    "audioUrl": "https://www.bloomberg.com/podcasts/surveillance",
+    "description": "Phân tích diễn biến chính sách lãi suất của Cục Dự trữ Liên bang Mỹ (Fed), biến động tỷ giá hối đoái ngoại tệ và tác động tới dòng vốn đầu tư xuyên biên giới.",
+    "transcript": "Tom Keene: Good morning. Global markets are digesting the latest inflation figures as central banks signal higher-for-longer interest rates.\nAnalyst: We are seeing currency market volatility intensify. Emerging market currencies face liquidity pressure as the dollar strengthens against major currency pairs.\nTom Keene: How are commercial banks hedging against interest rate risk in this environment?\nAnalyst: Commercial banks are adjusting their asset-liability matching strategies and increasing treasury reserves to absorb unexpected capital outflows.",
+    "vocab": [
+      {
+        "w": "volatility",
+        "ipa": "/ˌvɒləˈtɪləti/",
+        "m": "sự biến động mạnh của thị trường tài chính"
+      },
+      {
+        "w": "hedging",
+        "ipa": "/ˈhedʒɪŋ/",
+        "m": "nghiệp vụ phòng vệ rủi ro biến động giá/tỷ giá"
+      },
+      {
+        "w": "liquidity pressure",
+        "ipa": "/lɪˈkwɪdəti ˈpreʃər/",
+        "m": "áp lực thanh khoản dòng tiền"
+      },
+      {
+        "w": "asset-liability matching",
+        "ipa": "/ˈæset laɪəˈbɪləti/",
+        "m": "quản trị cân đối tài sản nợ và tài sản có"
+      },
+      {
+        "w": "capital outflows",
+        "ipa": "/ˈkæpɪtl ˈaʊtfləʊz/",
+        "m": "dòng vốn rút ra khỏi thị trường"
+      }
+    ],
+    "shadowingSentence": "Commercial banks are adjusting their asset-liability matching to absorb unexpected capital outflows."
+  },
+  {
+    "id": "ft_03",
+    "channel": "BBC Business Daily",
+    "channelIcon": "💳",
+    "category": "fintech",
+    "categoryName": "Tài Chính & Ngân Hàng Số",
+    "title": "Preventing Cyber Fraud in Mobile Wallets and QR Code Payments",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (BBC London)",
+    "audioUrl": "https://www.bbc.co.uk/programmes/p002vsxs",
+    "description": "Cách các ngân hàng số và cổng thanh toán quốc tế sử dụng mô hình học máy (Machine Learning) để nhận diện gian lận giao dịch thẻ và mã QR trong tích tắc.",
+    "transcript": "Presenter: Mobile payment apps have replaced cash across cities worldwide. But with convenience comes sophisticated cyber fraud.\nSecurity Officer: Attackers use social engineering and counterfeit QR codes to redirect merchant payments. Our primary defense is behavioral biometrics.\nPresenter: How does behavioral biometrics detect an imposter?\nSecurity Officer: It analyzes the angle at which you hold the phone, swipe speed, and keystroke dynamics. If a transaction deviates from your baseline profile, multi-factor authentication triggers instantly.",
+    "vocab": [
+      {
+        "w": "social engineering",
+        "ipa": "/ˌsəʊʃl endʒɪˈnɪərɪŋ/",
+        "m": "tấn công tâm lý lừa đảo chiếm đoạt thông tin"
+      },
+      {
+        "w": "behavioral biometrics",
+        "ipa": "/bɪˌheɪvjərəl baɪəʊˈmetrɪks/",
+        "m": "sinh trắc học hành vi người dùng"
+      },
+      {
+        "w": "counterfeit",
+        "ipa": "/ˈkaʊntəfɪt/",
+        "m": "giả mạo, lừa đảo"
+      },
+      {
+        "w": "multi-factor authentication",
+        "ipa": "/ˌmʌlti ˈfæktər/",
+        "m": "xác thực đa yếu tố bảo mật (MFA)"
+      }
+    ],
+    "shadowingSentence": "If a transaction deviates from your baseline profile, multi-factor authentication triggers instantly."
+  },
+  {
+    "id": "dev_01",
+    "channel": "DevOps Radio by CloudBees",
+    "channelIcon": "💻",
+    "category": "it_devops",
+    "categoryName": "IT Hệ Thống & DevOps",
+    "title": "Production Incident Management, Root Cause Analysis & Zero-Downtime Deployment",
+    "duration": "32 phút",
+    "level": "B1 - B2",
+    "accent": "US (San Francisco)",
+    "audioUrl": "https://devopsradio.libsyn.com",
+    "description": "Kinh nghiệm thực chiến xử lý sự cố hạ tầng máy chủ Production bị sập: quy trình lập phòng trực chiến (War Room), giao tiếp kỹ thuật trong họp khẩn và viết báo cáo nguyên nhân gốc rễ (Post-Mortem).",
+    "transcript": "Host: Today on DevOps Radio, we discuss how top engineering teams respond when production servers trigger P1 critical alerts at 2 AM.\nSite Reliability Engineer: The most critical rule during an active outage is communication hygiene. The Incident Commander must assign clear roles: one person on mitigation, one on telemetry, and one documenting the timeline.\nHost: Why is a blameless post-mortem culture so essential for high-velocity teams?\nSite Reliability Engineer: Because if engineers fear punishment, they hide incidents. A blameless root cause analysis identifies systemic flaws, like missing circuit breakers or insufficient database connection pools.",
+    "vocab": [
+      {
+        "w": "outage",
+        "ipa": "/ˈaʊtɪdʒ/",
+        "m": "sự cố ngừng hoạt động của hệ thống máy chủ"
+      },
+      {
+        "w": "incident commander",
+        "ipa": "/ˈɪnsɪdənt kəˈmɑːndər/",
+        "m": "chỉ huy trưởng điều phối xử lý sự cố khẩn cấp"
+      },
+      {
+        "w": "mitigation",
+        "ipa": "/ˌmɪtɪˈɡeɪʃn/",
+        "m": "biện pháp giảm nhẹ thiệt hại tạm thời"
+      },
+      {
+        "w": "blameless post-mortem",
+        "ipa": "/ˈbleɪmləs pəʊst ˈmɔːtəm/",
+        "m": "báo cáo phân tích nguyên nhân sự cố không quy kết trách nhiệm cá nhân"
+      },
+      {
+        "w": "connection pool",
+        "ipa": "/kəˈnekʃn puːl/",
+        "m": "hồ kết nối cơ sở dữ liệu dùng chung"
+      }
+    ],
+    "shadowingSentence": "A blameless root cause analysis identifies systemic flaws, such as missing circuit breakers."
+  },
+  {
+    "id": "dev_02",
+    "channel": "Software Engineering Daily",
+    "channelIcon": "⚙️",
+    "category": "it_devops",
+    "categoryName": "IT Hệ Thống & DevOps",
+    "title": "Database Latency, Distributed Caching with Redis & Kubernetes Clusters",
+    "duration": "35 phút",
+    "level": "B2",
+    "accent": "US (Silicon Valley)",
+    "audioUrl": "https://softwareengineeringdaily.com",
+    "description": "Giải thích chuyên sâu cách giảm độ trễ cơ sở dữ liệu từ 500ms xuống dưới 10ms bằng cơ chế đệm dữ liệu phân tán Redis và cấu hình cân bằng tải trên cụm Kubernetes.",
+    "transcript": "Host: Welcome to Software Engineering Daily. High database latency is the number one bottleneck for modern microservices architectures.\nArchitect: When queries hit millions of requests per minute, disk I/O degrades rapidly. Implementing an in-memory distributed cache like Redis reduces database load by over eighty percent.\nHost: How do you handle cache invalidation when multiple Kubernetes pods write concurrently?\nArchitect: We utilize write-through caching combined with an event-driven pub/sub architecture to propagate updates across all worker nodes seamlessly.",
+    "vocab": [
+      {
+        "w": "distributed cache",
+        "ipa": "/dɪˈstrɪbjuːtɪd kæʃ/",
+        "m": "bộ nhớ đệm phân tán trên nhiều máy chủ"
+      },
+      {
+        "w": "disk I/O",
+        "ipa": "/dɪsk aɪ əʊ/",
+        "m": "tốc độ đọc ghi dữ liệu từ ổ cứng"
+      },
+      {
+        "w": "cache invalidation",
+        "ipa": "/kæʃ ɪnˌvælɪˈdeɪʃn/",
+        "m": "xóa hoặc cập nhật lại bản ghi đệm đã lỗi thời"
+      },
+      {
+        "w": "concurrently",
+        "ipa": "/kənˈkʌrəntli/",
+        "m": "đồng thời cùng một thời điểm"
+      },
+      {
+        "w": "worker nodes",
+        "ipa": "/ˈwɜːkər nəʊdz/",
+        "m": "các máy chủ thực thi tác vụ trong cụm Kubernetes"
+      }
+    ],
+    "shadowingSentence": "Implementing an in-memory distributed cache reduces database load by over eighty percent."
+  },
+  {
+    "id": "dev_03",
+    "channel": "Syntax Web & Systems",
+    "channelIcon": "🛠️",
+    "category": "it_devops",
+    "categoryName": "IT Hệ Thống & DevOps",
+    "title": "Automating CI/CD Pipelines with GitHub Actions, Docker & Terraform",
+    "duration": "25 phút",
+    "level": "B1",
+    "accent": "US (Casual & Friendly)",
+    "audioUrl": "https://syntax.fm",
+    "description": "Hướng dẫn thực tế cách xây dựng quy trình triển khai phần mềm tự động hóa CI/CD, đóng gói container Docker và cấp phát hạ tầng đám mây dạng mã nguồn (Infrastructure as Code).",
+    "transcript": "Host: Hey everyone, today we're breaking down how to automate your entire deployment workflow from code commit to production release.\nCo-host: Gone are the days of manually FTP-ing files or SSH-ing into live servers to restart processes! With GitHub Actions, every pull request triggers automated tests and security vulnerability scans.\nHost: What is the biggest advantage of Infrastructure as Code using tools like Terraform?\nCo-host: Reproducibility! If an entire data center region goes offline, you can spin up an identical backup environment in minutes with a single command.",
+    "vocab": [
+      {
+        "w": "pipeline",
+        "ipa": "/ˈpaɪplaɪn/",
+        "m": "đường ống quy trình triển khai phần mềm tự động"
+      },
+      {
+        "w": "vulnerability scan",
+        "ipa": "/ˌvʌlnərəˈbɪləti skæn/",
+        "m": "quét lỗ hổng bảo mật trong mã nguồn"
+      },
+      {
+        "w": "infrastructure as code",
+        "ipa": "/ˈɪnfrəstrʌktʃər æz kəʊd/",
+        "m": "quản lý hạ tầng máy chủ bằng mã lệnh (IaC)"
+      },
+      {
+        "w": "reproducibility",
+        "ipa": "/ˌriːprədjuːsəˈbɪləti/",
+        "m": "khả năng tái lập chính xác môi trường bất kỳ lúc nào"
+      }
+    ],
+    "shadowingSentence": "With automated pipelines, you can spin up an identical environment in minutes with a single command."
+  },
+  {
+    "id": "work_01",
+    "channel": "Harvard Business Review (HBR IdeaCast)",
+    "channelIcon": "🏢",
+    "category": "workplace",
+    "categoryName": "Tiếng Anh Công Sở & Quản Lý",
+    "title": "How to Communicate Complex Technical Risks to Non-Technical Executives",
+    "duration": "24 phút",
+    "level": "B1 - B2",
+    "accent": "US (Boston / HBR)",
+    "audioUrl": "https://hbr.org/2018/01/podcast-ideacast",
+    "description": "Nghệ thuật giao tiếp của kỹ sư công nghệ với Ban Giám Đốc và Hội đồng Quản trị: cách chuyển dịch thuật ngữ kỹ thuật khô khan thành ngôn ngữ giá trị kinh doanh, rủi ro tài chính và quyết định đầu tư.",
+    "transcript": "Host: Welcome to HBR IdeaCast. One of the greatest frustrations technical leaders face is getting executive buy-in for critical infrastructure investments.\nProfessor: When an engineer tells the CEO, 'We need to refactor our microservices architecture because technical debt is too high,' the CEO hears expense without revenue.\nHost: How should technical professionals frame the conversation instead?\nProfessor: Frame it around business risk and customer churn. Say: 'If we do not upgrade this server cluster, system latency will cause ten percent of checkout transactions to fail, costing two million dollars annually.' Executives understand revenue and risk immediately.",
+    "vocab": [
+      {
+        "w": "executive buy-in",
+        "ipa": "/ɪɡˈzekjətɪv baɪ ɪn/",
+        "m": "sự đồng thuận và phê duyệt của ban lãnh đạo cấp cao"
+      },
+      {
+        "w": "technical debt",
+        "ipa": "/ˈteknɪkl det/",
+        "m": "nợ kỹ thuật do viết code nhanh hoặc chắp vá hệ thống"
+      },
+      {
+        "w": "customer churn",
+        "ipa": "/ˈkʌstəmər tʃɜːn/",
+        "m": "tỷ lệ khách hàng rời bỏ dịch vụ"
+      },
+      {
+        "w": "frame the conversation",
+        "ipa": "/freɪm ðə ˌkɒnvəˈseɪʃn/",
+        "m": "định hướng cách tiếp cận câu chuyện theo góc nhìn phù hợp"
+      }
+    ],
+    "shadowingSentence": "Frame technical conversations around business risk, customer retention, and revenue impact."
+  },
+  {
+    "id": "work_02",
+    "channel": "Business English Pod",
+    "channelIcon": "🤝",
+    "category": "workplace",
+    "categoryName": "Tiếng Anh Công Sở & Quản Lý",
+    "title": "Negotiating Deadlines, Managing Project Scope Creep & Vendor Contracts",
+    "duration": "19 phút",
+    "level": "B1",
+    "accent": "UK / US (International)",
+    "audioUrl": "https://www.businessenglishpod.com",
+    "description": "Mẫu câu đàm phán kéo dài hạn chót dự án (deadline), từ chối khéo léo các yêu cầu phát sinh không hợp lý (scope creep) và thương thảo điều khoản hợp đồng dịch vụ SLA với đối tác quốc tế.",
+    "transcript": "Narrator: In today's business English lesson, we examine how to negotiate unrealistic project deadlines without damaging professional relationships.\nProject Lead: We have reviewed the new feature requests from the client. However, incorporating these additions by the end of next week will jeopardize system testing.\nPartner: What alternative do you propose to ensure quality standards?\nProject Lead: I suggest we adopt a phased rollout. We deploy the core functionality on Friday, and deliver the supplementary reporting module in sprint two.",
+    "vocab": [
+      {
+        "w": "scope creep",
+        "ipa": "/skəʊp kriːp/",
+        "m": "hiện tượng dự án bị phình to do phát sinh thêm yêu cầu"
+      },
+      {
+        "w": "jeopardize",
+        "ipa": "/ˈdʒepədaɪz/",
+        "m": "gây nguy hiểm, làm tổn hại đến chất lượng dự án"
+      },
+      {
+        "w": "phased rollout",
+        "ipa": "/feɪzd ˈrəʊlaʊt/",
+        "m": "kế hoạch triển khai theo từng giai đoạn"
+      },
+      {
+        "w": "service level agreement",
+        "ipa": "/ˈsɜːvɪs ˈlevl əˈɡriːmənt/",
+        "m": "cam kết chất lượng dịch vụ (SLA)"
+      }
+    ],
+    "shadowingSentence": "I suggest we adopt a phased rollout to ensure system stability and quality standards."
+  },
+  {
+    "id": "bbc_01",
+    "channel": "BBC 6 Minute English",
+    "channelIcon": "🇬🇧",
+    "category": "general_fluency",
+    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
+    "title": "Can Artificial Intelligence Replace Computer Programmers and Writers?",
+    "duration": "6 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
+    "description": "Cuộc trò chuyện súc tích 6 phút của đài BBC về trí tuệ nhân tạo (AI): liệu AI có thể thay thế lập trình viên và người viết nội dung, cùng 6 từ vựng đắt giá nhất.",
+    "transcript": "Neil: Hello and welcome to 6 Minute English. I'm Neil.\nBeth: And I'm Beth. In this programme, we're asking: can artificial intelligence replace human creativity?\nNeil: Modern AI models can write software code, draft contracts, and even compose classical music in seconds.\nBeth: But experts argue that AI lacks emotional intelligence and true contextual understanding. It predicts patterns rather than generating original thought.",
+    "vocab": [
+      {
+        "w": "artificial intelligence",
+        "ipa": "/ˌɑːtɪˈfɪʃl ɪnˈtelɪdʒəns/",
+        "m": "trí tuệ nhân tạo (AI)"
+      },
+      {
+        "w": "emotional intelligence",
+        "ipa": "/ɪˌməʊʃənl ɪnˈtelɪdʒəns/",
+        "m": "trí thông minh cảm xúc (EQ)"
+      },
+      {
+        "w": "contextual understanding",
+        "ipa": "/kənˈtekstʃuəl/",
+        "m": "sự thấu hiểu ngữ cảnh thực tế"
+      },
+      {
+        "w": "predict patterns",
+        "ipa": "/prɪˈdɪkt ˈpætənz/",
+        "m": "dự đoán các quy luật lặp lại dựa trên dữ liệu"
+      }
+    ],
+    "shadowingSentence": "Artificial intelligence predicts patterns rather than generating original creative thought."
+  },
+  {
+    "id": "voa_01",
+    "channel": "VOA Learning English",
+    "channelIcon": "🇺🇸",
+    "category": "general_fluency",
+    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
+    "title": "How Data Centers Are Transitioning to Clean Energy and Advanced Cooling",
+    "duration": "15 phút",
+    "level": "A2 - B1",
+    "accent": "US (Clear Slow Pronunciation)",
+    "audioUrl": "https://learningenglish.voanews.com",
+    "description": "Bản tin khoa học công nghệ của đài VOA với tốc độ đọc chuẩn mực, phát âm rõ từng âm tiết: các trung tâm dữ liệu khổng lồ của thế giới đang chuyển đổi sang năng lượng sạch và công nghệ làm mát bằng chất lỏng ra sao.",
+    "transcript": "Announcer: From Washington, this is VOA Learning English. Today we report on the massive growth of computer data centers around the world.\nReporter: Cloud computing and artificial intelligence require enormous amounts of electrical energy. To address climate concerns, major technology companies are building data centers powered by geothermal and solar energy.\nAnnouncer: In addition, engineers are developing liquid cooling systems that submerge servers in non-conductive fluids, reducing energy consumption by forty percent.",
+    "vocab": [
+      {
+        "w": "data center",
+        "ipa": "/ˈdeɪtə ˈsentər/",
+        "m": "trung tâm dữ liệu lưu trữ máy chủ"
+      },
+      {
+        "w": "geothermal energy",
+        "ipa": "/ˌdʒiːəʊˈθɜːml/",
+        "m": "năng lượng địa nhiệt sạch"
+      },
+      {
+        "w": "liquid cooling",
+        "ipa": "/ˈlɪkwɪd ˈkuːlɪŋ/",
+        "m": "hệ thống làm mát linh kiện bằng chất lỏng"
+      },
+      {
+        "w": "submerge",
+        "ipa": "/səbˈmɜːdʒ/",
+        "m": "nhấn chìm hoàn toàn vào trong chất lỏng"
+      }
+    ],
+    "shadowingSentence": "Engineers are developing liquid cooling systems that reduce server energy consumption by forty percent."
+  },
+  {
+    "id": "bc_1_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 1: Giới thiệu bản thân, Angelina Jolie & Carolina tới Anh",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-01",
+    "description": "Tess và Ravi mở màn chuỗi Podcast, chia sẻ về sở thích, việc người nổi tiếng làm thiện nguyện và sự xuất hiện của Carolina - sinh viên quốc tế bắt đầu học tập tại Anh.",
+    "transcript": "Tess: Hello and welcome to LearnEnglish Podcast. My name is Tess.\nRavi: And I'm Ravi. Today we're talking about celebrities who do good things. We're going to discuss Angelina Jolie and her charity work with the United Nations.\nCarolina: Excuse me, where can I find the coach to Newcastle? This is my first time in the United Kingdom.",
+    "vocab": [
+      {
+        "w": "charity",
+        "ipa": "/ˈtʃærəti/",
+        "m": "tổ chức từ thiện"
+      },
+      {
+        "w": "introduce",
+        "ipa": "/ˌɪntrəˈdjuːs/",
+        "m": "giới thiệu bản thân / người khác"
+      },
+      {
+        "w": "in person",
+        "ipa": "/ɪn ˈpɜːsn/",
+        "m": "gặp mặt trực tiếp ngoài đời"
+      },
+      {
+        "w": "coach",
+        "ipa": "/kəʊtʃ/",
+        "m": "xe khách đường dài liên tỉnh"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 1."
+  },
+  {
+    "id": "bc_1_2",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 2: Kế hoạch cuối tuần, Điệu Tango Argentina & Sự cố sân bay",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-02",
+    "description": "Ravi và Tess bàn về các chuyến đi nghỉ cuối tuần (weekend away), ca sĩ Shakira, vũ điệu Tango tại Buenos Aires và tình huống Carolina tìm hành lý thất lạc ở sân bay.",
+    "transcript": "Tess: What are your plans for the weekend, Ravi?\nRavi: I love taking a weekend away to relax and unwind. Have you ever thought of traveling to South America?\nCarolina: Excuse me, where is the baggage reclaim area? I've been waiting for half an hour, but my suitcase hasn't arrived.",
+    "vocab": [
+      {
+        "w": "weekend away",
+        "ipa": "/ˌwiːkend əˈweɪ/",
+        "m": "kỳ nghỉ ngắn ngày cuối tuần"
+      },
+      {
+        "w": "baggage reclaim",
+        "ipa": "/ˈbæɡɪdʒ rɪˈkleɪm/",
+        "m": "khu vực nhận lại hành lý ký gửi"
+      },
+      {
+        "w": "unwind",
+        "ipa": "/ˌʌnˈwaɪnd/",
+        "m": "thư giãn, xả hơi sau chuỗi ngày bận rộn"
+      },
+      {
+        "w": "suitcase",
+        "ipa": "/ˈsuːtkeɪs/",
+        "m": "va li hành lý"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 2."
+  },
+  {
+    "id": "bc_1_3",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 3: Thiền định, Thám hiểm không gian & Phân biệt Say vs Tell",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-03",
+    "description": "Khám phá lợi ích của thiền định giúp giảm căng thẳng, ước mơ du hành vũ trụ, cuộc trò chuyện giữa Carolina và giáo viên hướng dẫn, cùng bí quyết dùng Say và Tell không bao giờ nhầm.",
+    "transcript": "Tess: Do you ever meditate, Ravi? It really helps clear my head after a stressful week.\nRavi: I usually play football to blow off steam. But meditation sounds very peaceful.\nCarolina: Could you give me some advice on which modules I should choose for this term?",
+    "vocab": [
+      {
+        "w": "meditate",
+        "ipa": "/ˈmedɪteɪt/",
+        "m": "ngồi thiền, tịnh tâm"
+      },
+      {
+        "w": "clear my head",
+        "ipa": "/klɪər maɪ hed/",
+        "m": "giúp đầu óc thanh thản, minh mẫn"
+      },
+      {
+        "w": "give advice",
+        "ipa": "/ɡɪv ədˈvaɪs/",
+        "m": "đưa ra lời khuyên (advice là danh từ không đếm được)"
+      },
+      {
+        "w": "blow off steam",
+        "ipa": "/bləʊ ɒf stiːm/",
+        "m": "giải tỏa căng thẳng, xả stress"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 3."
+  },
+  {
+    "id": "bc_1_4",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 4: Cảm xúc, Huyền thoại Bob Marley & Bày tỏ sự đồng cảm",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-04",
+    "description": "Thảo luận về sức mạnh của âm nhạc đối với tâm trạng qua các ca khúc của Bob Marley, so sánh sách và phim ảnh, và cách nói lời an ủi, chia sẻ bằng tiếng Anh.",
+    "transcript": "Ravi: Music has a huge impact on our emotions. Listening to Bob Marley always puts me in a good mood.\nTess: Absolutely! Whenever I feel down, upbeat music turns my day around.\nCarolina: I'm really sorry to hear that you lost your wallet. Let me know if you need anything.",
+    "vocab": [
+      {
+        "w": "in a good mood",
+        "ipa": "/ɪn ə ɡʊd muːd/",
+        "m": "tâm trạng vui vẻ, thoải mái"
+      },
+      {
+        "w": "feel down",
+        "ipa": "/fiːl daʊn/",
+        "m": "cảm thấy buồn rầu, chán chường"
+      },
+      {
+        "w": "turn around",
+        "ipa": "/tɜːn əˈraʊnd/",
+        "m": "xoay chuyển tình thế (từ xấu thành tốt)"
+      },
+      {
+        "w": "sympathy",
+        "ipa": "/ˈsɪmpəθi/",
+        "m": "sự cảm thông, lời an ủi"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 4."
+  },
+  {
+    "id": "bc_1_5",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 5: Sở thích, Rafael Nadal & Kể về thói quen cũ (Used to)",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-05",
+    "description": "Nói về sở thích thời thơ ấu, tinh thần thi đấu bền bỉ của Rafael Nadal, Carolina tham gia các câu lạc bộ sinh viên tại trường đại học và cấu trúc 'Used to'.",
+    "transcript": "Tess: Did you have any sports hobbies growing up, Ravi?\nRavi: I used to play tennis every afternoon! I always wanted to move across the court like Rafael Nadal.\nCarolina: I'm planning to sign up for the student film club to meet new friends.",
+    "vocab": [
+      {
+        "w": "used to + V",
+        "ipa": "/ˈjuːst tuː/",
+        "m": "từng làm gì trong quá khứ (nay không còn nữa)"
+      },
+      {
+        "w": "determination",
+        "ipa": "/dɪˌtɜːmɪˈneɪʃn/",
+        "m": "lòng kiên định, sự quyết tâm"
+      },
+      {
+        "w": "sign up for",
+        "ipa": "/saɪn ʌp fɔːr/",
+        "m": "đăng ký tham gia một câu lạc bộ / khóa học"
+      },
+      {
+        "w": "growing up",
+        "ipa": "/ˈɡrəʊɪŋ ʌp/",
+        "m": "trong giai đoạn lớn lên / thời niên thiếu"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 5."
+  },
+  {
+    "id": "bc_1_6",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 6: Ẩm thực, Đầu bếp Jamie Oliver & Gọi món tại Nhà hàng",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-06",
+    "description": "Nghệ thuật nấu ăn tại nhà đơn giản lấy cảm hứng từ đầu bếp Jamie Oliver, sự mê tín trong các nền văn hóa và kịch bản đi chợ, gọi món của Carolina.",
+    "transcript": "Ravi: Cooking fresh ingredients at home is much more rewarding than eating fast food.\nTess: Jamie Oliver showed everyone that home cooking can be quick and budget-friendly.\nCarolina: Excuse me, waiter, could we get the bill, please? Can we pay separately by credit card?",
+    "vocab": [
+      {
+        "w": "fresh ingredients",
+        "ipa": "/freʃ ɪnˈɡriːdiənts/",
+        "m": "nguyên liệu tươi sống"
+      },
+      {
+        "w": "budget-friendly",
+        "ipa": "/ˈbʌdʒɪt ˈfrendli/",
+        "m": "hợp túi tiền, tiết kiệm chi phí"
+      },
+      {
+        "w": "the bill",
+        "ipa": "/ðə bɪl/",
+        "m": "hóa đơn thanh toán (Anh-Mỹ: check)"
+      },
+      {
+        "w": "pay separately",
+        "ipa": "/peɪ ˈseprətli/",
+        "m": "thanh toán riêng / chia tiền (split the bill)"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 6."
+  },
+  {
+    "id": "bc_1_7",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 7: Giao thông, Tàu điện ngầm London & Hỏi đường di chuyển",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-07",
+    "description": "Kinh nghiệm đi lại trên hệ thống tàu điện ngầm London (Tube), câu khẩu hiệu 'Mind the gap', và cách hỏi hướng tàu, chuyển tuyến ga xe lửa chính xác.",
+    "transcript": "Tess: The London Underground is historic, but you really have to pay attention to line transfers.\nRavi: And never forget the famous announcement: 'Mind the gap between the train and the platform!'\nCarolina: Does this train go directly to Central Station or do I have to change at the next stop?",
+    "vocab": [
+      {
+        "w": "mind the gap",
+        "ipa": "/maɪnd ðə ɡæp/",
+        "m": "chú ý khoảng trống giữa cửa tàu và sân ga"
+      },
+      {
+        "w": "change trains",
+        "ipa": "/tʃeɪndʒ treɪnz/",
+        "m": "chuyển sang chuyến tàu khác"
+      },
+      {
+        "w": "platform",
+        "ipa": "/ˈplætfɔːm/",
+        "m": "ke ga / sân ga đón tàu"
+      },
+      {
+        "w": "direct service",
+        "ipa": "/dəˈrekt ˈsɜːvɪs/",
+        "m": "chuyến đi thẳng không cần đổi chặng"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 7."
+  },
+  {
+    "id": "bc_1_8",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 8: Nghề nghiệp mơ ước, Phỏng vấn xin việc & Tác phong công sở",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-08",
+    "description": "Hồi ức về công việc đầu tiên trong đời, tiêu chuẩn tác phong chuyên nghiệp nơi công sở và Carolina tham gia phỏng vấn xin việc làm thêm bán thời gian.",
+    "transcript": "Ravi: My very first job was working as an assistant in a local bookshop on weekends.\nTess: Customer service teaches you how to stay calm and communicate with different personalities.\nCarolina: I am punctual, fast-learning, and I have good interpersonal communication skills.",
+    "vocab": [
+      {
+        "w": "punctual",
+        "ipa": "/ˈpʌŋktʃuəl/",
+        "m": "đúng giờ, không bao giờ trễ hẹn"
+      },
+      {
+        "w": "interpersonal skills",
+        "ipa": "/ˌɪntəˈpɜːsənl skɪlz/",
+        "m": "kỹ năng giao tiếp ứng xử giữa người với người"
+      },
+      {
+        "w": "fast-learning",
+        "ipa": "/fɑːst ˈlɜːnɪŋ/",
+        "m": "khả năng tiếp thu kiến thức nhanh"
+      },
+      {
+        "w": "part-time job",
+        "ipa": "/ˌpɑːt ˈtaɪm dʒɒb/",
+        "m": "công việc làm thêm bán thời gian"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 8."
+  },
+  {
+    "id": "bc_1_9",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 9: Công nghệ, Điện thoại di động & Kỹ thuật Nêu ý kiến",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-09",
+    "description": "Tranh luận về thói quen sử dụng điện thoại thông minh, tình huống dở khóc dở cười khi điện thoại hết pin và các mẫu câu bày tỏ quan điểm cá nhân mạch lạc.",
+    "transcript": "Tess: I think smartphones are wonderful, but people look at their screens far too often during meals.\nRavi: From my perspective, staying connected with friends around the world is an incredible benefit.\nCarolina: In my opinion, setting boundaries with technology is essential for our mental well-being.",
+    "vocab": [
+      {
+        "w": "from my perspective",
+        "ipa": "/frəm maɪ pəˈspektɪv/",
+        "m": "từ góc nhìn / quan điểm của tôi"
+      },
+      {
+        "w": "stay connected",
+        "ipa": "/steɪ kəˈnektɪd/",
+        "m": "duy trì kết nối liên lạc"
+      },
+      {
+        "w": "set boundaries",
+        "ipa": "/set ˈbaʊndriz/",
+        "m": "đặt ra giới hạn, ranh giới lành mạnh"
+      },
+      {
+        "w": "well-being",
+        "ipa": "/ˈwel biːɪŋ/",
+        "m": "sức khỏe tinh thần và thể chất"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 9."
+  },
+  {
+    "id": "bc_1_10",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Tập 10: Lễ hội, Phong tục nước Anh & Đúc kết chặng đường A2-B1",
+    "duration": "15-20 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-010",
+    "description": "Tổng kết chuỗi 10 tập Series 1, khám phá nét văn hóa lễ hội truyền thống của xứ sở sương mù và lời khuyên giúp duy trì phản xạ giao tiếp lâu dài.",
+    "transcript": "Ravi: Here we are at the finale of Series 1! Time really flies when you practice consistently.\nTess: To all our learners worldwide: keep speaking, recording, and never fear making mistakes.\nCarolina: Looking back on this semester, my English fluency has improved tremendously!",
+    "vocab": [
+      {
+        "w": "time flies",
+        "ipa": "/taɪm flaɪz/",
+        "m": "thời gian trôi qua nhanh như chớp"
+      },
+      {
+        "w": "consistently",
+        "ipa": "/kənˈsɪstəntli/",
+        "m": "một cách kiên trì, đều đặn mỗi ngày"
+      },
+      {
+        "w": "tremendously",
+        "ipa": "/trəˈmendəsli/",
+        "m": "vô cùng nhiều, vượt bậc"
+      },
+      {
+        "w": "fluency",
+        "ipa": "/ˈfluːənsi/",
+        "m": "sự trôi chảy, lưu loát"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 10."
+  },
+  {
+    "id": "bc_2_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Series 2 - Tập 1: Ở chung nhà trọ (Flatmates) & Đàm phán việc nhà",
+    "duration": "15-20 phút",
+    "level": "B1 Intermediate",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-01",
+    "description": "Thử thách sống chung căn hộ cùng bạn bè quốc tế, phân chia việc nhà công bằng và cách trao đổi khi có bất đồng quan điểm mà không gây căng thẳng.",
+    "transcript": "Tess: Sharing a flat with friends is fun, but agreeing on who does the washing-up can get tricky!\nRavi: Good communication and clear house rules save friendships.\nCarolina: Would you mind taking out the rubbish tonight? I did the cleaning yesterday.",
+    "vocab": [
+      {
+        "w": "flatmate",
+        "ipa": "/ˈflætmeɪt/",
+        "m": "bạn cùng thuê chung một căn hộ"
+      },
+      {
+        "w": "house rules",
+        "ipa": "/haʊs ruːlz/",
+        "m": "nội quy chung trong nhà"
+      },
+      {
+        "w": "washing-up",
+        "ipa": "/ˌwɒʃɪŋ ˈʌp/",
+        "m": "việc rửa chén bát sau bữa ăn"
+      },
+      {
+        "w": "would you mind + V-ing",
+        "ipa": "/wʊd juː maɪnd/",
+        "m": "bạn có phiền khi làm việc này không?"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 1."
+  },
+  {
+    "id": "bc_2_3",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Series 2 - Tập 3: Lối sống lành mạnh, Thể thao & Cân bằng cuộc sống",
+    "duration": "15-20 phút",
+    "level": "B1 Intermediate",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-03",
+    "description": "Các phương pháp giữ gìn vóc dáng, giải tỏa căng thẳng sau giờ làm việc và câu chuyện về các môn thể thao mạo hiểm.",
+    "transcript": "Ravi: Balancing work commitments with physical exercise is tough, but it boosts mental clarity.\nTess: Even a twenty-minute brisk walk every evening makes a noticeable difference.\nCarolina: I try to stick to a balanced diet and drink plenty of water throughout the day.",
+    "vocab": [
+      {
+        "w": "mental clarity",
+        "ipa": "/ˈmentl ˈklærəti/",
+        "m": "sự sáng suốt, minh mẫn của tâm trí"
+      },
+      {
+        "w": "brisk walk",
+        "ipa": "/brɪsk wɔːk/",
+        "m": "đi bộ nhanh, rảo bước tập thể dục"
+      },
+      {
+        "w": "stick to a diet",
+        "ipa": "/stɪk tuː ə ˈdaɪət/",
+        "m": "duy trì chế độ ăn uống khoa học"
+      },
+      {
+        "w": "commitment",
+        "ipa": "/kəˈmɪtmənt/",
+        "m": "nhiệm vụ, cam kết trách nhiệm"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 3."
+  },
+  {
+    "id": "bc_3_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Series 3 - Tập 1: Bản sắc văn hóa, Đa dạng ẩm thực & Xã hội hiện đại",
+    "duration": "15-20 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-01",
+    "description": "Bức tranh đa sắc tộc tại các đô thị lớn của Vương quốc Anh, sự hòa quyện ẩm thực thế giới và cách giới thiệu bản sắc quê hương.",
+    "transcript": "Tess: Cities like London and Manchester are melting pots of cultures, accents and cuisines.\nRavi: You can walk down one street and taste authentic food from five different continents!\nCarolina: Being able to share my traditional family recipes with friends here makes me feel at home.",
+    "vocab": [
+      {
+        "w": "melting pot",
+        "ipa": "/ˈmeltɪŋ pɒt/",
+        "m": "nơi giao thoa hòa hợp của nhiều nền văn hóa"
+      },
+      {
+        "w": "authentic",
+        "ipa": "/ɔːˈθentɪk/",
+        "m": "chính gốc, chuẩn vị nguyên bản"
+      },
+      {
+        "w": "cuisine",
+        "ipa": "/kwɪˈziːn/",
+        "m": "nền ẩm thực đặc trưng"
+      },
+      {
+        "w": "feel at home",
+        "ipa": "/fiːl æt həʊm/",
+        "m": "cảm thấy thoải mái, ấm cúng như ở nhà"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 1."
+  },
+  {
+    "id": "bc_4_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Carolina Series)",
+    "title": "Series 4 - Tập 1: Giao tiếp quán Pub, Hài hước kiểu Anh & Thành ngữ tự nhiên",
+    "duration": "15-20 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-01",
+    "description": "Văn hóa xã giao trong quán Pub truyền thống nước Anh, phong cách nói đùa tế nhị (dry humour) và các thành ngữ tiếng Anh tự nhiên.",
+    "transcript": "Ravi: The local pub in Britain isn't just about drinks; it's a social hub where communities gather.\nTess: British humour relies heavily on sarcasm, understatement, and not taking oneself too seriously.\nCarolina: It took me a while to get the jokes, but now I thoroughly enjoy the banter!",
+    "vocab": [
+      {
+        "w": "social hub",
+        "ipa": "/ˈsəʊʃl hʌb/",
+        "m": "trung tâm gặp gỡ giao lưu xã hội"
+      },
+      {
+        "w": "understatement",
+        "ipa": "/ˈʌndəsteɪtmənt/",
+        "m": "cách nói giảm nói tránh đặc trưng kiểu Anh"
+      },
+      {
+        "w": "banter",
+        "ipa": "/ˈbæntər/",
+        "m": "những lời đùa vui vẻ, thân mật giữa bạn bè"
+      },
+      {
+        "w": "sarcasm",
+        "ipa": "/ˈsɑːkæzəm/",
+        "m": "sự châm biếm, mỉa mai hóm hỉnh"
+      }
+    ],
+    "shadowingSentence": "I am listening to British Council LearnEnglish podcast episode 1."
+  }
+];
 
-    let bcCurrentSeries = 1;
+    let currentPodcastFilter = {
+      category: 'all',
+      duration: 'all',
+      query: ''
+    };
 
-    function scrollToBcHub() {
-      switchTab('resources');
-      setTimeout(() => {
-        const el = document.getElementById('bcPodcastsHub');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
+    let activePodcast = GLOBAL_PODCASTS_DATA[0];
+    let isPodcastPlaying = false;
+    let podcastPlaybackRate = 1.0;
+    let podcastCurrentSeconds = 0;
+    let podcastTotalSeconds = 1680; // 28 mins default
+    let podcastTimerInterval = null;
 
-    function renderBcHub() {
-      filterBcSeries(bcCurrentSeries || 1);
-    }
+    function renderGlobalPodcastStudio() {
+      const container = document.getElementById('podcastsGrid');
+      const badgeEl = document.getElementById('podcastTotalBadge');
+      if (!container) return;
 
-    function filterBcSeries(seriesNum) {
-      bcCurrentSeries = seriesNum;
-      [1,2,3,4].forEach(s => {
-        const btn = document.getElementById('bcSeriesBtn-' + s);
-        if (btn) btn.className = s === seriesNum
-          ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow transition'
-          : 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
+      let filtered = GLOBAL_PODCASTS_DATA.filter(item => {
+        if (currentPodcastFilter.category !== 'all' && item.category !== currentPodcastFilter.category) {
+          return false;
+        }
+        if (currentPodcastFilter.duration === 'short') {
+          // Duration <= 15 mins
+          const num = parseInt(item.duration, 10) || 10;
+          if (num > 15) return false;
+        } else if (currentPodcastFilter.duration === 'long') {
+          // Duration > 15 mins
+          const num = parseInt(item.duration, 10) || 25;
+          if (num <= 15) return false;
+        }
+        if (currentPodcastFilter.query.trim().length > 0) {
+          const q = currentPodcastFilter.query.toLowerCase();
+          const matchTitle = item.title.toLowerCase().includes(q);
+          const matchDesc = item.description.toLowerCase().includes(q);
+          const matchChannel = item.channel.toLowerCase().includes(q);
+          const matchVocab = item.vocab && item.vocab.some(v => v.w.toLowerCase().includes(q) || v.m.toLowerCase().includes(q));
+          if (!matchTitle && !matchDesc && !matchChannel && !matchVocab) return false;
+        }
+        return true;
       });
-      const eps = BC_PODCASTS_DATA.filter(e => e.series === seriesNum);
-      const sel = document.getElementById('bcEpisodeSelect');
-      const countEl = document.getElementById('bcEpCountLabel');
-      if (sel) {
-        sel.innerHTML = '';
-        eps.forEach((ep, idx) => {
-          const opt = document.createElement('option');
-          opt.value = idx;
-          opt.textContent = 'Series ' + ep.series + ' - Tập ' + ep.ep + ': ' + ep.title;
-          sel.appendChild(opt);
+
+      if (badgeEl) badgeEl.textContent = filtered.length + ' / ' + GLOBAL_PODCASTS_DATA.length + ' tập';
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full p-8 rounded-2xl bg-slate-900/60 border border-slate-800 text-center space-y-2">
+            <div class="text-3xl">🔍</div>
+            <div class="text-white font-bold text-sm">Không tìm thấy podcast phù hợp</div>
+            <p class="text-xs text-slate-400">Hãy thử xóa bộ lọc tìm kiếm hoặc chọn danh mục khác nhé.</p>
+            <button onclick="filterPodcastCategory('all'); filterPodcastDuration('all');" class="mt-2 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition">
+              Xem Tất Cả Podcast
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(pc => {
+        const isActive = activePodcast && activePodcast.id === pc.id;
+        const vocabPills = (pc.vocab || []).map(v => `
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-[11px] text-slate-300">
+            <strong class="text-cyan-300">${escapeHtml(v.w)}</strong>
+            <span class="text-[10px] text-slate-500 font-mono">${v.ipa || ''}</span>
+            <button onclick="saveVocabFromPodcast('${escapeHtml(v.w)}', '${escapeHtml(v.ipa || '')}', '${escapeHtml(v.m || '')}')" class="text-amber-400 hover:text-amber-300 ml-0.5 text-xs" title="Lưu vào Sổ từ vựng">⭐</button>
+          </span>
+        `).join('');
+
+        return `
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border ${isActive ? 'border-cyan-400/80 bg-slate-900/90 shadow-xl shadow-cyan-500/10 ring-1 ring-cyan-400/30' : 'border-slate-800 bg-slate-900/70 hover:border-slate-700'} space-y-3.5 transition flex flex-col justify-between">
+            <div class="space-y-2.5">
+              <!-- Header Badges -->
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="text-xs font-bold text-cyan-300 flex items-center gap-1">
+                  <span>${pc.channelIcon || '🎙️'}</span>
+                  <span class="max-w-[160px] sm:max-w-[200px] truncate">${escapeHtml(pc.channel)}</span>
+                </span>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-mono font-semibold">${pc.duration}</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-semibold">${pc.level}</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">${pc.accent || 'Bản Xứ'}</span>
+                </div>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-sm sm:text-base font-extrabold text-white leading-snug">
+                ${escapeHtml(pc.title)}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed">
+                ${escapeHtml(pc.description)}
+              </p>
+
+              <!-- Key Vocabulary Preview -->
+              <div class="space-y-1">
+                <div class="text-[11px] font-bold text-slate-400">Từ vựng then chốt (Bấm ⭐ để lưu):</div>
+                <div class="flex flex-wrap gap-1.5">${vocabPills}</div>
+              </div>
+
+              <!-- Collapsible Transcript -->
+              <div id="pcTrans_${pc.id}" class="hidden p-3 rounded-xl bg-slate-950/90 border border-slate-800 text-xs text-slate-300 space-y-2 mt-2 max-h-56 overflow-y-auto custom-scroll">
+                <div class="text-[11px] font-bold text-cyan-400 flex items-center justify-between border-b border-slate-800 pb-1">
+                  <span>📜 Kịch Bản Bài Nghe (Transcript)</span>
+                  <button onclick="speakPodcastTranscript('${pc.id}')" class="text-emerald-400 hover:text-emerald-300 text-[10px] font-bold flex items-center gap-1">
+                    <span>🔊</span> <span>Đọc toàn bộ</span>
+                  </button>
+                </div>
+                <div class="whitespace-pre-line leading-relaxed font-sans text-[11px]">${escapeHtml(pc.transcript || 'Kịch bản đang được cập nhật...')}</div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <button onclick="selectAndPlayPodcast('${pc.id}')" class="px-3.5 py-1.5 rounded-xl ${isActive && isPodcastPlaying ? 'bg-amber-600 text-white' : 'bg-gradient-to-r from-cyan-600 to-indigo-600 text-white'} text-xs font-extrabold transition shadow cursor-pointer flex items-center gap-1">
+                  <span>${isActive && isPodcastPlaying ? '⏸ Tạm dừng' : '▶ Nghe Tập Này'}</span>
+                </button>
+                <button onclick="togglePodcastTranscript('${pc.id}')" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-semibold transition cursor-pointer">
+                  📖 Kịch bản
+                </button>
+              </div>
+
+              <div class="flex items-center gap-1.5">
+                <button onclick="shadowPodcastSentence('${pc.id}')" class="px-2.5 py-1.5 rounded-xl bg-indigo-950/70 hover:bg-indigo-900 border border-indigo-500/40 text-indigo-300 text-xs font-bold transition flex items-center gap-1" title="Luyện Shadowing nói đuổi theo tập này">
+                  <span>🎙️ Shadowing</span>
+                </button>
+                <a href="${pc.audioUrl || '#'}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-400 hover:text-white text-xs transition" title="Mở trang chủ nguồn podcast ↗">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterPodcastCategory(cat) {
+      currentPodcastFilter.category = cat;
+      document.querySelectorAll('.pc-cat-btn').forEach(b => {
+        b.className = 'pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1';
+      });
+      const activeBtn = document.getElementById('pcCatBtn-' + cat);
+      if (activeBtn) {
+        activeBtn.className = 'pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1';
+      }
+      renderGlobalPodcastStudio();
+    }
+
+    function filterPodcastDuration(dur) {
+      currentPodcastFilter.duration = dur;
+      document.querySelectorAll('.pc-dur-btn').forEach(b => {
+        b.className = 'pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition';
+      });
+      const activeBtn = document.getElementById('pcDurBtn-' + dur);
+      if (activeBtn) {
+        activeBtn.className = 'pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-cyan-600/30 border border-cyan-500/50 text-cyan-300 transition';
+      }
+      renderGlobalPodcastStudio();
+    }
+
+    function handlePodcastSearch(q) {
+      currentPodcastFilter.query = q || '';
+      renderGlobalPodcastStudio();
+    }
+
+    function selectAndPlayPodcast(id) {
+      const pc = GLOBAL_PODCASTS_DATA.find(p => p.id === id);
+      if (!pc) return;
+
+      if (activePodcast && activePodcast.id === id && isPodcastPlaying) {
+        pauseActivePodcast();
+        return;
+      }
+
+      activePodcast = pc;
+      podcastCurrentSeconds = 0;
+      updatePlayerCardUI();
+      playActivePodcast();
+      renderGlobalPodcastStudio();
+    }
+
+    function updatePlayerCardUI() {
+      if (!activePodcast) return;
+      document.getElementById('pcPlayerIcon').textContent = activePodcast.channelIcon || '🎙️';
+      document.getElementById('pcPlayerChannel').textContent = activePodcast.channel;
+      document.getElementById('pcPlayerDuration').textContent = activePodcast.duration;
+      document.getElementById('pcPlayerAccent').textContent = activePodcast.accent || 'Bản Xứ';
+      document.getElementById('pcPlayerTitle').textContent = activePodcast.title;
+      document.getElementById('pcTotalTime').textContent = activePodcast.duration;
+      document.getElementById('pcCurrentTime').textContent = '00:00';
+      document.getElementById('pcProgressBar').style.width = '0%';
+    }
+
+    function playActivePodcast() {
+      if (!activePodcast) return;
+      isPodcastPlaying = true;
+      document.getElementById('pcPlayIcon').textContent = '⏸';
+      document.getElementById('pcPlayText').textContent = 'Tạm Dừng';
+
+      // Cancel previous speech if any
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+      // Read summary and then transcript with native voice
+      const textToRead = activePodcast.channel + '. ' + activePodcast.title + '. ' + (activePodcast.transcript || activePodcast.description);
+      const isUk = (activePodcast.accent || '').includes('UK');
+      const targetLang = isUk ? 'en-GB' : 'en-US';
+
+      speakTextWithCb(textToRead, podcastPlaybackRate, targetLang, () => {
+        pauseActivePodcast();
+      });
+
+      // Start ticker for progress bar
+      clearInterval(podcastTimerInterval);
+      const durNum = parseInt(activePodcast.duration, 10) || 20;
+      podcastTotalSeconds = durNum * 60;
+
+      podcastTimerInterval = setInterval(() => {
+        if (!isPodcastPlaying) return;
+        podcastCurrentSeconds += 1;
+        const pct = Math.min(100, (podcastCurrentSeconds / podcastTotalSeconds) * 100);
+        const pb = document.getElementById('pcProgressBar');
+        if (pb) pb.style.width = pct + '%';
+        const ct = document.getElementById('pcCurrentTime');
+        if (ct) {
+          const m = String(Math.floor(podcastCurrentSeconds / 60)).padStart(2, '0');
+          const s = String(podcastCurrentSeconds % 60).padStart(2, '0');
+          ct.textContent = m + ':' + s;
+        }
+      }, 1000);
+
+      showToast('Đang phát podcast: ' + activePodcast.title, '🎧');
+    }
+
+    function pauseActivePodcast() {
+      isPodcastPlaying = false;
+      clearInterval(podcastTimerInterval);
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      const pIcon = document.getElementById('pcPlayIcon');
+      const pText = document.getElementById('pcPlayText');
+      if (pIcon) pIcon.textContent = '▶';
+      if (pText) pText.textContent = 'Nghe Ngay';
+      renderGlobalPodcastStudio();
+    }
+
+    function togglePlayActivePodcast() {
+      if (isPodcastPlaying) {
+        pauseActivePodcast();
+      } else {
+        playActivePodcast();
+      }
+    }
+
+    function rewindPodcast(sec = 10) {
+      podcastCurrentSeconds = Math.max(0, podcastCurrentSeconds - sec);
+      const pct = Math.min(100, (podcastCurrentSeconds / podcastTotalSeconds) * 100);
+      const pb = document.getElementById('pcProgressBar');
+      if (pb) pb.style.width = pct + '%';
+      showToast('Tua lùi ' + sec + 's', '⏪');
+    }
+
+    function forwardPodcast(sec = 10) {
+      podcastCurrentSeconds = Math.min(podcastTotalSeconds, podcastCurrentSeconds + sec);
+      const pct = Math.min(100, (podcastCurrentSeconds / podcastTotalSeconds) * 100);
+      const pb = document.getElementById('pcProgressBar');
+      if (pb) pb.style.width = pct + '%';
+      showToast('Tua tới ' + sec + 's', '⏩');
+    }
+
+    function changePodcastSpeed(rateStr) {
+      podcastPlaybackRate = parseFloat(rateStr) || 1.0;
+      if (isPodcastPlaying) {
+        // Re-apply rate
+        playActivePodcast();
+      }
+      showToast('Tốc độ Podcast: ' + rateStr + 'x', '⚡');
+    }
+
+    function seekPodcast(e) {
+      const bar = e.currentTarget;
+      const rect = bar.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const pct = Math.max(0, Math.min(1, clickX / rect.width));
+      podcastCurrentSeconds = Math.floor(pct * podcastTotalSeconds);
+      document.getElementById('pcProgressBar').style.width = (pct * 100) + '%';
+    }
+
+    function togglePodcastTranscript(id) {
+      const panel = document.getElementById('pcTrans_' + id);
+      if (panel) {
+        panel.classList.toggle('hidden');
+      }
+    }
+
+    function speakPodcastTranscript(id) {
+      const pc = GLOBAL_PODCASTS_DATA.find(p => p.id === id);
+      if (!pc || !pc.transcript) return;
+      speakText(pc.transcript, podcastPlaybackRate);
+      showToast('🔊 Đang đọc kịch bản tập ' + pc.title, '📜');
+    }
+
+    function saveVocabFromPodcast(w, ipa, meaning) {
+      if (!state.vocabVault) state.vocabVault = [];
+      const exists = state.vocabVault.some(v => v.word.toLowerCase() === w.toLowerCase());
+      if (!exists) {
+        state.vocabVault.unshift({
+          word: w,
+          ipa: ipa || '',
+          meaning: meaning || '',
+          stars: 1,
+          addedAt: new Date().toLocaleDateString('vi-VN')
         });
+        state.xp = (state.xp || 0) + 10;
+        saveState();
+        initVocabVault();
+        showToast('⭐ Đã lưu từ [' + w + '] vào Sổ tay từ vựng (+10 XP)!', '⭐');
+      } else {
+        showToast('Từ [' + w + '] đã có trong Sổ từ vựng của bạn!', '👍');
       }
-      if (countEl) countEl.textContent = eps.length + ' tập';
-      if (eps.length > 0) renderBcEpisodePanel(eps[0]);
     }
 
-    function selectBcEpisode(idx) {
-      const eps = BC_PODCASTS_DATA.filter(e => e.series === bcCurrentSeries);
-      if (eps[idx]) renderBcEpisodePanel(eps[idx]);
+    function shadowPodcastSentence(id) {
+      const pc = GLOBAL_PODCASTS_DATA.find(p => p.id === id);
+      if (!pc) return;
+      const sentence = pc.shadowingSentence || pc.transcript.split('\n')[0];
+      // Switch to practice tab and load sentence
+      switchTab('practice');
+      speakText(sentence, 0.9);
+      showToast('Đang luyện Shadowing câu từ Podcast: ' + pc.channel, '🎙️');
     }
 
-    function renderBcEpisodePanel(ep) {
-      const panel = document.getElementById('bcEpisodePanel');
-      if (!panel) return;
-      const safeScript = ep.script.replace(/`/g, '&#96;').replace(/\$/g, '&#36;');
-      const vocabHtml = ep.vocab.map(v => 
-        '<div class="flex items-center justify-between p-2 rounded-lg bg-slate-900 border border-slate-800 text-xs">' +
-          '<div class="flex items-center gap-2">' +
-            '<span class="font-bold text-white">' + v.w + '</span>' +
-            '<span class="text-slate-400 font-mono text-[11px]">' + v.ipa + '</span>' +
-            '<span class="text-slate-300">&mdash; ' + v.m + '</span>' +
-          '</div>' +
-          '<div class="flex items-center gap-2">' +
-            '<button onclick="speakText(\'' + v.w.replace(/'/g, "\\'") + '\', 0.85, \'en-GB\')" class="text-indigo-400 hover:text-indigo-300 font-semibold px-2 py-1 rounded bg-indigo-950/60 transition flex items-center gap-1"><span>🔊</span> <span>UK</span></button>' +
-            '<button onclick="addWordToVault(\'' + v.w.replace(/'/g, "\\'") + '\', \'' + v.ipa.replace(/'/g, "\\'") + '\', \'' + v.m.replace(/'/g, "\\'") + '\')" class="text-amber-400 hover:text-amber-300 font-semibold px-2 py-1 rounded bg-amber-950/60 border border-amber-500/30 transition flex items-center gap-1"><span>⭐</span> <span>Lưu</span></button>' +
-          '</div>' +
-        '</div>'
-      ).join('');
-
-      const optsHtml = ep.quiz.opts.map((opt, i) =>
-        '<button onclick="answerBcQuiz(' + i + ', ' + ep.quiz.ans + ')" id="bcQ_' + i + '" class="w-full text-left px-3.5 py-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-700 text-xs text-slate-200 transition">' + String.fromCharCode(65+i) + '. ' + opt + '</button>'
-      ).join('');
-
-      panel.innerHTML =
-        '<div class="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/30 space-y-2">' +
-          '<div class="flex items-center gap-2 flex-wrap">' +
-            '<span class="text-xs font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-300 border border-red-500/30">Series ' + ep.series + ' &bull; Tập ' + ep.ep + '</span>' +
-            '<span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300">' + ep.level + '</span>' +
-          '</div>' +
-          '<h3 class="font-bold text-base text-white">' + ep.title + '</h3>' +
-          '<p class="text-xs text-slate-300 leading-relaxed">' + ep.summary + '</p>' +
-          '<div class="flex flex-wrap gap-2 pt-1">' +
-            '<button onclick="speakText(document.getElementById(\'bcScript\').textContent, 0.88, \'en-GB\')" class="px-3 py-1.5 rounded-lg bg-red-600/30 hover:bg-red-600/50 border border-red-500/40 text-red-200 text-xs font-bold transition flex items-center gap-1">&#x1F50A; Nghe Script (UK Accent)</button>' +
-            '<a href="' + ep.bcUrl + '" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 border border-indigo-500/40 text-indigo-200 text-xs font-semibold transition">&#x1F310; Trang BC Ch&#237;nh Th&#7913;c + Audio &#8599;</a>' +
-          '</div>' +
-        '</div>' +
-        '<div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">' +
-          '<div class="text-xs font-bold text-amber-300 uppercase">&#x1F4DC; K&#7883;ch B&#7843;n H&#7897;i Tho&#7841;i (B&#7845;m n&#250;t UK &#273;&#7875; nghe):</div>' +
-          '<pre id="bcScript" class="text-xs text-slate-200 leading-relaxed whitespace-pre-wrap font-sans">' + ep.script + '</pre>' +
-        '</div>' +
-        '<div class="space-y-2">' +
-          '<div class="text-xs font-bold text-cyan-300 uppercase">&#x1F4D6; T&#7915; V&#7921;ng Tr&#7885;ng T&#226;m (B&#7845;m &#273;&#7875; nghe UK accent):</div>' +
-          vocabHtml +
-        '</div>' +
-        '<div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30">' +
-          '<div class="text-xs font-bold text-emerald-300 mb-1">&#x1F9E0; &#272;i&#7875;m Ng&#7919; Ph&#225;p / Idiom C&#7889;t L&#245;i:</div>' +
-          '<p class="text-xs text-slate-200 leading-relaxed">' + ep.grammarTip + '</p>' +
-        '</div>' +
-        '<div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-3">' +
-          '<div class="text-xs font-bold text-indigo-300 uppercase">&#x1F3AF; B&#224;i Ki&#7875;m Tra Nhanh:</div>' +
-          '<p class="text-sm font-semibold text-white">' + ep.quiz.q + '</p>' +
-          '<div class="space-y-1.5">' + optsHtml + '</div>' +
-          '<div id="bcQuizExp" class="hidden text-xs p-3 rounded-lg bg-indigo-950/60 border border-indigo-500/30 text-indigo-200"></div>' +
-        '</div>';
+    function speakTextWithCb(text, rate = 1.0, lang = 'en-US', onEnd) {
+      if (!window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = lang;
+      utter.rate = rate;
+      utter.onend = () => { if (onEnd) onEnd(); };
+      window.speechSynthesis.speak(utter);
     }
 
-    function answerBcQuiz(chosen, correct) {
-      const expEl = document.getElementById('bcQuizExp');
-      if (!expEl || !expEl.classList.contains('hidden')) return;
-      const eps = BC_PODCASTS_DATA.filter(e => e.series === bcCurrentSeries);
-      const sel = document.getElementById('bcEpisodeSelect');
-      const ep = sel ? eps[parseInt(sel.value, 10)] : null;
-      if (!ep) return;
-      expEl.classList.remove('hidden');
-      expEl.innerHTML = '&#x1F4A1; <strong>Gi&#7843;i th&#237;ch:</strong> ' + ep.quiz.exp;
-      for (let i = 0; i < ep.quiz.opts.length; i++) {
-        const btn = document.getElementById('bcQ_' + i);
-        if (!btn) continue;
-        if (i === correct) btn.className = 'w-full text-left px-3.5 py-2.5 rounded-lg bg-emerald-500/25 border border-emerald-500 text-xs text-emerald-300 font-bold';
-        else if (i === chosen) btn.className = 'w-full text-left px-3.5 py-2.5 rounded-lg bg-rose-500/25 border border-rose-500 text-xs text-rose-300';
-      }
-      if (chosen === correct) { state.xp += 10; playBeep('ding'); saveState(); renderDashboard(); }
-    }
 
     // ==================== AUTHENTICATION & CLOUD SYNC ENGINE ====================
     let currentUser = null;

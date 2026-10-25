@@ -1,0 +1,392 @@
+[
+  {
+    "id": "ft_01",
+    "channel": "Fintech Insider by 11:FS",
+    "channelIcon": "🏦",
+    "category": "fintech",
+    "categoryName": "Tài Chính & Ngân Hàng Số",
+    "title": "The Architecture of Open Banking, APIs & Core Banking Modernization",
+    "duration": "28 phút",
+    "level": "B1 - B2",
+    "accent": "UK / US (International)",
+    "audioUrl": "https://traffic.libsyn.com/secure/fintechinsider/Fintech_Insider_Open_Banking_Clip.mp3",
+    "description": "Khám phá cách các ngân hàng truyền thống chuyển đổi hệ thống lõi (Core Banking) sang kiến trúc Microservices và Open Banking API để kết nối ví điện tử và cổng thanh toán thời gian thực.",
+    "transcript": "Host: Welcome to Fintech Insider! Today we are discussing one of the most critical transformations in financial services: modernizing legacy core banking systems.\nGuest: Absolutely. Many legacy banks are still running on mainframes built decades ago. When you introduce instant payments and real-time fraud monitoring, these monolithic architectures struggle with latency and throughput.\nHost: What is the primary bottleneck when integrating third-party payment gateways via Open Banking APIs?\nGuest: The bottleneck is usually transaction reconciliation and token authentication. You cannot afford a single millisecond of unrecorded state change during high-volume peak hours.",
+    "vocab": [
+      {
+        "w": "core banking",
+        "ipa": "/kɔː ˈbæŋkɪŋ/",
+        "m": "hệ thống ngân hàng lõi vận hành tài khoản và sổ cái"
+      },
+      {
+        "w": "reconciliation",
+        "ipa": "/ˌrekənsɪliˈeɪʃn/",
+        "m": "đối soát số liệu và khớp lệnh giao dịch"
+      },
+      {
+        "w": "latency",
+        "ipa": "/ˈleɪtnsi/",
+        "m": "độ trễ phản hồi trong luồng xử lý giao dịch"
+      },
+      {
+        "w": "token authentication",
+        "ipa": "/ˈtəʊkən ɔːˌθentɪˈkeɪʃn/",
+        "m": "xác thực danh tính qua mã token bảo mật"
+      },
+      {
+        "w": "throughput",
+        "ipa": "/ˈθruːpʊt/",
+        "m": "thông lượng, số lượng giao dịch xử lý trên mỗi giây (TPS)"
+      }
+    ],
+    "shadowingSentence": "When integrating instant payments, legacy monolithic architectures struggle with latency and high throughput."
+  },
+  {
+    "id": "ft_02",
+    "channel": "Bloomberg Surveillance & Markets",
+    "channelIcon": "📈",
+    "category": "fintech",
+    "categoryName": "Tài Chính & Ngân Hàng Số",
+    "title": "Global Inflation, Central Bank Interest Rates & Foreign Exchange Volatility",
+    "duration": "22 phút",
+    "level": "B2",
+    "accent": "US (New York)",
+    "audioUrl": "https://www.bloomberg.com/podcasts/surveillance",
+    "description": "Phân tích diễn biến chính sách lãi suất của Cục Dự trữ Liên bang Mỹ (Fed), biến động tỷ giá hối đoái ngoại tệ và tác động tới dòng vốn đầu tư xuyên biên giới.",
+    "transcript": "Tom Keene: Good morning. Global markets are digesting the latest inflation figures as central banks signal higher-for-longer interest rates.\nAnalyst: We are seeing currency market volatility intensify. Emerging market currencies face liquidity pressure as the dollar strengthens against major currency pairs.\nTom Keene: How are commercial banks hedging against interest rate risk in this environment?\nAnalyst: Commercial banks are adjusting their asset-liability matching strategies and increasing treasury reserves to absorb unexpected capital outflows.",
+    "vocab": [
+      {
+        "w": "volatility",
+        "ipa": "/ˌvɒləˈtɪləti/",
+        "m": "sự biến động mạnh của thị trường tài chính"
+      },
+      {
+        "w": "hedging",
+        "ipa": "/ˈhedʒɪŋ/",
+        "m": "nghiệp vụ phòng vệ rủi ro biến động giá/tỷ giá"
+      },
+      {
+        "w": "liquidity pressure",
+        "ipa": "/lɪˈkwɪdəti ˈpreʃər/",
+        "m": "áp lực thanh khoản dòng tiền"
+      },
+      {
+        "w": "asset-liability matching",
+        "ipa": "/ˈæset laɪəˈbɪləti/",
+        "m": "quản trị cân đối tài sản nợ và tài sản có"
+      },
+      {
+        "w": "capital outflows",
+        "ipa": "/ˈkæpɪtl ˈaʊtfləʊz/",
+        "m": "dòng vốn rút ra khỏi thị trường"
+      }
+    ],
+    "shadowingSentence": "Commercial banks are adjusting their asset-liability matching to absorb unexpected capital outflows."
+  },
+  {
+    "id": "ft_03",
+    "channel": "BBC Business Daily",
+    "channelIcon": "💳",
+    "category": "fintech",
+    "categoryName": "Tài Chính & Ngân Hàng Số",
+    "title": "Preventing Cyber Fraud in Mobile Wallets and QR Code Payments",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (BBC London)",
+    "audioUrl": "https://www.bbc.co.uk/programmes/p002vsxs",
+    "description": "Cách các ngân hàng số và cổng thanh toán quốc tế sử dụng mô hình học máy (Machine Learning) để nhận diện gian lận giao dịch thẻ và mã QR trong tích tắc.",
+    "transcript": "Presenter: Mobile payment apps have replaced cash across cities worldwide. But with convenience comes sophisticated cyber fraud.\nSecurity Officer: Attackers use social engineering and counterfeit QR codes to redirect merchant payments. Our primary defense is behavioral biometrics.\nPresenter: How does behavioral biometrics detect an imposter?\nSecurity Officer: It analyzes the angle at which you hold the phone, swipe speed, and keystroke dynamics. If a transaction deviates from your baseline profile, multi-factor authentication triggers instantly.",
+    "vocab": [
+      {
+        "w": "social engineering",
+        "ipa": "/ˌsəʊʃl endʒɪˈnɪərɪŋ/",
+        "m": "tấn công tâm lý lừa đảo chiếm đoạt thông tin"
+      },
+      {
+        "w": "behavioral biometrics",
+        "ipa": "/bɪˌheɪvjərəl baɪəʊˈmetrɪks/",
+        "m": "sinh trắc học hành vi người dùng"
+      },
+      {
+        "w": "counterfeit",
+        "ipa": "/ˈkaʊntəfɪt/",
+        "m": "giả mạo, lừa đảo"
+      },
+      {
+        "w": "multi-factor authentication",
+        "ipa": "/ˌmʌlti ˈfæktər/",
+        "m": "xác thực đa yếu tố bảo mật (MFA)"
+      }
+    ],
+    "shadowingSentence": "If a transaction deviates from your baseline profile, multi-factor authentication triggers instantly."
+  },
+  {
+    "id": "dev_01",
+    "channel": "DevOps Radio by CloudBees",
+    "channelIcon": "💻",
+    "category": "it_devops",
+    "categoryName": "IT Hệ Thống & DevOps",
+    "title": "Production Incident Management, Root Cause Analysis & Zero-Downtime Deployment",
+    "duration": "32 phút",
+    "level": "B1 - B2",
+    "accent": "US (San Francisco)",
+    "audioUrl": "https://devopsradio.libsyn.com",
+    "description": "Kinh nghiệm thực chiến xử lý sự cố hạ tầng máy chủ Production bị sập: quy trình lập phòng trực chiến (War Room), giao tiếp kỹ thuật trong họp khẩn và viết báo cáo nguyên nhân gốc rễ (Post-Mortem).",
+    "transcript": "Host: Today on DevOps Radio, we discuss how top engineering teams respond when production servers trigger P1 critical alerts at 2 AM.\nSite Reliability Engineer: The most critical rule during an active outage is communication hygiene. The Incident Commander must assign clear roles: one person on mitigation, one on telemetry, and one documenting the timeline.\nHost: Why is a blameless post-mortem culture so essential for high-velocity teams?\nSite Reliability Engineer: Because if engineers fear punishment, they hide incidents. A blameless root cause analysis identifies systemic flaws, like missing circuit breakers or insufficient database connection pools.",
+    "vocab": [
+      {
+        "w": "outage",
+        "ipa": "/ˈaʊtɪdʒ/",
+        "m": "sự cố ngừng hoạt động của hệ thống máy chủ"
+      },
+      {
+        "w": "incident commander",
+        "ipa": "/ˈɪnsɪdənt kəˈmɑːndər/",
+        "m": "chỉ huy trưởng điều phối xử lý sự cố khẩn cấp"
+      },
+      {
+        "w": "mitigation",
+        "ipa": "/ˌmɪtɪˈɡeɪʃn/",
+        "m": "biện pháp giảm nhẹ thiệt hại tạm thời"
+      },
+      {
+        "w": "blameless post-mortem",
+        "ipa": "/ˈbleɪmləs pəʊst ˈmɔːtəm/",
+        "m": "báo cáo phân tích nguyên nhân sự cố không quy kết trách nhiệm cá nhân"
+      },
+      {
+        "w": "connection pool",
+        "ipa": "/kəˈnekʃn puːl/",
+        "m": "hồ kết nối cơ sở dữ liệu dùng chung"
+      }
+    ],
+    "shadowingSentence": "A blameless root cause analysis identifies systemic flaws, such as missing circuit breakers."
+  },
+  {
+    "id": "dev_02",
+    "channel": "Software Engineering Daily",
+    "channelIcon": "⚙️",
+    "category": "it_devops",
+    "categoryName": "IT Hệ Thống & DevOps",
+    "title": "Database Latency, Distributed Caching with Redis & Kubernetes Clusters",
+    "duration": "35 phút",
+    "level": "B2",
+    "accent": "US (Silicon Valley)",
+    "audioUrl": "https://softwareengineeringdaily.com",
+    "description": "Giải thích chuyên sâu cách giảm độ trễ cơ sở dữ liệu từ 500ms xuống dưới 10ms bằng cơ chế đệm dữ liệu phân tán Redis và cấu hình cân bằng tải trên cụm Kubernetes.",
+    "transcript": "Host: Welcome to Software Engineering Daily. High database latency is the number one bottleneck for modern microservices architectures.\nArchitect: When queries hit millions of requests per minute, disk I/O degrades rapidly. Implementing an in-memory distributed cache like Redis reduces database load by over eighty percent.\nHost: How do you handle cache invalidation when multiple Kubernetes pods write concurrently?\nArchitect: We utilize write-through caching combined with an event-driven pub/sub architecture to propagate updates across all worker nodes seamlessly.",
+    "vocab": [
+      {
+        "w": "distributed cache",
+        "ipa": "/dɪˈstrɪbjuːtɪd kæʃ/",
+        "m": "bộ nhớ đệm phân tán trên nhiều máy chủ"
+      },
+      {
+        "w": "disk I/O",
+        "ipa": "/dɪsk aɪ əʊ/",
+        "m": "tốc độ đọc ghi dữ liệu từ ổ cứng"
+      },
+      {
+        "w": "cache invalidation",
+        "ipa": "/kæʃ ɪnˌvælɪˈdeɪʃn/",
+        "m": "xóa hoặc cập nhật lại bản ghi đệm đã lỗi thời"
+      },
+      {
+        "w": "concurrently",
+        "ipa": "/kənˈkʌrəntli/",
+        "m": "đồng thời cùng một thời điểm"
+      },
+      {
+        "w": "worker nodes",
+        "ipa": "/ˈwɜːkər nəʊdz/",
+        "m": "các máy chủ thực thi tác vụ trong cụm Kubernetes"
+      }
+    ],
+    "shadowingSentence": "Implementing an in-memory distributed cache reduces database load by over eighty percent."
+  },
+  {
+    "id": "dev_03",
+    "channel": "Syntax Web & Systems",
+    "channelIcon": "🛠️",
+    "category": "it_devops",
+    "categoryName": "IT Hệ Thống & DevOps",
+    "title": "Automating CI/CD Pipelines with GitHub Actions, Docker & Terraform",
+    "duration": "25 phút",
+    "level": "B1",
+    "accent": "US (Casual & Friendly)",
+    "audioUrl": "https://syntax.fm",
+    "description": "Hướng dẫn thực tế cách xây dựng quy trình triển khai phần mềm tự động hóa CI/CD, đóng gói container Docker và cấp phát hạ tầng đám mây dạng mã nguồn (Infrastructure as Code).",
+    "transcript": "Host: Hey everyone, today we're breaking down how to automate your entire deployment workflow from code commit to production release.\nCo-host: Gone are the days of manually FTP-ing files or SSH-ing into live servers to restart processes! With GitHub Actions, every pull request triggers automated tests and security vulnerability scans.\nHost: What is the biggest advantage of Infrastructure as Code using tools like Terraform?\nCo-host: Reproducibility! If an entire data center region goes offline, you can spin up an identical backup environment in minutes with a single command.",
+    "vocab": [
+      {
+        "w": "pipeline",
+        "ipa": "/ˈpaɪplaɪn/",
+        "m": "đường ống quy trình triển khai phần mềm tự động"
+      },
+      {
+        "w": "vulnerability scan",
+        "ipa": "/ˌvʌlnərəˈbɪləti skæn/",
+        "m": "quét lỗ hổng bảo mật trong mã nguồn"
+      },
+      {
+        "w": "infrastructure as code",
+        "ipa": "/ˈɪnfrəstrʌktʃər æz kəʊd/",
+        "m": "quản lý hạ tầng máy chủ bằng mã lệnh (IaC)"
+      },
+      {
+        "w": "reproducibility",
+        "ipa": "/ˌriːprədjuːsəˈbɪləti/",
+        "m": "khả năng tái lập chính xác môi trường bất kỳ lúc nào"
+      }
+    ],
+    "shadowingSentence": "With automated pipelines, you can spin up an identical environment in minutes with a single command."
+  },
+  {
+    "id": "work_01",
+    "channel": "Harvard Business Review (HBR IdeaCast)",
+    "channelIcon": "🏢",
+    "category": "workplace",
+    "categoryName": "Tiếng Anh Công Sở & Quản Lý",
+    "title": "How to Communicate Complex Technical Risks to Non-Technical Executives",
+    "duration": "24 phút",
+    "level": "B1 - B2",
+    "accent": "US (Boston / HBR)",
+    "audioUrl": "https://hbr.org/2018/01/podcast-ideacast",
+    "description": "Nghệ thuật giao tiếp của kỹ sư công nghệ với Ban Giám Đốc và Hội đồng Quản trị: cách chuyển dịch thuật ngữ kỹ thuật khô khan thành ngôn ngữ giá trị kinh doanh, rủi ro tài chính và quyết định đầu tư.",
+    "transcript": "Host: Welcome to HBR IdeaCast. One of the greatest frustrations technical leaders face is getting executive buy-in for critical infrastructure investments.\nProfessor: When an engineer tells the CEO, 'We need to refactor our microservices architecture because technical debt is too high,' the CEO hears expense without revenue.\nHost: How should technical professionals frame the conversation instead?\nProfessor: Frame it around business risk and customer churn. Say: 'If we do not upgrade this server cluster, system latency will cause ten percent of checkout transactions to fail, costing two million dollars annually.' Executives understand revenue and risk immediately.",
+    "vocab": [
+      {
+        "w": "executive buy-in",
+        "ipa": "/ɪɡˈzekjətɪv baɪ ɪn/",
+        "m": "sự đồng thuận và phê duyệt của ban lãnh đạo cấp cao"
+      },
+      {
+        "w": "technical debt",
+        "ipa": "/ˈteknɪkl det/",
+        "m": "nợ kỹ thuật do viết code nhanh hoặc chắp vá hệ thống"
+      },
+      {
+        "w": "customer churn",
+        "ipa": "/ˈkʌstəmər tʃɜːn/",
+        "m": "tỷ lệ khách hàng rời bỏ dịch vụ"
+      },
+      {
+        "w": "frame the conversation",
+        "ipa": "/freɪm ðə ˌkɒnvəˈseɪʃn/",
+        "m": "định hướng cách tiếp cận câu chuyện theo góc nhìn phù hợp"
+      }
+    ],
+    "shadowingSentence": "Frame technical conversations around business risk, customer retention, and revenue impact."
+  },
+  {
+    "id": "work_02",
+    "channel": "Business English Pod",
+    "channelIcon": "🤝",
+    "category": "workplace",
+    "categoryName": "Tiếng Anh Công Sở & Quản Lý",
+    "title": "Negotiating Deadlines, Managing Project Scope Creep & Vendor Contracts",
+    "duration": "19 phút",
+    "level": "B1",
+    "accent": "UK / US (International)",
+    "audioUrl": "https://www.businessenglishpod.com",
+    "description": "Mẫu câu đàm phán kéo dài hạn chót dự án (deadline), từ chối khéo léo các yêu cầu phát sinh không hợp lý (scope creep) và thương thảo điều khoản hợp đồng dịch vụ SLA với đối tác quốc tế.",
+    "transcript": "Narrator: In today's business English lesson, we examine how to negotiate unrealistic project deadlines without damaging professional relationships.\nProject Lead: We have reviewed the new feature requests from the client. However, incorporating these additions by the end of next week will jeopardize system testing.\nPartner: What alternative do you propose to ensure quality standards?\nProject Lead: I suggest we adopt a phased rollout. We deploy the core functionality on Friday, and deliver the supplementary reporting module in sprint two.",
+    "vocab": [
+      {
+        "w": "scope creep",
+        "ipa": "/skəʊp kriːp/",
+        "m": "hiện tượng dự án bị phình to do phát sinh thêm yêu cầu"
+      },
+      {
+        "w": "jeopardize",
+        "ipa": "/ˈdʒepədaɪz/",
+        "m": "gây nguy hiểm, làm tổn hại đến chất lượng dự án"
+      },
+      {
+        "w": "phased rollout",
+        "ipa": "/feɪzd ˈrəʊlaʊt/",
+        "m": "kế hoạch triển khai theo từng giai đoạn"
+      },
+      {
+        "w": "service level agreement",
+        "ipa": "/ˈsɜːvɪs ˈlevl əˈɡriːmənt/",
+        "m": "cam kết chất lượng dịch vụ (SLA)"
+      }
+    ],
+    "shadowingSentence": "I suggest we adopt a phased rollout to ensure system stability and quality standards."
+  },
+  {
+    "id": "bbc_01",
+    "channel": "BBC 6 Minute English",
+    "channelIcon": "🇬🇧",
+    "category": "general_fluency",
+    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
+    "title": "Can Artificial Intelligence Replace Computer Programmers and Writers?",
+    "duration": "6 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English)",
+    "audioUrl": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
+    "description": "Cuộc trò chuyện súc tích 6 phút của đài BBC về trí tuệ nhân tạo (AI): liệu AI có thể thay thế lập trình viên và người viết nội dung, cùng 6 từ vựng đắt giá nhất.",
+    "transcript": "Neil: Hello and welcome to 6 Minute English. I'm Neil.\nBeth: And I'm Beth. In this programme, we're asking: can artificial intelligence replace human creativity?\nNeil: Modern AI models can write software code, draft contracts, and even compose classical music in seconds.\nBeth: But experts argue that AI lacks emotional intelligence and true contextual understanding. It predicts patterns rather than generating original thought.",
+    "vocab": [
+      {
+        "w": "artificial intelligence",
+        "ipa": "/ˌɑːtɪˈfɪʃl ɪnˈtelɪdʒəns/",
+        "m": "trí tuệ nhân tạo (AI)"
+      },
+      {
+        "w": "emotional intelligence",
+        "ipa": "/ɪˌməʊʃənl ɪnˈtelɪdʒəns/",
+        "m": "trí thông minh cảm xúc (EQ)"
+      },
+      {
+        "w": "contextual understanding",
+        "ipa": "/kənˈtekstʃuəl/",
+        "m": "sự thấu hiểu ngữ cảnh thực tế"
+      },
+      {
+        "w": "predict patterns",
+        "ipa": "/prɪˈdɪkt ˈpætənz/",
+        "m": "dự đoán các quy luật lặp lại dựa trên dữ liệu"
+      }
+    ],
+    "shadowingSentence": "Artificial intelligence predicts patterns rather than generating original creative thought."
+  },
+  {
+    "id": "voa_01",
+    "channel": "VOA Learning English",
+    "channelIcon": "🇺🇸",
+    "category": "general_fluency",
+    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
+    "title": "How Data Centers Are Transitioning to Clean Energy and Advanced Cooling",
+    "duration": "15 phút",
+    "level": "A2 - B1",
+    "accent": "US (Clear Slow Pronunciation)",
+    "audioUrl": "https://learningenglish.voanews.com",
+    "description": "Bản tin khoa học công nghệ của đài VOA với tốc độ đọc chuẩn mực, phát âm rõ từng âm tiết: các trung tâm dữ liệu khổng lồ của thế giới đang chuyển đổi sang năng lượng sạch và công nghệ làm mát bằng chất lỏng ra sao.",
+    "transcript": "Announcer: From Washington, this is VOA Learning English. Today we report on the massive growth of computer data centers around the world.\nReporter: Cloud computing and artificial intelligence require enormous amounts of electrical energy. To address climate concerns, major technology companies are building data centers powered by geothermal and solar energy.\nAnnouncer: In addition, engineers are developing liquid cooling systems that submerge servers in non-conductive fluids, reducing energy consumption by forty percent.",
+    "vocab": [
+      {
+        "w": "data center",
+        "ipa": "/ˈdeɪtə ˈsentər/",
+        "m": "trung tâm dữ liệu lưu trữ máy chủ"
+      },
+      {
+        "w": "geothermal energy",
+        "ipa": "/ˌdʒiːəʊˈθɜːml/",
+        "m": "năng lượng địa nhiệt sạch"
+      },
+      {
+        "w": "liquid cooling",
+        "ipa": "/ˈlɪkwɪd ˈkuːlɪŋ/",
+        "m": "hệ thống làm mát linh kiện bằng chất lỏng"
+      },
+      {
+        "w": "submerge",
+        "ipa": "/səbˈmɜːdʒ/",
+        "m": "nhấn chìm hoàn toàn vào trong chất lỏng"
+      }
+    ],
+    "shadowingSentence": "Engineers are developing liquid cooling systems that reduce server energy consumption by forty percent."
+  }
+]
