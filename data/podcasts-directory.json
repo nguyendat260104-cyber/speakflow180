@@ -121,12 +121,49 @@
     "shadowingSentence": "If a transaction deviates from your baseline profile, multi-factor authentication triggers instantly."
   },
   {
+    "id": "ft_04",
+    "channel": "The Fintech Show",
+    "channelIcon": "🔗",
+    "category": "fintech",
+    "categoryName": "Tài Chính & Ngân Hàng Số",
+    "title": "Cross-Border Remittances, ISO 20022 Financial Messaging & Stablecoins",
+    "duration": "26 phút",
+    "level": "B2",
+    "accent": "UK / US (International)",
+    "audioUrl": "https://thefintechtimes.com",
+    "description": "Chuẩn tin nhắn tài chính quốc tế ISO 20022 đang thay đổi hệ thống SWIFT ra sao và vai trò của tiền mã hóa bảo chứng (Stablecoin) trong kiều hối xuyên quốc gia.",
+    "transcript": "Host: Global cross-border payments have historically taken three to five business days with high intermediary bank fees.\nExpert: The adoption of ISO 20022 rich data standards enables straight-through processing. It carries detailed compliance metadata that eliminates false-positive AML screening holds.\nHost: Are institutional banks piloting digital asset settlements?\nExpert: Yes, major banks are experimenting with regulated digital ledgers to achieve 24/7 continuous settlement liquidity.",
+    "vocab": [
+      {
+        "w": "cross-border remittance",
+        "ipa": "/krɒs ˈbɔːdər rɪˈmɪtns/",
+        "m": "chuyển tiền kiều hối xuyên biên giới"
+      },
+      {
+        "w": "straight-through processing",
+        "ipa": "/streɪt θruː ˈprəʊsesɪŋ/",
+        "m": "xử lý giao dịch tự động xuyên suốt không cần can thiệp thủ công"
+      },
+      {
+        "w": "intermediary bank",
+        "ipa": "/ˌɪntəˈmiːdiəri bæŋk/",
+        "m": "ngân hàng trung gian chuyển tiếp lệnh chuyển tiền"
+      },
+      {
+        "w": "anti-money laundering",
+        "ipa": "/ˌænti ˈmʌni ˈlɔːndərɪŋ/",
+        "m": "chống rửa tiền (AML)"
+      }
+    ],
+    "shadowingSentence": "The adoption of rich data standards enables continuous 24/7 cross-border settlement liquidity."
+  },
+  {
     "id": "dev_01",
     "channel": "DevOps Radio by CloudBees",
     "channelIcon": "💻",
     "category": "it_devops",
     "categoryName": "IT Hệ Thống & DevOps",
-    "title": "Production Incident Management, Root Cause Analysis & Zero-Downtime Deployment",
+    "title": "Production Incident Management, War Room & Zero-Downtime Deployment",
     "duration": "32 phút",
     "level": "B1 - B2",
     "accent": "US (San Francisco)",
@@ -242,6 +279,43 @@
     "shadowingSentence": "With automated pipelines, you can spin up an identical environment in minutes with a single command."
   },
   {
+    "id": "dev_04",
+    "channel": "The Cloudcast",
+    "channelIcon": "☁️",
+    "category": "it_devops",
+    "categoryName": "IT Hệ Thống & DevOps",
+    "title": "Multi-Cloud Governance, Observability with Prometheus & Cyber Hardening",
+    "duration": "30 phút",
+    "level": "B2",
+    "accent": "US (Austin, Texas)",
+    "audioUrl": "https://thecloudcast.net",
+    "description": "Chiến lược quản trị hạ tầng đa đám mây (AWS, Azure, Google Cloud), thu thập chỉ số hiệu năng hệ thống (Prometheus/Grafana) và tăng cường bảo mật máy chủ chống xâm nhập.",
+    "transcript": "Host: Operating across multi-cloud environments brings flexibility, but it multiplies operational complexity.\nGuest: Observability is the key. You cannot fix what you cannot measure. Centralized log aggregation and distributed tracing allow us to pinpoint a failing microservice in seconds.\nHost: How do you enforce security hardening across hundreds of Kubernetes clusters?\nGuest: We use policy-as-code. Every container image must pass rigorous vulnerability scans before admission controllers allow it onto the production cluster.",
+    "vocab": [
+      {
+        "w": "observability",
+        "ipa": "/əbˌzɜːvəˈbɪləti/",
+        "m": "khả năng quan sát và đo lường trạng thái nội bộ hệ thống"
+      },
+      {
+        "w": "distributed tracing",
+        "ipa": "/dɪˈstrɪbjuːtɪd ˈtreɪsɪŋ/",
+        "m": "truy vết luồng request đi qua các microservice"
+      },
+      {
+        "w": "security hardening",
+        "ipa": "/sɪˈkjʊərəti ˈhɑːdnɪŋ/",
+        "m": "tăng cường siết chặt bảo mật hệ điều hành và dịch vụ"
+      },
+      {
+        "w": "policy-as-code",
+        "ipa": "/ˈpɒləsi æz kəʊd/",
+        "m": "áp đặt quy tắc bảo mật tự động bằng mã lệnh"
+      }
+    ],
+    "shadowingSentence": "Centralized observability and distributed tracing allow us to pinpoint a failing service in seconds."
+  },
+  {
     "id": "work_01",
     "channel": "Harvard Business Review (HBR IdeaCast)",
     "channelIcon": "🏢",
@@ -316,6 +390,1498 @@
     "shadowingSentence": "I suggest we adopt a phased rollout to ensure system stability and quality standards."
   },
   {
+    "id": "work_03",
+    "channel": "Manager Tools Podcast",
+    "channelIcon": "🎯",
+    "category": "workplace",
+    "categoryName": "Tiếng Anh Công Sở & Quản Lý",
+    "title": "Conducting High-Impact 1-on-1 Meetings & Giving Constructive Feedback",
+    "duration": "28 phút",
+    "level": "B1 - B2",
+    "accent": "US (Executive)",
+    "audioUrl": "https://www.manager-tools.com",
+    "description": "Cách triển khai các buổi họp 1-kèm-1 định kỳ với nhân viên hoặc sếp trực tiếp: mẫu câu đưa ra góp ý mang tính xây dựng và giải quyết xung đột trong nhóm kỹ thuật.",
+    "transcript": "Host: Effective leaders do not wait for annual performance reviews to communicate. Weekly one-on-ones build psychological safety and catch misunderstandings early.\nCo-host: When delivering constructive feedback, always anchor your observations to specific behaviors, not personality traits. Instead of saying 'You are careless,' explain 'When the release notes lacked database migration scripts, deployment was delayed.'",
+    "vocab": [
+      {
+        "w": "psychological safety",
+        "ipa": "/ˌsaɪkəˈlɒdʒɪkl ˈseɪfti/",
+        "m": "môi trường an toàn tâm lý giúp mọi người dám cởi mở"
+      },
+      {
+        "w": "constructive feedback",
+        "ipa": "/kənˈstrʌktɪv ˈfiːdbæk/",
+        "m": "phản hồi mang tính xây dựng, hướng tới cải thiện"
+      },
+      {
+        "w": "anchor observations",
+        "ipa": "/ˈæŋkər ˌɒbzəˈveɪʃnz/",
+        "m": "gắn chặt các nhận xét vào hành vi và kết quả thực tế"
+      }
+    ],
+    "shadowingSentence": "When delivering constructive feedback, anchor your observations to specific behaviors and business outcomes."
+  },
+  {
+    "id": "bc_1_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 1: Giới thiệu bản thân, Angelina Jolie & Carolina tới Anh",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-01",
+    "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 1 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Giới thiệu bản thân, Angelina Jolie & Carolina tới Anh.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "charity",
+        "ipa": "/charity/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "introduce",
+        "ipa": "/introduce/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "in person",
+        "ipa": "/in person/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "coach",
+        "ipa": "/coach/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 1."
+  },
+  {
+    "id": "bc_1_2",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 2: Kế hoạch cuối tuần, Điệu Tango Argentina & Sự cố hành lý sân bay",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-02",
+    "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 2 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Kế hoạch cuối tuần, Điệu Tango Argentina & Sự cố hành lý sân bay.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "weekend away",
+        "ipa": "/weekend away/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "baggage reclaim",
+        "ipa": "/baggage reclaim/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "unwind",
+        "ipa": "/unwind/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "suitcase",
+        "ipa": "/suitcase/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 2."
+  },
+  {
+    "id": "bc_1_3",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 3: Thiền định, Thám hiểm không gian & Phân biệt Say vs Tell",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-03",
+    "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 3 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Thiền định, Thám hiểm không gian & Phân biệt Say vs Tell.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "meditate",
+        "ipa": "/meditate/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "clear my head",
+        "ipa": "/clear my head/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "give advice",
+        "ipa": "/give advice/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "blow off steam",
+        "ipa": "/blow off steam/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 3."
+  },
+  {
+    "id": "bc_1_4",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 4: Nấu ăn tại nhà, Thành phố New York & Thuê phòng trọ sinh viên",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-04",
+    "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 4 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Nấu ăn tại nhà, Thành phố New York & Thuê phòng trọ sinh viên.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "accommodation",
+        "ipa": "/accommodation/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "landlord",
+        "ipa": "/landlord/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "deposit",
+        "ipa": "/deposit/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "recipe",
+        "ipa": "/recipe/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 4."
+  },
+  {
+    "id": "bc_1_5",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 5: Âm nhạc cổ điển, Thú cưng trong nhà & Làm quen bạn cùng phòng",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-05",
+    "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 5 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Âm nhạc cổ điển, Thú cưng trong nhà & Làm quen bạn cùng phòng.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "flatmate",
+        "ipa": "/flatmate/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "chores",
+        "ipa": "/chores/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "classical music",
+        "ipa": "/classical music/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "get along",
+        "ipa": "/get along/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 5."
+  },
+  {
+    "id": "bc_1_6",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 6: Văn hóa trà chiều nước Anh, Shakespeare & Mua vé tàu hỏa",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-06",
+    "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 6 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Văn hóa trà chiều nước Anh, Shakespeare & Mua vé tàu hỏa.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "afternoon tea",
+        "ipa": "/afternoon tea/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "return ticket",
+        "ipa": "/return ticket/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "platform",
+        "ipa": "/platform/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "culture shock",
+        "ipa": "/culture shock/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 6."
+  },
+  {
+    "id": "bc_1_7",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 7: Bảo tàng Lịch sử tự nhiên London & Cách mở tài khoản ngân hàng",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-07",
+    "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 7 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Bảo tàng Lịch sử tự nhiên London & Cách mở tài khoản ngân hàng.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "bank account",
+        "ipa": "/bank account/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "debit card",
+        "ipa": "/debit card/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "proof of address",
+        "ipa": "/proof of address/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "exhibition",
+        "ipa": "/exhibition/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 7."
+  },
+  {
+    "id": "bc_1_8",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 8: Kỳ nghỉ hè tại biển, Kem truyền thống & Đặt lịch hẹn khám bác sĩ",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-08",
+    "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 8 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Kỳ nghỉ hè tại biển, Kem truyền thống & Đặt lịch hẹn khám bác sĩ.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "appointment",
+        "ipa": "/appointment/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "prescription",
+        "ipa": "/prescription/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "seaside",
+        "ipa": "/seaside/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "symptom",
+        "ipa": "/symptom/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 8."
+  },
+  {
+    "id": "bc_1_9",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 9: Công viên Hoàng gia London & Phỏng vấn xin việc làm thêm tại trường",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-09",
+    "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 9 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Công viên Hoàng gia London & Phỏng vấn xin việc làm thêm tại trường.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "part-time job",
+        "ipa": "/part-time job/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "CV",
+        "ipa": "/CV/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "campus",
+        "ipa": "/campus/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "reference",
+        "ipa": "/reference/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 9."
+  },
+  {
+    "id": "bc_1_10",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 1)",
+    "title": "Series 1 - Tập 10: Lễ hội Giáng sinh nước Anh & Tổng kết Series 1",
+    "duration": "18 phút",
+    "level": "A2 - B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-10",
+    "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 1, Episode 10 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Lễ hội Giáng sinh nước Anh & Tổng kết Series 1.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "celebration",
+        "ipa": "/celebration/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "mince pie",
+        "ipa": "/mince pie/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "cracker",
+        "ipa": "/cracker/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "New Year resolution",
+        "ipa": "/New Year resolution/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 10."
+  },
+  {
+    "id": "bc_2_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 1: Khởi động học kỳ mới, Món ăn Fish & Chips & Lễ hội Bonfire Night",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-01",
+    "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 1 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Khởi động học kỳ mới, Món ăn Fish & Chips & Lễ hội Bonfire Night.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "tradition",
+        "ipa": "/tradition/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "semester",
+        "ipa": "/semester/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "fireworks",
+        "ipa": "/fireworks/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "vinegar",
+        "ipa": "/vinegar/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 1."
+  },
+  {
+    "id": "bc_2_2",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 2: Tham gia Câu lạc bộ kịch nói sinh viên & Mua sắm giảm giá Boxing Day",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-02",
+    "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 2 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Tham gia Câu lạc bộ kịch nói sinh viên & Mua sắm giảm giá Boxing Day.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "drama society",
+        "ipa": "/drama society/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "rehearsal",
+        "ipa": "/rehearsal/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "bargain",
+        "ipa": "/bargain/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "sale discount",
+        "ipa": "/sale discount/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 2."
+  },
+  {
+    "id": "bc_2_3",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 3: Bảo vệ môi trường, Tái chế rác thải nhựa & Khám phá Cambridge",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-03",
+    "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 3 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Bảo vệ môi trường, Tái chế rác thải nhựa & Khám phá Cambridge.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "recycling",
+        "ipa": "/recycling/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "sustainability",
+        "ipa": "/sustainability/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "punt boat",
+        "ipa": "/punt boat/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "historic college",
+        "ipa": "/historic college/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 3."
+  },
+  {
+    "id": "bc_2_4",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 4: Thói quen đọc sách, Tiểu thuyết trinh thám Sherlock Holmes",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-04",
+    "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 4 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Thói quen đọc sách, Tiểu thuyết trinh thám Sherlock Holmes.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "detective novel",
+        "ipa": "/detective novel/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "plot twist",
+        "ipa": "/plot twist/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "clue",
+        "ipa": "/clue/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "masterpiece",
+        "ipa": "/masterpiece/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 4."
+  },
+  {
+    "id": "bc_2_5",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 5: Chuyến dã ngoại vùng nông thôn Lake District & Thời tiết Anh",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-05",
+    "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 5 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Chuyến dã ngoại vùng nông thôn Lake District & Thời tiết Anh.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "countryside",
+        "ipa": "/countryside/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "drizzle",
+        "ipa": "/drizzle/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "hiking trail",
+        "ipa": "/hiking trail/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "waterproof",
+        "ipa": "/waterproof/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 5."
+  },
+  {
+    "id": "bc_2_6",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 6: Công nghệ thông tin trong trường học, Mạng xã hội & Quyền riêng tư",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-06",
+    "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 6 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Công nghệ thông tin trong trường học, Mạng xã hội & Quyền riêng tư.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "digital privacy",
+        "ipa": "/digital privacy/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "cyber safety",
+        "ipa": "/cyber safety/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "social media",
+        "ipa": "/social media/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "algorithm",
+        "ipa": "/algorithm/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 6."
+  },
+  {
+    "id": "bc_2_7",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 7: Tìm nhà trọ mới cho năm hai, Ký hợp đồng thuê nhà & Mẹo chi tiêu",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-07",
+    "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 7 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Tìm nhà trọ mới cho năm hai, Ký hợp đồng thuê nhà & Mẹo chi tiêu.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "tenancy agreement",
+        "ipa": "/tenancy agreement/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "utilities bill",
+        "ipa": "/utilities bill/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "budget",
+        "ipa": "/budget/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "inventory",
+        "ipa": "/inventory/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 7."
+  },
+  {
+    "id": "bc_2_8",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 8: Khám phá ẩm thực quốc tế tại London & Đi chợ phiên Camden Market",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-08",
+    "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 8 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Khám phá ẩm thực quốc tế tại London & Đi chợ phiên Camden Market.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "street food",
+        "ipa": "/street food/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "flea market",
+        "ipa": "/flea market/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "vintage",
+        "ipa": "/vintage/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "multi-cultural",
+        "ipa": "/multi-cultural/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 8."
+  },
+  {
+    "id": "bc_2_9",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 9: Ôn thi học kỳ, Kỹ năng quản lý thời gian & Tránh trì hoãn",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-09",
+    "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 9 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Ôn thi học kỳ, Kỹ năng quản lý thời gian & Tránh trì hoãn.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "revision",
+        "ipa": "/revision/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "procrastination",
+        "ipa": "/procrastination/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "deadline",
+        "ipa": "/deadline/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "productivity",
+        "ipa": "/productivity/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 9."
+  },
+  {
+    "id": "bc_2_10",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 2)",
+    "title": "Series 2 - Tập 10: Kết thúc năm học thứ nhất & Buổi tiệc chia tay sinh viên",
+    "duration": "18 phút",
+    "level": "B1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-10",
+    "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 2, Episode 10 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Kết thúc năm học thứ nhất & Buổi tiệc chia tay sinh viên.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "farewell party",
+        "ipa": "/farewell party/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "graduation",
+        "ipa": "/graduation/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "toast",
+        "ipa": "/toast/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "memorable",
+        "ipa": "/memorable/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 10."
+  },
+  {
+    "id": "bc_3_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 1: Bắt đầu kỳ thực tập doanh nghiệp & Văn hóa làm việc công sở",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-01",
+    "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 1 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Bắt đầu kỳ thực tập doanh nghiệp & Văn hóa làm việc công sở.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "internship",
+        "ipa": "/internship/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "corporate culture",
+        "ipa": "/corporate culture/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "onboarding",
+        "ipa": "/onboarding/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "orientation",
+        "ipa": "/orientation/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 1."
+  },
+  {
+    "id": "bc_3_2",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 2: Lập ngân sách chi tiêu cá nhân, Đầu tư tài chính & Thẻ tín dụng",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-02",
+    "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 2 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Lập ngân sách chi tiêu cá nhân, Đầu tư tài chính & Thẻ tín dụng.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "financial literacy",
+        "ipa": "/financial literacy/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "interest rate",
+        "ipa": "/interest rate/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "credit score",
+        "ipa": "/credit score/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "investment",
+        "ipa": "/investment/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 2."
+  },
+  {
+    "id": "bc_3_3",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 3: Làm việc từ xa (Remote Work), Cân bằng công việc & Cuộc sống",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-03",
+    "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 3 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Làm việc từ xa (Remote Work), Cân bằng công việc & Cuộc sống.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "telecommuting",
+        "ipa": "/telecommuting/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "work-life balance",
+        "ipa": "/work-life balance/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "flexibility",
+        "ipa": "/flexibility/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "burnout",
+        "ipa": "/burnout/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 3."
+  },
+  {
+    "id": "bc_3_4",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 4: Khởi nghiệp công nghệ, Ứng dụng di động & Gọi vốn đầu tư mạo hiểm",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-04",
+    "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 4 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Khởi nghiệp công nghệ, Ứng dụng di động & Gọi vốn đầu tư mạo hiểm.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "startup",
+        "ipa": "/startup/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "venture capital",
+        "ipa": "/venture capital/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "pitch deck",
+        "ipa": "/pitch deck/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "prototype",
+        "ipa": "/prototype/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 4."
+  },
+  {
+    "id": "bc_3_5",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 5: Giao tiếp đa văn hóa trong tập đoàn đa quốc gia",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-05",
+    "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 5 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Giao tiếp đa văn hóa trong tập đoàn đa quốc gia.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "cross-cultural communication",
+        "ipa": "/cross-cultural communication/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "etiquette",
+        "ipa": "/etiquette/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "diversity",
+        "ipa": "/diversity/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "inclusion",
+        "ipa": "/inclusion/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 5."
+  },
+  {
+    "id": "bc_3_6",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 6: Kỹ năng thuyết trình trước đám đông & Trình bày ý tưởng sáng tạo",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-06",
+    "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 6 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Kỹ năng thuyết trình trước đám đông & Trình bày ý tưởng sáng tạo.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "public speaking",
+        "ipa": "/public speaking/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "body language",
+        "ipa": "/body language/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "visual aids",
+        "ipa": "/visual aids/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "persuasion",
+        "ipa": "/persuasion/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 6."
+  },
+  {
+    "id": "bc_3_7",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 7: Chăm sóc sức khỏe tinh thần, Tập Yoga & Chế độ ăn uống lành mạnh",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-07",
+    "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 7 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Chăm sóc sức khỏe tinh thần, Tập Yoga & Chế độ ăn uống lành mạnh.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "mental wellness",
+        "ipa": "/mental wellness/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "mindfulness",
+        "ipa": "/mindfulness/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "nutrition",
+        "ipa": "/nutrition/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "resilience",
+        "ipa": "/resilience/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 7."
+  },
+  {
+    "id": "bc_3_8",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 8: Nghệ thuật đàm phán hợp đồng & Giải quyết bất đồng ý kiến",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-08",
+    "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 8 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Nghệ thuật đàm phán hợp đồng & Giải quyết bất đồng ý kiến.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "negotiation",
+        "ipa": "/negotiation/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "consensus",
+        "ipa": "/consensus/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "compromise",
+        "ipa": "/compromise/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "win-win solution",
+        "ipa": "/win-win solution/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 8."
+  },
+  {
+    "id": "bc_3_9",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 9: Tương lai của năng lượng tái tạo & Giao thông xe điện thông minh",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-09",
+    "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 9 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Tương lai của năng lượng tái tạo & Giao thông xe điện thông minh.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "electric vehicles",
+        "ipa": "/electric vehicles/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "carbon footprint",
+        "ipa": "/carbon footprint/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "solar grid",
+        "ipa": "/solar grid/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "clean tech",
+        "ipa": "/clean tech/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 9."
+  },
+  {
+    "id": "bc_3_10",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 3)",
+    "title": "Series 3 - Tập 10: Đánh giá kết quả thực tập & Nhận lời mời làm việc chính thức",
+    "duration": "18 phút",
+    "level": "B1 - B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-10",
+    "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 3, Episode 10 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Đánh giá kết quả thực tập & Nhận lời mời làm việc chính thức.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "performance review",
+        "ipa": "/performance review/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "job offer",
+        "ipa": "/job offer/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "contract signing",
+        "ipa": "/contract signing/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "career milestone",
+        "ipa": "/career milestone/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 10."
+  },
+  {
+    "id": "bc_4_1",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 1: Nhận chức danh Kỹ sư chính thức & Định hướng phát triển nghề nghiệp",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-01",
+    "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 1 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Nhận chức danh Kỹ sư chính thức & Định hướng phát triển nghề nghiệp.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "promotion",
+        "ipa": "/promotion/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "job title",
+        "ipa": "/job title/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "career roadmap",
+        "ipa": "/career roadmap/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      },
+      {
+        "w": "mentorship",
+        "ipa": "/mentorship/",
+        "m": "từ vựng trọng tâm trong tập 1"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 1."
+  },
+  {
+    "id": "bc_4_2",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 2: Quản lý nhóm dự án phần mềm theo phương pháp Agile & Scrum",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-02",
+    "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 2 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Quản lý nhóm dự án phần mềm theo phương pháp Agile & Scrum.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "agile methodology",
+        "ipa": "/agile methodology/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "sprint planning",
+        "ipa": "/sprint planning/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "backlog",
+        "ipa": "/backlog/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      },
+      {
+        "w": "retrospective",
+        "ipa": "/retrospective/",
+        "m": "từ vựng trọng tâm trong tập 2"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 2."
+  },
+  {
+    "id": "bc_4_3",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 3: Kiểm toán bảo mật hệ thống & Tuân thủ quy định dữ liệu GDPR",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-03",
+    "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 3 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Kiểm toán bảo mật hệ thống & Tuân thủ quy định dữ liệu GDPR.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "compliance audit",
+        "ipa": "/compliance audit/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "data sovereignty",
+        "ipa": "/data sovereignty/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "encryption",
+        "ipa": "/encryption/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      },
+      {
+        "w": "regulatory",
+        "ipa": "/regulatory/",
+        "m": "từ vựng trọng tâm trong tập 3"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 3."
+  },
+  {
+    "id": "bc_4_4",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 4: Chiến lược đàm phán tăng lương & Quyền lợi nhân viên (Benefits)",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-04",
+    "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 4 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Chiến lược đàm phán tăng lương & Quyền lợi nhân viên (Benefits).\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "compensation package",
+        "ipa": "/compensation package/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "equity",
+        "ipa": "/equity/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "stock options",
+        "ipa": "/stock options/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      },
+      {
+        "w": "appraisal",
+        "ipa": "/appraisal/",
+        "m": "từ vựng trọng tâm trong tập 4"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 4."
+  },
+  {
+    "id": "bc_4_5",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 5: Ứng dụng Trí tuệ nhân tạo (AI) trong phân tích dữ liệu kinh doanh",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-05",
+    "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 5 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Ứng dụng Trí tuệ nhân tạo (AI) trong phân tích dữ liệu kinh doanh.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "business intelligence",
+        "ipa": "/business intelligence/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "predictive analytics",
+        "ipa": "/predictive analytics/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      },
+      {
+        "w": "deep learning",
+        "ipa": "/deep learning/",
+        "m": "từ vựng trọng tâm trong tập 5"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 5."
+  },
+  {
+    "id": "bc_4_6",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 6: Xử lý xung đột lợi ích giữa phòng Kỹ thuật và phòng Kinh doanh",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-06",
+    "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 6 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Xử lý xung đột lợi ích giữa phòng Kỹ thuật và phòng Kinh doanh.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "stakeholder alignment",
+        "ipa": "/stakeholder alignment/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "conflict resolution",
+        "ipa": "/conflict resolution/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      },
+      {
+        "w": "compromise",
+        "ipa": "/compromise/",
+        "m": "từ vựng trọng tâm trong tập 6"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 6."
+  },
+  {
+    "id": "bc_4_7",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 7: Tham gia Hội nghị Công nghệ Toàn cầu tại London & Mở rộng mạng lưới",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-07",
+    "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 7 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Tham gia Hội nghị Công nghệ Toàn cầu tại London & Mở rộng mạng lưới.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "keynote speaker",
+        "ipa": "/keynote speaker/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "networking",
+        "ipa": "/networking/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "industry trends",
+        "ipa": "/industry trends/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      },
+      {
+        "w": "panel discussion",
+        "ipa": "/panel discussion/",
+        "m": "từ vựng trọng tâm trong tập 7"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 7."
+  },
+  {
+    "id": "bc_4_8",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 8: Tự động hóa vận hành (DevOps & SRE) giúp tiết kiệm triệu đô la",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-08",
+    "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 8 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Tự động hóa vận hành (DevOps & SRE) giúp tiết kiệm triệu đô la.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "cost optimization",
+        "ipa": "/cost optimization/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "continuous delivery",
+        "ipa": "/continuous delivery/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      },
+      {
+        "w": "high availability",
+        "ipa": "/high availability/",
+        "m": "từ vựng trọng tâm trong tập 8"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 8."
+  },
+  {
+    "id": "bc_4_9",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 9: Lãnh đạo trong khủng hoảng kinh tế & Xây dựng văn hóa kiên cường",
+    "duration": "18 phút",
+    "level": "B2",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-09",
+    "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 9 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Lãnh đạo trong khủng hoảng kinh tế & Xây dựng văn hóa kiên cường.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "crisis leadership",
+        "ipa": "/crisis leadership/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "organizational resilience",
+        "ipa": "/organizational resilience/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      },
+      {
+        "w": "change management",
+        "ipa": "/change management/",
+        "m": "từ vựng trọng tâm trong tập 9"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 9."
+  },
+  {
+    "id": "bc_4_10",
+    "channel": "British Council LearnEnglish",
+    "channelIcon": "🇬🇧",
+    "category": "british_council",
+    "categoryName": "Hội Đồng Anh (Series 4)",
+    "title": "Series 4 - Tập 10: Tốt nghiệp khóa học 180 ngày & Bứt phá giao tiếp tiếng Anh tự nhiên",
+    "duration": "18 phút",
+    "level": "B2 - C1",
+    "accent": "UK (British English chuẩn)",
+    "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-10",
+    "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
+    "transcript": "Tess: Hello and welcome to Series 4, Episode 10 of the British Council LearnEnglish Podcast!\nRavi: Hi everyone! Today we're continuing our fascinating journey discussing Tốt nghiệp khóa học 180 ngày & Bứt phá giao tiếp tiếng Anh tự nhiên.\nCarolina: Excuse me, could you give me more details about this topic? I want to make sure I understand the nuances of communicating in English.",
+    "vocab": [
+      {
+        "w": "fluency mastery",
+        "ipa": "/fluency mastery/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "lifelong learning",
+        "ipa": "/lifelong learning/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "professional English",
+        "ipa": "/professional English/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      },
+      {
+        "w": "graduation",
+        "ipa": "/graduation/",
+        "m": "từ vựng trọng tâm trong tập 10"
+      }
+    ],
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 10."
+  },
+  {
     "id": "bbc_01",
     "channel": "BBC 6 Minute English",
     "channelIcon": "🇬🇧",
@@ -358,7 +1924,7 @@
     "channelIcon": "🇺🇸",
     "category": "general_fluency",
     "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
-    "title": "How Data Centers Are Transitioning to Clean Energy and Advanced Cooling",
+    "title": "How Data Centers Are Transitioning to Clean Energy and Advanced Liquid Cooling",
     "duration": "15 phút",
     "level": "A2 - B1",
     "accent": "US (Clear Slow Pronunciation)",
@@ -388,5 +1954,37 @@
       }
     ],
     "shadowingSentence": "Engineers are developing liquid cooling systems that reduce server energy consumption by forty percent."
+  },
+  {
+    "id": "luke_01",
+    "channel": "Luke's English Podcast",
+    "channelIcon": "🎙️",
+    "category": "general_fluency",
+    "categoryName": "Luyện Nghe & Phản Xạ Đời Sống",
+    "title": "Natural English Idioms & Phrasal Verbs Used in Fast Workplace Conversations",
+    "duration": "30 phút",
+    "level": "B1 - B2",
+    "accent": "UK (Award-winning Teacher Luke Thompson)",
+    "audioUrl": "https://teacherluke.co.uk",
+    "description": "Thầy giáo Luke Thompson giải thích cặn kẽ cách người bản xứ sử dụng thành ngữ và cụm động từ tự nhiên trong giao tiếp đời thực và công ty công nghệ mà không có trong sách giáo khoa.",
+    "transcript": "Luke: Hello listeners! Welcome to Luke's English Podcast. Today we are looking at real spoken idioms that make you sound like a genuine native speaker.\nGuest: Many non-native speakers translate directly from their mother tongue. But in English, phrases like 'touch base' or 'circle back' convey nuanced collaboration without sounding confrontational.\nLuke: Let's break down five idioms you can use in your very next sprint meeting!",
+    "vocab": [
+      {
+        "w": "touch base",
+        "ipa": "/tʌtʃ beɪs/",
+        "m": "liên hệ ngắn gọn để cập nhật thông tin tình hình"
+      },
+      {
+        "w": "circle back",
+        "ipa": "/ˈsɜːkl bæk/",
+        "m": "quay trở lại thảo luận một chủ đề sau đó"
+      },
+      {
+        "w": "confrontational",
+        "ipa": "/ˌkɒnfrənˈteɪʃənl/",
+        "m": "có tính chất đối đầu, căng thẳng"
+      }
+    ],
+    "shadowingSentence": "Let's touch base tomorrow morning to circle back on the database deployment status."
   }
 ]
