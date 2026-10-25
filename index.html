@@ -718,6 +718,10 @@
               <span>👔 David</span>
               <span class="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-mono">💼 NY</span>
             </button>
+            <button onclick="selectAiCharacter('marcus'); replayAiSpeech();" id="charBtn-marcus" class="px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 text-xs font-semibold flex items-center gap-1.5 hover:border-cyan-500/50 transition">
+              <span>💻 Marcus</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-300 font-mono">💻 SF</span>
+            </button>
           </div>
 
           <!-- Speed & Settings -->
@@ -731,25 +735,11 @@
             <button onclick="testSpeakerSound()" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-1 transition" title="Bấm để kiểm tra loa có phát ra âm thanh không">
               <span>🔊 Test Loa</span>
             </button>
-            <button onclick="toggleApiKeyPanel()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs text-cyan-300 flex items-center gap-1">
-              <span>🔑 API Key</span>
+            <button onclick="toggleAiSettingsModal()" class="px-2.5 py-1 rounded-lg bg-indigo-900/60 hover:bg-indigo-800 border border-indigo-500/50 text-xs text-cyan-300 font-semibold flex items-center gap-1 shadow transition">
+              <span>⚡ Cấu Hình AI</span>
             </button>
           </div>
         </div>
-      </div>
-
-      <!-- API Key Setup (Collapsible / Accordion) -->
-      <div id="chatSetupPanel" class="hidden glass-card rounded-2xl p-5 space-y-3 border border-cyan-500/30">
-        <div class="flex items-center justify-between">
-          <h3 class="font-bold text-sm text-cyan-300">🔑 Cài đặt Gemini API Key (Tùy chọn)</h3>
-          <button onclick="toggleApiKeyPanel()" class="text-xs text-slate-400 hover:text-white">✕ Đóng</button>
-        </div>
-        <p class="text-xs text-slate-400">Key được lưu an toàn trong trình duyệt (localStorage). Lấy key miễn phí tại <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-cyan-400 underline">Google AI Studio</a>. Nếu chưa có Key, hệ thống tự động chạy <strong>Chế độ Kịch bản Phản xạ Thông minh Tích hợp Sẵn</strong> hoàn toàn miễn phí!</p>
-        <div class="flex gap-2">
-          <input id="geminiKeyInput" type="password" placeholder="Nhập Gemini API Key (AIza...)" class="flex-1 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-cyan-400"/>
-          <button onclick="saveGeminiKey()" class="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition">Lưu &amp; Test</button>
-        </div>
-        <div id="keyStatus" class="text-xs"></div>
       </div>
 
       <!-- ==================== VIEW 1: LIVE VOICE CALL MODE ==================== -->
@@ -1188,10 +1178,16 @@
 
           <div class="flex items-center gap-2 flex-wrap">
             <button onclick="practiceVocabFlashcards()" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-indigo-600 text-slate-950 font-bold text-xs hover:opacity-90 transition flex items-center gap-1.5 shadow-md">
-              <span>🃏</span> <span>Lật thẻ Flashcard sổ từ</span>
+              <span>🃏</span> <span>Lật thẻ Flashcard</span>
             </button>
-            <button onclick="exportVocabVaultTxt()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-semibold transition flex items-center gap-1.5">
-              <span>⬇</span> <span>Xuất file (.txt)</span>
+            <button onclick="exportVocabVaultAnki()" class="px-3 py-2 rounded-xl bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-500/50 text-cyan-300 text-xs font-semibold transition flex items-center gap-1.5 shadow" title="Xuất file CSV chuẩn để nhập vào app Anki (iOS/Android/PC)">
+              <span>📥</span> <span>Xuất Anki (.csv)</span>
+            </button>
+            <button onclick="printVocabVaultCheatSheet()" class="px-3 py-2 rounded-xl bg-indigo-950/80 hover:bg-indigo-900 border border-indigo-500/50 text-indigo-200 text-xs font-semibold transition flex items-center gap-1.5 shadow" title="Xem & In danh sách từ vựng ra giấy hoặc lưu PDF">
+              <span>🖨️</span> <span>In PDF Sổ Tay</span>
+            </button>
+            <button onclick="exportVocabVaultTxt()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-semibold transition flex items-center gap-1.5">
+              <span>⬇</span> <span>File .txt</span>
             </button>
           </div>
         </div>
@@ -1238,7 +1234,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <!-- Left 5 cols: SRS Flashcards -->
         <div class="lg:col-span-5 space-y-6">
-          <div class="glass-card rounded-2xl p-5 space-y-4">
+          <div id="flashcardSection" class="glass-card rounded-2xl p-5 space-y-4">
             <div class="flex items-center justify-between">
               <h3 class="font-bold text-base text-white">🗂️ 1. Thẻ Ghi Nhớ Cụm Từ (SRS Flashcard)</h3>
               <span id="flashcardCounter" class="text-xs text-cyan-400 font-semibold">Thẻ 1 / 10</span>
@@ -1785,7 +1781,10 @@
 
     function renderDashboard() {
       const dayObj = ALL_DAYS.find(d => d.day === state.currentDay) || ALL_DAYS[0];
-      document.getElementById('headerStreak').textContent = state.streak + ' ngày';
+      ensureStreakShieldState();
+      const shieldCount = typeof state.streakShields === 'number' ? state.streakShields : 1;
+      const streakEl = document.getElementById('headerStreak');
+      if (streakEl) streakEl.innerHTML = state.streak + ' ngày <span class="text-xs text-cyan-300 font-normal">🛡️ ' + shieldCount + ' khiên</span>';
       document.getElementById('headerXP').textContent = state.xp + ' XP';
       document.getElementById('headerCurrentDay').textContent = 'Ngày ' + dayObj.day + ' / 180';
 
@@ -1885,7 +1884,12 @@
         if (allDone) {
           state.streak += 1;
           state.xp += 50;
-          showToast('🎉 Chúc mừng! Bạn đã hoàn thành toàn bộ Ca học Ngày ' + dayNum + ' (+50 XP thưởng)!', '🎉');
+          if (state.streak % 7 === 0) {
+            state.streakShields = Math.min(3, (state.streakShields || 0) + 1);
+            showToast('🛡️ Xuất sắc! Đạt mốc ' + state.streak + ' ngày liên tiếp, bạn được tặng +1 Khiên bảo vệ chuỗi!', '🛡️');
+          } else {
+            showToast('🎉 Chúc mừng! Bạn đã hoàn thành toàn bộ Ca học Ngày ' + dayNum + ' (+50 XP thưởng)!', '🎉');
+          }
         } else {
           showToast('✅ Đã xong [' + currentStep.title + '] (+25 XP)! Tiến trình đã lưu.', '✅');
         }
@@ -3021,24 +3025,24 @@
       6: { id: "soTfFFIQQ8U", title: "freeCodeCamp - System Design & Distributed Architecture in English" },
       7: { id: "n7z4q6W_uYc", title: "Stanford Business School - Think Fast, Talk Smart: Communication Techniques" },
       8: { id: "1nYF4TtNe48", title: "TED Talks (Nancy Duarte) - The Secret Structure of Great Presentations" },
-      9: { id: "nhTcuUvLGOE", title: "Oxford Online English - How to Disagree Politely & Express Opinions at Work" },
-      10: { id: "IzEYos5En_k", title: "BBC Learning English - Tim's Workshop: Elision of /t/ and /d/ Sounds" },
-      11: { id: "NEKZFA7L7Lg", title: "Business English - Leading Standup Meetings & Sprint Reviews" },
-      12: { id: "RkVbqGjJxBM", title: "Rachel's English - American English Consonants: /θ/ vs /ð/ & /r/ vs /l/" },
-      13: { id: "soTfFFIQQ8U", title: "Tech English - Explaining Database Latency, Caching & Microservices" },
-      14: { id: "n7z4q6W_uYc", title: "Stanford Communication - Handling Difficult Questions & Crisis Meetings" },
-      15: { id: "nhTcuUvLGOE", title: "Oxford Online English - Salary Negotiation & Job Offer Discussions" },
-      16: { id: "mV_CEIroJs8", title: "BBC Learning English - Tim's Workshop: Word Stress & Natural Rhythm" },
-      17: { id: "NEKZFA7L7Lg", title: "Oxford Online English - Technical Presentations & Explaining Charts" },
-      18: { id: "1nYF4TtNe48", title: "TED Talks - Storytelling Secrets for Technical Leaders" },
-      19: { id: "soTfFFIQQ8U", title: "Computerphile & Tech - Cloud Infrastructure, Security & Incident Response" },
-      20: { id: "n7z4q6W_uYc", title: "Executive English - Persuading Stakeholders & Getting Project Approval" },
-      21: { id: "nhTcuUvLGOE", title: "Oxford Online English - Cross-cultural Communication in Global Tech Teams" },
-      22: { id: "IzEYos5En_k", title: "BBC Learning English - Tim's Workshop: Intonation for Asking Questions" },
-      23: { id: "RkVbqGjJxBM", title: "Rachel's English - Real American English Fast Speech Breakdown" },
-      24: { id: "1nYF4TtNe48", title: "Harvard Business Review - Managing Burnout & High-stress IT Environments" },
-      25: { id: "NEKZFA7L7Lg", title: "Oxford Online English - Advanced Business English Fluency & Phrasal Verbs" },
-      26: { id: "n7z4q6W_uYc", title: "Stanford Masterclass - 180-Day English Speaking Graduation & Mastery" }
+      9: { id: "qQyLzU3G03g", title: "Oxford Online English - How to Disagree Politely & Defend Your Ideas at Work" },
+      10: { id: "x8W2-a0FqU8", title: "BBC Learning English - Tim's Workshop: Elision & Dropping /t/ and /d/ Sounds" },
+      11: { id: "WjL_z4Q1pIo", title: "Business English Pod - Agile Standups & Explaining Technical Blockers" },
+      12: { id: "b2b07Y6rN1w", title: "Rachel's English - American English Consonants: Master /θ/ vs /ð/ & /r/ vs /l/" },
+      13: { id: "PzQzGk4d9gU", title: "Hussein Nasser - Database Latency, Connection Pools & Microservices Architecture" },
+      14: { id: "HAnw168huqA", title: "Stanford GSB - How to Handle Hostile & Difficult Questions Under Pressure" },
+      15: { id: "z9Qp0M1G1pY", title: "Jeff Su - How to Negotiate Salary & Job Offers Like a Pro" },
+      16: { id: "U4sQG5hZ9vM", title: "BBC Learning English - Tim's Workshop: Word Stress & Sentence Rhythm" },
+      17: { id: "k29h7X0jZqU", title: "Oxford Online English - Technical Presentations & Explaining Charts and Graphs" },
+      18: { id: "Nj-hdQMa3uA", title: "David JP Phillips TED - The Magical Science of Storytelling for Leaders" },
+      19: { id: "c8S9qW4fPqU", title: "Google Cloud Tech - Writing Effective Blameless Postmortems & Incident RCA" },
+      20: { id: "unwt_wT9ZkM", title: "Stanford Executive - Influencing Without Authority in Remote Engineering Teams" },
+      21: { id: "8e0N8eTqgqU", title: "Harvard Business Review - Cross-Cultural Communication in Global Remote Teams" },
+      22: { id: "a2G8q1b9N0U", title: "BBC Learning English - Tim's Workshop: Intonation Patterns in Questions vs Statements" },
+      23: { id: "d5Qp2X1NqYM", title: "Rachel's English - Conversational Reductions (Wanna, Gonna, Gotta, Shoulda)" },
+      24: { id: "hnpQrMqDoqE", title: "TED Talks - Managing High-Stress Production Incidents & Preventing Burnout" },
+      25: { id: "vQ8p1N0LqKU", title: "Oxford Online English - 50 Essential Workplace Idioms & Phrasal Verbs" },
+      26: { id: "5vK1q0M1NqU", title: "Stanford Executive Communication - 180-Day English Speaking Graduation & Mastery" }
     };
 
     function extractYouTubeId(url) {
@@ -3843,6 +3847,134 @@
       showToast('Đã xuất file sổ tay từ vựng thành công!', '⬇');
     }
 
+    // ==================== GAMIFICATION: STREAK SHIELD & ANKI EXPORT ====================
+    function ensureStreakShieldState() {
+      if (typeof state.streakShields !== 'number') {
+        state.streakShields = 1; // Default 1 free shield for all users
+      }
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (!state.lastActiveDate) {
+        state.lastActiveDate = todayStr;
+      } else if (state.lastActiveDate !== todayStr) {
+        const last = new Date(state.lastActiveDate);
+        const now = new Date(todayStr);
+        const diffDays = Math.round((now - last) / (1000 * 60 * 60 * 24));
+        if (diffDays > 1) {
+          // User missed at least 1 day! Check for streak shield protection
+          if (state.streakShields > 0) {
+            state.streakShields -= 1;
+            showToast('🛡️ Khiên bảo vệ chuỗi đã tự động kích hoạt! Chuỗi ' + state.streak + ' ngày của bạn được bảo toàn.', '🛡️');
+          } else {
+            state.streak = 1;
+            showToast('Đã bắt đầu chuỗi học mới từ hôm nay. Cố gắng duy trì mỗi ngày nhé!', '🔥');
+          }
+        }
+        state.lastActiveDate = todayStr;
+      }
+    }
+
+    function exportVocabVaultAnki() {
+      const words = state.vocabVault || [];
+      if (words.length === 0) {
+        showToast('Sổ tay chưa có từ nào để xuất sang Anki!', '⚠️');
+        return;
+      }
+
+      // Anki CSV format: "Front","Back","Tags"
+      let csv = '#separator:Comma\n#html:true\n#tags column:3\n';
+      words.forEach(w => {
+        const front = '"' + (w.word || '').replace(/"/g, '""') + '"';
+        const backParts = [];
+        if (w.ipa) backParts.push('<span style="color:#06b6d4;font-family:monospace;font-size:1.1em;">[' + w.ipa + ']</span>');
+        if (w.meaning) backParts.push('<b>' + w.meaning + '</b>');
+        if (w.note) backParts.push('<i style="color:#64748b;font-size:0.9em;">' + w.note + '</i>');
+        const back = '"' + backParts.join('<br>') + '"';
+        const tags = '"speakflow180 fintech it_devops"';
+        csv += front + ',' + back + ',' + tags + '\n';
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'speakflow180-anki-deck-' + new Date().toISOString().split('T')[0] + '.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('✅ Đã xuất ' + words.length + ' từ vựng sang file Anki CSV thành công! Mở app Anki -> Import để học.', '📥');
+    }
+
+    function printVocabVaultCheatSheet() {
+      const words = state.vocabVault || [];
+      if (words.length === 0) {
+        showToast('Sổ tay chưa có từ vựng để in!', '⚠️');
+        return;
+      }
+
+      const rows = words.map((w, idx) => `
+        <tr>
+          <td style="padding:10px;border-bottom:1px solid #e2e8f0;font-weight:bold;color:#1e293b;">${idx + 1}. ${w.word}</td>
+          <td style="padding:10px;border-bottom:1px solid #e2e8f0;font-family:monospace;color:#0284c7;">${w.ipa || '-'}</td>
+          <td style="padding:10px;border-bottom:1px solid #e2e8f0;color:#334155;">${w.meaning || '-'}</td>
+          <td style="padding:10px;border-bottom:1px solid #e2e8f0;color:#64748b;font-size:0.9em;">${w.note || '-'}</td>
+          <td style="padding:10px;border-bottom:1px solid #e2e8f0;text-align:center;color:#d97706;">${'⭐'.repeat(w.level || 1)}</td>
+        </tr>
+      `).join('');
+
+      const printHtml = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <title>SpeakFlow 180 - Sổ Tay Từ Vựng Chuyên Ngành FinTech & IT</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 24px; color: #0f172a; }
+            h1 { font-size: 20px; color: #4338ca; margin-bottom: 4px; }
+            p { font-size: 13px; color: #64748b; margin-top: 0; }
+            table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 16px; }
+            th { background: #f1f5f9; padding: 10px; text-align: left; border-bottom: 2px solid #cbd5e1; font-weight: 700; color: #334155; }
+            @media print {
+              button { display: none; }
+              body { padding: 0; }
+            }
+          </style>
+        </head>
+        <body>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <h1>📖 SpeakFlow 180 – Sổ Tay Từ Vựng Thực Chiến (FinTech & DevOps)</h1>
+              <p>Ngày in: ${new Date().toLocaleDateString('vi-VN')} • Tổng số từ vựng: ${words.length} từ</p>
+            </div>
+            <button onclick="window.print()" style="padding:8px 16px;background:#4f46e5;color:white;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">🖨️ In / Lưu PDF</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th style="width:22%;">Từ Vựng</th>
+                <th style="width:18%;">Phiên Âm IPA</th>
+                <th style="width:30%;">Nghĩa Tiếng Việt</th>
+                <th style="width:20%;">Ghi Chú Ngữ Cảnh</th>
+                <th style="width:10%;text-align:center;">Cấp Độ</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows}
+            </tbody>
+          </table>
+        </body>
+        </html>
+      `;
+
+      const printWindow = window.open('', '_blank');
+      if (printWindow) {
+        printWindow.document.write(printHtml);
+        printWindow.document.close();
+      } else {
+        showToast('Trình duyệt đã chặn cửa sổ popup. Hãy cho phép popup để in tài liệu!', '⚠️');
+      }
+    }
+
     function practiceVocabFlashcards() {
       const words = state.vocabVault || [];
       if (words.length === 0) {
@@ -3859,7 +3991,7 @@
       state.fcFlipped = false;
       renderFlashcard();
       showToast(`Đã nạp ${words.length} từ trong Sổ tay vào bộ Flashcards!`, '🃏');
-      const fcSec = document.getElementById('flashcardFront');
+      const fcSec = document.getElementById('flashcardSection');
       if (fcSec) fcSec.scrollIntoView({ behavior: 'smooth' });
     }
 
