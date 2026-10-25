@@ -1,0 +1,36 @@
+{
+  "userId": "tuan.sre_fintech-bank.com",
+  "user": {
+    "name": "Tuấn SRE DevOps",
+    "email": "tuan.sre@fintech-bank.com",
+    "role": "💻 IT Vận Hành Hệ Thống & DevOps"
+  },
+  "lastSynced": "2026-10-25T12:13:44.807Z",
+  "stats": {
+    "streak": 12,
+    "xp": 980,
+    "vocabCount": 3,
+    "activeTab": "tab-dashboard"
+  },
+  "state": {
+    "streak": 12,
+    "xp": 980,
+    "vocabVault": [
+      {
+        "word": "infrastructure",
+        "ipa": "/ˈɪnfrəˌstrʌktʃər/",
+        "stars": 5
+      },
+      {
+        "word": "incident",
+        "ipa": "/ˈɪnsɪdənt/",
+        "stars": 4
+      },
+      {
+        "word": "latency",
+        "ipa": "/ˈleɪtnsi/",
+        "stars": 5
+      }
+    ]
+  }
+}
