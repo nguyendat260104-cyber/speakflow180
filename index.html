@@ -422,8 +422,8 @@
           <div class="glass-card rounded-2xl p-5 space-y-4">
             <div class="flex items-center justify-between flex-wrap gap-2">
               <h3 class="font-bold text-base text-white">📌 Nội Dung Trọng Tâm Của Ngày Đang Chọn</h3>
-              <a id="dashResourceLink" href="https://www.youtube.com/watch?v=ZTgYjGXFAkw" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/30 transition">
-                🔗 Mở Video / Tài liệu của Tuần ↗
+              <a id="dashResourceLink" href="https://www.youtube.com/watch?v=ZTgYjGXFAkw" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/30 transition flex items-center gap-1.5">
+                <span>📺</span> <span id="dashResourceLinkText">Video Bài Học Ngày Đang Chọn ↗</span>
               </a>
             </div>
 
@@ -467,15 +467,23 @@
             <!-- Video Player Card with Dual-Video Mode Header -->
             <div class="rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-xl">
               <!-- Video Sub-Header: Mode Selector & Action Buttons -->
-              <div class="flex items-center justify-between p-2.5 sm:px-4 bg-slate-900 border-b border-slate-800 flex-wrap gap-2">
-                <!-- Dual-Video Tabs -->
-                <div class="flex items-center p-0.5 rounded-xl bg-slate-950 border border-slate-800">
-                  <button id="videoTabBtn-lesson" onclick="switchDayVideoMode('lesson')" class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition flex items-center gap-1.5 bg-red-600 text-white shadow cursor-pointer">
-                    <span>🎬</span> <span>Video Bài Học Chủ Đề</span>
-                  </button>
-                  <button id="videoTabBtn-grammar" onclick="switchDayVideoMode('grammar')" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
-                    <span>📘</span> <span>Video Ngữ Pháp Cốt Lõi</span>
-                  </button>
+              <div class="flex items-center justify-between p-2.5 sm:px-4 bg-slate-900 border-b border-slate-800 flex-wrap gap-2.5">
+                <!-- Section Title & Dual-Video Tabs -->
+                <div class="flex items-center gap-3 flex-wrap">
+                  <div class="flex items-center gap-1.5 text-xs sm:text-sm font-black text-red-400 whitespace-nowrap">
+                    <span class="text-base text-red-500">▶</span>
+                    <span>Video Bài Học Ngày <span id="dashVideoHeadingDayNum" class="text-amber-400 font-mono font-black text-sm px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">1</span> / 180</span>
+                  </div>
+
+                  <!-- Dual-Video Tabs -->
+                  <div class="flex items-center p-0.5 rounded-xl bg-slate-950 border border-slate-800">
+                    <button id="videoTabBtn-lesson" onclick="switchDayVideoMode('lesson')" class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition flex items-center gap-1.5 bg-red-600 text-white shadow cursor-pointer">
+                      <span>🎬</span> <span id="videoTabBtnLessonText">Bài Học Ngày 1</span>
+                    </button>
+                    <button id="videoTabBtn-grammar" onclick="switchDayVideoMode('grammar')" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5 cursor-pointer">
+                      <span>📘</span> <span id="videoTabBtnGrammarText">Ngữ Pháp Ngày 1</span>
+                    </button>
+                  </div>
                 </div>
 
                 <div class="flex items-center gap-2 flex-wrap">
@@ -483,13 +491,13 @@
                     <span>▶</span> <span>Mở App YouTube ↗</span>
                   </a>
                   <button onclick="playLectureAudio()" class="text-xs px-2.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold flex items-center gap-1 transition cursor-pointer" title="Nghe bài đọc chuẩn bản xứ ngay lập tức">
-                    <span>🔊</span> <span>Nghe Audio</span>
+                    <span>🔊</span> <span>Nghe Audio Bài Giảng</span>
                   </button>
                   <button onclick="toggleVideoEmbed()" id="toggleVideoBtn" class="text-xs px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition cursor-pointer">
                     Ẩn video
                   </button>
                   <button onclick="startShadowingMode()" class="text-xs px-2.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition cursor-pointer">
-                    🎙️ Shadowing
+                    🎙️ Shadowing Mode
                   </button>
                 </div>
               </div>
@@ -2022,10 +2030,8 @@
       if (lf) lf.value = entry?.learned || '';
       if (rf) rf.value = entry?.review || '';
 
-      const resLink = document.getElementById('dashResourceLink');
-      resLink.href = dayObj.resUrl;
-      resLink.textContent = '🔗 ' + dayObj.resName + ' ↗';
-
+      // dashResourceLink is dynamically maintained by updateYouTubeEmbed(dayObj)
+      
       // Populate dropdown if empty
       const sel = document.getElementById('dayQuickSelect');
       if (sel && sel.options.length === 0) {
@@ -7229,25 +7235,36 @@
 
       if (!dayData) return;
 
-      // Update Header Text & Indicators
-      const dayIndicator = document.getElementById('dashVideoDayIndicator');
-      if (dayIndicator) dayIndicator.textContent = 'Ngày ' + dNum + ' / 180';
+      // 1. Update Section Heading Day Indicator
+      const headDayNum = document.getElementById('dashVideoHeadingDayNum');
+      if (headDayNum) headDayNum.textContent = dNum;
 
-      const lvlBadge = document.getElementById('dashVideoLevelBadge');
-      if (lvlBadge) lvlBadge.textContent = dayData.level;
+      // 2. Update Dual-Tab Buttons Day Text
+      const btnLessonText = document.getElementById('videoTabBtnLessonText');
+      if (btnLessonText) btnLessonText.textContent = 'Bài Học Ngày ' + dNum;
 
+      const btnGrammarText = document.getElementById('videoTabBtnGrammarText');
+      if (btnGrammarText) btnGrammarText.textContent = 'Ngữ Pháp Ngày ' + dNum;
+
+      // 3. Update Quick Switcher Pills Text
       const quickLesson = document.getElementById('quickDayLessonText');
       if (quickLesson) quickLesson.textContent = 'Video 1: Bài Học Ngày ' + dNum;
 
       const quickGrammar = document.getElementById('quickDayGrammarText');
       if (quickGrammar) quickGrammar.textContent = 'Video 2: Ngữ Pháp Ngày ' + dNum;
 
-      // Pick target video by currentVideoMode ('lesson' or 'grammar')
+      // 4. Update Indicators & Badges
+      const dayIndicator = document.getElementById('dashVideoDayIndicator');
+      if (dayIndicator) dayIndicator.textContent = 'Ngày ' + dNum + ' / 180';
+
+      const lvlBadge = document.getElementById('dashVideoLevelBadge');
+      if (lvlBadge) lvlBadge.textContent = dayData.level;
+
+      // 5. Select target video by currentVideoMode ('lesson' or 'grammar')
       const activeVideo = currentVideoMode === 'grammar' ? dayData.grammarVideo : dayData.lessonVideo;
       const vid = activeVideo.id;
       const vTitle = activeVideo.title;
 
-      // Update Channel, Duration & Topic Badges
       const chBadge = document.getElementById('dashVideoChannelBadge');
       if (chBadge) chBadge.textContent = activeVideo.channel;
 
@@ -7261,18 +7278,28 @@
           : '💡 Trọng tâm: ' + activeVideo.topic;
       }
 
-      // Update Dual-Tab Buttons Styling
+      // 6. Update Dual-Tab Buttons Styling
       updateVideoTabsUI();
 
       if (wrapper) wrapper.style.display = 'block';
 
+      // 7. Update Iframe Source & Direct Links
       if (vid) {
         const pageOrigin = encodeURIComponent(window.location.origin || 'https://speakflow180.vercel.app');
-        iframe.src = 'https://www.youtube.com/embed/' + vid + '?playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=' + pageOrigin;
+        const targetSrc = 'https://www.youtube.com/embed/' + vid + '?playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=' + pageOrigin;
+        if (!iframe.src || !iframe.src.includes(vid)) {
+          iframe.src = targetSrc;
+        }
         if (directBtn) directBtn.href = 'https://www.youtube.com/watch?v=' + vid;
         if (linkEl) {
           linkEl.href = 'https://www.youtube.com/watch?v=' + vid;
-          linkEl.textContent = '🔗 ' + vTitle + ' ↗';
+          const resText = document.getElementById('dashResourceLinkText');
+          const shortTitle = vTitle.length > 55 ? vTitle.substring(0, 52) + '...' : vTitle;
+          if (resText) {
+            resText.textContent = 'Video Ngày ' + dNum + ' (' + (currentVideoMode === 'grammar' ? 'Ngữ pháp' : 'Bài học') + '): ' + shortTitle + ' ↗';
+          } else {
+            linkEl.textContent = '📺 Video Ngày ' + dNum + ': ' + shortTitle + ' ↗';
+          }
         }
       }
     }
@@ -10347,7 +10374,9 @@ function sendChatMessage() {
     // ==================== PWA SERVICE WORKER ====================
     function registerPWA() {
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {}); // silent fail if no sw.js
+        navigator.serviceWorker.register('/sw.js').then(reg => {
+          reg.update();
+        }).catch(() => {});
       }
     }
 
