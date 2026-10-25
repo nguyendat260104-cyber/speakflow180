@@ -7,9 +7,9 @@
     "role": "🏦 Tài Chính & Ngân Hàng",
     "avatar": "🏦",
     "joinedDate": "25/10/2026",
-    "lastSyncedAt": "2026-10-25T12:40:08.291Z"
+    "lastSyncedAt": "2026-10-25T12:40:48.841Z"
   },
-  "lastSynced": "2026-10-25T12:40:47.845Z",
+  "lastSynced": "2026-10-25T16:26:50.969Z",
   "stats": {
     "streak": 1,
     "xp": 120,
@@ -59,6 +59,8 @@
         "dateAdded": "Mặc định",
         "reviewCount": 2
       }
-    ]
+    ],
+    "streakShields": 1,
+    "lastActiveDate": "2026-10-25"
   }
 }
