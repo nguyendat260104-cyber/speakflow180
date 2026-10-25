@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
-  <meta name="referrer" content="no-referrer" />
+  <meta name="referrer" content="origin-when-cross-origin" />
   <title>SpeakFlow 180 – Hệ Thống Học Tiếng Anh Giao Tiếp Buổi Tối (3–6 Tháng)</title>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
@@ -160,6 +160,108 @@
     </div>
   </div>
 
+  <!-- ==================== AUTH GATEKEEPER SCREEN (MÀN HÌNH KHÓA XÁC THỰC) ==================== -->
+  <div id="authGateScreen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950 overflow-y-auto">
+    <!-- Ambient glowing backgrounds -->
+    <div class="fixed top-1/4 -left-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="fixed bottom-1/4 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="glass-card w-full max-w-md rounded-3xl p-6 sm:p-8 space-y-6 border-2 border-indigo-500/40 bg-slate-900/95 shadow-2xl relative my-auto">
+      
+      <!-- Brand Logo & Header -->
+      <div class="text-center space-y-2">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-400 via-indigo-500 to-indigo-700 flex items-center justify-center text-white font-extrabold text-2xl shadow-xl shadow-indigo-500/30 mx-auto border border-cyan-400/40">
+          SF
+        </div>
+        <div class="flex items-center justify-center gap-2 pt-1">
+          <h1 class="text-2xl font-black tracking-tight text-white">SpeakFlow 180</h1>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-bold uppercase">Pro</span>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Nền tảng luyện tiếng Anh giao tiếp &amp; phản xạ thực chiến cho kỹ sư <strong>IT DevOps</strong> và nhân sự <strong>FinTech</strong>.
+        </p>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-[11px] text-amber-300 font-medium">
+          <span>🔒</span> <span>Vui lòng Đăng nhập / Đăng ký để vào hệ thống</span>
+        </div>
+      </div>
+
+      <!-- Segmented Switch: Login vs Register -->
+      <div class="flex items-center p-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold">
+        <button id="gateTabBtnLogin" onclick="switchGateTab('login')" class="flex-1 py-2.5 rounded-lg bg-indigo-600 text-white transition shadow cursor-pointer">
+          🔑 Đăng Nhập
+        </button>
+        <button id="gateTabBtnRegister" onclick="switchGateTab('register')" class="flex-1 py-2.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer">
+          ✨ Đăng Ký Mới
+        </button>
+      </div>
+
+      <!-- Form: Đăng Nhập -->
+      <form id="gateLoginForm" onsubmit="handleGateLogin(event)" class="space-y-4 text-xs">
+        <div class="space-y-1.5">
+          <label class="text-slate-300 font-bold flex items-center justify-between">
+            <span>Email hoặc Tên tài khoản:</span>
+            <span class="text-[10px] text-slate-500 font-normal">Bắt buộc</span>
+          </label>
+          <input id="gateLoginEmail" type="text" required placeholder="VD: tuan.devops@fintech.vn hoặc tuanit" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 transition"/>
+        </div>
+        <div class="space-y-1.5">
+          <label class="text-slate-300 font-bold flex items-center justify-between">
+            <span>Mật khẩu / Mã PIN:</span>
+            <span class="text-[10px] text-slate-500 font-normal">Bắt buộc</span>
+          </label>
+          <input id="gateLoginPassword" type="password" required placeholder="Nhập mật khẩu của bạn..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 transition"/>
+        </div>
+        <div id="gateLoginError" class="hidden text-[11px] text-rose-400 font-semibold p-2 rounded-lg bg-rose-500/10 border border-rose-500/20"></div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-600 via-indigo-600 to-indigo-700 hover:from-cyan-500 hover:to-indigo-600 text-white font-extrabold text-sm shadow-xl shadow-cyan-500/25 transition cursor-pointer">
+          Mở Khóa &amp; Vào Học Ngay 🚀
+        </button>
+      </form>
+
+      <!-- Form: Đăng Ký -->
+      <form id="gateRegisterForm" onsubmit="handleGateRegister(event)" class="hidden space-y-3.5 text-xs">
+        <div class="space-y-1">
+          <label class="text-slate-300 font-bold">Họ và Tên của bạn:</label>
+          <input id="gateRegName" type="text" required placeholder="VD: Nguyễn Minh Tuấn" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 transition"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-slate-300 font-bold">Email công việc / cá nhân:</label>
+          <input id="gateRegEmail" type="email" required placeholder="VD: tuan.devops@fintech.vn" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 transition"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-slate-300 font-bold">Chuyên môn &amp; Mục tiêu học:</label>
+          <select id="gateRegRole" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 cursor-pointer">
+            <option value="💻 IT Vận Hành Hệ Thống &amp; DevOps">💻 IT Vận Hành Hệ Thống &amp; DevOps</option>
+            <option value="🏦 Tài Chính &amp; Ngân Hàng">🏦 Tài Chính &amp; Ngân Hàng (FinTech)</option>
+            <option value="🏢 Tiếng Anh Công Sở &amp; Quản Lý">🏢 Tiếng Anh Công Sở &amp; Quản Lý</option>
+            <option value="🎯 Luyện Thi IELTS Speaking">🎯 Luyện Thi IELTS Speaking</option>
+          </select>
+        </div>
+        <div class="space-y-1">
+          <label class="text-slate-300 font-bold">Mật khẩu:</label>
+          <input id="gateRegPassword" type="password" required minlength="4" placeholder="Tối thiểu 4 ký tự..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 transition"/>
+        </div>
+        <div id="gateRegError" class="hidden text-[11px] text-rose-400 font-semibold p-2 rounded-lg bg-rose-500/10 border border-rose-500/20"></div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-500/25 transition cursor-pointer">
+          Tạo Tài Khoản &amp; Kích Hoạt 🚀
+        </button>
+      </form>
+
+      <!-- Cloud Sync & GitHub badge -->
+      <div class="pt-3 border-t border-slate-800 text-center space-y-2">
+        <div class="flex items-center justify-center gap-1.5 text-[11px] text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Đồng bộ an toàn: Vercel Cloud &amp; GitHub Repo</span>
+        </div>
+        <p class="text-[10px] text-slate-500">
+          Dữ liệu bài học, chuỗi streak và sổ từ vựng được tự động lưu trữ vĩnh viễn trên tài khoản của bạn.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== MAIN APP SHELL (ĐƯỢC BẢO VỆ) ==================== -->
+  <div id="mainAppShell" class="hidden min-h-screen flex flex-col">
   <!-- Top Header -->
   <header class="sticky top-0 z-40 border-b border-slate-800 bg-slate-900/95 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
@@ -312,13 +414,14 @@
               <div class="flex items-center justify-between px-3 py-2 bg-slate-900 border-b border-slate-800">
                 <span class="text-xs font-bold text-red-400 flex items-center gap-1.5">▶ Video Bài Học Tuần Này</span>
                 <div class="flex items-center gap-2">
+                  <a id="dashVideoDirectBtn" href="https://www.youtube.com/watch?v=g3oViL-3G-Y" target="_blank" rel="noopener noreferrer" class="text-xs px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold flex items-center gap-1 transition shadow cursor-pointer" title="Mở trực tiếp trên App YouTube / Trình duyệt"><span>▶</span> <span>Mở App YouTube ↗</span></a>
                   <button onclick="playLectureAudio()" class="text-xs px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold flex items-center gap-1 transition" title="Nghe bài đọc chuẩn bản xứ ngay lập tức">🔊 Nghe Audio Bài Giảng</button>
                   <button onclick="toggleVideoEmbed()" id="toggleVideoBtn" class="text-xs px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition">Ẩn video</button>
                   <button onclick="startShadowingMode()" class="text-xs px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition">🎙️ Shadowing Mode</button>
                 </div>
               </div>
               <div id="videoEmbedWrapper" class="relative w-full" style="padding-bottom:56.25%;">
-                <iframe id="dashVideoEmbed" class="absolute inset-0 w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe id="dashVideoEmbed" class="absolute inset-0 w-full h-full" src="" frameborder="0" playsinline webkit-playsinline allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <!-- Video Sound Helper Bar -->
               <div class="px-3 py-2 bg-indigo-950/40 border-t border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
@@ -1263,6 +1366,7 @@
     </section>
 
   </main>
+  </div><!-- end #mainAppShell -->
 
   <script>
     // ==================== EMBEDDED CURRICULUM DATA ====================
@@ -2670,7 +2774,10 @@
       if (wrapper) wrapper.style.display = 'block';
 
       if (vid) {
-        iframe.src = `https://www.youtube.com/embed/${vid}?rel=0&modestbranding=1&enablejsapi=1`;
+        const pageOrigin = encodeURIComponent(window.location.origin || 'https://speakflow180.vercel.app');
+        iframe.src = `https://www.youtube.com/embed/${vid}?playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=${pageOrigin}`;
+        const directBtn = document.getElementById('dashVideoDirectBtn');
+        if (directBtn) directBtn.href = `https://www.youtube.com/watch?v=${vid}`;
         if (linkEl) {
           linkEl.href = dayObj.resUrl.includes('youtube.com/watch') ? dayObj.resUrl : `https://www.youtube.com/watch?v=${vid}`;
           linkEl.textContent = '🔗 ' + vTitle + ' ↗';
@@ -5649,12 +5756,113 @@ function sendChatMessage() {
           currentUser = JSON.parse(rawUser);
         }
       } catch(e) {}
-      renderHeaderAuth();
-      if (currentUser && currentUser.email) {
-        // Trigger background sync on initial load
+
+      if (currentUser && currentUser.name) {
+        unlockAppShell();
+        renderHeaderAuth();
         setTimeout(() => triggerCloudSync(true), 2000);
+      } else {
+        lockToAuthGate();
       }
     }
+
+    function lockToAuthGate() {
+      const gate = document.getElementById('authGateScreen');
+      const shell = document.getElementById('mainAppShell');
+      if (gate) gate.classList.remove('hidden');
+      if (shell) shell.classList.add('hidden');
+    }
+
+    function unlockAppShell() {
+      const gate = document.getElementById('authGateScreen');
+      const shell = document.getElementById('mainAppShell');
+      if (gate) gate.classList.add('hidden');
+      if (shell) shell.classList.remove('hidden');
+    }
+
+    function switchGateTab(tab) {
+      const btnLogin = document.getElementById('gateTabBtnLogin');
+      const btnReg = document.getElementById('gateTabBtnRegister');
+      const formLogin = document.getElementById('gateLoginForm');
+      const formReg = document.getElementById('gateRegisterForm');
+
+      if (tab === 'register') {
+        btnLogin.className = 'flex-1 py-2.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer';
+        btnReg.className = 'flex-1 py-2.5 rounded-lg bg-indigo-600 text-white transition shadow cursor-pointer';
+        formLogin.classList.add('hidden');
+        formReg.classList.remove('hidden');
+      } else {
+        btnLogin.className = 'flex-1 py-2.5 rounded-lg bg-indigo-600 text-white transition shadow cursor-pointer';
+        btnReg.className = 'flex-1 py-2.5 rounded-lg text-slate-400 hover:text-white transition cursor-pointer';
+        formLogin.classList.remove('hidden');
+        formReg.classList.add('hidden');
+      }
+    }
+
+    async function handleGateLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('gateLoginEmail').value.trim();
+      const pwd = document.getElementById('gateLoginPassword').value;
+      const errEl = document.getElementById('gateLoginError');
+
+      if (!email || !pwd) {
+        if (errEl) { errEl.textContent = 'Vui lòng nhập email và mật khẩu.'; errEl.classList.remove('hidden'); }
+        return;
+      }
+
+      currentUser = {
+        id: 'usr_' + email.replace(/[^a-zA-Z0-9]/g, '_'),
+        name: email.split('@')[0],
+        email: email,
+        role: '💻 IT Vận Hành Hệ Thống & DevOps',
+        avatar: '👨‍💻',
+        lastSyncedAt: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('sf180_user', JSON.stringify(currentUser));
+      } catch(e) {}
+
+      unlockAppShell();
+      renderHeaderAuth();
+      showToast('Chào mừng ' + currentUser.name + ' trở lại SpeakFlow 180!', '🎉');
+      pullCloudSync(false);
+    }
+
+    async function handleGateRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('gateRegName').value.trim();
+      const email = document.getElementById('gateRegEmail').value.trim();
+      const role = document.getElementById('gateRegRole').value;
+      const pwd = document.getElementById('gateRegPassword').value;
+      const errEl = document.getElementById('gateRegError');
+
+      if (!name || !email || !pwd) {
+        if (errEl) { errEl.textContent = 'Vui lòng điền đầy đủ thông tin.'; errEl.classList.remove('hidden'); }
+        return;
+      }
+
+      currentUser = {
+        id: 'usr_' + Date.now(),
+        name: name,
+        email: email,
+        role: role,
+        avatar: role.includes('IT') ? '👨‍💻' : role.includes('Ngân Hàng') ? '🏦' : '💼',
+        joinedDate: new Date().toLocaleDateString('vi-VN'),
+        lastSyncedAt: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('sf180_user', JSON.stringify(currentUser));
+      } catch(e) {}
+
+      unlockAppShell();
+      renderHeaderAuth();
+      showToast('Tạo tài khoản thành công! Chào mừng ' + name + '!', '🚀');
+      triggerCloudSync(false);
+    }
+
+
 
     function renderHeaderAuth() {
       const container = document.getElementById('headerAuthContainer');
@@ -5814,14 +6022,14 @@ function sendChatMessage() {
     }
 
     function handleLogout() {
-      if (!confirm('Bạn có chắc chắn muốn đăng xuất tài khoản?')) return;
+      if (!confirm('Bạn có chắc chắn muốn đăng xuất khỏi SpeakFlow 180?')) return;
       currentUser = null;
       try {
         localStorage.removeItem('sf180_user');
       } catch(e) {}
-      renderHeaderAuth();
       closeProfileModal();
-      showToast('Đã đăng xuất tài khoản.', '👋');
+      lockToAuthGate();
+      showToast('Đã đăng xuất tài khoản. Hệ thống đã khóa.', '🔒');
     }
 
     // ==================== CLOUD SYNC & GITHUB SYNC ENGINE ====================
