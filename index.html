@@ -5814,7 +5814,7 @@ function sendChatMessage() {
           }
           localStorage.setItem('sf180_user', JSON.stringify(currentUser));
           if (!silent) {
-            showToast('Đã đồng bộ tiến độ lên Đám mây Vercel' + (currentUser.gistId ? ' & GitHub!' : '!'), '☁️');
+            showToast('Đã lưu tiến độ lên Đám mây Vercel & GitHub Repository!', '🐙');
           }
           return true;
         }
@@ -6121,30 +6121,23 @@ function sendChatMessage() {
         </div>
       </div>
 
-      <!-- GITHUB GIST CLOUD SYNC SECTION -->
-      <div class="p-4 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-700/80 space-y-3 text-xs">
+      <!-- GITHUB REPOSITORY & CLOUD AUTO-SYNC SECTION -->
+      <div class="p-4 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-emerald-500/40 space-y-3 text-xs">
         <div class="flex items-center justify-between">
-          <div class="flex items-center gap-1.5 font-bold text-white">
-            <span>🐙</span> <span>Đồng Bộ Trực Tiếp Lên GitHub (Gist Sync)</span>
+          <div class="flex items-center gap-2 font-bold text-white">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>🐙 GitHub Repository (Auto Sync)</span>
           </div>
-          <span id="githubStatusBadge" class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Tùy chọn</span>
+          <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">Đang Tự Động Lưu</span>
         </div>
         <p class="text-slate-300 text-[11px] leading-relaxed">
-          Lưu trữ bản sao dữ liệu bí mật vào tài khoản GitHub của chính bạn. Hoàn toàn riêng tư, an toàn và miễn phí trọn đời:
+          Toàn bộ tiến độ học tập, streak, XP và sổ từ vựng được tự động đẩy thẳng vào kho lưu trữ GitHub <strong class="text-white">nguyendat260104-cyber/speakflow180</strong> tại thư mục <code class="text-emerald-300 font-mono">data/users/</code>.
         </p>
-        <div class="space-y-1.5">
-          <div class="flex items-center gap-1.5">
-            <input id="inputGithubToken" type="password" placeholder="Dán GitHub Personal Access Token (ghp_...)" class="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 font-mono"/>
-            <a href="https://github.com/settings/tokens/new?description=SpeakFlow180Sync&scopes=gist" target="_blank" rel="noopener noreferrer" class="px-2.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-[11px] font-bold whitespace-nowrap transition">
-              Tạo Token ↗
-            </a>
-          </div>
-          <div class="flex items-center justify-between flex-wrap gap-2 pt-1">
-            <button onclick="saveAndSyncGitHub()" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-cyan-500/50 text-cyan-300 font-bold text-xs transition flex items-center gap-1">
-              <span>🐙</span> <span>Lưu Token &amp; Đẩy lên GitHub</span>
-            </button>
-            <span id="githubGistLinkContainer"></span>
-          </div>
+        <div class="flex items-center justify-between flex-wrap gap-2 pt-1">
+          <a href="https://github.com/nguyendat260104-cyber/speakflow180/tree/main/data" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-emerald-500/40 text-emerald-300 font-bold text-xs transition flex items-center gap-1.5 shadow">
+            <span>📂</span> <span>Xem Dữ Liệu Học Trên GitHub ↗</span>
+          </a>
+          <span class="text-[10px] text-slate-400">Tự động commit &amp; lưu trữ vĩnh viễn</span>
         </div>
       </div>
 
