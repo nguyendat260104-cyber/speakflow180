@@ -821,6 +821,41 @@
               <span>●</span> <span id="callStatusLabel">Emma sẵn sàng lắng nghe và đàm thoại cùng bạn...</span>
             </div>
           </div>
+
+          <!-- Live Harmonic Cyber Soundwave Visualizer -->
+          <div class="w-full max-w-xs sm:max-w-sm px-2 pt-0.5 flex flex-col items-center">
+            <canvas id="callWaveCanvas" width="360" height="38" class="w-full h-9 rounded-xl bg-slate-950/70 border border-cyan-500/30 shadow-inner"></canvas>
+          </div>
+
+          <!-- Fast Situation Presets Toolbar -->
+          <div class="w-full max-w-md px-2 pt-1">
+            <div class="flex items-center justify-between text-[11px] text-slate-400 pb-1">
+              <span class="font-bold text-cyan-300 flex items-center gap-1">
+                <span>⚡</span> <span>Tình Huống Sát Thực Tế (1 Chạm):</span>
+              </span>
+              <span class="text-[10px] text-slate-500">Tự chuyển Bối Cảnh &amp; Giảng Viên</span>
+            </div>
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scroll text-xs">
+              <button onclick="selectScenario('devops_incident')" class="px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-rose-950/80 border border-rose-500/40 text-rose-300 font-semibold whitespace-nowrap transition flex items-center gap-1">
+                <span>🚨</span> <span>War Room Sự Cố</span>
+              </button>
+              <button onclick="selectScenario('banking_fintech')" class="px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-semibold whitespace-nowrap transition flex items-center gap-1">
+                <span>🏦</span> <span>FinTech &amp; Banking</span>
+              </button>
+              <button onclick="selectScenario('cloud_infra')" class="px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-indigo-950/80 border border-indigo-500/40 text-indigo-300 font-semibold whitespace-nowrap transition flex items-center gap-1">
+                <span>💻</span> <span>Cloud &amp; DevOps</span>
+              </button>
+              <button onclick="selectScenario('interview')" class="px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-amber-950/80 border border-amber-500/40 text-amber-300 font-semibold whitespace-nowrap transition flex items-center gap-1">
+                <span>💼</span> <span>Phỏng Vấn SRE</span>
+              </button>
+              <button onclick="selectScenario('audit_compliance')" class="px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-semibold whitespace-nowrap transition flex items-center gap-1">
+                <span>📊</span> <span>Báo Cáo SLA</span>
+              </button>
+              <button onclick="selectScenario('smalltalk')" class="px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-purple-950/80 border border-purple-500/40 text-purple-300 font-semibold whitespace-nowrap transition flex items-center gap-1">
+                <span>☕</span> <span>Small Talk</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- ==================== ELSA INTERACTIVE CONVERSATION FEED ==================== -->
@@ -2206,16 +2241,112 @@
       }
     }
 
-    function getBestEnglishVoice(targetLang = 'en-US') {
+    function getBestEnglishVoice(targetLang = 'en-US', preferGender = null) {
       if (!cachedAppVoices || cachedAppVoices.length === 0) loadAppVoices();
       if (!cachedAppVoices || cachedAppVoices.length === 0) return null;
       const norm = (targetLang || 'en-US').toLowerCase().replace('_', '-');
-      let v = cachedAppVoices.find(voice => voice.lang && voice.lang.toLowerCase().replace('_', '-') === norm);
-      if (v) return v;
-      v = cachedAppVoices.find(voice => voice.lang && voice.lang.toLowerCase().startsWith('en'));
-      if (v) return v;
-      return cachedAppVoices[0];
+      const isUK = norm.includes('gb');
+      const candidates = cachedAppVoices.filter(v => {
+        const l = (v.lang || '').toLowerCase().replace('_', '-');
+        return l.startsWith('en');
+      });
+      if (candidates.length === 0) return cachedAppVoices[0];
+      function scoreVoice(voice) {
+        let score = 0;
+        const name = (voice.name || '').toLowerCase();
+        const lang = (voice.lang || '').toLowerCase().replace('_', '-');
+        if (isUK && (lang.includes('gb') || name.includes('united kingdom') || name.includes('british') || name.includes('oxford'))) score += 35;
+        if (!isUK && (lang.includes('us') || name.includes('united states') || name.includes('american'))) score += 30;
+        if (name.includes('natural') || name.includes('neural') || name.includes('online')) score += 60;
+        if (name.includes('google') || name.includes('samantha') || name.includes('daniel') || name.includes('karen') || name.includes('serena') || name.includes('jenny') || name.includes('guy') || name.includes('aria') || name.includes('moira') || name.includes('oliver')) score += 45;
+        if (name.includes('premium') || name.includes('enhanced')) score += 35;
+        if (preferGender === 'female' && (name.includes('female') || name.includes('jenny') || name.includes('samantha') || name.includes('zira') || name.includes('karen') || name.includes('aria') || name.includes('serena'))) score += 20;
+        if (preferGender === 'male' && (name.includes('male') || name.includes('guy') || name.includes('daniel') || name.includes('david') || name.includes('ryan') || name.includes('oliver') || name.includes('mark'))) score += 20;
+        if (name.includes('desktop') || name.includes('david desktop') || name.includes('zira desktop')) score -= 25;
+        return score;
+      }
+      candidates.sort((a, b) => scoreVoice(b) - scoreVoice(a));
+      return candidates[0];
     }
+
+    // ==================== STREAM SPEECH QUEUE (INSTANT SENTENCE PIPELINING) ====================
+    class StreamSpeechQueue {
+      constructor() {
+        this.queue = [];
+        this.isPlaying = false;
+        this.onSentenceStart = null;
+        this.onAllComplete = null;
+        this.watchdogInterval = null;
+      }
+      enqueue(sentence, lang, rate) {
+        if (!sentence || !sentence.trim()) return;
+        this.queue.push({ sentence: sentence.trim(), lang, rate });
+        if (!this.isPlaying) this.playNext();
+      }
+      playNext() {
+        if (this.queue.length === 0) {
+          this.isPlaying = false;
+          this.stopWatchdog();
+          if (this.onAllComplete) this.onAllComplete();
+          return;
+        }
+        this.isPlaying = true;
+        this.startWatchdog();
+        const item = this.queue.shift();
+        if (this.onSentenceStart) this.onSentenceStart(item.sentence);
+        const char = (typeof AI_CHARACTERS !== 'undefined' && AI_CHARACTERS[currentAiChar]) ? AI_CHARACTERS[currentAiChar] : null;
+        const preferGender = (char && (char.id === 'emma')) ? 'female' : 'male';
+        const bestVoice = getBestEnglishVoice(item.lang || (char ? char.lang : 'en-US'), preferGender);
+        if ('speechSynthesis' in window) {
+          try {
+            if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.resume();
+            const utter = new SpeechSynthesisUtterance(item.sentence);
+            if (bestVoice) { utter.voice = bestVoice; utter.lang = bestVoice.lang; } else { utter.lang = item.lang || (char ? char.lang : 'en-US'); }
+            utter.rate = item.rate || currentSpeechRate || 1.0;
+            utter.pitch = 1.02;
+            let hasFinished = false;
+            const completeSentence = () => {
+              if (hasFinished) return;
+              hasFinished = true;
+              window._lastUtterance = null;
+              setTimeout(() => { this.playNext(); }, 90);
+            };
+            utter.onend = completeSentence;
+            utter.onerror = (err) => { console.warn('Utterance error:', err); completeSentence(); };
+            window._lastUtterance = utter;
+            setTimeout(() => {
+              try {
+                if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+                window.speechSynthesis.speak(utter);
+              } catch(e) { completeSentence(); }
+            }, 30);
+            return;
+          } catch(e) { console.warn('SpeechSynthesis error:', e); }
+        }
+        fallbackGoogleAudioStream(item.sentence, item.lang, item.rate, null, () => { setTimeout(() => { this.playNext(); }, 90); });
+      }
+      cancel() {
+        this.queue = [];
+        this.isPlaying = false;
+        this.stopWatchdog();
+        if (window.speechSynthesis) { try { window.speechSynthesis.cancel(); } catch(e) {} }
+        if (currentTtsAudio) { try { currentTtsAudio.pause(); currentTtsAudio = null; } catch(e) {} }
+      }
+      startWatchdog() {
+        this.stopWatchdog();
+        this.watchdogInterval = setInterval(() => {
+          if (this.isPlaying && 'speechSynthesis' in window && window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+          }
+        }, 2000);
+      }
+      stopWatchdog() {
+        if (this.watchdogInterval) { clearInterval(this.watchdogInterval); this.watchdogInterval = null; }
+      }
+    }
+    const streamSpeechQueue = new StreamSpeechQueue();
 
     function chunkTextForTts(text, maxLen = 160) {
       if (!text) return [];
@@ -4753,6 +4884,20 @@
                 <div id="trans-${t.id}" class="hidden text-xs text-slate-300 italic pt-1 border-t border-slate-800/80">
                   💡 ${escapeHtml(t.trans)}
                 </div>
+                ${t.suggestedReplies && t.suggestedReplies.length > 0 ? `
+                  <div class="pt-2 border-t border-slate-800/80 space-y-1.5">
+                    <div class="text-[11px] text-cyan-300 font-semibold flex items-center gap-1">
+                      <span>💬</span> <span>Gợi ý đối đáp phản xạ (Bấm 1 chạm để nói):</span>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                      ${t.suggestedReplies.map(r => `
+                        <button onclick="sendQuickReplyText('${escapeHtml(r).replace(/'/g, "\\'")}')" class="text-left text-xs px-2.5 py-1.5 rounded-xl bg-slate-800/90 hover:bg-cyan-900/60 border border-slate-700 hover:border-cyan-400 text-slate-200 hover:text-white transition flex items-center gap-1.5">
+                          <span>➤</span> <span>${escapeHtml(r)}</span>
+                        </button>
+                      `).join('')}
+                    </div>
+                  </div>
+                ` : ''}
               </div>
             </div>
           `;
@@ -4883,9 +5028,107 @@
       feed.scrollTop = feed.scrollHeight;
     }
 
+    // ==================== 60FPS LIVE HARMONIC SOUNDWAVE VISUALIZER ====================
+    class ActiveWaveVisualizer {
+      constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas ? this.canvas.getContext('2d') : null;
+        this.mode = 'idle'; // 'idle', 'listening', 'thinking', 'ai_speaking'
+        this.animationFrame = null;
+        this.phase = 0;
+        if (this.canvas) this.start();
+      }
+      setMode(mode) { this.mode = mode; }
+      start() {
+        if (!this.canvas || !this.ctx) return;
+        const render = () => {
+          this.draw();
+          this.animationFrame = requestAnimationFrame(render);
+        };
+        render();
+      }
+      draw() {
+        if (!this.ctx || !this.canvas) return;
+        const ctx = this.ctx;
+        const w = this.canvas.width;
+        const h = this.canvas.height;
+        ctx.clearRect(0, 0, w, h);
+        this.phase += 0.05;
+        ctx.fillStyle = 'rgba(2, 6, 23, 0.45)';
+        ctx.fillRect(0, 0, w, h);
+        const cy = h / 2;
+        if (this.mode === 'listening') {
+          ctx.lineWidth = 2.4; ctx.strokeStyle = '#f43f5e';
+          ctx.beginPath();
+          for (let x = 0; x < w; x++) {
+            const angle = (x / w) * Math.PI * 4 + this.phase * 2.2;
+            const amp = Math.sin(x * 0.05 + this.phase) * 12 + Math.sin(x * 0.1) * 5;
+            const y = cy + Math.sin(angle) * amp;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+          ctx.lineWidth = 1.2; ctx.strokeStyle = '#fb7185';
+          ctx.beginPath();
+          for (let x = 0; x < w; x++) {
+            const angle = (x / w) * Math.PI * 6 - this.phase * 2.5;
+            const amp = Math.cos(x * 0.06 + this.phase) * 8;
+            const y = cy + Math.sin(angle) * amp;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        } else if (this.mode === 'ai_speaking') {
+          ctx.lineWidth = 2.5; ctx.strokeStyle = '#22d3ee';
+          ctx.beginPath();
+          for (let x = 0; x < w; x++) {
+            const angle = (x / w) * Math.PI * 4 + this.phase * 1.6;
+            const amp = Math.sin(x * 0.04 + this.phase) * 11 + Math.cos(x * 0.08) * 5;
+            const y = cy + Math.sin(angle) * amp;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+          ctx.lineWidth = 1.5; ctx.strokeStyle = '#818cf8';
+          ctx.beginPath();
+          for (let x = 0; x < w; x++) {
+            const angle = (x / w) * Math.PI * 5 - this.phase * 2;
+            const amp = Math.cos(x * 0.05 + this.phase) * 7;
+            const y = cy + Math.cos(angle) * amp;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        } else if (this.mode === 'thinking') {
+          ctx.lineWidth = 2; ctx.strokeStyle = '#f59e0b';
+          ctx.beginPath();
+          for (let x = 0; x < w; x++) {
+            const angle = (x / w) * Math.PI * 8 + this.phase * 3;
+            const amp = Math.sin(angle) * 5;
+            const y = cy + amp;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        } else {
+          ctx.lineWidth = 1.8; ctx.strokeStyle = '#38bdf8';
+          ctx.beginPath();
+          for (let x = 0; x < w; x++) {
+            const amp = Math.sin(x * 0.025 + this.phase * 0.8) * 3.5;
+            const y = cy + amp;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+      }
+    }
+
+    function sendQuickReplyText(phrase) {
+      if (!phrase) return;
+      handleUserSpokenMessage(phrase);
+    }
+
     function initAiVoiceCall() {
       initScenarios();
-      selectScenario('smalltalk');
+      selectScenario('banking_fintech');
+      if (!window.activeWaveVisualizer) {
+        window.activeWaveVisualizer = new ActiveWaveVisualizer('callWaveCanvas');
+      }
     }
 
     function selectAiCharacter(charId) {
@@ -4969,6 +5212,12 @@
       }
 
       if (statusLabel) statusLabel.textContent = labelText;
+      if (window.activeWaveVisualizer) {
+        if (state === 'speaking') window.activeWaveVisualizer.setMode('ai_speaking');
+        else if (state === 'listening') window.activeWaveVisualizer.setMode('listening');
+        else if (state === 'thinking') window.activeWaveVisualizer.setMode('thinking');
+        else window.activeWaveVisualizer.setMode('idle');
+      }
 
       if (dot && statusText) {
         if (state === 'listening') {
@@ -5366,33 +5615,89 @@ RESPONSE FORMAT (JSON ONLY):
       };
     }
 
-    // Master Unified Dispatcher
+    // Master Unified Dispatcher (Serverless Vercel AI -> Groq -> Gemini -> Master ESL Tree)
     async function dispatchAiTeacherTurn(cleanText) {
       const char = AI_CHARACTERS[currentAiChar] || AI_CHARACTERS.emma;
       const sc = SCENARIOS[currentScenario] || SCENARIOS.smalltalk;
 
-      const groqKey = localStorage.getItem('sf180_groq_key');
-      const geminiKey = localStorage.getItem('sf180_gemini_key');
+      const userGroqKey = localStorage.getItem('sf180_groq_key') || '';
+      const userGeminiKey = localStorage.getItem('sf180_gemini_key') || '';
+      const customKey = userGroqKey || userGeminiKey || '';
 
-      // 1. Try Groq (Ultra speed ~300ms)
-      if (groqKey && groqKey.length > 10) {
-        const groqRes = await callGroqApi(cleanText, groqKey, char, sc);
-        if (groqRes && groqRes.text) return groqRes;
+      // 1. Primary Engine: Vercel Serverless AI Proxy (/api/chat) with Auto Llama 3.3 / Gemini 2.0
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 6500);
+
+        const resp = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal,
+          body: JSON.stringify({
+            message: cleanText,
+            history: chatHistory.slice(-6),
+            character: currentAiChar,
+            scenario: currentScenario,
+            customApiKey: customKey
+          })
+        });
+        clearTimeout(timeoutId);
+
+        if (resp.ok) {
+          const json = await resp.json();
+          if (json && json.en) {
+            updateAiEngineLiveBadge(json.source || 'cloud');
+            return {
+              text: json.en,
+              trans: json.vi || 'Bản dịch đàm thoại thực tế',
+              teacherTip: json.teacherTip || '',
+              suggestedReplies: json.suggestedReplies || []
+            };
+          }
+        }
+      } catch (err) {
+        console.warn('/api/chat serverless call unavailable or timed out, trying client direct engines:', err);
       }
 
-      // 2. Try Google Gemini Flash (~500ms)
-      if (geminiKey && geminiKey.length > 10) {
-        const geminiRes = await callGeminiApi(cleanText, geminiKey, char, sc);
-        if (geminiRes && geminiRes.text) return geminiRes;
+      // 2. Direct Groq Client-side fallback if key is configured
+      if (userGroqKey && userGroqKey.length > 10) {
+        const groqRes = await callGroqApi(cleanText, userGroqKey, char, sc);
+        if (groqRes && groqRes.text) {
+          updateAiEngineLiveBadge('groq-llama-3.3-70b');
+          return groqRes;
+        }
       }
 
-      // 3. Built-in Master ESL Teacher Pedagogical Engine (0ms, 100% reliable)
+      // 3. Direct Gemini Client-side fallback if key is configured
+      if (userGeminiKey && userGeminiKey.length > 10) {
+        const geminiRes = await callGeminiApi(cleanText, userGeminiKey, char, sc);
+        if (geminiRes && geminiRes.text) {
+          updateAiEngineLiveBadge('gemini-flash');
+          return geminiRes;
+        }
+      }
+
+      // 4. Built-in Master ESL Teacher Pedagogical Engine (0ms, 100% reliable)
+      updateAiEngineLiveBadge('autonomous-master-esl-v2');
       const localRes = sc.respond(cleanText, scenarioTurnCount);
       return {
         text: localRes.text,
         trans: localRes.trans,
-        teacherTip: localRes.teacherTip || 'Tập trung bật rõ âm đuôi (Ending Sounds) và giữ nhịp thở đều đặn khi nói nhé!'
+        teacherTip: localRes.teacherTip || 'Tập trung bật rõ âm đuôi (Ending Sounds) và giữ nhịp thở đều đặn khi nói nhé!',
+        suggestedReplies: []
       };
+    }
+
+    function updateAiEngineLiveBadge(source) {
+      const statusEl = document.getElementById('aiEngineStatusText');
+      if (!statusEl) return;
+      if (source.includes('groq')) {
+        statusEl.innerHTML = '<span class="text-cyan-400 font-bold">🚀 Đang dùng: Groq Llama 3.3 70B Siêu Tốc (~250ms Cloud)</span>';
+      } else if (source.includes('gemini')) {
+        statusEl.innerHTML = '<span class="text-emerald-400 font-bold">⚡ Đang dùng: Google Gemini 2.0 Flash (Cloud)</span>';
+      } else {
+        statusEl.innerHTML = '<span class="text-indigo-300 font-bold">🧠 Đang dùng: Giảng Viên Bản Xứ 10 Năm (Serverless NLP)</span>';
+      }
     }
 
     function toggleAiSettingsModal() {
@@ -5458,24 +5763,33 @@ RESPONSE FORMAT (JSON ONLY):
 
       setAiAvatarState('speaking', char.name + ' đang trả lời bạn...');
 
-      playHybridSpeech(
-        text,
-        targetLang,
-        rate || currentSpeechRate || 1.0,
-        () => {
-          setAiAvatarState('speaking', char.name + ' đang nói...');
-        },
-        () => {
-          setAiAvatarState('idle', char.name + ' sẵn sàng... Bấm Mic để nói tiếp!');
-          if (handsFreeActive && aiCallMode === 'call') {
-            setTimeout(() => {
-              if (handsFreeActive && !isCallRecActive) {
-                toggleCallMicrophone();
-              }
-            }, 800);
-          }
+      // Split into progressive spoken sentences for instant sentence-by-sentence streaming
+      const clean = text.replace(/<[^>]+>/g, '').replace(/[*_#`]/g, '').trim();
+      const sentences = clean.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [clean];
+
+      streamSpeechQueue.cancel();
+
+      streamSpeechQueue.onSentenceStart = (s) => {
+        setAiAvatarState('speaking', char.name + ' đang nói...');
+      };
+
+      streamSpeechQueue.onAllComplete = () => {
+        setAiAvatarState('idle', char.name + ' sẵn sàng... Bấm Mic để nói tiếp!');
+        if (handsFreeActive && aiCallMode === 'call') {
+          setTimeout(() => {
+            if (handsFreeActive && !isCallRecActive) {
+              toggleCallMicrophone();
+            }
+          }, 600); // Snappy hands-free re-activation
         }
-      );
+      };
+
+      sentences.forEach(s => {
+        const trimmed = s.trim();
+        if (trimmed) {
+          streamSpeechQueue.enqueue(trimmed, targetLang, rate || currentSpeechRate || 1.0);
+        }
+      });
     }
 
     function replayAiSpeech() {
