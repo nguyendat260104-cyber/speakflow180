@@ -6,9 +6,9 @@
     "email": "nguyendat260104@gmail.com",
     "role": "💻 IT Vận Hành Hệ Thống & DevOps",
     "avatar": "👨‍💻",
-    "lastSyncedAt": "2026-10-25T13:03:09.887Z"
+    "lastSyncedAt": "2026-10-25T13:04:16.683Z"
   },
-  "lastSynced": "2026-10-25T13:04:15.921Z",
+  "lastSynced": "2026-10-25T15:40:20.663Z",
   "stats": {
     "streak": 1,
     "xp": 120,
@@ -58,6 +58,8 @@
         "dateAdded": "Mặc định",
         "reviewCount": 2
       }
-    ]
+    ],
+    "streakShields": 1,
+    "lastActiveDate": "2026-10-25"
   }
 }
