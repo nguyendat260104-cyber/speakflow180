@@ -1409,43 +1409,79 @@
         </div>
 
         <!-- Filter Controls Bar -->
-        <div class="space-y-3">
-          <!-- Category Filter Pills -->
-          <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-            <span class="text-xs font-bold text-slate-400 shrink-0">Chủ đề:</span>
-            <button onclick="filterPodcastCategory('all')" id="pcCatBtn-all" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow transition cursor-pointer">
-              🌟 Tất Cả (74 tập)
+        <div class="space-y-3.5">
+          <!-- Tier 1: Level Filter (Từ Thấp Lên Cao) -->
+          <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap pb-2 border-b border-slate-800/80">
+            <span class="text-xs font-bold text-amber-300 shrink-0 flex items-center gap-1">
+              <span>🎯</span> <span>Cấp độ (Level):</span>
+            </span>
+            <button onclick="filterPodcastLevel('all')" id="pcLvlBtn-all" class="pc-lvl-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500/25 text-amber-300 border border-amber-500/50 shadow transition cursor-pointer flex items-center gap-1">
+              🌟 Tất Cả Level
             </button>
-            <button onclick="filterPodcastCategory('bbc')" id="pcCatBtn-bbc" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
-              <span>🇬🇧</span> <span>BBC 6-Minute English (20 tập có Audio)</span>
+            <button onclick="filterPodcastLevel('a1_a2')" id="pcLvlBtn-a1_a2" class="pc-lvl-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🌱</span> <span>Level 1: A1 - A2 (Sơ Cấp / Dễ Nghe - Đọc Chậm Rõ)</span>
             </button>
-            <button onclick="filterPodcastCategory('fintech')" id="pcCatBtn-fintech" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
-              <span>🏦</span> <span>FinTech &amp; Ngân Hàng Số</span>
+            <button onclick="filterPodcastLevel('b1')" id="pcLvlBtn-b1" class="pc-lvl-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🌿</span> <span>Level 2: B1 (Trung Cấp - Giao Tiếp Đời Sống)</span>
             </button>
-            <button onclick="filterPodcastCategory('it_devops')" id="pcCatBtn-it_devops" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
-              <span>💻</span> <span>IT DevOps, SRE &amp; Cloud</span>
+            <button onclick="filterPodcastLevel('b2')" id="pcLvlBtn-b2" class="pc-lvl-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🌳</span> <span>Level 3: B2 (Trung Cao Cấp - Công Sở &amp; Chuyên Môn)</span>
             </button>
-            <button onclick="filterPodcastCategory('workplace')" id="pcCatBtn-workplace" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
-              <span>🏢</span> <span>Công Sở &amp; Quản Lý (HBR)</span>
-            </button>
-            <button onclick="filterPodcastCategory('british_council')" id="pcCatBtn-british_council" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
-              <span>🇬🇧</span> <span>Hội Đồng Anh (Carolina)</span>
-            </button>
-            <button onclick="filterPodcastCategory('general_fluency')" id="pcCatBtn-general_fluency" class="pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
-              <span>🎙️</span> <span>BBC 6-Min &amp; VOA</span>
+            <button onclick="filterPodcastLevel('c1_c2')" id="pcLvlBtn-c1_c2" class="pc-lvl-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🏆</span> <span>Level 4: C1 - C2 (Chuyên Sâu Bản Xứ &amp; Tư Duy)</span>
             </button>
           </div>
 
-          <!-- Secondary Filters: Duration & Search -->
-          <div class="flex items-center justify-between gap-3 flex-wrap pt-1 text-xs">
+          <!-- Tier 2: Source Filter (Đa Nguồn: VOA, British Council, BBC, TED, NPR, Luke) -->
+          <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap pb-2 border-b border-slate-800/80">
+            <span class="text-xs font-bold text-cyan-300 shrink-0 flex items-center gap-1">
+              <span>🎙️</span> <span>Kênh phát:</span>
+            </span>
+            <button onclick="filterPodcastSource('all')" id="pcSrcBtn-all" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-cyan-600 text-white shadow transition cursor-pointer">
+              Tất Cả Kênh
+            </button>
+            <button onclick="filterPodcastSource('voa')" id="pcSrcBtn-voa" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🇺🇸</span> <span>VOA Learning English (Mỹ Chậm Rõ)</span>
+            </button>
+            <button onclick="filterPodcastSource('british_council')" id="pcSrcBtn-british_council" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🏛️</span> <span>British Council (Hội Đồng Anh)</span>
+            </button>
+            <button onclick="filterPodcastSource('bbc')" id="pcSrcBtn-bbc" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🇬🇧</span> <span>BBC 6-Minute English</span>
+            </button>
+            <button onclick="filterPodcastSource('ted')" id="pcSrcBtn-ted" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>💡</span> <span>TED Talks Daily</span>
+            </button>
+            <button onclick="filterPodcastSource('npr')" id="pcSrcBtn-npr" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>📻</span> <span>NPR Life Kit (Đàm Thoại Mỹ)</span>
+            </button>
+            <button onclick="filterPodcastSource('luke')" id="pcSrcBtn-luke" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>🎙️</span> <span>Luke's English Podcast</span>
+            </button>
+            <button onclick="filterPodcastSource('business_tech')" id="pcSrcBtn-business_tech" class="pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1">
+              <span>💼</span> <span>HBR, FinTech &amp; IT DevOps</span>
+            </button>
+          </div>
+
+          <!-- Tier 3: Topic Pills, Duration & Search Input -->
+          <div class="flex items-center justify-between gap-3 flex-wrap text-xs">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-slate-400 font-semibold shrink-0">Chủ đề:</span>
+              <button onclick="filterPodcastCategory('all')" id="pcCatBtn-all" class="pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-600/40 border border-indigo-500/50 text-indigo-200 transition cursor-pointer">Tất cả chủ đề</button>
+              <button onclick="filterPodcastCategory('daily_life')" id="pcCatBtn-daily_life" class="pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer">☕ Đời sống &amp; Giao tiếp</button>
+              <button onclick="filterPodcastCategory('workplace')" id="pcCatBtn-workplace" class="pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer">🏢 Công sở &amp; Sự nghiệp</button>
+              <button onclick="filterPodcastCategory('tech')" id="pcCatBtn-tech" class="pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer">💻 Công nghệ &amp; AI</button>
+              <button onclick="filterPodcastCategory('finance')" id="pcCatBtn-finance" class="pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer">🏦 Tài chính &amp; FinTech</button>
+              <button onclick="filterPodcastCategory('mindset')" id="pcCatBtn-mindset" class="pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer">🧠 Tâm lý &amp; Thói quen</button>
+            </div>
             <div class="flex items-center gap-2">
               <span class="text-slate-400 font-semibold">Thời lượng:</span>
-              <button onclick="filterPodcastDuration('all')" id="pcDurBtn-all" class="pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-cyan-600/30 border border-cyan-500/50 text-cyan-300 transition">Mọi độ dài</button>
-              <button onclick="filterPodcastDuration('short')" id="pcDurBtn-short" class="pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">⚡ Ngắn (6-15p)</button>
-              <button onclick="filterPodcastDuration('long')" id="pcDurBtn-long" class="pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">⏳ Dài (20-40p)</button>
+              <button onclick="filterPodcastDuration('all')" id="pcDurBtn-all" class="pc-dur-btn px-2 py-0.5 rounded-lg text-xs font-bold bg-cyan-600/30 border border-cyan-500/50 text-cyan-300 transition cursor-pointer">Mọi độ dài</button>
+              <button onclick="filterPodcastDuration('short')" id="pcDurBtn-short" class="pc-dur-btn px-2 py-0.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer">⚡ Ngắn (5-15p)</button>
+              <button onclick="filterPodcastDuration('long')" id="pcDurBtn-long" class="pc-dur-btn px-2 py-0.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer">⏳ Dài (15-35p)</button>
             </div>
             <div class="flex-1 max-w-xs min-w-[200px]">
-              <input id="podcastSearchInput" oninput="handlePodcastSearch(this.value)" type="text" placeholder="🔍 Tìm theo từ khóa (latency, bank, cloud...)" class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 font-medium"/>
+              <input id="podcastSearchInput" oninput="handlePodcastSearch(this.value)" type="text" placeholder="🔍 Tìm theo từ khóa (habit, VOA, TED, money...)" class="w-full px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs focus:outline-none focus:border-cyan-400 font-medium"/>
             </div>
           </div>
         </div>
@@ -10921,6 +10957,606 @@ function sendChatMessage() {
     // ==================== GLOBAL MULTI-CHANNEL PODCASTS STUDIO ENGINE ====================
     const GLOBAL_PODCASTS_DATA = [
   {
+    "id": "voa_a1_01",
+    "channel": "VOA Learning English",
+    "channelIcon": "🇺🇸",
+    "category": "voa",
+    "source": "voa",
+    "topic": "daily_life",
+    "duration": "6 phút",
+    "accent": "Mỹ Chậm Rõ (General American)",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
+    "levelCode": "a1_a2",
+    "title": "Words and Their Stories: Why Do We Say 'Break a Leg'?",
+    "description": "Khám phá nguồn gốc thành ngữ chúc may mắn nổi tiếng nhất của người Mỹ 'Break a leg'. Giọng đọc VOA chuẩn âm Mỹ được thu chậm hơn 30% giúp người mới bắt đầu nghe rõ từng âm vị và phụ âm cuối.",
+    "audioUrl": "https://learningenglish.voanews.com/audio/break_a_leg_sample.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "transcript": "Welcome to Words and Their Stories from VOA Learning English! On this program, we explore common American idioms and expressions. Today, we talk about a strange phrase: 'Break a leg!'. In English, when someone is about to perform on stage or take a big test, we do not say 'good luck'. Instead, we smile and say: 'Break a leg!'. Why do we wish bad luck to bring good fortune? Let's explore the theater superstitions behind this phrase.",
+    "transcriptVi": "Chào mừng bạn đến với chương trình 'Words and Their Stories' từ VOA Learning English! Trong chương trình này, chúng ta cùng khám phá các thành ngữ và cách diễn đạt phổ biến của người Mỹ. Hôm nay, chúng ta tìm hiểu về một cụm từ kỳ lạ: 'Break a leg!'. Trong tiếng Anh, khi ai đó sắp biểu diễn trên sân khấu hay thi một kỳ thi quan trọng, người ta thường không nói 'good luck' mà nói 'Break a leg!'. Tại sao lại chúc gãy chân để mang lại may mắn? Hãy cùng tìm hiểu quan niệm kiêng kỵ trong giới nghệ thuật đằng sau câu nói này nhé.",
+    "vocab": [
+      {
+        "w": "superstition",
+        "ipa": "/ˌsuː.pɚˈstɪʃ.ən/",
+        "m": "sự mê tín, kiêng kỵ dân gian"
+      },
+      {
+        "w": "performer",
+        "ipa": "/pɚˈfɔːr.mɚ/",
+        "m": "người biểu diễn trên sân khấu"
+      },
+      {
+        "w": "good fortune",
+        "ipa": "/ɡʊd ˈfɔːr.tʃuːn/",
+        "m": "vận may, điều may mắn"
+      },
+      {
+        "w": "idiom",
+        "ipa": "/ˈɪd.i.əm/",
+        "m": "thành ngữ bản xứ"
+      }
+    ]
+  },
+  {
+    "id": "voa_a1_02",
+    "channel": "VOA Learning English",
+    "channelIcon": "🇺🇸",
+    "category": "voa",
+    "source": "voa",
+    "topic": "daily_life",
+    "duration": "7 phút",
+    "accent": "Mỹ Chậm Rõ (General American)",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
+    "levelCode": "a1_a2",
+    "title": "Everyday Grammar: How to Talk About Your Morning Routine",
+    "description": "Học cách sử dụng thì hiện tại đơn (Present Simple) và trạng từ tần suất (always, usually, rarely) để mô tả thói quen buổi sáng một cách trôi chảy và tự nhiên nhất.",
+    "audioUrl": "https://learningenglish.voanews.com/audio/morning_routine_grammar.mp3",
+    "localAudioUrl": "/audio/bbc_gold_sample.mp3",
+    "transcript": "Welcome to Everyday Grammar! I'm Alice and with me is Dan. Today, we look at how to describe what you do every morning. When we talk about daily routines, we use the simple present tense with adverbs of frequency like 'always', 'usually', and 'sometimes'. For example: 'I always wake up at six, brew a fresh cup of coffee, and stretch for ten minutes.' Notice how the verbs stay in the base form with 'I' and 'you'.",
+    "transcriptVi": "Chào mừng bạn đến với Ngữ Pháp Hàng Ngày! Tôi là Alice và cùng tôi là Dan. Hôm nay, chúng ta tìm hiểu cách mô tả những việc bạn làm mỗi sáng. Khi nói về thói quen hàng ngày, chúng ta dùng thì hiện tại đơn kèm trạng từ chỉ tần suất như 'always', 'usually', và 'sometimes'. Ví dụ: 'Tôi luôn thức dậy lúc 6 giờ, pha một tách cà phê và giãn cơ 10 phút.' Chú ý cách động từ giữ nguyên mẫu với 'I' và 'you'.",
+    "vocab": [
+      {
+        "w": "routine",
+        "ipa": "/ruːˈtiːn/",
+        "m": "thói quen, lịch trình lặp lại hàng ngày"
+      },
+      {
+        "w": "frequency",
+        "ipa": "/ˈfriː.kwən.si/",
+        "m": "tần suất, mức độ thường xuyên"
+      },
+      {
+        "w": "brew",
+        "ipa": "/bruː/",
+        "m": "pha cà phê / hãm trà"
+      },
+      {
+        "w": "stretch",
+        "ipa": "/stretʃ/",
+        "m": "giãn cơ, vươn vai thư giãn"
+      }
+    ]
+  },
+  {
+    "id": "voa_a1_03",
+    "channel": "VOA Learning English",
+    "channelIcon": "🇺🇸",
+    "category": "voa",
+    "source": "voa",
+    "topic": "mindset",
+    "duration": "8 phút",
+    "accent": "Mỹ Chậm Rõ (General American)",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
+    "levelCode": "a1_a2",
+    "title": "Health Report: The Proven Benefits of Walking 30 Minutes Daily",
+    "description": "Nghiên cứu y khoa chứng minh việc đi bộ 30 phút mỗi ngày giúp giảm 40% căng thẳng, tăng cường lưu thông máu não và kéo dài tuổi thọ một cách đáng kinh ngạc.",
+    "audioUrl": "https://learningenglish.voanews.com/audio/health_walking_benefits.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "transcript": "From VOA Learning English, this is the Health Report. Many people believe that getting in shape requires lifting heavy weights or running marathons. But modern health scientists say the simplest exercise is actually the most powerful: walking. Taking a brisk thirty-minute walk every day lowers your blood pressure, clears mental fog, and boosts positive mood chemicals like endorphins.",
+    "transcriptVi": "Từ VOA Learning English, đây là Bản tin Sức khỏe. Nhiều người tin rằng để giữ dáng phải nâng tạ nặng hoặc chạy marathon. Nhưng các nhà khoa học hiện đại khẳng định bài tập đơn giản nhất lại chính là bài tập quyền năng nhất: đi bộ. Đi bộ nhanh 30 phút mỗi ngày giúp hạ huyết áp, làm sạch tâm trí và kích thích tiết endorphin - hormone vui vẻ.",
+    "vocab": [
+      {
+        "w": "brisk",
+        "ipa": "/brɪsk/",
+        "m": "nhanh nhẹn, hoạt bát (đi bộ nhanh)"
+      },
+      {
+        "w": "blood pressure",
+        "ipa": "/blʌd ˈpreʃ.ɚ/",
+        "m": "huyết áp"
+      },
+      {
+        "w": "mental fog",
+        "ipa": "/ˈmen.təl fɑːɡ/",
+        "m": "tình trạng uể oải, đầu óc mụ mẫm"
+      },
+      {
+        "w": "endorphin",
+        "ipa": "/enˈdɔːr.fɪn/",
+        "m": "hormone hạnh phúc giúp giảm đau tự nhiên"
+      }
+    ]
+  },
+  {
+    "id": "voa_a1_04",
+    "channel": "VOA Learning English",
+    "channelIcon": "🇺🇸",
+    "category": "voa",
+    "source": "voa",
+    "topic": "daily_life",
+    "duration": "6 phút",
+    "accent": "Mỹ Chậm Rõ (General American)",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
+    "levelCode": "a1_a2",
+    "title": "Everyday Grammar: How to Order Food Politely at an American Restaurant",
+    "description": "Các mẫu câu lịch thiệp khi gọi món ăn tại nhà hàng Mỹ: phân biệt 'Can I have...', 'Could I please get...' và cách hỏi về hóa đơn (the check / the bill).",
+    "audioUrl": "https://learningenglish.voanews.com/audio/ordering_food_grammar.mp3",
+    "localAudioUrl": "/audio/bbc_driverless_sample.mp3",
+    "transcript": "Ordering food in English does not have to be stressful. Instead of commanding 'Give me a burger', native speakers use polite modals like 'Could I please have the grilled salmon?' or 'I would like the garden salad, dressing on the side.' When you finish your meal, simply ask: 'Could we get the check, please?'. Let's practice these natural restaurant collocations.",
+    "transcriptVi": "Gọi đồ ăn bằng tiếng Anh không hề đáng sợ. Thay vì nói ra lệnh 'Give me a burger', người bản xứ luôn dùng các trợ động từ lịch thiệp như 'Could I please have the grilled salmon?' (Cho tôi xin món cá hồi nướng được không?) hoặc 'I would like the garden salad, dressing on the side' (Cho tôi món salad, để sốt riêng bên cạnh). Khi ăn xong, chỉ cần hỏi: 'Could we get the check, please?'. Hãy cùng luyện các cụm từ nhà hàng tự nhiên này nhé.",
+    "vocab": [
+      {
+        "w": "dressing on the side",
+        "ipa": "/ˈdres.ɪŋ ɑːn ðə saɪd/",
+        "m": "để nước sốt riêng bên cạnh (không trộn sẵn)"
+      },
+      {
+        "w": "the check",
+        "ipa": "/ðə tʃek/",
+        "m": "hóa đơn thanh toán (tiếng Anh Mỹ)"
+      },
+      {
+        "w": "polite modals",
+        "ipa": "/pəˈlaɪt ˈmoʊ.dəlz/",
+        "m": "trợ động từ lịch sự (could, would, may)"
+      },
+      {
+        "w": "grilled salmon",
+        "ipa": "/ɡrɪld ˈsæm.ən/",
+        "m": "cá hồi nướng (chú ý âm câm 'l' trong salmon)"
+      }
+    ]
+  },
+  {
+    "id": "npr_b1_01",
+    "channel": "NPR (National Public Radio Mỹ)",
+    "channelIcon": "📻",
+    "category": "npr",
+    "source": "npr",
+    "topic": "mindset",
+    "duration": "14 phút",
+    "accent": "Mỹ Đàm Thoại Tự Nhiên (US Conversational)",
+    "level": "B1 (Trung Cấp - Tự Nhiên)",
+    "levelCode": "b1",
+    "title": "NPR Life Kit: How to Build Habits That Actually Stick",
+    "description": "Chuyên gia tâm lý học James Clear và phóng viên NPR chia sẻ nguyên lý 'Atomic Habits' (Thói quen nguyên tử): làm thế nào để thay đổi bản thân bằng các hành động siêu nhỏ 2 phút mỗi ngày.",
+    "audioUrl": "https://play.podtrac.com/npr-510338/edge1.pod.npr.org/anon.npr-podcasts/podcast/npr/lifekit/2026/01/20260115_lifekit_habits.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "transcript": "Host: You're listening to Life Kit from NPR. I'm Marielle Segarra. Every January, millions of us resolve to exercise more, read fifty books, or master a foreign language. And by February? Most of those resolutions evaporate into thin air. Today, habit expert James Clear joins us to explain why motivation is overrated and environment design is everything. If you want to read more, put a book on your pillow, not on your nightstand.",
+    "transcriptVi": "Người dẫn chương trình: Bạn đang lắng nghe Life Kit từ NPR. Tôi là Marielle Segarra. Mỗi tháng Giêng, hàng triệu người trong chúng ta quyết tâm tập thể dục nhiều hơn, đọc 50 cuốn sách hay thành thạo một ngoại ngữ. Và đến tháng Hai? Hầu hết những quyết tâm đó tan biến vào không khí. Hôm nay, chuyên gia thói quen James Clear tham gia cùng chúng ta để giải thích tại sao động lực bị đánh giá quá cao còn thiết kế môi trường mới là tất cả. Nếu bạn muốn đọc sách nhiều hơn, hãy để cuốn sách ngay trên gối của bạn, chứ không phải trên kệ đầu giường.",
+    "vocab": [
+      {
+        "w": "evaporate",
+        "ipa": "/ɪˈvæp.ə.reɪt/",
+        "m": "bốc hơi, tan biến không còn dấu vết"
+      },
+      {
+        "w": "overrated",
+        "ipa": "/ˌoʊ.vɚˈreɪ.t̬ɪd/",
+        "m": "được đánh giá quá cao so với thực tế"
+      },
+      {
+        "w": "environment design",
+        "ipa": "/ɪnˈvaɪ.rən.mənt dɪˈzaɪn/",
+        "m": "thiết kế môi trường sống hỗ trợ thói quen"
+      },
+      {
+        "w": "resolution",
+        "ipa": "/ˌrez.əˈluː.ʃən/",
+        "m": "quyết tâm đầu năm mới"
+      }
+    ]
+  },
+  {
+    "id": "npr_b1_02",
+    "channel": "NPR (National Public Radio Mỹ)",
+    "channelIcon": "📻",
+    "category": "npr",
+    "source": "npr",
+    "topic": "mindset",
+    "duration": "16 phút",
+    "accent": "Mỹ Đàm Thoại Tự Nhiên (US Conversational)",
+    "level": "B1 (Trung Cấp - Tự Nhiên)",
+    "levelCode": "b1",
+    "title": "NPR Life Kit: The Science of Overcoming Procrastination",
+    "description": "Trì hoãn không phải là lười biếng mà là vấn đề điều hòa cảm xúc (emotional regulation). Khám phá mẹo 5 phút 'Five-Minute Rule' giúp bạn bắt tay vào làm việc ngay lập tức.",
+    "audioUrl": "https://play.podtrac.com/npr-510338/edge1.pod.npr.org/anon.npr-podcasts/podcast/npr/lifekit/2026/02/20260210_lifekit_procrastination.mp3",
+    "localAudioUrl": "/audio/bbc_gold_sample.mp3",
+    "transcript": "Welcome back to Life Kit. Procrastination is not a character flaw. It is an emotional regulation problem. When we face a daunting task—like filing taxes or speaking in English during a client call—our brain perceives it as a threat. We turn to Instagram or TikTok not because we are lazy, but because our brain craves immediate relief. The secret? Tell yourself: 'I will only work on this for five minutes.' Once you start, friction disappears.",
+    "transcriptVi": "Chào mừng trở lại với Life Kit. Sự trì hoãn không phải là khuyết điểm về tính cách. Nó là vấn đề điều hòa cảm xúc. Khi chúng ta đối mặt với một nhiệm vụ đáng ngại—như nộp thuế hay nói tiếng Anh trong cuộc họp với khách hàng—não bộ coi đó là một mối đe dọa. Chúng ta tìm đến Instagram hay TikTok không phải vì lười, mà vì não khao khát sự giải tỏa tức thì. Bí quyết là gì? Hãy tự nhủ: 'Mình sẽ chỉ làm việc này đúng 5 phút thôi.' Một khi đã bắt đầu, lực cản sẽ tan biến.",
+    "vocab": [
+      {
+        "w": "procrastination",
+        "ipa": "/proʊˌkræs.təˈneɪ.ʃən/",
+        "m": "sự chần chừ, thói quen trì hoãn"
+      },
+      {
+        "w": "daunting",
+        "ipa": "/ˈdɑːn.tɪŋ/",
+        "m": "nản lòng, gây e sợ và áp lực"
+      },
+      {
+        "w": "friction",
+        "ipa": "/ˈfrɪk.ʃən/",
+        "m": "lực cản, sự ma sát cản trở hành động"
+      },
+      {
+        "w": "emotional regulation",
+        "ipa": "/ɪˈmoʊ.ʃən.əl ˌreɡ.jəˈleɪ.ʃən/",
+        "m": "khả năng điều hòa và làm chủ cảm xúc"
+      }
+    ]
+  },
+  {
+    "id": "npr_b1_03",
+    "channel": "NPR (National Public Radio Mỹ)",
+    "channelIcon": "📻",
+    "category": "npr",
+    "source": "npr",
+    "topic": "finance",
+    "duration": "15 phút",
+    "accent": "Mỹ Đàm Thoại Tự Nhiên (US Conversational)",
+    "level": "B1 (Trung Cấp - Tự Nhiên)",
+    "levelCode": "b1",
+    "title": "NPR Life Kit: Budgeting for Beginners - The 50/30/20 Rule",
+    "description": "Quy tắc quản lý tài chính cá nhân 50/30/20: 50% cho nhu cầu thiết yếu (needs), 30% cho sở thích (wants) và 20% cho tiết kiệm & đầu tư tương lai.",
+    "audioUrl": "https://play.podtrac.com/npr-510338/edge1.pod.npr.org/anon.npr-podcasts/podcast/npr/lifekit/2026/03/20260305_lifekit_budgeting.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "transcript": "Managing personal finances does not mean depriving yourself of daily joy. In this episode of Life Kit, financial planner Sophia Bera breaks down the famous 50/30/20 framework. Fifty percent of your take-home pay covers essentials: rent, utilities, groceries, and debt minimums. Thirty percent is guilt-free spending for hobbies and dining out. And the remaining twenty percent goes directly into emergency funds and investments.",
+    "transcriptVi": "Quản lý tài chính cá nhân không có nghĩa là tự tước đi niềm vui hàng ngày của bạn. Trong tập Life Kit này, chuyên gia hoạch định tài chính Sophia Bera phân tích khung 50/30/20 nổi tiếng. 50% thu nhập ròng dành cho nhu cầu thiết yếu: tiền thuê nhà, điện nước, ăn uống cơ bản và trả nợ tối thiểu. 30% chi tiêu thoải mái không áy náy cho sở thích và tụ tập bạn bè. Và 20% còn lại chuyển thẳng vào quỹ dự phòng khẩn cấp và đầu tư.",
+    "vocab": [
+      {
+        "w": "take-home pay",
+        "ipa": "/ˈteɪk.hoʊm peɪ/",
+        "m": "lương thực nhận (sau khi trừ thuế và bảo hiểm)"
+      },
+      {
+        "w": "essentials",
+        "ipa": "/ɪˈsen.ʃəlz/",
+        "m": "các nhu cầu sinh hoạt thiết yếu bắt buộc"
+      },
+      {
+        "w": "emergency fund",
+        "ipa": "/ɪˈmɝː.dʒən.si fʌnd/",
+        "m": "quỹ dự phòng tài chính khẩn cấp"
+      },
+      {
+        "w": "guilt-free",
+        "ipa": "/ˈɡɪlt.friː/",
+        "m": "thoải mái, không cảm thấy có lỗi hay áy náy"
+      }
+    ]
+  },
+  {
+    "id": "luke_b1_01",
+    "channel": "Luke's English Podcast",
+    "channelIcon": "🎙️",
+    "category": "luke",
+    "source": "luke",
+    "topic": "daily_life",
+    "duration": "25 phút",
+    "accent": "Anh Bản Xứ Chuẩn (Natural British RP)",
+    "level": "B1 - B2 (Trung Cấp & Bản Xứ)",
+    "levelCode": "b1",
+    "title": "Luke's Podcast: How to Stop Translating in Your Head When Speaking English",
+    "description": "Thầy Luke Thompson phân tích bí quyết dứt điểm thói quen dịch từ tiếng mẹ đẻ sang tiếng Anh trong đầu, rèn luyện phản xạ cụm từ (collocations) và suy nghĩ bằng tiếng Anh.",
+    "audioUrl": "https://traffic.libsyn.com/secure/teacherluke/Lukes_English_Podcast_Stop_Translating.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "transcript": "Hello listeners! Luke Thompson here, welcoming you to another episode of Luke's English Podcast. Today we are tackling the million-dollar question: How do you stop translating in your head before you speak? When you translate word-for-word, your speech slows down to an agonizing crawl. Native speakers do not assemble sentences from individual words; they pull pre-fabricated chunks of language from their memory bank. Let me show you how to train your brain to think in chunks.",
+    "transcriptVi": "Xin chào quý thính giả! Luke Thompson đây, chào mừng bạn đến với một tập tiếp theo của Luke's English Podcast. Hôm nay chúng ta giải quyết câu hỏi triệu đô: Làm thế nào để ngừng dịch trong đầu trước khi nói? Khi bạn dịch từng từ một, tốc độ nói của bạn sẽ chậm lại như rùa bò. Người bản xứ không ghép câu từ từng từ đơn lẻ; họ lấy các cụm ngôn ngữ định hình sẵn từ kho ký ức. Hãy để tôi chỉ cho bạn cách rèn luyện não bộ tư duy theo cụm nhé.",
+    "vocab": [
+      {
+        "w": "agonizing",
+        "ipa": "/ˈæɡ.ə.naɪ.zɪŋ/",
+        "m": "khổ sở, chậm chạp đến mức đau đớn"
+      },
+      {
+        "w": "pre-fabricated chunks",
+        "ipa": "/ˌpriːˈfæb.rɪ.keɪ.tɪd tʃʌŋks/",
+        "m": "các cụm từ định hình sẵn (collocations)"
+      },
+      {
+        "w": "word-for-word",
+        "ipa": "/ˌwɝːd.fɚˈwɝːd/",
+        "m": "dịch từng chữ một (dịch thô)"
+      },
+      {
+        "w": "memory bank",
+        "ipa": "/ˈmem.ər.i bæŋk/",
+        "m": "kho lưu trữ ký ức và phản xạ ngôn ngữ"
+      }
+    ]
+  },
+  {
+    "id": "luke_b2_01",
+    "channel": "Luke's English Podcast",
+    "channelIcon": "🎙️",
+    "category": "luke",
+    "source": "luke",
+    "topic": "daily_life",
+    "duration": "28 phút",
+    "accent": "Anh Bản Xứ Chuẩn (Natural British RP)",
+    "level": "B2 (Trung Cao Cấp)",
+    "levelCode": "b2",
+    "title": "Luke's Podcast: British Manners, Understatement and Polite Irony",
+    "description": "Nghệ thuật giao tiếp của người Anh: tại sao khi người Anh nói 'Not bad' nghĩa là 'Rất xuất sắc', và khi họ nói 'With all due respect' nghĩa là chuẩn bị phản bác kịch liệt!",
+    "audioUrl": "https://traffic.libsyn.com/secure/teacherluke/Lukes_English_Podcast_British_Irony.mp3",
+    "localAudioUrl": "/audio/bbc_driverless_sample.mp3",
+    "transcript": "Welcome back to the podcast. Today, we delve into the delightfully baffling world of British politeness and understatement. In British culture, exaggerating your feelings is often seen as unseemly. If something is truly magnificent, a British person will simply nod and remark: 'Well, that wasn't too bad, was it?'. Understanding this subtle irony is essential for anyone doing business or living in the United Kingdom.",
+    "transcriptVi": "Chào mừng trở lại với podcast. Hôm nay, chúng ta đi sâu vào thế giới thú vị và đôi khi khó hiểu của sự lịch thiệp và lối nói giảm nói tránh của người Anh. Trong văn hóa Anh, việc phóng đại cảm xúc thường bị coi là thiếu tế nhị. Nếu một điều gì đó thực sự tráng lệ tuyệt vời, một người Anh sẽ chỉ gật đầu và nói: 'Chà, cái đó cũng không tệ lắm nhỉ?'. Hiểu được sự mỉa mai tinh tế này là điều tối quan trọng cho bất kỳ ai làm ăn hay sinh sống tại Vương quốc Anh.",
+    "vocab": [
+      {
+        "w": "understatement",
+        "ipa": "/ˈʌn.dɚˌsteɪt.mənt/",
+        "m": "lối nói giảm, nói bớt đi so với sự thật"
+      },
+      {
+        "w": "baffling",
+        "ipa": "/ˈbæf.lɪŋ/",
+        "m": "khó hiểu, gây bối rối cho người ngoài"
+      },
+      {
+        "w": "unseemly",
+        "ipa": "/ʌnˈsiːm.li/",
+        "m": "khiếm nhã, không phù hợp chuẩn mực lịch thiệp"
+      },
+      {
+        "w": "subtle irony",
+        "ipa": "/ˈsʌt.əl ˈaɪ.rə.ni/",
+        "m": "sự mỉa mai/hài hước tinh tế, ngầm hiểu"
+      }
+    ]
+  },
+  {
+    "id": "ted_b2_01",
+    "channel": "TED Talks Daily",
+    "channelIcon": "💡",
+    "category": "ted",
+    "source": "ted",
+    "topic": "workplace",
+    "duration": "12 phút",
+    "accent": "Quốc Tế Chuẩn (Global English / British)",
+    "level": "B2 (Trung Cao Cấp)",
+    "levelCode": "b2",
+    "title": "Julian Treasure: How to Speak So That People Want to Listen",
+    "description": "Bài diễn thuyết kinh điển của Julian Treasure với hơn 50 triệu lượt xem: 7 tội lỗi chết người trong giao tiếp (gossip, judging, negativity) và công thức H.A.I.L (Honesty, Authenticity, Integrity, Love).",
+    "audioUrl": "https://dts.podtrac.com/redirect.mp3/chrt.fm/track/3G835/traffic.megaphone.fm/TED7043812702.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "transcript": "The human voice is the most powerful sound on the planet. It's the only sound that can start a war or say 'I love you'. And yet many people have the experience that when they speak, people simply do not listen to them. Why is that? Today, I want to suggest seven deadly sins of speaking that we need to avoid: gossip, judging, negativity, complaining, excuses, exaggeration, and dogmatism. And instead, let's stand on four powerful cornerstones: Honesty, Authenticity, Integrity, and Love—spelling the word HAIL.",
+    "transcriptVi": "Giọng nói của con người là âm thanh quyền năng nhất trên hành tinh này. Đó là âm thanh duy nhất có thể châm ngòi một cuộc chiến tranh hoặc nói lên câu 'Tôi yêu bạn'. Thế nhưng nhiều người lại trải qua cảm giác rằng khi họ cất lời, người khác lại chẳng buồn lắng nghe. Tại sao lại như vậy? Hôm nay, tôi muốn chỉ ra 7 thói quen độc hại trong giao tiếp mà chúng ta cần tránh: buôn chuyện ngồi lê đôi mách, phán xét, tiêu cực, than vãn, bào chữa, phóng đại và giáo điều. Thay vào đó, hãy dựa trên 4 trụ cột quyền năng: Trung thực, Chân thực, Liêm chính và Tình yêu thương—tạo nên chữ H.A.I.L.",
+    "vocab": [
+      {
+        "w": "authenticity",
+        "ipa": "/ˌɔː.θenˈtɪs.ə.t̬i/",
+        "m": "tính chân thực, là chính mình không giả tạo"
+      },
+      {
+        "w": "integrity",
+        "ipa": "/ɪnˈteɡ.rə.t̬i/",
+        "m": "sự chính trực, giữ lời hứa và chuẩn mực đạo đức"
+      },
+      {
+        "w": "dogmatism",
+        "ipa": "/ˈdɑːɡ.mə.tɪ.zəm/",
+        "m": "sự giáo điều, áp đặt quan điểm cá nhân là chân lý"
+      },
+      {
+        "w": "cornerstone",
+        "ipa": "/ˈkɔːr.nɚ.stoʊn/",
+        "m": "viên đá tảng nền móng, trụ cột cốt lõi"
+      }
+    ]
+  },
+  {
+    "id": "ted_b2_02",
+    "channel": "TED Talks Daily",
+    "channelIcon": "💡",
+    "category": "ted",
+    "source": "ted",
+    "topic": "mindset",
+    "duration": "14 phút",
+    "accent": "Mỹ Diễn Thuyết (US Inspiring Accent)",
+    "level": "B2 (Trung Cao Cấp)",
+    "levelCode": "b2",
+    "title": "Tim Urban: Inside the Mind of a Master Procrastinator",
+    "description": "Nhà văn Tim Urban giải thích cơ chế hài hước bên trong não bộ người trì hoãn: Chú khỉ ham vui nhất thời (Instant Gratification Monkey) và Quái vật hoảng loạn (Panic Monster) khi hạn chót đến gần.",
+    "audioUrl": "https://dts.podtrac.com/redirect.mp3/chrt.fm/track/3G835/traffic.megaphone.fm/TED8172910391.mp3",
+    "localAudioUrl": "/audio/bbc_gold_sample.mp3",
+    "transcript": "So in college, I was a government major, which means I had to write a lot of papers. And when a normal student writes a paper, they spread the work out over several weeks. I had a different system: I planned to work, but then the Instant Gratification Monkey took the wheel! The monkey only cares about two things: easy and fun. Everything is fine until the Panic Monster wakes up! That's the only thing the monkey is terrified of: deadlines.",
+    "transcriptVi": "Thời đại học, tôi học chuyên ngành chính phủ, đồng nghĩa với việc phải viết rất nhiều bài luận. Khi một sinh viên bình thường viết bài, họ phân bổ công việc đều đặn qua nhiều tuần. Còn tôi có một hệ thống khác: Tôi lên kế hoạch làm việc, nhưng rồi 'Chú khỉ ham vui nhất thời' nhảy vào cướp tay lái! Chú khỉ chỉ quan tâm đến 2 điều: việc gì DỄ và việc gì VUI. Mọi thứ cứ thế êm đẹp cho đến khi 'Quái vật Hoảng loạn' thức giấc! Đó là thứ duy nhất chú khỉ sợ chết khiếp: Hạn chót (Deadlines).",
+    "vocab": [
+      {
+        "w": "gratification",
+        "ipa": "/ˌɡræt̬.ə.fəˈkeɪ.ʃən/",
+        "m": "sự thỏa mãn, cảm giác sướng tức thì"
+      },
+      {
+        "w": "terrified",
+        "ipa": "/ˈter.ə.faɪd/",
+        "m": "khiếp sợ, hoảng loạn cùng cực"
+      },
+      {
+        "w": "take the wheel",
+        "ipa": "/teɪk ðə wiːl/",
+        "m": "cướp quyền điều khiển (cầm lái)"
+      },
+      {
+        "w": "spread out",
+        "ipa": "/spred aʊt/",
+        "m": "phân bổ dàn trải đều theo thời gian"
+      }
+    ]
+  },
+  {
+    "id": "ted_c1_01",
+    "channel": "TED Talks Daily",
+    "channelIcon": "💡",
+    "category": "ted",
+    "source": "ted",
+    "topic": "tech",
+    "duration": "18 phút",
+    "accent": "Quốc Tế Học Thuật (Intellectual Global Accent)",
+    "level": "C1 - C2 (Chuyên Sâu & Bản Xứ)",
+    "levelCode": "c1_c2",
+    "title": "The AI Revolution: How Generative Intelligence Will Redefine Human Agency",
+    "description": "Phân tích triết học và kỹ thuật về làn sóng AI tạo sinh: Khi máy tính có thể lập trình, viết văn và suy luận logic, điều gì làm nên giá trị cốt lõi và lợi thế cạnh tranh duy nhất của con người?",
+    "audioUrl": "https://dts.podtrac.com/redirect.mp3/chrt.fm/track/3G835/traffic.megaphone.fm/TED9201948172.mp3",
+    "localAudioUrl": "/audio/bbc_driverless_sample.mp3",
+    "transcript": "We stand at an unprecedented inflection point in human civilization. For decades, automation replaced mechanical muscle. Generative intelligence is now automating cognitive synthesis. When algorithms can synthesize legal briefs, generate production code, and compose orchestral symphonies in milliseconds, what remains uniquely human? The answer lies not in raw computational throughput, but in empathy, contextual wisdom, moral discernment, and the courage to ask original questions.",
+    "transcriptVi": "Chúng ta đang đứng tại một điểm uốn chưa từng có trong lịch sử văn minh nhân loại. Suốt nhiều thập kỷ, tự động hóa thay thế cơ bắp cơ học. Giờ đây, AI tạo sinh đang tự động hóa việc tổng hợp nhận thức trí tuệ. Khi các thuật toán có thể tóm tắt hồ sơ pháp lý, viết mã nguồn sản phẩm và sáng tác bản giao hưởng trong vài mili-giây, điều gì còn lại là duy nhất của con người? Câu trả lời không nằm ở năng lực tính toán thô, mà nằm ở sự thấu cảm, trí tuệ ngữ cảnh, sự phân định đạo đức và lòng dũng cảm đặt ra những câu hỏi nguyên bản.",
+    "vocab": [
+      {
+        "w": "inflection point",
+        "ipa": "/ɪnˈflek.ʃən pɔɪnt/",
+        "m": "điểm uốn, bước ngoặt lịch sử làm thay đổi cục diện"
+      },
+      {
+        "w": "cognitive synthesis",
+        "ipa": "/ˈkɑːɡ.nə.t̬ɪv ˈsɪn.θə.sɪs/",
+        "m": "sự tổng hợp nhận thức và tư duy phân tích"
+      },
+      {
+        "w": "discernment",
+        "ipa": "/dɪˈsɝːn.mənt/",
+        "m": "sự sáng suốt, khả năng phân định đúng sai tinh tường"
+      },
+      {
+        "w": "computational throughput",
+        "ipa": "/ˌkɑːm.pjəˈteɪ.ʃən.əl ˈθruː.pʊt/",
+        "m": "thông lượng/năng lực tính toán của máy móc"
+      }
+    ]
+  },
+  {
+    "id": "ted_c1_02",
+    "channel": "TED Talks Daily",
+    "channelIcon": "💡",
+    "category": "ted",
+    "source": "ted",
+    "topic": "mindset",
+    "duration": "16 phút",
+    "accent": "Mỹ Học Thuật (US Academic Accent)",
+    "level": "C1 - C2 (Chuyên Sâu & Bản Xứ)",
+    "levelCode": "c1_c2",
+    "title": "Brené Brown: The Transformative Power of Vulnerability and Authentic Courage",
+    "description": "Giáo sư Brené Brown phân tích 10 năm nghiên cứu xã hội học: Tại sao sự tổn thương (vulnerability) không phải là điểm yếu, mà là cái nôi sinh ra sự dũng cảm, sáng tạo và gắn kết con người đích thực.",
+    "audioUrl": "https://dts.podtrac.com/redirect.mp3/chrt.fm/track/3G835/traffic.megaphone.fm/TED_Brene_Brown_Power_of_Vulnerability.mp3",
+    "localAudioUrl": "/audio/bbc_sleep_sample.mp3",
+    "transcript": "Vulnerability is not winning or losing; it's having the courage to show up when you can't control the outcome. In our hyper-competitive culture, we equate vulnerability with weakness. But across thousands of interviews, I found that vulnerability is the birthplace of joy, creativity, belonging, and authentic connection. If we numb our capacity for vulnerability, we inadvertently numb our joy.",
+    "transcriptVi": "Sự tổn thương không phải là việc thắng hay thua; đó là lòng dũng cảm bước ra sàn đấu ngay cả khi bạn không thể kiểm soát được kết quả. Trong nền văn hóa cạnh tranh khốc liệt ngày nay, chúng ta thường đánh đồng sự dễ bị tổn thương với sự yếu đuối. Nhưng qua hàng ngàn cuộc phỏng vấn, tôi nhận ra rằng sự tổn thương chính là cái nôi sinh ra niềm vui, sự sáng tạo, cảm giác thuộc về và sự kết nối đích thực giữa con người với con người.",
+    "vocab": [
+      {
+        "w": "vulnerability",
+        "ipa": "/ˌvʌl.nɚ.əˈbɪl.ə.t̬i/",
+        "m": "sự tổn thương, trạng thái dám để lộ điểm yếu để sống chân thật"
+      },
+      {
+        "w": "hyper-competitive",
+        "ipa": "/ˌhaɪ.pɚ.kəmˈpet̬.ə.t̬ɪv/",
+        "m": "cạnh tranh khốc liệt quá mức"
+      },
+      {
+        "w": "inadvertently",
+        "ipa": "/ˌɪn.ədˈvɝː.tənt.li/",
+        "m": "vô tình, không hề cố ý nhưng để lại hậu quả"
+      },
+      {
+        "w": "capacity",
+        "ipa": "/kəˈpæs.ə.t̬i/",
+        "m": "sức chứa, năng lực tâm hồn"
+      }
+    ]
+  },
+  {
+    "id": "bloomberg_c1_01",
+    "channel": "Bloomberg Surveillance & Markets",
+    "channelIcon": "🏦",
+    "category": "fintech",
+    "source": "business_tech",
+    "topic": "finance",
+    "duration": "25 phút",
+    "accent": "Mỹ Tài Chính Phố Wall (Wall Street Financial English)",
+    "level": "C1 - C2 (Chuyên Sâu & Bản Xứ)",
+    "levelCode": "c1_c2",
+    "title": "Bloomberg Macro: The Future of Global Reserve Currencies & Digital Settlement",
+    "description": "Phân tích kinh tế vĩ mô của Bloomberg cùng các chuyên gia Goldman Sachs: Tác động của chính sách lãi suất Cục Dự trữ Liên bang Mỹ (Fed), hệ thống thanh toán bù trừ xuyên biên giới và tiền tệ kỹ thuật số ngân hàng trung ương (CBDC).",
+    "audioUrl": "https://traffic.omny.fm/d/clips/e73c998e-6e60-432f-8610-ae210140770b/8b2d075d-e59d-4765-a864-ae32006cdb54/bloomberg_markets_macro_sample.mp3",
+    "localAudioUrl": "/audio/bbc_gold_sample.mp3",
+    "transcript": "From the Bloomberg headquarters in New York, this is Bloomberg Surveillance. Today, macroeconomic analysts examine the trajectory of the Federal Reserve's balance sheet reduction and global currency reserves. As emerging market economies pilot sovereign digital currencies, multi-currency settlement rails like mBridge are challenging traditional SWIFT correspondents. We break down the implications for global liquidity and sovereign bond yields.",
+    "transcriptVi": "Từ trụ sở Bloomberg tại New York, đây là Bloomberg Surveillance. Hôm nay, các chuyên gia kinh tế vĩ mô phân tích quỹ đạo thu hẹp bảng cân đối kế toán của Cục Dự trữ Liên bang Mỹ và dự trữ ngoại hối toàn cầu. Khi các nền kinh tế mới nổi thử nghiệm tiền kỹ thuật số quốc gia, các mạng lưới quyết toán đa tiền tệ như mBridge đang đặt ra thách thức cho các ngân hàng đại lý SWIFT truyền thống. Chúng ta cùng phân tích tác động đối với thanh khoản toàn cầu và lợi suất trái phiếu chính phủ.",
+    "vocab": [
+      {
+        "w": "trajectory",
+        "ipa": "/trəˈdʒek.tɚ.i/",
+        "m": "quỹ đạo phát triển, xu hướng biến động"
+      },
+      {
+        "w": "balance sheet reduction",
+        "ipa": "/ˈbæl.əns ʃiːt rɪˈdʌk.ʃən/",
+        "m": "thu hẹp bảng cân đối kế toán (thắt chặt tiền tệ)"
+      },
+      {
+        "w": "sovereign",
+        "ipa": "/ˈsɑːv.rən/",
+        "m": "thuộc chủ quyền quốc gia (tiền tệ quốc gia)"
+      },
+      {
+        "w": "correspondent banking",
+        "ipa": "/ˌkɔːr.əˈspɑːn.dənt ˈbæŋ.kɪŋ/",
+        "m": "hệ thống ngân hàng đại lý quốc tế"
+      }
+    ]
+  },
+  {
+    "id": "dev_c1_01",
+    "channel": "Software Engineering Daily",
+    "channelIcon": "💻",
+    "category": "it_devops",
+    "source": "business_tech",
+    "topic": "tech",
+    "duration": "28 phút",
+    "accent": "Mỹ Thung Lũng Silicon (US Silicon Valley Tech)",
+    "level": "C1 - C2 (Chuyên Sâu & Bản Xứ)",
+    "levelCode": "c1_c2",
+    "title": "Software Engineering Daily: High-Throughput Distributed Systems & Kafka Architecture",
+    "description": "Kiến trúc sư trưởng hệ thống thảo luận kỹ thuật phân tán: Cách Netflix và Stripe xử lý hàng tỷ luồng sự kiện mỗi ngày bằng Apache Kafka, đảm bảo tính toàn vẹn dữ liệu và độ sẵn sàng 99.999%.",
+    "audioUrl": "https://softwareengineeringdaily.com/audio/distributed_kafka_architecture_sample.mp3",
+    "localAudioUrl": "/audio/bbc_driverless_sample.mp3",
+    "transcript": "Welcome to Software Engineering Daily. Today's deep dive focuses on distributed event streaming architectures at massive enterprise scale. When operating financial ledger pipelines handling millions of concurrent events per second, eventual consistency guarantees are simply inadequate; strict serializability and idempotent transaction semantics are strictly mandatory. We discuss partition rebalancing, log compaction, and Raft consensus protocols.",
+    "transcriptVi": "Chào mừng đến với Software Engineering Daily. Bài phân tích chuyên sâu hôm nay tập trung vào kiến trúc truyền luồng sự kiện phân tán ở quy mô doanh nghiệp khổng lồ. Khi vận hành các đường ống sổ cái tài chính xử lý hàng triệu sự kiện đồng thời mỗi giây, các cam kết nhất quán ngẫu nhiên (eventual consistency) hoàn toàn không đủ; tính tuần tự hóa nghiêm ngặt và ngữ nghĩa giao dịch idempotent là bắt buộc. Chúng ta thảo luận về cân bằng phân vùng, nén log và giao thức đồng thuận Raft.",
+    "vocab": [
+      {
+        "w": "distributed event streaming",
+        "ipa": "/dɪˈstrɪb.juː.t̬ɪd ɪˈvent ˈstriː.mɪŋ/",
+        "m": "truyền luồng sự kiện phân tán"
+      },
+      {
+        "w": "idempotent",
+        "ipa": "/aɪˈdem.poʊ.tənt/",
+        "m": "tính lũy đẳng (thực thi nhiều lần không đổi kết quả)"
+      },
+      {
+        "w": "serializability",
+        "ipa": "/ˌsɪr.i.ə.laɪ.zəˈbɪl.ə.t̬i/",
+        "m": "khả năng tuần tự hóa các giao dịch an toàn"
+      },
+      {
+        "w": "consensus protocol",
+        "ipa": "/kənˈsen.səs ˈproʊ.t̬ə.kɑːl/",
+        "m": "giao thức đạt được sự đồng thuận trong hệ thống phân tán"
+      }
+    ]
+  },
+  {
     "id": "bbc_6min_01",
     "channel": "BBC Learning English (6 Minute English)",
     "channelIcon": "🇬🇧",
@@ -10950,7 +11586,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"What should you eat for a better night’s sleep?\".\n<p>Have you ever had the feeling of lying awake at night, unable to get to sleep? Many of us know what it is like to struggle with sleep, especially if we have drunk too much tea or coffee before bed! But did you know that your sleep quality can be affected by other parts of your diet too? Georgie and Phil discuss this and teach you some new vocabulary.</p><p>Get a free transcript and quiz at bbclearningenglish.com (currently experiencing technical issues).</p><p>Sign up for our email newsletter for tips and updates: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p><p>Follow us on social media @bbclearningenglish</p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: What should you eat for a better night’s sleep?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: What should you eat for a better night’s sleep?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_02",
@@ -10982,7 +11621,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Why has gold got so expensive?\".\n<p>Many of us own jewellery or other items that are gold coloured, but do you own anything that is made from real gold? Gold is a precious metal, which means that there is a limited supply in the world. This not only makes it expensive, but also means that it holds a relatively stable value. So, why are investors interested in it, and should the rest of us start buying more of it? Georgie and Phil discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261015\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261015</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why has gold got so expensive?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why has gold got so expensive?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_03",
@@ -11014,7 +11656,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Are people drinking less alcohol?\".\n<p>In recent generations many people have chosen to stop drinking alcohol. Surveys from the UK suggest that 16 to 24-year-olds are more likely to be non-drinkers than the older generations. Many people are sharing their experience of drinking less alcohol or being completely sober on social media. Some people have been saying that they want to go out more to drink and have fun with friends, but they have concerns about fitness and wellness. Georgie and Neil discuss this and teach you some new vocabulary. </p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): </p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261008\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261008</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Are people drinking less alcohol?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Are people drinking less alcohol?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_04",
@@ -11046,7 +11691,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Why does heartbreak hurt so much?\".\n<p>Anyone who has had their heart broken will know how horrible it feels. But did you know that the pain you feel is not just imaginary – it registers in the same part of the brain that processes physical pain. So, why do we feel this pain? And if it feels so bad, what is the point of being in love in the first place? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261001\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-261001</a> Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why does heartbreak hurt so much?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why does heartbreak hurt so much?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_05",
@@ -11078,7 +11726,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Why do we itch?\".\n<p>Feeling itchy is unpleasant, and the feeling of finally scratching that itch can be very satisfying! But why do we feel itchy in the first place? And is it possible to catch an itch from someone else? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260924\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260924</a></p><p>Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why do we itch?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Why do we itch?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_06",
@@ -11110,7 +11761,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Is rejection good for us?\".\n<p>How would you feel about going up to a stranger on the street and asking them for a cheeky favour? If the idea makes you nervous, then don't worry – you are not alone! But recently, some people have been filming themselves doing this, as part of a social media trend called 'rejection therapy'. It's not an officially recognised form of therapy, but some have found that it improves their confidence. Georgie and Neil discuss this and teach you some new vocabulary.</p><p>6 Minute English now has a VIDEO VERSION! 6 Minute English now comes with a video! It's the same programme that you know and love, but now you can see us! Watch this podcast here (and find a free worksheet): <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260917\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260917</a></p><p>Let us know what you think of the new version of 6 Minute English at <a href=\"mailto:learningenglish@bbc.co.uk\">learningenglish@bbc.co.uk</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Is rejection good for us?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Is rejection good for us?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_07",
@@ -11142,7 +11796,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Can apps teach you a language?\".\n<p>Have you ever used Duolingo, Babbel, Busuu or perhaps another language-learning app? How did you get on? Some people love the convenience of these apps – you can learn on the go, like during your commute to work, rather than committing to a certain time each week, like learning in a class. But are they teaching the languages effectively? Neil and Pippa discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260910\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260910</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Can apps teach you a language?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Can apps teach you a language?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_08",
@@ -11174,7 +11831,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Climate change and extreme weather\".\n<p>Every year we see damage, death and destruction caused by hurricanes, cyclones and typhoons - tropical storms. Is climate change making this impact worse? Climate change may be making this destruction worse. Phil is joined by BBC weather presenter and meteorologist Sarah Keith-Lucas to learn more about this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260903\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260903</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Climate change and extreme weather."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Climate change and extreme weather.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_09",
@@ -11206,7 +11866,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"How do we describe smells?\".\n<p>What is the worst smell in the world? And what is the best smell? Are there any smells that you like, but that your friends or family hate? Smells are all around us all the time, but the English language is often quite general in the way it describes smells, as opposed to other senses like sounds or tastes. But why is this? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260827\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260827</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: How do we describe smells?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: How do we describe smells?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_10",
@@ -11238,7 +11901,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Sharing the road with driverless cars\".\n<p>Imagine crossing a road and turning to see a car heading towards you... without a driver! While this might seem scary, driverless cars are already operating safely in many cities around the world. These autonomous cars contain huge amounts of technology to help them drive alongside other road users carefully. But will humans behave as carefully around them? Can we communicate clearly with these 'robotaxis', or are we simply incompatible? Phil and Pippa discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260820\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260820</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a> \nSubscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Sharing the road with driverless cars."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Sharing the road with driverless cars.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_11",
@@ -11270,7 +11936,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Who does the housework?\".\n<p>Unloading the dishwasher, mopping the floor, cleaning the loo... what is your most hated household chore? We all know there are jobs around the house which have to be done regularly, even if they are sometimes boring or unpleasant. But who tends to do the most amount of jobs in your household? And is there anyone who isn't pulling their weight...? Pippa and Neil discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260813\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260813</a></p><p>Practise your listening with The Listening Room here:</p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Who does the housework?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Who does the housework?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_12",
@@ -11302,7 +11971,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"How do climate scientists make predictions?\".\n<p>Across the world, climate change is already beginning to change the way we live our lives. But how big will that change be and what kinds of change will occur? These are the kinds of questions that scientists have been asking for decades. So, how exactly do they try to find answers to such complex questions about the future? Understanding where we are heading might help humanity prepare for the consequences of climate change. Phil and Pippa discuss this and teach you some new vocabulary.</p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260806\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260806</a></p><p>Practise your listening with The Listening Room here:</p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: How do climate scientists make predictions?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: How do climate scientists make predictions?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_13",
@@ -11334,7 +12006,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"The Enhanced Games\".\n<p>What would the world of athletics look like if athletes were allowed to take drugs? Pippa and Neil discuss the Enhanced Games. </p><p>Learn English from authentic BBC programme clips. Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260730\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260730</a></p><p>Practise your listening with The Listening Room here: </p><p><a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: The Enhanced Games."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: The Enhanced Games.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_14",
@@ -11366,7 +12041,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Children in warzones\".\n<p>The most recent figure from 2024 says that 520 million children are living in conflict zones. That's about one in every five children worldwide. Some of the discussions in this episode will be about death and trauma. Neil and Becca hear from a journalist who has spent some time with children in warzones and discuss the topic in simpler English.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260723\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260723</a></p><p>Practise your listening with The Listening Room here:\n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here:\n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Children in warzones."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Children in warzones.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_15",
@@ -11398,7 +12076,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"What's in a footballer's brain?\".\n<p>Football players are faster than ever before. But in a game where every tiny decision counts, elite clubs are turning to neuroscience to understand how players can think, decide and perform even faster. Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260716\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260716</a></p><p>Practise your listening with The Listening Room here:\n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here:\n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: What's in a footballer's brain?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: What's in a footballer's brain?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_16",
@@ -11430,7 +12111,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Should we cycle more?\".\n<p>When did you learn to ride a bike? Perhaps you learnt as a child and have not cycled for a long time. Well don't worry, you can pick it up again quickly – it's just like riding a bike! And if you have never cycled, it's not too late to start. With new cycle tracks and electric bikes, cycling is becoming more and more accessible. Neil and Becca discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260709</a></p><p>Practise your listening with The Listening Room here: \n<a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: \n<a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Should we cycle more?."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Should we cycle more?.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_17",
@@ -11462,7 +12146,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Rude emails\".\n<p>What is the rudest email you have ever received? We all deal with emails on a daily basis, but sometimes people can write them too quickly, without thinking enough about how it makes the other person feel. Is there anything that people write in emails which you find impolite? And have you ever sent a rude email yourself...? Phil and Becca discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260702\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260702</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Rude emails."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Rude emails.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_18",
@@ -11494,7 +12181,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Stress-free family meals\".\n<p>Are you a fussy eater? Many of us remember foods that we used to hate as children – some of us still do hate those foods! But what can parents do to help encourage their children to eat a healthy diet, without turning every dinner into disaster? Neil and Georgie discuss this and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260625\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260625</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Stress-free family meals."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Stress-free family meals.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_19",
@@ -11526,7 +12216,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"Limiting screen time for children\".\n<p>Many parents worry that their children spend too much time on screens. Governments around the world, such as in the UK, Australia and China, are introducing online safety measures to limit the amount of screen time for children or prevent them accessing social media. Neil and Becca talk about their own screen time and teach you some new vocabulary.</p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260618\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260618</a></p><p>Practise your listening with The Listening Room here: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/the_listening_room\">https://www.bbc.co.uk/learningenglish/english/features/the_listening_room</a></p><p>Subscribe to our newsletters here: <a href=\"https://www.bbc.co.uk/send/u178220599\">https://www.bbc.co.uk/send/u178220599</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: Limiting screen time for children."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: Limiting screen time for children.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "bbc_6min_20",
@@ -11558,7 +12251,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome to 6 Minute English from BBC Learning English.\nToday we are discussing: \"How advertisers make us spend money\".\n<p>What was the last thing you bought? And can you remember why you bought that particular thing, rather than something else? We all like to think we make rational, independent choices when we buy things, but advertisers are constantly trying different strategies to influence us to behave differently. Pippa and Phil discuss this and teach you some new vocabulary. </p><p>Listen to natural English conversations with Real Easy English: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/real-easy-english\">https://www.bbc.co.uk/learningenglish/english/features/real-easy-english</a></p><p>Learn English from the news: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/learning-english-from-the-news_2026\">https://www.bbc.co.uk/learningenglish/english/features/learning-english-from-the-news_2026</a></p><p>Get a free worksheet, quiz and transcript for this episode: <a href=\"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260611\">https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2026/ep-260611</a></p>\nListen along and practice natural English connected speech and everyday expressions.",
-    "shadowingSentence": "In this episode of 6 Minute English, we explore: How advertisers make us spend money."
+    "shadowingSentence": "In this episode of 6 Minute English, we explore: How advertisers make us spend money.",
+    "levelCode": "b2",
+    "source": "bbc",
+    "topic": "daily_life"
   },
   {
     "id": "ft_01",
@@ -11568,7 +12264,7 @@ function sendChatMessage() {
     "categoryName": "Tài Chính & Ngân Hàng Số",
     "title": "The Architecture of Open Banking, APIs & Core Banking Modernization",
     "duration": "28 phút",
-    "level": "B1 - B2",
+    "level": "C1 (Chuyên Sâu)",
     "accent": "UK / US (International)",
     "audioUrl": "https://traffic.libsyn.com/secure/fintechinsider/Fintech_Insider_Open_Banking_Clip.mp3",
     "description": "Khám phá cách các ngân hàng truyền thống chuyển đổi hệ thống lõi (Core Banking) sang kiến trúc Microservices và Open Banking API để kết nối ví điện tử và cổng thanh toán thời gian thực.",
@@ -11600,7 +12296,10 @@ function sendChatMessage() {
         "m": "thông lượng, số lượng giao dịch xử lý trên mỗi giây (TPS)"
       }
     ],
-    "shadowingSentence": "When integrating instant payments, legacy monolithic architectures struggle with latency and high throughput."
+    "shadowingSentence": "When integrating instant payments, legacy monolithic architectures struggle with latency and high throughput.",
+    "levelCode": "c1_c2",
+    "source": "business_tech",
+    "topic": "finance"
   },
   {
     "id": "ft_02",
@@ -11642,7 +12341,10 @@ function sendChatMessage() {
         "m": "dòng vốn rút ra khỏi thị trường"
       }
     ],
-    "shadowingSentence": "Commercial banks are adjusting their asset-liability matching to absorb unexpected capital outflows."
+    "shadowingSentence": "Commercial banks are adjusting their asset-liability matching to absorb unexpected capital outflows.",
+    "levelCode": "b2",
+    "source": "business_tech",
+    "topic": "finance"
   },
   {
     "id": "ft_03",
@@ -11679,7 +12381,10 @@ function sendChatMessage() {
         "m": "xác thực đa yếu tố bảo mật (MFA)"
       }
     ],
-    "shadowingSentence": "If a transaction deviates from your baseline profile, multi-factor authentication triggers instantly."
+    "shadowingSentence": "If a transaction deviates from your baseline profile, multi-factor authentication triggers instantly.",
+    "levelCode": "b1",
+    "source": "business_tech",
+    "topic": "finance"
   },
   {
     "id": "ft_04",
@@ -11716,7 +12421,10 @@ function sendChatMessage() {
         "m": "chống rửa tiền (AML)"
       }
     ],
-    "shadowingSentence": "The adoption of rich data standards enables continuous 24/7 cross-border settlement liquidity."
+    "shadowingSentence": "The adoption of rich data standards enables continuous 24/7 cross-border settlement liquidity.",
+    "levelCode": "b2",
+    "source": "business_tech",
+    "topic": "finance"
   },
   {
     "id": "dev_01",
@@ -11726,7 +12434,7 @@ function sendChatMessage() {
     "categoryName": "IT Hệ Thống & DevOps",
     "title": "Production Incident Management, War Room & Zero-Downtime Deployment",
     "duration": "32 phút",
-    "level": "B1 - B2",
+    "level": "C1 (Chuyên Sâu)",
     "accent": "US (San Francisco)",
     "audioUrl": "https://devopsradio.libsyn.com",
     "description": "Kinh nghiệm thực chiến xử lý sự cố hạ tầng máy chủ Production bị sập: quy trình lập phòng trực chiến (War Room), giao tiếp kỹ thuật trong họp khẩn và viết báo cáo nguyên nhân gốc rễ (Post-Mortem).",
@@ -11758,7 +12466,10 @@ function sendChatMessage() {
         "m": "hồ kết nối cơ sở dữ liệu dùng chung"
       }
     ],
-    "shadowingSentence": "A blameless root cause analysis identifies systemic flaws, such as missing circuit breakers."
+    "shadowingSentence": "A blameless root cause analysis identifies systemic flaws, such as missing circuit breakers.",
+    "levelCode": "c1_c2",
+    "source": "business_tech",
+    "topic": "tech"
   },
   {
     "id": "dev_02",
@@ -11800,7 +12511,10 @@ function sendChatMessage() {
         "m": "các máy chủ thực thi tác vụ trong cụm Kubernetes"
       }
     ],
-    "shadowingSentence": "Implementing an in-memory distributed cache reduces database load by over eighty percent."
+    "shadowingSentence": "Implementing an in-memory distributed cache reduces database load by over eighty percent.",
+    "levelCode": "b2",
+    "source": "business_tech",
+    "topic": "tech"
   },
   {
     "id": "dev_03",
@@ -11837,7 +12551,10 @@ function sendChatMessage() {
         "m": "khả năng tái lập chính xác môi trường bất kỳ lúc nào"
       }
     ],
-    "shadowingSentence": "With automated pipelines, you can spin up an identical environment in minutes with a single command."
+    "shadowingSentence": "With automated pipelines, you can spin up an identical environment in minutes with a single command.",
+    "levelCode": "b1",
+    "source": "bbc",
+    "topic": "tech"
   },
   {
     "id": "dev_04",
@@ -11874,7 +12591,10 @@ function sendChatMessage() {
         "m": "áp đặt quy tắc bảo mật tự động bằng mã lệnh"
       }
     ],
-    "shadowingSentence": "Centralized observability and distributed tracing allow us to pinpoint a failing service in seconds."
+    "shadowingSentence": "Centralized observability and distributed tracing allow us to pinpoint a failing service in seconds.",
+    "levelCode": "b2",
+    "source": "business_tech",
+    "topic": "tech"
   },
   {
     "id": "work_01",
@@ -11884,7 +12604,7 @@ function sendChatMessage() {
     "categoryName": "Tiếng Anh Công Sở & Quản Lý",
     "title": "How to Communicate Complex Technical Risks to Non-Technical Executives",
     "duration": "24 phút",
-    "level": "B1 - B2",
+    "level": "C1 (Chuyên Sâu)",
     "accent": "US (Boston / HBR)",
     "audioUrl": "https://hbr.org/2018/01/podcast-ideacast",
     "description": "Nghệ thuật giao tiếp của kỹ sư công nghệ với Ban Giám Đốc và Hội đồng Quản trị: cách chuyển dịch thuật ngữ kỹ thuật khô khan thành ngôn ngữ giá trị kinh doanh, rủi ro tài chính và quyết định đầu tư.",
@@ -11911,7 +12631,10 @@ function sendChatMessage() {
         "m": "định hướng cách tiếp cận câu chuyện theo góc nhìn phù hợp"
       }
     ],
-    "shadowingSentence": "Frame technical conversations around business risk, customer retention, and revenue impact."
+    "shadowingSentence": "Frame technical conversations around business risk, customer retention, and revenue impact.",
+    "levelCode": "c1_c2",
+    "source": "business_tech",
+    "topic": "workplace"
   },
   {
     "id": "work_02",
@@ -11948,7 +12671,10 @@ function sendChatMessage() {
         "m": "cam kết chất lượng dịch vụ (SLA)"
       }
     ],
-    "shadowingSentence": "I suggest we adopt a phased rollout to ensure system stability and quality standards."
+    "shadowingSentence": "I suggest we adopt a phased rollout to ensure system stability and quality standards.",
+    "levelCode": "b1",
+    "source": "bbc",
+    "topic": "workplace"
   },
   {
     "id": "work_03",
@@ -11980,7 +12706,10 @@ function sendChatMessage() {
         "m": "gắn chặt các nhận xét vào hành vi và kết quả thực tế"
       }
     ],
-    "shadowingSentence": "When delivering constructive feedback, anchor your observations to specific behaviors and business outcomes."
+    "shadowingSentence": "When delivering constructive feedback, anchor your observations to specific behaviors and business outcomes.",
+    "levelCode": "b2",
+    "source": "business_tech",
+    "topic": "workplace"
   },
   {
     "id": "voa_01",
@@ -12017,7 +12746,10 @@ function sendChatMessage() {
         "m": "nhấn chìm hoàn toàn vào trong chất lỏng"
       }
     ],
-    "shadowingSentence": "Engineers are developing liquid cooling systems that reduce server energy consumption by forty percent."
+    "shadowingSentence": "Engineers are developing liquid cooling systems that reduce server energy consumption by forty percent.",
+    "levelCode": "a1_a2",
+    "source": "voa",
+    "topic": "daily_life"
   },
   {
     "id": "luke_01",
@@ -12048,7 +12780,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Hello and welcome to Luke's English Podcast. Today we are talking about debating skills in English. How do you express your opinion when you disagree strongly, but you want to keep the discussion friendly and professional? Let's break it down together.",
-    "shadowingSentence": "I see your point, but from an architectural perspective, we need to consider long-term maintainability."
+    "shadowingSentence": "I see your point, but from an architectural perspective, we need to consider long-term maintainability.",
+    "levelCode": "b1",
+    "source": "luke",
+    "topic": "daily_life"
   },
   {
     "id": "luke_02",
@@ -12079,7 +12814,10 @@ function sendChatMessage() {
       }
     ],
     "transcript": "Welcome back to the podcast. Today we are diving into phrasal verbs that native speakers use without even thinking about them. From touching base to circling back and keeping everyone in the loop.",
-    "shadowingSentence": "Let's touch base tomorrow morning to circle back on the deployment status."
+    "shadowingSentence": "Let's touch base tomorrow morning to circle back on the deployment status.",
+    "levelCode": "b2",
+    "source": "luke",
+    "topic": "daily_life"
   },
   {
     "id": "bc_1_1",
@@ -12089,7 +12827,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 1: Giới thiệu bản thân, Angelina Jolie & Carolina tới Anh",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-01",
     "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12116,7 +12854,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 1"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 1."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 1.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_2",
@@ -12126,7 +12867,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 2: Kế hoạch cuối tuần, Điệu Tango Argentina & Sự cố hành lý sân bay",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-02",
     "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12153,7 +12894,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 2"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 2."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 2.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_3",
@@ -12163,7 +12907,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 3: Thiền định, Thám hiểm không gian & Phân biệt Say vs Tell",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-03",
     "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12190,7 +12934,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 3"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 3."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 3.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_4",
@@ -12200,7 +12947,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 4: Nấu ăn tại nhà, Thành phố New York & Thuê phòng trọ sinh viên",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-04",
     "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12227,7 +12974,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 4"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 4."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 4.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_5",
@@ -12237,7 +12987,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 5: Âm nhạc cổ điển, Thú cưng trong nhà & Làm quen bạn cùng phòng",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-05",
     "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12264,7 +13014,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 5"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 5."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 5.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_6",
@@ -12274,7 +13027,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 6: Văn hóa trà chiều nước Anh, Shakespeare & Mua vé tàu hỏa",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-06",
     "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12301,7 +13054,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 6"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 6."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 6.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_7",
@@ -12311,7 +13067,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 7: Bảo tàng Lịch sử tự nhiên London & Cách mở tài khoản ngân hàng",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-07",
     "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12338,7 +13094,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 7"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 7."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 7.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_8",
@@ -12348,7 +13107,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 8: Kỳ nghỉ hè tại biển, Kem truyền thống & Đặt lịch hẹn khám bác sĩ",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-08",
     "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12375,7 +13134,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 8"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 8."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 8.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_9",
@@ -12385,7 +13147,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 9: Công viên Hoàng gia London & Phỏng vấn xin việc làm thêm tại trường",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-09",
     "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12412,7 +13174,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 9"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 9."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 9.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_1_10",
@@ -12422,7 +13187,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 1)",
     "title": "Series 1 - Tập 10: Lễ hội Giáng sinh nước Anh & Tổng kết Series 1",
     "duration": "18 phút",
-    "level": "A2 - B1",
+    "level": "A1 - A2 (Sơ Cấp / Dễ Nghe)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-01/episode-10",
     "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12449,7 +13214,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 10"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 10."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 1, Episode 10.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "a1_a2"
   },
   {
     "id": "bc_2_1",
@@ -12459,7 +13227,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 1: Khởi động học kỳ mới, Món ăn Fish & Chips & Lễ hội Bonfire Night",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-01",
     "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12486,7 +13254,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 1"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 1."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 1.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_2",
@@ -12496,7 +13267,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 2: Tham gia Câu lạc bộ kịch nói sinh viên & Mua sắm giảm giá Boxing Day",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-02",
     "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12523,7 +13294,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 2"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 2."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 2.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_3",
@@ -12533,7 +13307,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 3: Bảo vệ môi trường, Tái chế rác thải nhựa & Khám phá Cambridge",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-03",
     "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12560,7 +13334,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 3"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 3."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 3.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_4",
@@ -12570,7 +13347,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 4: Thói quen đọc sách, Tiểu thuyết trinh thám Sherlock Holmes",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-04",
     "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12597,7 +13374,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 4"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 4."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 4.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_5",
@@ -12607,7 +13387,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 5: Chuyến dã ngoại vùng nông thôn Lake District & Thời tiết Anh",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-05",
     "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12634,7 +13414,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 5"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 5."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 5.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_6",
@@ -12644,7 +13427,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 6: Công nghệ thông tin trong trường học, Mạng xã hội & Quyền riêng tư",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-06",
     "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12671,7 +13454,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 6"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 6."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 6.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_7",
@@ -12681,7 +13467,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 7: Tìm nhà trọ mới cho năm hai, Ký hợp đồng thuê nhà & Mẹo chi tiêu",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-07",
     "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12708,7 +13494,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 7"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 7."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 7.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_8",
@@ -12718,7 +13507,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 8: Khám phá ẩm thực quốc tế tại London & Đi chợ phiên Camden Market",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-08",
     "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12745,7 +13534,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 8"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 8."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 8.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_9",
@@ -12755,7 +13547,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 9: Ôn thi học kỳ, Kỹ năng quản lý thời gian & Tránh trì hoãn",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-09",
     "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12782,7 +13574,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 9"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 9."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 9.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_2_10",
@@ -12792,7 +13587,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 2)",
     "title": "Series 2 - Tập 10: Kết thúc năm học thứ nhất & Buổi tiệc chia tay sinh viên",
     "duration": "18 phút",
-    "level": "B1",
+    "level": "B1 (Trung Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-02/episode-10",
     "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12819,7 +13614,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 10"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 10."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 2, Episode 10.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b1"
   },
   {
     "id": "bc_3_1",
@@ -12829,7 +13627,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 1: Bắt đầu kỳ thực tập doanh nghiệp & Văn hóa làm việc công sở",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-01",
     "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12856,7 +13654,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 1"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 1."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 1.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_2",
@@ -12866,7 +13667,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 2: Lập ngân sách chi tiêu cá nhân, Đầu tư tài chính & Thẻ tín dụng",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-02",
     "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12893,7 +13694,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 2"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 2."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 2.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_3",
@@ -12903,7 +13707,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 3: Làm việc từ xa (Remote Work), Cân bằng công việc & Cuộc sống",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-03",
     "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12930,7 +13734,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 3"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 3."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 3.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_4",
@@ -12940,7 +13747,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 4: Khởi nghiệp công nghệ, Ứng dụng di động & Gọi vốn đầu tư mạo hiểm",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-04",
     "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -12967,7 +13774,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 4"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 4."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 4.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_5",
@@ -12977,7 +13787,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 5: Giao tiếp đa văn hóa trong tập đoàn đa quốc gia",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-05",
     "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13004,7 +13814,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 5"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 5."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 5.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_6",
@@ -13014,7 +13827,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 6: Kỹ năng thuyết trình trước đám đông & Trình bày ý tưởng sáng tạo",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-06",
     "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13041,7 +13854,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 6"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 6."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 6.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_7",
@@ -13051,7 +13867,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 7: Chăm sóc sức khỏe tinh thần, Tập Yoga & Chế độ ăn uống lành mạnh",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-07",
     "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13078,7 +13894,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 7"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 7."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 7.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_8",
@@ -13088,7 +13907,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 8: Nghệ thuật đàm phán hợp đồng & Giải quyết bất đồng ý kiến",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-08",
     "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13115,7 +13934,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 8"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 8."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 8.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_9",
@@ -13125,7 +13947,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 9: Tương lai của năng lượng tái tạo & Giao thông xe điện thông minh",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-09",
     "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13152,7 +13974,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 9"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 9."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 9.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_3_10",
@@ -13162,7 +13987,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 3)",
     "title": "Series 3 - Tập 10: Đánh giá kết quả thực tập & Nhận lời mời làm việc chính thức",
     "duration": "18 phút",
-    "level": "B1 - B2",
+    "level": "B2 (Trung Cao Cấp)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-03/episode-10",
     "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13189,7 +14014,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 10"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 10."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 3, Episode 10.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_1",
@@ -13199,7 +14027,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 1: Nhận chức danh Kỹ sư chính thức & Định hướng phát triển nghề nghiệp",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-01",
     "description": "Tập 1 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13226,7 +14054,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 1"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 1."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 1.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_2",
@@ -13236,7 +14067,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 2: Quản lý nhóm dự án phần mềm theo phương pháp Agile & Scrum",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-02",
     "description": "Tập 2 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13263,7 +14094,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 2"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 2."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 2.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_3",
@@ -13273,7 +14107,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 3: Kiểm toán bảo mật hệ thống & Tuân thủ quy định dữ liệu GDPR",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-03",
     "description": "Tập 3 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13300,7 +14134,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 3"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 3."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 3.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_4",
@@ -13310,7 +14147,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 4: Chiến lược đàm phán tăng lương & Quyền lợi nhân viên (Benefits)",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-04",
     "description": "Tập 4 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13337,7 +14174,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 4"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 4."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 4.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_5",
@@ -13347,7 +14187,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 5: Ứng dụng Trí tuệ nhân tạo (AI) trong phân tích dữ liệu kinh doanh",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-05",
     "description": "Tập 5 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13369,7 +14209,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 5"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 5."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 5.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_6",
@@ -13379,7 +14222,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 6: Xử lý xung đột lợi ích giữa phòng Kỹ thuật và phòng Kinh doanh",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-06",
     "description": "Tập 6 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13401,7 +14244,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 6"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 6."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 6.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_7",
@@ -13411,7 +14257,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 7: Tham gia Hội nghị Công nghệ Toàn cầu tại London & Mở rộng mạng lưới",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-07",
     "description": "Tập 7 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13438,7 +14284,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 7"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 7."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 7.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_8",
@@ -13448,7 +14297,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 8: Tự động hóa vận hành (DevOps & SRE) giúp tiết kiệm triệu đô la",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-08",
     "description": "Tập 8 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13470,7 +14319,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 8"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 8."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 8.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_9",
@@ -13480,7 +14332,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 9: Lãnh đạo trong khủng hoảng kinh tế & Xây dựng văn hóa kiên cường",
     "duration": "18 phút",
-    "level": "B2",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-09",
     "description": "Tập 9 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13502,7 +14354,10 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 9"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 9."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 9.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   },
   {
     "id": "bc_4_10",
@@ -13512,7 +14367,7 @@ function sendChatMessage() {
     "categoryName": "Hội Đồng Anh (Series 4)",
     "title": "Series 4 - Tập 10: Tốt nghiệp khóa học 180 ngày & Bứt phá giao tiếp tiếng Anh tự nhiên",
     "duration": "18 phút",
-    "level": "B2 - C1",
+    "level": "B2 - C1 (Nâng Cao)",
     "accent": "UK (British English chuẩn)",
     "audioUrl": "https://learnenglish.britishcouncil.org/general-english/audio-series/podcasts/series-04/episode-10",
     "description": "Tập 10 trong chuỗi Podcast Hội đồng Anh: Tess, Ravi và Carolina khám phá cuộc sống và văn hóa tại Anh kèm các cuộc hội thoại chuẩn mực và giải thích từ vựng.",
@@ -13539,11 +14394,16 @@ function sendChatMessage() {
         "m": "từ vựng trọng tâm trong tập 10"
       }
     ],
-    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 10."
+    "shadowingSentence": "Welcome to British Council LearnEnglish Podcast Series 4, Episode 10.",
+    "source": "british_council",
+    "topic": "daily_life",
+    "levelCode": "b2"
   }
 ];
 
     let currentPodcastFilter = {
+      level: 'all',
+      source: 'all',
       category: 'all',
       duration: 'all',
       query: ''
@@ -13553,8 +14413,61 @@ function sendChatMessage() {
     let isPodcastPlaying = false;
     let podcastPlaybackRate = 1.0;
     let podcastCurrentSeconds = 0;
-    let podcastTotalSeconds = 1680; // 28 mins default
+    let podcastTotalSeconds = 1680;
     let podcastTimerInterval = null;
+
+    function filterPodcastLevel(lvl) {
+      currentPodcastFilter.level = lvl;
+      document.querySelectorAll('.pc-lvl-btn').forEach(btn => {
+        btn.className = 'pc-lvl-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1';
+      });
+      const activeBtn = document.getElementById('pcLvlBtn-' + lvl);
+      if (activeBtn) {
+        activeBtn.className = 'pc-lvl-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500/25 text-amber-300 border border-amber-500/50 shadow transition cursor-pointer flex items-center gap-1';
+      }
+      renderGlobalPodcastStudio();
+    }
+
+    function filterPodcastSource(src) {
+      currentPodcastFilter.source = src;
+      document.querySelectorAll('.pc-src-btn').forEach(btn => {
+        btn.className = 'pc-src-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1';
+      });
+      const activeBtn = document.getElementById('pcSrcBtn-' + src);
+      if (activeBtn) {
+        activeBtn.className = 'pc-src-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-cyan-600 text-white shadow transition cursor-pointer flex items-center gap-1';
+      }
+      renderGlobalPodcastStudio();
+    }
+
+    function filterPodcastCategory(cat) {
+      currentPodcastFilter.category = cat;
+      document.querySelectorAll('.pc-cat-btn').forEach(btn => {
+        btn.className = 'pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer';
+      });
+      const activeBtn = document.getElementById('pcCatBtn-' + cat);
+      if (activeBtn) {
+        activeBtn.className = 'pc-cat-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-600/40 border border-indigo-500/50 text-indigo-200 transition cursor-pointer';
+      }
+      renderGlobalPodcastStudio();
+    }
+
+    function filterPodcastDuration(dur) {
+      currentPodcastFilter.duration = dur;
+      document.querySelectorAll('.pc-dur-btn').forEach(btn => {
+        btn.className = 'pc-dur-btn px-2 py-0.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer';
+      });
+      const activeBtn = document.getElementById('pcDurBtn-' + dur);
+      if (activeBtn) {
+        activeBtn.className = 'pc-dur-btn px-2 py-0.5 rounded-lg text-xs font-bold bg-cyan-600/30 border border-cyan-500/50 text-cyan-300 transition cursor-pointer';
+      }
+      renderGlobalPodcastStudio();
+    }
+
+    function handlePodcastSearch(val) {
+      currentPodcastFilter.query = val || '';
+      renderGlobalPodcastStudio();
+    }
 
     function renderGlobalPodcastStudio() {
       const container = document.getElementById('podcastsGrid');
@@ -13562,25 +14475,44 @@ function sendChatMessage() {
       if (!container) return;
 
       let filtered = GLOBAL_PODCASTS_DATA.filter(item => {
-        if (currentPodcastFilter.category !== 'all' && item.category !== currentPodcastFilter.category) {
-          return false;
+        // 1. Level Filter
+        if (currentPodcastFilter.level !== 'all') {
+          if (item.levelCode !== currentPodcastFilter.level) {
+            if (currentPodcastFilter.level === 'a1_a2' && !item.level.includes('A1') && !item.level.includes('A2')) return false;
+            if (currentPodcastFilter.level === 'b1' && !item.level.includes('B1')) return false;
+            if (currentPodcastFilter.level === 'b2' && !item.level.includes('B2')) return false;
+            if (currentPodcastFilter.level === 'c1_c2' && !item.level.includes('C1') && !item.level.includes('C2')) return false;
+          }
         }
+        // 2. Source Filter
+        if (currentPodcastFilter.source !== 'all') {
+          if (item.source !== currentPodcastFilter.source && item.category !== currentPodcastFilter.source) {
+            return false;
+          }
+        }
+        // 3. Category / Topic Filter
+        if (currentPodcastFilter.category !== 'all') {
+          if (item.topic !== currentPodcastFilter.category && item.category !== currentPodcastFilter.category) {
+            return false;
+          }
+        }
+        // 4. Duration Filter
         if (currentPodcastFilter.duration === 'short') {
-          // Duration <= 15 mins
           const num = parseInt(item.duration, 10) || 10;
           if (num > 15) return false;
         } else if (currentPodcastFilter.duration === 'long') {
-          // Duration > 15 mins
           const num = parseInt(item.duration, 10) || 25;
           if (num <= 15) return false;
         }
+        // 5. Query Search
         if (currentPodcastFilter.query.trim().length > 0) {
           const q = currentPodcastFilter.query.toLowerCase();
           const matchTitle = item.title.toLowerCase().includes(q);
-          const matchDesc = item.description.toLowerCase().includes(q);
-          const matchChannel = item.channel.toLowerCase().includes(q);
+          const matchDesc = (item.description || '').toLowerCase().includes(q);
+          const matchChannel = (item.channel || '').toLowerCase().includes(q);
+          const matchLevel = (item.level || '').toLowerCase().includes(q);
           const matchVocab = item.vocab && item.vocab.some(v => v.w.toLowerCase().includes(q) || v.m.toLowerCase().includes(q));
-          if (!matchTitle && !matchDesc && !matchChannel && !matchVocab) return false;
+          if (!matchTitle && !matchDesc && !matchChannel && !matchLevel && !matchVocab) return false;
         }
         return true;
       });
@@ -13591,10 +14523,10 @@ function sendChatMessage() {
         container.innerHTML = `
           <div class="col-span-full p-8 rounded-2xl bg-slate-900/60 border border-slate-800 text-center space-y-2">
             <div class="text-3xl">🔍</div>
-            <div class="text-white font-bold text-sm">Không tìm thấy podcast phù hợp</div>
-            <p class="text-xs text-slate-400">Hãy thử xóa bộ lọc tìm kiếm hoặc chọn danh mục khác nhé.</p>
-            <button onclick="filterPodcastCategory('all'); filterPodcastDuration('all');" class="mt-2 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition">
-              Xem Tất Cả Podcast
+            <div class="text-white font-bold text-sm">Không tìm thấy podcast phù hợp với bộ lọc</div>
+            <p class="text-xs text-slate-400">Hãy thử xóa từ khóa tìm kiếm hoặc chọn cấp độ khác nhé.</p>
+            <button onclick="filterPodcastLevel('all'); filterPodcastSource('all'); filterPodcastCategory('all'); filterPodcastDuration('all');" class="mt-2 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition cursor-pointer">
+              Xem Toàn Bộ Kho Podcasts (${GLOBAL_PODCASTS_DATA.length} Tập)
             </button>
           </div>
         `;
@@ -13611,18 +14543,34 @@ function sendChatMessage() {
           </span>
         `).join('');
 
+        let levelBadgeClass = 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40 font-bold';
+        let levelIcon = '📘';
+        if (pc.levelCode === 'a1_a2' || pc.level.includes('A1') || pc.level.includes('A2')) {
+          levelBadgeClass = 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 font-bold';
+          levelIcon = '🌱';
+        } else if (pc.levelCode === 'b1' || (pc.level.includes('B1') && !pc.level.includes('B2'))) {
+          levelBadgeClass = 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40 font-bold';
+          levelIcon = '🌿';
+        } else if (pc.levelCode === 'c1_c2' || pc.level.includes('C1') || pc.level.includes('C2')) {
+          levelBadgeClass = 'bg-amber-500/20 text-amber-300 border-amber-500/40 font-bold';
+          levelIcon = '🏆';
+        } else {
+          levelBadgeClass = 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40 font-bold';
+          levelIcon = '🌳';
+        }
+
         return `
           <div class="glass-card rounded-2xl p-4 sm:p-5 border ${isActive ? 'border-cyan-400/80 bg-slate-900/90 shadow-xl shadow-cyan-500/10 ring-1 ring-cyan-400/30' : 'border-slate-800 bg-slate-900/70 hover:border-slate-700'} space-y-3.5 transition flex flex-col justify-between">
             <div class="space-y-2.5">
               <!-- Header Badges -->
               <div class="flex items-center justify-between gap-2 flex-wrap">
-                <span class="text-xs font-bold text-cyan-300 flex items-center gap-1">
-                  <span>${pc.channelIcon || '🎙️'}</span>
+                <span class="text-xs font-bold text-cyan-300 flex items-center gap-1.5">
+                  <span class="text-base">${pc.channelIcon || '🎙️'}</span>
                   <span class="max-w-[160px] sm:max-w-[200px] truncate">${escapeHtml(pc.channel)}</span>
                 </span>
                 <div class="flex items-center gap-1.5 flex-wrap">
                   <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-mono font-semibold">${pc.duration}</span>
-                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-semibold">${pc.level}</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full ${levelBadgeClass} flex items-center gap-1">${levelIcon} ${escapeHtml(pc.level)}</span>
                   <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">${pc.accent || 'Bản Xứ'}</span>
                 </div>
               </div>
@@ -13643,70 +14591,42 @@ function sendChatMessage() {
                 <div class="flex flex-wrap gap-1.5">${vocabPills}</div>
               </div>
 
-              <!-- Collapsible Transcript -->
+              <!-- Collapsible Transcript & Translation -->
               <div id="pcTrans_${pc.id}" class="hidden p-3 rounded-xl bg-slate-950/90 border border-slate-800 text-xs text-slate-300 space-y-2 mt-2 max-h-56 overflow-y-auto custom-scroll">
                 <div class="text-[11px] font-bold text-cyan-400 flex items-center justify-between border-b border-slate-800 pb-1">
                   <span>📜 Kịch Bản Bài Nghe (Transcript)</span>
-                  <button onclick="speakPodcastTranscript('${pc.id}')" class="text-emerald-400 hover:text-emerald-300 text-[10px] font-bold flex items-center gap-1">
+                  <button onclick="speakPodcastTranscript('${pc.id}')" class="text-emerald-400 hover:text-emerald-300 text-[10px] font-bold flex items-center gap-1 cursor-pointer">
                     <span>🔊</span> <span>Đọc toàn bộ</span>
                   </button>
                 </div>
-                <div class="whitespace-pre-line leading-relaxed font-sans text-[11px]">${escapeHtml(pc.transcript || 'Kịch bản đang được cập nhật...')}</div>
+                <div class="whitespace-pre-line leading-relaxed font-sans text-[11px] text-slate-200">${escapeHtml(pc.transcript || 'Kịch bản đang được cập nhật...')}</div>
+                ${pc.transcriptVi ? `
+                  <div class="pt-2 border-t border-slate-800/80 text-[11px] text-amber-200/90 leading-relaxed italic">
+                    <strong class="text-amber-300 not-italic block pb-0.5">🇻🇳 Bản dịch tiếng Việt:</strong>
+                    ${escapeHtml(pc.transcriptVi)}
+                  </div>
+                ` : ''}
               </div>
             </div>
 
             <!-- Action Buttons -->
             <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2 flex-wrap">
               <div class="flex items-center gap-1.5">
-                <button onclick="selectAndPlayPodcast('${pc.id}')" class="px-3.5 py-1.5 rounded-xl ${isActive && isPodcastPlaying ? 'bg-amber-600 text-white' : 'bg-gradient-to-r from-cyan-600 to-indigo-600 text-white'} text-xs font-extrabold transition shadow cursor-pointer flex items-center gap-1">
-                  <span>${isActive && isPodcastPlaying ? '⏸ Tạm dừng' : '▶ Nghe Tập Này'}</span>
+                <button onclick="selectAndPlayPodcast('${pc.id}')" class="px-3.5 py-1.5 rounded-xl ${isActive && isPodcastPlaying ? 'bg-amber-600 hover:bg-amber-500 text-white font-bold' : 'bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold'} text-xs flex items-center gap-1.5 transition shadow hover:scale-105 active:scale-95 cursor-pointer">
+                  <span>${isActive && isPodcastPlaying ? '⏸' : '▶'}</span>
+                  <span>${isActive && isPodcastPlaying ? 'Tạm Dừng' : 'Phát Trực Tiếp'}</span>
                 </button>
-                <button onclick="togglePodcastTranscript('${pc.id}')" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-semibold transition cursor-pointer">
-                  📖 Kịch bản
+                <button onclick="togglePodcastTranscript('${pc.id}')" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs transition cursor-pointer" title="Xem kịch bản lời thoại">
+                  📜 Kịch bản
                 </button>
               </div>
-
-              <div class="flex items-center gap-1.5">
-                <button onclick="shadowPodcastSentence('${pc.id}')" class="px-2.5 py-1.5 rounded-xl bg-indigo-950/70 hover:bg-indigo-900 border border-indigo-500/40 text-indigo-300 text-xs font-bold transition flex items-center gap-1" title="Luyện Shadowing nói đuổi theo tập này">
-                  <span>🎙️ Shadowing</span>
-                </button>
-                <a href="${pc.audioUrl || '#'}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-400 hover:text-white text-xs transition" title="Mở trang chủ nguồn podcast ↗">
-                  ↗
-                </a>
-              </div>
+              <button onclick="addPodcastToFavorites('${pc.id}')" class="text-slate-400 hover:text-amber-400 p-1.5 text-xs transition cursor-pointer" title="Lưu vào danh sách yêu thích">
+                ⭐ Lưu bài
+              </button>
             </div>
           </div>
         `;
       }).join('');
-    }
-
-    function filterPodcastCategory(cat) {
-      currentPodcastFilter.category = cat;
-      document.querySelectorAll('.pc-cat-btn').forEach(b => {
-        b.className = 'pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition cursor-pointer flex items-center gap-1';
-      });
-      const activeBtn = document.getElementById('pcCatBtn-' + cat);
-      if (activeBtn) {
-        activeBtn.className = 'pc-cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow transition cursor-pointer flex items-center gap-1';
-      }
-      renderGlobalPodcastStudio();
-    }
-
-    function filterPodcastDuration(dur) {
-      currentPodcastFilter.duration = dur;
-      document.querySelectorAll('.pc-dur-btn').forEach(b => {
-        b.className = 'pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition';
-      });
-      const activeBtn = document.getElementById('pcDurBtn-' + dur);
-      if (activeBtn) {
-        activeBtn.className = 'pc-dur-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-cyan-600/30 border border-cyan-500/50 text-cyan-300 transition';
-      }
-      renderGlobalPodcastStudio();
-    }
-
-    function handlePodcastSearch(q) {
-      currentPodcastFilter.query = q || '';
-      renderGlobalPodcastStudio();
     }
 
     let nativePodcastAudio = null;
@@ -13781,6 +14701,7 @@ function sendChatMessage() {
 
       return nativePodcastAudio;
     }
+
 
     function selectAndPlayPodcast(id) {
       const pc = GLOBAL_PODCASTS_DATA.find(p => p.id === id);
