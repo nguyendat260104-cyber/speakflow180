@@ -7,9 +7,9 @@
     "role": "🏦 Tài Chính & Ngân Hàng",
     "avatar": "🏦",
     "joinedDate": "25/10/2026",
-    "lastSyncedAt": "2026-10-25T12:40:48.841Z"
+    "lastSyncedAt": "2026-10-25T16:27:04.011Z"
   },
-  "lastSynced": "2026-10-25T16:26:50.969Z",
+  "lastSynced": "2026-10-25T16:31:20.138Z",
   "stats": {
     "streak": 1,
     "xp": 120,
@@ -21,7 +21,7 @@
     "studyMode": 45,
     "xp": 120,
     "streak": 1,
-    "soundEnabled": true,
+    "soundEnabled": false,
     "reminderTime": "21:00",
     "completedTasks": {},
     "selectedIpaIndex": 20,
