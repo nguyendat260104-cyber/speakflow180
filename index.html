@@ -996,6 +996,19 @@
           </div>
 
           <!-- Main Big Mic Button -->
+          <!-- Smart Live Assist Bar: Gợi ý trả lời & Dịch tức thì khi bí -->
+          <div class="flex items-center justify-center gap-2 flex-wrap pt-1">
+            <button onclick="helpWithReplySuggestions()" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-amber-500/20 hover:from-amber-500/35 hover:to-orange-500/35 border border-amber-500/50 text-amber-300 font-bold text-xs flex items-center gap-1.5 transition shadow-lg shadow-amber-500/10 hover:scale-105 active:scale-95" title="Bấm khi bí ý tưởng để nhận gợi ý đối đáp và nghe mẫu phát âm">
+              <span class="text-sm">💡</span> <span>Gợi Ý Trả Lời (Bấm Khi Bí)</span>
+            </button>
+            <button onclick="toggleLatestAiTranslate()" class="px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-600 text-slate-200 font-bold text-xs flex items-center gap-1.5 transition shadow hover:scale-105 active:scale-95" title="Bấm để xem/ẩn bản dịch tiếng Việt của câu AI vừa nói">
+              <span class="text-sm">🌐</span> <span>Dịch Câu AI Vừa Nói</span>
+            </button>
+            <button onclick="askAiToSimplify()" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs flex items-center gap-1 transition" title="Yêu cầu AI nói lại câu ngắn gọn, đơn giản hơn">
+              <span>🔄</span> <span>Nói Đơn Giản Hơn</span>
+            </button>
+          </div>
+
           <div class="flex items-center justify-center gap-4">
             <button id="btnCallMic" onclick="toggleCallMicrophone()" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white text-2xl sm:text-3xl flex items-center justify-center shadow-xl shadow-cyan-500/25 transition-all duration-300 hover:scale-105 active:scale-95" title="Bấm để nói chuyện cùng AI">
               <span id="callMicIcon">🎙️</span>
@@ -8448,43 +8461,180 @@
         ],
         getOpening: (char) => ({
           text: "Hello there! I'm delighted to practice English with you tonight. How was your day—did you have a productive time at work or school, or did you have a relaxing day?",
-          trans: "Chào bạn! Mình rất vui được luyện tiếng Anh cùng bạn tối nay. Ngày hôm nay của bạn thế nào—bận rộn năng suất hay thư thái?"
+          trans: "Chào bạn! Mình rất vui được luyện tiếng Anh cùng bạn tối nay. Ngày hôm nay của bạn thế nào—bận rộn năng suất hay thư thái?",
+          teacherTip: "Khi trả lời về ngày làm việc, người bản xứ hay dùng các từ mô tả như 'productive' (năng suất), 'hectic' (tất bật) hoặc 'eventful' thay vì chỉ dùng mỗi từ 'busy' nhé!",
+          suggestedReplies: [
+            {
+              en: "I had a very productive day finishing our sprint tasks.",
+              vi: "Tôi đã có một ngày rất năng suất khi hoàn thành các nhiệm vụ của sprint."
+            },
+            {
+              en: "It was quite exhausting today because of back-to-back meetings.",
+              vi: "Hôm nay khá kiệt sức vì các cuộc họp nối tiếp nhau liên tục."
+            },
+            {
+              en: "Pretty relaxing actually! Just taking some time to practice my English.",
+              vi: "Thực ra khá thư thái! Tôi chỉ đang dành chút thời gian luyện tập tiếng Anh."
+            }
+          ]
         }),
         respond: (userText, turn) => {
           const lower = userText.toLowerCase();
           if (/amma/i.test(lower)) {
             return {
               text: "Hello there! I'm doing fantastically well, thank you so much for asking! By the way, my name is pronounced Emma /ˈɛm.ə/. How was your day today—did you have a busy day at work?",
-              trans: "Xin chào! Mình cảm thấy rất tuyệt vời, cảm ơn bạn đã hỏi thăm! Nhân tiện, tên mình phát âm chuẩn là Emma /ˈɛm.ə/. Ngày hôm nay của bạn thế nào—ở chỗ làm có bận rộn không?"
+              trans: "Xin chào! Mình cảm thấy rất tuyệt vời, cảm ơn bạn đã hỏi thăm! Nhân tiện, tên mình phát âm chuẩn là Emma /ˈɛm.ə/. Ngày hôm nay của bạn thế nào—ở chỗ làm có bận rộn không?",
+              teacherTip: "Lỗi phát âm: Đừng bẹt miệng sang hai bên thành /æ/ (Amma). Hãy hạ nhẹ hàm dưới đọc âm /e/ ngắn như chữ 'e' tiếng Việt: Emma /ˈɛm.ə/.",
+              correction: {
+                hasError: true,
+                original: "Amma",
+                corrected: "Emma",
+                betterWay: "Hello Emma, how are you doing today?",
+                explanation: "Tên riêng phát âm là Emma /ˈɛm.ə/."
+              },
+              suggestedReplies: [
+                {
+                  en: "I had a busy day at work, but everything is going well.",
+                  vi: "Tôi đã có một ngày khá bận ở chỗ làm, nhưng mọi thứ đều ổn thỏa."
+                },
+                {
+                  en: "Today was quite challenging with several new projects.",
+                  vi: "Hôm nay khá thử thách với một số dự án mới."
+                },
+                {
+                  en: "It was a peaceful day, mostly handling routine tasks.",
+                  vi: "Đó là một ngày bình yên, chủ yếu là giải quyết các công việc thường nhật."
+                }
+              ]
             };
           }
           if (/how are you|how do you do/i.test(lower)) {
             return {
               text: "I am feeling wonderful and fully energized to practice with you! How about you—are you feeling relaxed tonight, or are you a little tired after a long day?",
-              trans: "Mình cảm thấy rất tuyệt vời và tràn đầy năng lượng để luyện cùng bạn! Còn bạn thì sao—tối nay bạn thấy thư thái hay hơi mệt sau ngày dài?"
+              trans: "Mình cảm thấy rất tuyệt vời và tràn đầy năng lượng để luyện cùng bạn! Còn bạn thì sao—tối nay bạn thấy thư thái hay hơi mệt sau ngày dài?",
+              teacherTip: "Khi trả lời 'How are you', ngoài 'I'm fine', người bản xứ hay nói 'I'm feeling energized' (tràn đầy năng lượng) hoặc 'A bit worn out' (hơi mệt một chút).",
+              correction: {
+                hasError: false,
+                betterWay: "I'm doing great tonight and excited to chat with you!",
+                explanation: "Cách trả lời tự nhiên, thân thiện và tạo ấn tượng tốt."
+              },
+              suggestedReplies: [
+                {
+                  en: "I'm feeling relaxed and eager to learn something new tonight.",
+                  vi: "Tôi cảm thấy thư thái và rất hào hứng học điều mới tối nay."
+                },
+                {
+                  en: "A little tired after a long shift, but always happy to practice English.",
+                  vi: "Hơi mệt một chút sau ca làm dài, nhưng luôn vui khi được luyện tiếng Anh."
+                },
+                {
+                  en: "I'm in great spirits, ready for an engaging conversation!",
+                  vi: "Tâm trạng tôi đang rất tốt, sẵn sàng cho một cuộc trò chuyện thú vị!"
+                }
+              ]
             };
           }
           if (/busy|tired|stress|heavy|hard|exhaust/i.test(lower)) {
             return {
               text: "I completely understand! A demanding day really takes a toll on our energy. What is your favorite way to unwind in the evening—do you enjoy good music or a nice warm meal?",
-              trans: "Mình rất hiểu cảm giác đó! Một ngày nhiều việc thực sự rút cạn năng lượng. Cách thư giãn yêu thích của bạn vào buổi tối là gì—bạn thích nghe nhạc hay ăn một bữa ấm cúng?"
+              trans: "Mình rất hiểu cảm giác đó! Một ngày nhiều việc thực sự rút cạn năng lượng. Cách thư giãn yêu thích của bạn vào buổi tối là gì—bạn thích nghe nhạc hay ăn một bữa ấm cúng?",
+              teacherTip: "Cụm 'take a toll on' (gây hao tổn, rút cạn sức lực) và 'unwind' (thư giãn xả hơi) là 2 cụm từ bản xứ cực kỳ đắt giá khi nói về việc phục hồi sau ngày mệt mỏi.",
+              correction: {
+                hasError: false,
+                betterWay: "I had a pretty exhausting day, so I'm looking forward to unwinding.",
+                explanation: "Dùng từ 'unwind' thay vì chỉ nói 'relax' giúp câu nói bản xứ hơn nhiều."
+              },
+              suggestedReplies: [
+                {
+                  en: "I usually listen to acoustic music and drink a warm cup of tea.",
+                  vi: "Tôi thường nghe nhạc acoustic và uống một tách trà ấm."
+                },
+                {
+                  en: "I enjoy watching an entertaining podcast or taking a quiet walk.",
+                  vi: "Tôi thích xem một podcast giải trí hoặc đi dạo yên tĩnh."
+                },
+                {
+                  en: "Cooking a wholesome dinner always helps me decompress.",
+                  vi: "Nấu một bữa tối ngon lành luôn giúp tôi xả bớt căng thẳng."
+                }
+              ]
             };
           }
           if (/good|great|fine|happy|relax|wonderful/i.test(lower)) {
             return {
               text: "That is wonderful to hear! Having a positive and pleasant day makes practicing English so much more enjoyable. What was the most interesting highlight of your day?",
-              trans: "Thật tuyệt vời khi nghe điều đó! Một ngày tràn đầy năng lượng tích cực giúp việc luyện tiếng Anh thú vị hơn rất nhiều. Điểm nhấn thú vị nhất trong ngày của bạn là gì?"
+              trans: "Thật tuyệt vời khi nghe điều đó! Một ngày tràn đầy năng lượng tích cực giúp việc luyện tiếng Anh thú vị hơn rất nhiều. Điểm nhấn thú vị nhất trong ngày của bạn là gì?",
+              teacherTip: "Từ 'highlight' (điểm sáng/điểm nhấn đáng nhớ nhất) là từ người bản xứ rất thích dùng khi trò chuyện về trải nghiệm trong ngày.",
+              correction: {
+                hasError: false,
+                betterWay: "My day was truly delightful and full of small accomplishments.",
+                explanation: "Diễn đạt sống động về một ngày vui vẻ và thành công."
+              },
+              suggestedReplies: [
+                {
+                  en: "The highlight of my day was solving a tricky problem with my team.",
+                  vi: "Điểm nhấn trong ngày của tôi là cùng nhóm giải quyết xong một vấn đề hóc búa."
+                },
+                {
+                  en: "I had a great lunch with an old friend I hadn't seen in months.",
+                  vi: "Tôi đã có bữa trưa rất vui với một người bạn cũ nhiều tháng chưa gặp."
+                },
+                {
+                  en: "Just having some peaceful uninterrupted focus time was the best part.",
+                  vi: "Chỉ riêng việc có chút thời gian tập trung yên tĩnh không bị ngắt quãng đã là điều tuyệt nhất rồi."
+                }
+              ]
             };
           }
           if (/break the ice|stranger|start a conversation/i.test(lower)) {
             return {
               text: "Breaking the ice is an art! Commenting on something shared, like 'The weather is lovely today, isn't it?' is the friendliest opener. In what situations do you feel most hesitant to start talking?",
-              trans: "Bắt chuyện là cả một nghệ thuật! Nhận xét về điều chung như thời tiết là cách mở đầu thân thiện nhất. Trong tình huống nào bạn cảm thấy e ngại bắt chuyện nhất?"
+              trans: "Bắt chuyện là cả một nghệ thuật! Nhận xét về điều chung như thời tiết là cách mở đầu thân thiện nhất. Trong tình huống nào bạn cảm thấy e ngại bắt chuyện nhất?",
+              teacherTip: "Thành ngữ 'break the ice' (phá vỡ sự ngượng ngùng lúc đầu). Khi gặp người mới, hãy dùng câu hỏi đuôi (Tag question) nhẹ nhàng: 'Lovely weather, isn't it?'.",
+              correction: {
+                hasError: false,
+                betterWay: "I sometimes find it challenging to initiate small talk with strangers.",
+                explanation: "Dùng 'initiate small talk' rất lịch sự và chuyên nghiệp."
+              },
+              suggestedReplies: [
+                {
+                  en: "I feel most hesitant when speaking with native English speakers at conferences.",
+                  vi: "Tôi thấy e ngại nhất khi nói chuyện với người bản xứ tại các hội nghị."
+                },
+                {
+                  en: "In large group meetings, I sometimes worry about making grammar mistakes.",
+                  vi: "Trong các cuộc họp nhóm đông người, đôi khi tôi lo lắng về việc mắc lỗi ngữ pháp."
+                },
+                {
+                  en: "I'm usually confident, but finding the right opening topic can be tricky.",
+                  vi: "Tôi thường tự tin, nhưng tìm được chủ đề mở đầu phù hợp đôi khi khá khó."
+                }
+              ]
             };
           }
           return {
             text: "That is an intriguing point! I love how spontaneously you shared that. Could you tell me a little bit more about what you plan to do tomorrow evening?",
-            trans: "Đó là một góc nhìn rất thú vị! Mình rất thích cách bạn chia sẻ tự nhiên như vậy. Bạn có thể chia sẻ thêm về kế hoạch tối mai của bạn không?"
+            trans: "Đó là một góc nhìn rất thú vị! Mình rất thích cách bạn chia sẻ tự nhiên như vậy. Bạn có thể chia sẻ thêm về kế hoạch tối mai của bạn không?",
+            teacherTip: "Từ 'spontaneously' /spɒnˈteɪ.ni.əs.li/ (một cách tự nhiên, không gượng gạo). Hãy giữ nhịp nói tự nhiên này nhé!",
+            correction: {
+              hasError: false,
+              betterWay: "That sounds like a great plan for the upcoming days.",
+              explanation: "Câu phản hồi mượt mà, kết nối tự nhiên vào câu hỏi tiếp theo."
+            },
+            suggestedReplies: [
+              {
+                en: "Tomorrow evening I plan to continue practicing English and then read a book.",
+                vi: "Tối mai tôi dự định tiếp tục luyện tiếng Anh và sau đó đọc một cuốn sách."
+              },
+              {
+                en: "I have a scheduled online meeting, followed by some family time.",
+                vi: "Tôi có một cuộc họp trực tuyến theo lịch, sau đó là thời gian dành cho gia đình."
+              },
+              {
+                en: "I'll probably hit the gym to stay fit after sitting all day at work.",
+                vi: "Có lẽ tôi sẽ đi tập gym để rèn luyện thể lực sau cả ngày ngồi làm việc."
+              }
+            ]
           };
         }
       },
@@ -8504,7 +8654,22 @@
         ],
         getOpening: (char) => ({
           text: "Good day team. As we head into peak financial transaction hours, what is the health status of our payment gateways and core banking settlement services?",
-          trans: "Chào cả nhóm. Khi chuẩn bị bước vào giờ cao điểm giao dịch tài chính, tình trạng hoạt động của các cổng thanh toán và dịch vụ thanh toán bù trừ cốt lõi đang như thế nào?"
+          trans: "Chào cả nhóm. Khi chuẩn bị bước vào giờ cao điểm giao dịch tài chính, tình trạng hoạt động của các cổng thanh toán và dịch vụ thanh toán bù trừ cốt lõi đang như thế nào?",
+          teacherTip: "Trong ngân hàng quốc tế, cụm 'settlement services' (dịch vụ quyết toán/thanh toán bù trừ) và 'health status' (tình trạng hoạt động) là các thuật ngữ chuẩn mực của các cuộc họp standup.",
+          suggestedReplies: [
+            {
+              en: "All payment gateways are operating normally with latency under 150 milliseconds.",
+              vi: "Tất cả các cổng thanh toán đều đang hoạt động bình thường với độ trễ dưới 150 mili-giây."
+            },
+            {
+              en: "We are observing a 20% spike in transaction volume, but queue latency remains healthy.",
+              vi: "Chúng tôi ghi nhận lưu lượng giao dịch tăng 20%, nhưng độ trễ hàng đợi vẫn ở mức an toàn."
+            },
+            {
+              en: "The primary settlement service is stable, and our fallback cluster is on hot standby.",
+              vi: "Dịch vụ quyết toán chính đang ổn định, và cụm dự phòng đang ở chế độ trực chiến sẵn sàng."
+            }
+          ]
         }),
         respond: (userText, turn) => {
           const lower = userText.toLowerCase();
@@ -8512,27 +8677,103 @@
             return {
               text: "High transaction throughput is expected during payroll cycles. Are our queuing mechanisms and database connection pools handling the load without transaction timeouts?",
               trans: "Lưu lượng giao dịch lớn là bình thường trong kỳ trả lương. Các cơ chế hàng đợi (queuing) và connection pool của cơ sở dữ liệu có đang xử lý tốt mà không bị timeout không?",
-              teacherTip: "Trong ngành ngân hàng, thay vì nói 'many money' hay 'many users', người bản xứ luôn dùng cụm danh từ chuẩn: 'high transaction volume' hoặc 'peak transaction throughput'!"
+              teacherTip: "Trong ngành ngân hàng, thay vì nói 'many money' hay 'many users', người bản xứ luôn dùng cụm danh từ chuẩn: 'high transaction volume' hoặc 'peak transaction throughput'!",
+              correction: {
+                hasError: false,
+                betterWay: "Our systems are effectively scaling to absorb the payroll traffic surge.",
+                explanation: "Dùng từ 'traffic surge' và 'absorb' rất chuẩn văn phong kỹ thuật cấp cao."
+              },
+              suggestedReplies: [
+                {
+                  en: "Our Kafka queues and database connection pools are holding up well without any timeout errors.",
+                  vi: "Hàng đợi Kafka và connection pool cơ sở dữ liệu của chúng tôi đang hoạt động rất tốt, không hề có lỗi timeout nào."
+                },
+                {
+                  en: "We dynamically scaled our worker pods by 30% to guarantee smooth processing.",
+                  vi: "Chúng tôi đã tự động scale thêm 30% số worker pod để đảm bảo xử lý mượt mà."
+                },
+                {
+                  en: "Average response time is slightly higher, but well within our SLA threshold of 200ms.",
+                  vi: "Thời gian phản hồi trung bình có cao hơn một chút, nhưng vẫn hoàn toàn nằm trong ngưỡng cam kết SLA 200ms."
+                }
+              ]
             };
           }
           if (/fraud|security|block|suspicious|card|token/i.test(lower)) {
             return {
               text: "Security vigilance is paramount in financial systems. Did the fraud detection model flag those as false positives, or should we freeze the associated merchant tokens for review?",
               trans: "Cảnh giác an ninh là tối quan trọng trong hệ thống tài chính. Mô hình phát hiện gian lận có báo nhầm không, hay chúng ta nên khóa tạm thời token của đơn vị chấp nhận thanh toán để rà soát?",
-              teacherTip: "Khi hệ thống an ninh báo nhầm giao dịch hợp lệ thành gian lận, thuật ngữ chuẩn quốc tế là 'false positive'. Tránh dịch thô 'wrong alert' bạn nhé!"
+              teacherTip: "Khi hệ thống an ninh báo nhầm giao dịch hợp lệ thành gian lận, thuật ngữ chuẩn quốc tế là 'false positive'. Tránh dịch thô 'wrong alert' bạn nhé!",
+              correction: {
+                hasError: false,
+                betterWay: "Our fraud detection engine intercepted several anomalous payment attempts.",
+                explanation: "Dùng 'intercepted anomalous payment attempts' rất sắc sảo và chuyên nghiệp."
+              },
+              suggestedReplies: [
+                {
+                  en: "They were verified as fraudulent attempts from an unknown IP range and promptly blocked.",
+                  vi: "Chúng đã được xác minh là các nỗ lực gian lận từ dải IP lạ và đã bị chặn ngay lập tức."
+                },
+                {
+                  en: "Most of them were false positives, and we have calibrated the risk scoring threshold.",
+                  vi: "Phần lớn là báo nhầm (false positive), và chúng tôi đã hiệu chỉnh lại ngưỡng chấm điểm rủi ro."
+                },
+                {
+                  en: "We temporarily froze the affected merchant account and alerted the compliance team.",
+                  vi: "Chúng tôi đã tạm khóa tài khoản merchant bị ảnh hưởng và thông báo cho đội tuân thủ."
+                }
+              ]
             };
           }
           if (/reconciliation|audit|compliance|settlement|discrepancy/i.test(lower)) {
             return {
               text: "Accurate end-of-day reconciliation guarantees financial integrity. Are there any discrepancy margins between the core banking ledger and external clearing networks?",
               trans: "Đối soát cuối ngày chính xác đảm bảo tính toàn vẹn tài chính. Có phát sinh chênh lệch nào giữa sổ cái core banking và các mạng lưới thanh toán bên ngoài không?",
-              teacherTip: "Từ 'reconciliation' /ˌrek.ənˌsɪl.iˈeɪ.ʃən/ là từ vàng của dân kế toán & ngân hàng (đối soát số dư). Khi có số liệu chênh lệch, hãy dùng từ 'discrepancy' thay vì 'difference'."
+              teacherTip: "Từ 'reconciliation' /ˌrek.ənˌsɪl.iˈeɪ.ʃən/ là từ vàng của dân kế toán & ngân hàng (đối soát số dư). Khi có số liệu chênh lệch, hãy dùng từ 'discrepancy' thay vì 'difference'.",
+              correction: {
+                hasError: false,
+                betterWay: "Our daily reconciliation completed with zero discrepancy margins.",
+                explanation: "Diễn đạt ngắn gọn, chuẩn xác báo cáo quyết toán tài chính."
+              },
+              suggestedReplies: [
+                {
+                  en: "The reconciliation process completed successfully with zero discrepancies across all accounts.",
+                  vi: "Quy trình đối soát đã hoàn thành thành công và không có bất kỳ chênh lệch nào trên mọi tài khoản."
+                },
+                {
+                  en: "There was a minor discrepancy of 2 transactions due to network latency, which resolved automatically.",
+                  vi: "Có một chênh lệch nhỏ 2 giao dịch do trễ mạng, và đã được tự động xử lý xong."
+                },
+                {
+                  en: "All clearing records match our core ledger balances 100% for today's financial close.",
+                  vi: "Toàn bộ bản ghi thanh toán bù trừ khớp 100% với số dư sổ cái cốt lõi cho kỳ chốt sổ hôm nay."
+                }
+              ]
             };
           }
           return {
             text: "That is a solid operational update. In terms of banking service availability, what is our current fallback strategy if the primary payment gateway becomes unresponsive?",
             trans: "Bản cập nhật vận hành rất rõ ràng. Về độ sẵn sàng của dịch vụ ngân hàng, chiến lược dự phòng hiện tại của chúng ta là gì nếu cổng thanh toán chính mất phản hồi?",
-            teacherTip: "Để nói hệ thống bị đơ hay không phản hồi, người bản xứ dùng tính từ 'unresponsive' (VD: 'The payment gateway is unresponsive'), tự nhiên hơn nhiều so với 'gateway cannot answer'."
+            teacherTip: "Để nói hệ thống bị đơ hay không phản hồi, người bản xứ dùng tính từ 'unresponsive' (VD: 'The payment gateway is unresponsive'), tự nhiên hơn nhiều so với 'gateway cannot answer'.",
+            correction: {
+              hasError: false,
+              betterWay: "Our automated failover circuit breaker switches to the secondary gateway within 3 seconds.",
+              explanation: "Thuật ngữ 'circuit breaker' và 'failover' là chuẩn quốc tế trong kiến trúc FinTech."
+            },
+            suggestedReplies: [
+              {
+                en: "Our circuit breaker will automatically reroute traffic to the secondary gateway within 3 seconds.",
+                vi: "Cơ chế circuit breaker của chúng tôi sẽ tự động định tuyến lại lưu lượng sang cổng phụ trong vòng 3 giây."
+              },
+              {
+                en: "We maintain an active-active deployment so neither gateway represents a single point of failure.",
+                vi: "Chúng tôi duy trì mô hình active-active nên không có cổng nào là điểm lỗi đơn nhất (SPOF)."
+              },
+              {
+                en: "In case of failure, critical transactions are queued safely in Redis for retry.",
+                vi: "Trong trường hợp lỗi, các giao dịch quan trọng sẽ được lưu an toàn trong hàng đợi Redis để thử lại."
+              }
+            ]
           };
         }
       },
@@ -8552,7 +8793,22 @@
         ],
         getOpening: (char) => ({
           text: "War room bridge is active. Our monitoring alert triggered on high latency and elevated 5xx error rates across API gateways. What is the current blast radius, and should we trigger automatic failover?",
-          trans: "Cầu họp khẩn War room đã kích hoạt. Cảnh báo giám sát vừa báo độ trễ cao và tỷ lệ lỗi 5xx tăng vọt trên các API gateway. Phạm vi ảnh hưởng hiện tại là bao nhiêu, và chúng ta có nên kích hoạt chuyển đổi dự phòng (failover) ngay không?"
+          trans: "Cầu họp khẩn War room đã kích hoạt. Cảnh báo giám sát vừa báo độ trễ cao và tỷ lệ lỗi 5xx tăng vọt trên các API gateway. Phạm vi ảnh hưởng hiện tại là bao nhiêu, và chúng ta có nên kích hoạt chuyển đổi dự phòng (failover) ngay không?",
+          teacherTip: "Thuật ngữ 'blast radius' (bán kính/phạm vi ảnh hưởng của sự cố) là từ chuyên ngành rất được các kỹ sư SRE của Google, AWS hay dùng thay vì nói 'how many users broken'.",
+          suggestedReplies: [
+            {
+              en: "The blast radius is currently limited to about 15% of checkout transactions in the US region.",
+              vi: "Phạm vi ảnh hưởng hiện tại giới hạn ở khoảng 15% các giao dịch thanh toán tại khu vực Mỹ."
+            },
+            {
+              en: "I strongly recommend triggering immediate failover to our secondary standby cluster.",
+              vi: "Tôi rất khuyến nghị kích hoạt chuyển đổi dự phòng ngay lập tức sang cụm máy chủ dự phòng."
+            },
+            {
+              en: "We identified a runaway database query causing connection timeouts; we are terminating it now.",
+              vi: "Chúng tôi đã tìm ra một câu truy vấn cơ sở dữ liệu bị treo gây nghẽn kết nối; chúng tôi đang hủy nó ngay."
+            }
+          ]
         }),
         respond: (userText, turn) => {
           const lower = userText.toLowerCase();
@@ -8560,26 +8816,77 @@
             return {
               text: "Executing failover to the standby cluster is the safest move. Has traffic successfully rerouted, and are the health check probes returning HTTP 200 OK across all pods?",
               trans: "Kích hoạt chuyển đổi sang cụm máy chủ dự phòng là phương án an toàn nhất. Lưu lượng đã được định tuyến lại thành công chưa, và các probe kiểm tra sức khỏe đã trả về HTTP 200 OK trên các pod chưa?",
-              teacherTip: "Khi nói chuyển máy chủ dự phòng, 'trigger failover' hoặc 'failover to standby' là phrasal verb chuyên dụng của kỹ sư DevOps, thay vì nói 'change server'."
+              teacherTip: "Khi nói chuyển máy chủ dự phòng, 'trigger failover' hoặc 'failover to standby' là phrasal verb chuyên dụng của kỹ sư DevOps, thay vì nói 'change server'.",
+              correction: {
+                hasError: false,
+                betterWay: "Traffic rerouting succeeded and all health checks are now green.",
+                explanation: "Diễn đạt ngắn gọn, tự tin trong phòng họp sự cố."
+              },
+              suggestedReplies: [
+                {
+                  en: "Traffic has rerouted 100% and all health probes are reporting 200 OK.",
+                  vi: "Lưu lượng đã được chuyển hướng 100% và tất cả các probe kiểm tra sức khỏe đều báo 200 OK."
+                },
+                {
+                  en: "The standby cluster is handling the traffic smoothly with p99 latency under 80ms.",
+                  vi: "Cụm dự phòng đang xử lý lưu lượng rất êm với độ trễ p99 dưới 80 mili-giây."
+                },
+                {
+                  en: "DNS propagation is complete and customer error reports have dropped to zero.",
+                  vi: "Việc cập nhật DNS đã hoàn tất và các báo cáo lỗi từ khách hàng đã giảm về 0."
+                }
+              ]
             };
           }
           if (/rollback|deploy|release|version|git/i.test(lower)) {
             return {
               text: "Rolling back to the previous stable release was the right call under pressure. Did the rollback clear the latency spike, and have we notified customer support that services are stabilizing?",
               trans: "Rollback về bản phát hành ổn định trước đó là quyết định rất chính xác dưới áp lực. Việc rollback đã giải quyết được đỉnh độ trễ chưa, và chúng ta đã báo đội CSKH là hệ thống đang ổn định dần chưa?",
-              teacherTip: "Khi hệ thống bị chậm đột ngột sau khi cập nhật, hãy dùng danh từ 'latency spike' (đỉnh nhọn độ trễ). Còn động từ khôi phục bản cũ là 'roll back' (2 từ) và danh từ là 'rollback' (1 từ)."
-            };
-          }
-          if (/cpu|memory|leak|disk|utilization|exhaust/i.test(lower)) {
-            return {
-              text: "Resource exhaustion directly impacts transaction throughput. Can we temporarily spin up additional worker nodes while engineering investigates the memory profiling dump?",
-              trans: "Cạn kiệt tài nguyên ảnh hưởng trực tiếp đến thông lượng giao dịch. Chúng ta có thể scale thêm các node worker tạm thời trong khi đội kỹ thuật phân tích file dump bộ nhớ không?",
-              teacherTip: "Khi máy chủ bị tràn RAM hay quá tải CPU, thuật ngữ bản xứ là 'resource exhaustion' hoặc 'memory leak'. Khi muốn tạo thêm máy chủ, kỹ sư hay dùng cụm 'spin up additional nodes'."
+              teacherTip: "Khi hệ thống bị chậm đột ngột sau khi cập nhật, hãy dùng danh từ 'latency spike' (đỉnh nhọn độ trễ). Còn động từ khôi phục bản cũ là 'roll back' (2 từ) và danh từ là 'rollback' (1 từ).",
+              correction: {
+                hasError: false,
+                betterWay: "The rollback resolved the latency spike immediately and services are operational.",
+                explanation: "Báo cáo dứt khoát kết quả khắc phục sự cố."
+              },
+              suggestedReplies: [
+                {
+                  en: "Yes, the rollback immediately cleared the latency spike and error rates are back to baseline.",
+                  vi: "Vâng, việc rollback đã giải quyết ngay lập tức đỉnh trễ và tỷ lệ lỗi đã trở về mức cơ sở."
+                },
+                {
+                  en: "Customer support has been notified and we posted an incident update on our status page.",
+                  vi: "Đội CSKH đã được thông báo và chúng tôi đã đăng bản cập nhật sự cố lên trang status."
+                },
+                {
+                  en: "We will lock production deployments until we complete a thorough root cause analysis.",
+                  vi: "Chúng tôi sẽ khóa việc deploy máy chủ thật cho đến khi hoàn thành phân tích nguyên nhân gốc rễ (RCA)."
+                }
+              ]
             };
           }
           return {
-            text: "Understood. Let's maintain strict incident command discipline. What is the estimated Mean Time to Recovery (MTTR), and when can we publish the next status page update to stakeholders?",
-            trans: "Đã rõ. Hãy duy trì kỷ luật điều phối sự cố chặt chẽ. Thời gian phục hồi dự kiến (MTTR) là bao lâu, và khi nào chúng ta có thể cập nhật thông tin tiếp theo lên trang trạng thái cho các bên liên quan?"
+            text: "Understood. Let's maintain strict incident command discipline. What is the estimated Mean Time to Recovery (MTTR), and when can we publish the next status page update?",
+            trans: "Đã rõ. Hãy duy trì kỷ luật chỉ huy sự cố nghiêm ngặt. Thời gian phục hồi trung bình (MTTR) ước tính là bao lâu, và khi nào chúng ta có thể đăng bản cập nhật tiếp theo lên trang trạng thái?",
+            teacherTip: "MTTR (Mean Time to Recovery) là chỉ số vàng đo lường năng lực ứng phó sự cố của các tập đoàn công nghệ toàn cầu.",
+            correction: {
+              hasError: false,
+              betterWay: "Our estimated MTTR is under fifteen minutes, and we will update the status page shortly.",
+              explanation: "Cách trả lời tiêu chuẩn của Incident Commander."
+            },
+            suggestedReplies: [
+              {
+                en: "Estimated MTTR is under 15 minutes, and we will push a status update in 5 minutes.",
+                vi: "MTTR ước tính là dưới 15 phút, và chúng tôi sẽ đăng cập nhật trạng thái trong 5 phút nữa."
+              },
+              {
+                en: "Systems are already recovering; we expect full resolution within 10 minutes.",
+                vi: "Hệ thống đã đang hồi phục rồi; chúng tôi dự kiến xử lý triệt để trong vòng 10 phút."
+              },
+              {
+                en: "We are drafting the post-mortem document now to ensure this does not recur.",
+                vi: "Chúng tôi đang soạn tài liệu đánh giá hậu kiểm (post-mortem) ngay để đảm bảo lỗi này không lặp lại."
+              }
+            ]
           };
         }
       },
@@ -8594,36 +8901,52 @@
         starters: [
           "We automated our deployment pipeline using CI/CD with automated testing stages.",
           "We should configure auto-scaling policies to handle unexpected traffic spikes.",
-          "How can we optimize our monthly cloud infrastructure expenses without sacrificing performance?",
-          "All nightly system backups have been encrypted and replicated to the disaster recovery site."
+          "How can we optimize our monthly cloud infrastructure expenses without sacrificing reliability?",
+          "Our multi-region disaster recovery strategy guarantees a Recovery Time Objective of under 5 minutes."
         ],
         getOpening: (char) => ({
-          text: "Welcome to our weekly Cloud Infrastructure sync. Today we're reviewing our container orchestration, multi-region redundancy, and cloud FinOps optimization. What updates do you have on our infrastructure roadmap?",
-          trans: "Chào mừng đến buổi họp Hạ tầng Cloud định kỳ. Hôm nay chúng ta rà soát điều phối container, dự phòng đa khu vực và tối ưu hóa chi phí đám mây (FinOps). Bạn có cập nhật gì về lộ trình hạ tầng không?"
+          text: "Welcome to the cloud architecture review. Today we evaluate our multi-region Kubernetes deployments and automated CI/CD pipelines. How are our containerized workloads performing under production loads?",
+          trans: "Chào mừng đến với buổi rà soát kiến trúc đám mây. Hôm nay chúng ta đánh giá các cụm triển khai Kubernetes đa vùng và đường ống CI/CD tự động. Các workload container đang hoạt động ra sao dưới tải thực tế?",
+          teacherTip: "Cụm 'containerized workloads' (các ứng dụng/tác vụ chạy trong container) và 'under production load' (dưới tải thực tế của người dùng) là thuật ngữ chuẩn mực của kỹ sư Cloud cấp cao.",
+          suggestedReplies: [
+            {
+              en: "Our containerized workloads are running smoothly with average CPU utilization around 45%.",
+              vi: "Các workload container của chúng tôi đang chạy rất mượt với mức sử dụng CPU trung bình khoảng 45%."
+            },
+            {
+              en: "We configured horizontal pod autoscaling to dynamically spin up pods during traffic surges.",
+              vi: "Chúng tôi đã cấu hình horizontal pod autoscaling để tự động tạo thêm pod khi lưu lượng tăng đột biến."
+            },
+            {
+              en: "We recently migrated to Graviton ARM processors, cutting our cloud compute costs by 20%.",
+              vi: "Gần đây chúng tôi đã chuyển sang chip ARM Graviton, cắt giảm được 20% chi phí tính toán đám mây."
+            }
+          ]
         }),
         respond: (userText, turn) => {
-          const lower = userText.toLowerCase();
-          if (/cost|finops|expense|optimize|budget|bill/i.test(lower)) {
-            return {
-              text: "FinOps optimization is crucial for sustainable operations. By purchasing reserved instances and pruning idle development environments, how much percentage reduction can we target this quarter?",
-              trans: "Tối ưu chi phí FinOps là rất quan trọng để vận hành bền vững. Bằng cách mua reserved instance và dọn dẹp các môi trường dev nhàn rỗi, mục tiêu giảm bao nhiêu phần trăm chi phí trong quý này?"
-            };
-          }
-          if (/ci\/cd|pipeline|automation|deploy|test|jenkins|github/i.test(lower)) {
-            return {
-              text: "A robust CI/CD pipeline minimizes human error during deployment. Have we integrated automated security scanning and linting gates prior to production merges?",
-              trans: "Pipeline CI/CD vững chắc giảm thiểu tối đa lỗi con người khi release. Chúng ta đã tích hợp các bước quét bảo mật tự động và linting trước khi merge vào production chưa?"
-            };
-          }
-          if (/backup|disaster|recovery|dr|replicate|snapshot/i.test(lower)) {
-            return {
-              text: "Disaster recovery resilience is non-negotiable for enterprise banking. Have we tested our Recovery Time Objective (RTO) and Recovery Point Objective (RPO) in our latest simulation drill?",
-              trans: "Khả năng khôi phục sau thảm họa là điều kiện tiên quyết trong ngân hàng. Chúng ta đã đo thử mục tiêu thời gian khôi phục (RTO) và điểm khôi phục (RPO) trong đợt diễn tập gần nhất chưa?"
-            };
-          }
           return {
             text: "That sounds like a scalable architecture strategy. How will these infrastructure improvements impact our overall API response times during peak concurrent traffic?",
-            trans: "Đó là một chiến lược kiến trúc có tính mở rộng rất cao. Những cải tiến hạ tầng này sẽ tác động thế nào đến thời gian phản hồi API vào các đợt lưu lượng truy cập đồng thời cao điểm?"
+            trans: "Đó là một chiến lược kiến trúc có tính mở rộng rất cao. Những cải tiến hạ tầng này sẽ tác động thế nào đến thời gian phản hồi API vào các đợt lưu lượng truy cập đồng thời cao điểm?",
+            teacherTip: "Cụm 'peak concurrent traffic' (lưu lượng truy cập đồng thời cao điểm) là thuật ngữ chính xác thay vì nói 'many people use at the same time'.",
+            correction: {
+              hasError: false,
+              betterWay: "These optimizations will maintain sub-second response times even during ten-fold traffic spikes.",
+              explanation: "Cách nói thuyết phục về tính chịu tải của hạ tầng đám mây."
+            },
+            suggestedReplies: [
+              {
+                en: "We expect our 99th percentile API latency to remain well under 100 milliseconds.",
+                vi: "Chúng tôi kỳ vọng độ trễ API ở phân vị 99 (p99) sẽ duy trì ở mức dưới 100 mili-giây."
+              },
+              {
+                en: "Edge caching via Cloudflare CDN will absorb over 70% of static asset requests.",
+                vi: "Bộ đệm biên qua CDN Cloudflare sẽ hấp thụ hơn 70% các yêu cầu tài nguyên tĩnh."
+              },
+              {
+                en: "Our database read replicas will ensure query times remain consistently fast.",
+                vi: "Các bản sao đọc (read replicas) của cơ sở dữ liệu sẽ đảm bảo thời gian truy vấn luôn nhanh ổn định."
+              }
+            ]
           };
         }
       },
@@ -8643,31 +8966,47 @@
         ],
         getOpening: (char) => ({
           text: "Good morning. Today's executive review focuses on our IT Operations governance, system SLA performance, and regulatory compliance. Could you summarize our quarterly system availability and risk posture?",
-          trans: "Chào buổi sáng. Buổi họp ban giám đốc hôm nay tập trung vào quản trị vận hành IT, chỉ số cam kết chất lượng dịch vụ (SLA) và tuân thủ quy định. Bạn có thể tóm tắt độ sẵn sàng của hệ thống và tình hình rủi ro quý này không?"
+          trans: "Chào buổi sáng. Buổi họp ban giám đốc hôm nay tập trung vào quản trị vận hành IT, chỉ số cam kết chất lượng dịch vụ (SLA) và tuân thủ quy định. Bạn có thể tóm tắt độ sẵn sàng của hệ thống và tình hình rủi ro quý này không?",
+          teacherTip: "Cụm 'risk posture' (tình hình/vị thế quản trị rủi ro) và 'system availability' (độ sẵn sàng của hệ thống) là từ vựng đắt giá của các giám đốc công nghệ (CTO/CIO).",
+          suggestedReplies: [
+            {
+              en: "I am proud to report that we maintained 99.99% uptime across all Tier-1 banking services this quarter.",
+              vi: "Tôi rất tự hào báo cáo rằng chúng ta đã duy trì tỷ lệ uptime 99.99% trên tất cả dịch vụ ngân hàng Cấp 1 quý này."
+            },
+            {
+              en: "Our cybersecurity audit concluded with zero critical vulnerabilities and full PCI-DSS compliance.",
+              vi: "Đợt kiểm toán an ninh mạng đã kết thúc với 0 lỗ hổng nghiêm trọng và đạt 100% chuẩn tuân thủ PCI-DSS."
+            },
+            {
+              en: "Incident resolution times improved by 40% thanks to our new automated observability platform.",
+              vi: "Thời gian xử lý sự cố đã cải thiện 40% nhờ nền tảng giám sát tự động hóa mới."
+            }
+          ]
         }),
         respond: (userText, turn) => {
-          const lower = userText.toLowerCase();
-          if (/uptime|sla|availability|99.99|metric|downtime/i.test(lower)) {
-            return {
-              text: "Maintaining four-nines (99.99%) uptime across financial services is a stellar achievement. Which operational initiatives contributed most significantly to keeping downtime under four minutes per month?",
-              trans: "Duy trì uptime 4 số 9 (99.99%) trên các dịch vụ tài chính là một thành tích rất xuất sắc. Những sáng kiến vận hành nào đã đóng góp lớn nhất vào việc giữ thời gian ngừng hoạt động dưới 4 phút mỗi tháng?"
-            };
-          }
-          if (/compliance|audit|security|iso|soc|pci|pen/i.test(lower)) {
-            return {
-              text: "Regulatory compliance is top priority for our board and financial regulators. Were there any remediation items highlighted in the penetration test, and what is our timeline to address them?",
-              trans: "Tuân thủ quy định là ưu tiên hàng đầu của Hội đồng quản trị và cơ quan quản lý tài chính. Có hạng mục khắc phục nào được chỉ ra trong đợt kiểm thử xâm nhập không, và lộ trình xử lý của chúng ta là gì?"
-            };
-          }
-          if (/access|privilege|iam|password|mfa|least/i.test(lower)) {
-            return {
-              text: "Enforcing the principle of least privilege drastically limits attack vectors. How are we monitoring privileged access for system administrators and database engineers?",
-              trans: "Áp dụng nguyên tắc quyền tối thiểu hạn chế tối đa các nguy cơ tấn công. Chúng ta đang giám sát quyền truy cập đặc quyền của các quản trị viên hệ thống và kỹ sư cơ sở dữ liệu như thế nào?"
-            };
-          }
           return {
             text: "That demonstrates mature operational governance. Looking forward to the next fiscal year, what infrastructure investments will we need to stay ahead of upcoming regulatory mandates?",
-            trans: "Điều đó chứng minh năng lực quản trị vận hành rất trưởng thành. Hướng tới năm tài chính tiếp theo, chúng ta cần đầu tư hạ tầng nào để đón đầu các quy định pháp lý sắp tới?"
+            trans: "Điều đó chứng minh năng lực quản trị vận hành rất trưởng thành. Hướng tới năm tài chính tiếp theo, chúng ta cần đầu tư hạ tầng nào để đón đầu các quy định pháp lý sắp tới?",
+            teacherTip: "Cụm 'stay ahead of upcoming regulatory mandates' (đi trước đón đầu các quy định pháp lý bắt buộc sắp tới) là phong thái trao đổi của các nhà lãnh đạo chiến lược.",
+            correction: {
+              hasError: false,
+              betterWay: "We recommend prioritizing automated compliance auditing and end-to-end data encryption.",
+              explanation: "Đề xuất chiến lược ngắn gọn, rõ ràng cho ban lãnh đạo."
+            },
+            suggestedReplies: [
+              {
+                en: "We should invest in automated compliance auditing and confidential computing hardware.",
+                vi: "Chúng ta nên đầu tư vào hệ thống kiểm toán tuân thủ tự động và phần cứng điện toán bảo mật."
+              },
+              {
+                en: "Upgrading our disaster recovery site to zero-RPO active-active replication is essential.",
+                vi: "Nâng cấp trung tâm dự phòng thảm họa lên mô hình nhân bản active-active với RPO bằng 0 là rất cần thiết."
+              },
+              {
+                en: "We will allocate budget to expand our dedicated cybersecurity monitoring team.",
+                vi: "Chúng tôi sẽ phân bổ ngân sách để mở rộng đội ngũ chuyên trách giám sát an ninh mạng."
+              }
+            ]
           };
         }
       },
@@ -8686,26 +9025,48 @@
           "Could you ask me how I handle tight deadlines under pressure?"
         ],
         getOpening: (char) => ({
-          text: "Good evening. Welcome to our formal interview session. To start off, could you please introduce yourself and tell me what motivated you to apply for this position?",
-          trans: "Chào buổi tối. Chào mừng bạn đến với buổi phỏng vấn. Để bắt đầu, bạn hãy giới thiệu ngắn gọn về bản thân và chia sẻ lý do bạn quan tâm đến vị trí này nhé?"
+          text: "Welcome to this interview round. We are looking for an exceptional professional who can bridge technical execution with confident cross-functional collaboration. To begin, could you introduce yourself and highlight your most impactful career achievement?",
+          trans: "Chào mừng bạn đến với vòng phỏng vấn này. Chúng tôi đang tìm kiếm một nhân sự xuất sắc có khả năng kết nối giữa thực thi kỹ thuật và phối hợp liên phòng ban tự tin. Để bắt đầu, bạn có thể giới thiệu về bản thân và điểm nhấn thành tựu nghề nghiệp nổi bật nhất của mình không?",
+          teacherTip: "Khi trả lời câu hỏi 'Tell me about yourself', hãy áp dụng công thức: Hiện tại (Current role) -> Quá khứ (Key achievements với con số cụ thể) -> Tương lai (Why this position fits you).",
+          suggestedReplies: [
+            {
+              en: "I have over 4 years of experience managing high-throughput IT systems in the banking sector.",
+              vi: "Tôi có hơn 4 năm kinh nghiệm quản lý các hệ thống IT thông lượng cao trong lĩnh vực ngân hàng."
+            },
+            {
+              en: "My biggest achievement was leading an infrastructure migration that cut operating costs by 25%.",
+              vi: "Thành tựu lớn nhất của tôi là dẫn dắt dự án chuyển dịch hạ tầng giúp cắt giảm 25% chi phí vận hành."
+            },
+            {
+              en: "I specialize in bridging the gap between software engineering and strategic business goals.",
+              vi: "Thế mạnh của tôi là làm cầu nối giữa kỹ thuật phần mềm và các mục tiêu kinh doanh chiến lược."
+            }
+          ]
         }),
         respond: (userText, turn) => {
-          const lower = userText.toLowerCase();
-          if (turn <= 1 || /introduce|my name is|i am|experience|years|work/i.test(lower)) {
-            return {
-              text: "Thank you for that clear introduction. Your background sounds very promising! Could you describe a challenging project or technical issue you handled and how you managed to overcome it?",
-              trans: "Cảm ơn phần giới thiệu rất rõ ràng của bạn. Kinh nghiệm của bạn nghe rất triển vọng! Bạn có thể chia sẻ một dự án hoặc sự cố kỹ thuật khó khăn bạn từng phụ trách và cách bạn giải quyết nó không?"
-            };
-          }
-          if (/challenge|problem|difficult|team|solve|deadline|pressure/i.test(lower)) {
-            return {
-              text: "Excellent problem-solving mindset! That demonstrates great resilience. Looking ahead, where do you see your professional skills evolving over the next two to three years?",
-              trans: "Tư duy giải quyết vấn đề rất xuất sắc! Điều đó chứng minh sự kiên trì của bạn. Vậy bạn thấy kỹ năng chuyên môn của mình sẽ phát triển thế nào trong 2-3 năm tới?"
-            };
-          }
           return {
-            text: "That shows strong dedication. In our fast-paced company environment, how do you handle competing priorities when multiple stakeholders request urgent changes?",
-            trans: "Điều đó thể hiện sự tận tâm lớn. Trong môi trường công ty tốc độ cao, bạn xử lý các ưu tiên cạnh tranh thế nào khi nhiều bên cùng yêu cầu thay đổi khẩn cấp?"
+            text: "That sounds like high-value experience. When managing cross-functional projects with tight deadlines, how do you handle conflicting priorities between engineering and product stakeholders?",
+            trans: "Đó là kinh nghiệm rất giá trị. Khi quản lý các dự án liên phòng ban với thời hạn gấp, bạn xử lý những bất đồng về thứ tự ưu tiên giữa đội kỹ thuật và sản phẩm như thế nào?",
+            teacherTip: "Trong phỏng vấn quản lý, 'manage conflicting priorities' (quản lý các ưu tiên mâu thuẫn nhau) là câu hỏi kinh điển. Hãy nhắc đến việc 'aligning on business impact' (thống nhất dựa trên tác động kinh doanh).",
+            correction: {
+              hasError: false,
+              betterWay: "I align stakeholders around measurable business metrics and transparent trade-offs.",
+              explanation: "Câu trả lời thể hiện tư duy lãnh đạo và kỹ năng giao tiếp xuất sắc."
+            },
+            suggestedReplies: [
+              {
+                en: "I bring both teams together, focus on user impact, and make transparent trade-offs.",
+                vi: "Tôi tập hợp cả hai đội lại, tập trung vào tác động đến người dùng và đưa ra các đánh đổi minh bạch."
+              },
+              {
+                en: "I prioritize deliverables based on ROI and establish clear milestone checkpoints.",
+                vi: "Tôi ưu tiên các hạng mục dựa trên hiệu quả đầu tư (ROI) và thiết lập các mốc kiểm tra rõ ràng."
+              },
+              {
+                en: "Open asynchronous communication and data-driven decisions help us resolve disagreements quickly.",
+                vi: "Giao tiếp bất đồng bộ cởi mở và các quyết định dựa trên dữ liệu giúp chúng tôi giải quyết bất đồng nhanh chóng."
+              }
+            ]
           };
         }
       },
@@ -8724,20 +9085,48 @@
           "I would like to propose a new automated workflow for our deliverables."
         ],
         getOpening: (char) => ({
-          text: "Good morning team. Let's do a quick sync on our quarterly project milestones. Could you share an update on your deliverables and any roadblocks you encountered?",
-          trans: "Chào buổi sáng cả nhóm. Hãy cùng họp nhanh cập nhật tiến độ công việc. Bạn có thể chia sẻ tình hình các đầu việc của mình và những khó khăn đang gặp phải không?"
+          text: "Good morning team. We have our weekly sync today. Could each of you share a quick status update on your deliverables and let me know if anyone has blockers?",
+          trans: "Chào buổi sáng cả nhóm. Hôm nay chúng ta có cuộc họp đồng bộ tiến độ hàng tuần. Mọi người có thể chia sẻ nhanh tiến độ công việc và cho tôi biết có ai gặp trở ngại nào không?",
+          teacherTip: "Trong các cuộc họp Agile/Scrum quốc tế, từ 'blocker' (vấn đề đang cản trở tiến độ) và 'sync' (buổi họp đồng bộ ngắn) được dùng hàng ngày.",
+          suggestedReplies: [
+            {
+              en: "Everything is on track for our sprint release on Friday with no major blockers.",
+              vi: "Mọi thứ đều đang đúng tiến độ cho đợt phát hành sprint vào thứ Sáu, không có trở ngại lớn nào."
+            },
+            {
+              en: "I completed the API integration, but I am currently waiting for design team feedback.",
+              vi: "Tôi đã hoàn thành phần tích hợp API, nhưng hiện tại đang chờ phản hồi từ đội thiết kế."
+            },
+            {
+              en: "We hit a small blocker with the third-party payment vendor, and I am following up today.",
+              vi: "Chúng tôi gặp một vướng mắc nhỏ với đối tác cổng thanh toán bên thứ ba, và tôi đang bám sát xử lý hôm nay."
+            }
+          ]
         }),
         respond: (userText, turn) => {
-          const lower = userText.toLowerCase();
-          if (/deadline|delay|push back|extend/i.test(lower)) {
-            return {
-              text: "I appreciate you flagging the timeline early. Quality is definitely our top priority. How will those extra two days ensure we exceed the client's expectations?",
-              trans: "Tôi rất hoan nghênh bạn đã báo sớm về tiến độ. Chất lượng chắc chắn là ưu tiên hàng đầu. Hai ngày gia hạn thêm này sẽ giúp chúng ta vượt kỳ vọng của khách hàng thế nào?"
-            };
-          }
           return {
-            text: "That is a proactive update. To keep all stakeholders aligned, let's schedule a 15-minute sync tomorrow morning. What key milestones will be completed by then?",
-            trans: "Đó là một bản cập nhật rất chủ động. Để đảm bảo mọi bên cùng nắm rõ, hãy xếp lịch họp nhanh 15 phút sáng mai. Những hạng mục bàn giao chính nào sẽ hoàn tất vào lúc đó?"
+            text: "Great progress. Collaboration and fast feedback loops are critical. Is there anything leadership can do to help unblock you or expedite the deliverable?",
+            trans: "Tiến độ rất tốt. Sự phối hợp và các vòng phản hồi nhanh là then chốt. Ban lãnh đạo có thể hỗ trợ điều gì để giúp bạn tháo gỡ khó khăn hoặc đẩy nhanh tiến độ không?",
+            teacherTip: "Động từ 'unblock' (tháo gỡ vật cản) và 'expedite' /ˌek.spəˈdaɪt/ (đẩy nhanh tiến độ) là 2 từ vựng chuyên nghiệp rất được ưa chuộng ở môi trường doanh nghiệp đa quốc gia.",
+            correction: {
+              hasError: false,
+              betterWay: "We have everything we need, and we will keep you posted on the final sign-off.",
+              explanation: "Câu kết thúc cập nhật tiến độ công việc tự tin, chuyên nghiệp."
+            },
+            suggestedReplies: [
+              {
+                en: "Everything is under control. I will keep you posted if we need any executive escalation.",
+                vi: "Mọi thứ đều trong tầm kiểm soát. Tôi sẽ báo lại ngay nếu cần ban lãnh đạo can thiệp thúc đẩy."
+              },
+              {
+                en: "A quick email from you to the vendor manager would help speed up their approval.",
+                vi: "Một email ngắn từ anh tới quản lý bên đối tác sẽ giúp đẩy nhanh việc phê duyệt của họ."
+              },
+              {
+                en: "We are all set for now, thank you for the support!",
+                vi: "Chúng tôi đã có đầy đủ những gì cần thiết lúc này, cảm ơn anh đã hỗ trợ!"
+              }
+            ]
           };
         }
       },
@@ -8756,26 +9145,48 @@
           "Can I have the bill, please? Do you accept credit card payments?"
         ],
         getOpening: (char) => ({
-          text: "Hey welcome to San Francisco! Alex here. Are you checking in for your flight at the airport, or looking for awesome food spots around town?",
-          trans: "Chào mừng bạn đến với San Francisco! Alex đây. Bạn đang làm thủ tục chuyến bay ở sân bay, hay muốn tìm quán ăn ngon quanh thành phố?"
+          text: "Hey there traveler! Welcome to our hotel concierge desk. How was your flight into the city, and how can I help you settle in today?",
+          trans: "Xin chào quý khách! Chào mừng bạn đến với quầy lễ tân khách sạn. Chuyến bay đến thành phố của bạn có thuận lợi không, và tôi có thể giúp gì cho bạn hôm nay?",
+          teacherTip: "Khi nói chuyện ở khách sạn hoặc du lịch, từ 'concierge' /kɒn.siˈeəʒ/ (quầy hỗ trợ thông tin & dịch vụ khách hàng) là dịch vụ hỗ trợ bạn đặt bàn, gọi xe hoặc gợi ý điểm tham quan.",
+          suggestedReplies: [
+            {
+              en: "The flight was smooth, thank you! I have a reservation under the name Nguyen for three nights.",
+              vi: "Chuyến bay rất êm đẹp, cảm ơn bạn! Tôi có đặt phòng trước dưới tên Nguyễn trong 3 đêm."
+            },
+            {
+              en: "I'm a bit jet-lagged, but excited to explore the city! Could I check in early?",
+              vi: "Tôi hơi mệt do lệch múi giờ, nhưng rất hào hứng khám phá thành phố! Tôi có thể nhận phòng sớm không?"
+            },
+            {
+              en: "Could you recommend some good authentic local restaurants within walking distance?",
+              vi: "Bạn có thể gợi ý cho tôi vài nhà hàng địa phương ngon chuẩn vị ở gần đây có thể đi bộ được không?"
+            }
+          ]
         }),
         respond: (userText, turn) => {
-          const lower = userText.toLowerCase();
-          if (/flight|airport|baggage|gate|ticket/i.test(lower)) {
-            return {
-              text: "Gotcha! Gate 14B is right down this terminal past the security check. Flight boards in about thirty minutes. Do you have any carry-on luggage with you?",
-              trans: "Hiểu rồi! Cổng 14B nằm ngay cuối nhà ga này sau cửa kiểm tra an ninh. Chuyến bay sẽ lên máy bay sau 30 phút. Bạn có mang hành lý xách tay theo không?"
-            };
-          }
-          if (/hotel|room|check in|stay|reservation/i.test(lower)) {
-            return {
-              text: "Awesome, I found your reservation! Here is your electronic key card for Room 502 with a view of the bay. Complimentary breakfast starts at 7 AM. Would you like a wake-up call?",
-              trans: "Tuyệt vời, mình đã thấy đặt phòng của bạn! Đây là thẻ phòng 502 hướng nhìn ra vịnh. Bữa sáng miễn phí bắt đầu lúc 7 giờ sáng. Bạn có cần gọi báo thức không?"
-            };
-          }
           return {
-            text: "Oh you gotta try the clam chowder at Fisherman's Wharf—it's legendary! What kind of flavors or cuisines do you enjoy eating the most when traveling?",
-            trans: "Ôi bạn nhất định phải thử món súp kem nghêu ở Fisherman's Wharf—nổi tiếng lắm đấy! Khi đi du lịch bạn thích khám phá hương vị ẩm thực nào nhất?"
+            text: "Certainly! We have your room ready on the 12th floor with a wonderful city view. Would you like me to book any sightseeing tours or arrange airport transfer for your departure?",
+            trans: "Tất nhiên rồi! Phòng của bạn đã sẵn sàng ở tầng 12 với tầm nhìn toàn cảnh thành phố tuyệt đẹp. Bạn có muốn tôi đặt tour tham quan hoặc sắp xếp xe đưa đón sân bay cho ngày về không?",
+            teacherTip: "Cụm 'airport transfer' (xe đưa đón sân bay) và 'city view' (phòng hướng nhìn ra thành phố) là những thuật ngữ du lịch phổ biến nhất.",
+            correction: {
+              hasError: false,
+              betterWay: "That sounds wonderful, thank you so much for your warm hospitality!",
+              explanation: "Lời cảm ơn lịch sự và thân thiện khi đi du lịch nước ngoài."
+            },
+            suggestedReplies: [
+              {
+                en: "That sounds fantastic! Please arrange airport pickup for Friday morning.",
+                vi: "Nghe tuyệt quá! Vui lòng sắp xếp xe đưa đón sân bay cho tôi vào sáng thứ Sáu nhé."
+              },
+              {
+                en: "I would love a city tour brochure so I can check out the museums tomorrow.",
+                vi: "Tôi muốn xin một tập tài liệu tour thành phố để ngày mai đi tham quan các bảo tàng."
+              },
+              {
+                en: "Thank you so much! Just the room key for now, I'm heading up to get some rest.",
+                vi: "Cảm ơn bạn rất nhiều! Cho tôi xin chìa khóa phòng trước nhé, tôi muốn lên phòng nghỉ ngơi chút."
+              }
+            ]
           };
         }
       },
@@ -8791,16 +9202,51 @@
           "Do you think artificial intelligence will replace human jobs in the future?",
           "How can busy working professionals maintain their physical and mental health?",
           "Which foreign country's culture and lifestyle do you admire the most?",
-          "In my opinion, continuous lifelong learning is the key to career success."
+          "In my opinion, continuous lifelong learning is the key to thriving in modern society."
         ],
         getOpening: (char) => ({
-          text: "Welcome to our British Council Discussion Circle! Today's community debate is: 'Can modern technology truly improve our quality of life, or does it cause more stress?' What is your viewpoint?",
-          trans: "Chào mừng bạn đến với Vòng thảo luận Hội Đồng Anh! Chủ đề tranh luận hôm nay là: 'Công nghệ hiện đại thực sự nâng cao chất lượng sống, hay gây thêm căng thẳng?' Quan điểm của bạn thế nào?"
+          text: "Welcome to our British Council intellectual discussion circle. Today's theme explores modern work-life balance and lifelong learning. In your personal opinion, what is the single most valuable habit for long-term personal growth?",
+          trans: "Chào mừng bạn đến với diễn đàn thảo luận học thuật của Hội Đồng Anh. Chủ đề hôm nay khám phá sự cân bằng cuộc sống - công việc và học tập suốt đời. Theo quan điểm cá nhân của bạn, thói quen giá trị nhất cho sự phát triển lâu dài là gì?",
+          teacherTip: "Khi đưa ra quan điểm cá nhân học thuật, hãy mở đầu bằng 'In my personal opinion', 'From my perspective' hoặc 'I firmly believe that...' thay vì chỉ nói 'I think'.",
+          suggestedReplies: [
+            {
+              en: "In my opinion, dedicating at least thirty minutes every evening to reading is life-changing.",
+              vi: "Theo quan điểm của tôi, dành ít nhất 30 phút mỗi tối để đọc sách là thói quen thay đổi cuộc đời."
+            },
+            {
+              en: "I firmly believe that practicing daily reflection and journaling sharpens critical thinking.",
+              vi: "Tôi tin chắc rằng việc suy ngẫm hàng ngày và viết nhật ký giúp mài giũa tư duy phản biện."
+            },
+            {
+              en: "Maintaining physical fitness through regular exercise provides the mental stamina needed to succeed.",
+              vi: "Duy trì thể lực qua việc tập thể dục đều đặn đem lại sự bền bỉ tinh thần cần thiết để thành công."
+            }
+          ]
         }),
         respond: (userText, turn) => {
           return {
-            text: "That is a nuanced perspective! On one hand, automation saves time, yet constant notifications can disrupt our peace. How do you set boundaries with technology in your own routine?",
-            trans: "Đó là một góc nhìn rất sâu sắc! Một mặt, tự động hóa tiết kiệm thời gian, nhưng thông báo liên tục có thể làm mất đi sự tĩnh tâm. Cá nhân bạn đặt ranh giới với công nghệ như thế nào trong thói quen hằng ngày?"
+            text: "A truly thoughtful perspective. Cultivating consistent habits requires immense self-discipline. How do you personally stay motivated when facing distractions or setbacks?",
+            trans: "Một góc nhìn thực sự sâu sắc. Nuôi dưỡng những thói quen bền bỉ đòi hỏi tính kỷ luật tự giác rất lớn. Cá nhân bạn duy trì động lực như thế nào khi đối mặt với sự xao nhãng hoặc thất bại?",
+            teacherTip: "Từ 'setback' (thất bại/bước thụt lùi tạm thời) và 'self-discipline' (tính kỷ luật tự giác) là những từ vựng C1/C2 nâng tầm bài nói của bạn trong các kỳ thi học thuật.",
+            correction: {
+              hasError: false,
+              betterWay: "I focus on small daily wins rather than waiting for external motivation.",
+              explanation: "Câu triết lý sâu sắc, thể hiện tư duy trưởng thành và vốn từ phong phú."
+            },
+            suggestedReplies: [
+              {
+                en: "I break my long-term goals into micro-habits so I never feel overwhelmed.",
+                vi: "Tôi chia nhỏ các mục tiêu dài hạn thành những thói quen vi mô để không bao giờ thấy ngợp."
+              },
+              {
+                en: "Reminding myself of my core values and long-term vision keeps me focused on track.",
+                vi: "Tự nhắc nhở bản thân về các giá trị cốt lõi và tầm nhìn dài hạn giúp tôi luôn đi đúng hướng."
+              },
+              {
+                en: "I embrace setbacks as learning opportunities rather than defining failures.",
+                vi: "Tôi đón nhận những bước lùi như cơ hội học hỏi thay vì coi chúng là những thất bại định đoạt."
+              }
+            ]
           };
         }
       },
@@ -8819,13 +9265,48 @@
           "My hometown has developed remarkably fast over the past ten years."
         ],
         getOpening: (char) => ({
-          text: "Good afternoon. Welcome to our IELTS Speaking simulation. In Part 1, let's discuss your hometown. Could you tell me about the town or city where you grew up?",
-          trans: "Chào buổi chiều. Chào mừng bạn đến với phần thi thử IELTS Speaking. Ở Part 1, hãy nói về quê hương bạn. Bạn có thể chia sẻ về thành phố nơi bạn lớn lên không?"
+          text: "Good day. Welcome to the IELTS Speaking assessment simulation. We will begin with Part 1. Could you tell me a little bit about your hometown—what do you like most about living there?",
+          trans: "Xin chào. Chào mừng bạn đến với buổi mô phỏng kỳ thi IELTS Speaking. Chúng ta sẽ bắt đầu với Part 1. Bạn có thể chia sẻ một chút về quê hương mình—điều bạn thích nhất khi sống ở đó là gì?",
+          teacherTip: "Tiêu chí IELTS Band 7+: Hãy dùng các tính từ mô tả nâng cao như 'bustling metropolis' (đô thị sầm uất), 'picturesque scenery' (phong cảnh đẹp như tranh) và mở rộng câu trả lời bằng lý do & ví dụ.",
+          suggestedReplies: [
+            {
+              en: "I was born and raised in a bustling metropolitan city with vibrant street life and rich culture.",
+              vi: "Tôi sinh ra và lớn lên ở một thành phố đô thị sầm uất với nhịp sống đường phố sôi động và nền văn hóa giàu bản sắc."
+            },
+            {
+              en: "What I appreciate most is the warm hospitality of the local people and the delicious cuisine.",
+              vi: "Điều tôi trân trọng nhất là sự hiếu khách nồng hậu của người dân địa phương và nền ẩm thực thơm ngon."
+            },
+            {
+              en: "Although it can be quite crowded, the convenience and public amenities are second to none.",
+              vi: "Dù đôi khi khá đông đúc, nhưng sự tiện lợi và các tiện ích công cộng ở đây thuộc hàng đỉnh cao."
+            }
+          ]
         }),
         respond: (userText, turn) => {
           return {
-            text: "Good expansion of ideas. Moving to the next question: Has your hometown changed significantly over the past ten years? Try to use comparative adjectives and time connectors.",
-            trans: "Phát triển ý rất tốt. Sang câu hỏi tiếp theo: Quê hương bạn có thay đổi đáng kể trong 10 năm qua không? Hãy thử dùng tính từ so sánh và từ nối chỉ thời gian nhé."
+            text: "Excellent elaboration. Now moving to the next question: Has your hometown changed significantly over the past ten years? Try to use comparative adjectives and time connectors.",
+            trans: "Phát triển ý rất tốt. Sang câu hỏi tiếp theo: Quê hương bạn có thay đổi đáng kể trong 10 năm qua không? Hãy thử dùng tính từ so sánh và từ nối chỉ thời gian nhé.",
+            teacherTip: "Cụm 'changed significantly' (thay đổi đáng kể) và các từ nối như 'In stark contrast to', 'Over the span of a decade' sẽ giúp bạn ghi điểm Lexical Resource rất cao.",
+            correction: {
+              hasError: false,
+              betterWay: "Over the past decade, my city has undergone tremendous economic and infrastructural transformation.",
+              explanation: "Câu trả lời chuẩn Band 8.0 với các từ vựng tinh tế: 'undergone tremendous transformation'."
+            },
+            suggestedReplies: [
+              {
+                en: "Over the span of a decade, my city has transformed from a sleepy town into a dynamic economic hub.",
+                vi: "Trong vòng một thập kỷ, thành phố tôi đã biến đổi từ một thị trấn trầm lắng thành một trung tâm kinh tế năng động."
+              },
+              {
+                en: "The infrastructure has improved dramatically with modern elevated railways and modern high-rises.",
+                vi: "Hạ tầng đã được cải thiện vượt bậc với các tuyến đường sắt trên cao hiện đại và các tòa nhà cao tầng mới."
+              },
+              {
+                en: "While modern developments brought great convenience, traffic congestion has unfortunately worsened.",
+                vi: "Trong khi sự phát triển hiện đại đem lại tiện ích to lớn, tình trạng ùn tắc giao thông lại đáng tiếc trở nên tồi tệ hơn."
+              }
+            ]
           };
         }
       }
@@ -9164,6 +9645,8 @@
         charRole: char.role,
         text: opening.text,
         trans: opening.trans,
+        teacherTip: opening.teacherTip || '',
+        suggestedReplies: opening.suggestedReplies || [],
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       dialogueTurns.push(openingTurn);
@@ -9195,17 +9678,31 @@
       const feed = document.getElementById('dialogueFeed');
       if (!feed) return;
 
-      feed.innerHTML = dialogueTurns.map(t => {
+      feed.innerHTML = dialogueTurns.map((t, idx) => {
         if (t.sender === 'ai') {
+          const hasSuggestions = t.suggestedReplies && t.suggestedReplies.length > 0;
           return `
-            <div class="space-y-1.5 animate-fadeIn">
+            <div class="space-y-1.5 animate-fadeIn" id="turn-card-${t.id}">
               <div class="flex items-center gap-2 text-[11px] text-slate-400">
                 <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
                 <span class="font-bold text-cyan-300">${escapeHtml(t.charName)} (${escapeHtml(t.charRole)})</span>
                 <span class="text-[10px] text-slate-500">${t.time}</span>
               </div>
-              <div class="p-3.5 sm:p-4 rounded-2xl rounded-tl-sm bg-gradient-to-r from-slate-900 to-indigo-950/70 border border-indigo-500/30 text-white space-y-2.5 shadow-md">
-                <p class="text-sm sm:text-base font-medium leading-relaxed">${escapeHtml(t.text)}</p>
+              <div class="p-3.5 sm:p-4 rounded-2xl rounded-tl-sm bg-gradient-to-r from-slate-900 to-indigo-950/70 border border-indigo-500/30 text-white space-y-3 shadow-md">
+                <!-- Spoken AI Text (Clickable to toggle translation) -->
+                <p onclick="toggleTurnTranslate('${t.id}')" class="text-sm sm:text-base font-medium leading-relaxed cursor-pointer hover:text-cyan-200 transition" title="Bấm vào câu này để xem/ẩn bản dịch tiếng Việt">
+                  ${escapeHtml(t.text)}
+                </p>
+
+                <!-- In-place Translation Box (Toggled on/off) -->
+                <div id="trans-${t.id}" class="hidden p-3 rounded-xl bg-slate-950/90 border border-amber-500/40 text-xs text-amber-200 leading-relaxed shadow-inner space-y-1">
+                  <div class="font-bold text-amber-300 flex items-center gap-1.5">
+                    <span>🇻🇳</span> <span>Bản dịch tiếng Việt tự nhiên:</span>
+                  </div>
+                  <p class="text-slate-200">${escapeHtml(t.trans)}</p>
+                </div>
+
+                <!-- Teacher Pedagogical Tip -->
                 ${t.teacherTip ? `
                   <div class="p-2.5 rounded-xl bg-amber-950/40 border border-amber-500/30 text-xs text-amber-200 space-y-1">
                     <div class="font-bold text-amber-300 flex items-center gap-1.5">
@@ -9214,33 +9711,59 @@
                     <p class="leading-relaxed text-amber-100">${escapeHtml(t.teacherTip)}</p>
                   </div>
                 ` : ''}
-                <div class="flex items-center justify-between pt-1 border-t border-slate-800/80 text-xs">
+
+                <!-- Interactive Audio & Translation Action Bar -->
+                <div class="flex items-center justify-between pt-1 border-t border-slate-800/80 text-xs flex-wrap gap-2">
                   <div class="flex items-center gap-3">
-                    <button onclick="playTurnAudio('${t.id}')" class="text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1 transition">
+                    <button onclick="playTurnAudio('${t.id}')" class="text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1 transition" title="Nghe lại câu nói này">
                       <span>🔊</span> <span>Nghe lại</span>
                     </button>
-                    <button onclick="playTurnAudioSlow('${t.id}')" class="text-slate-400 hover:text-slate-200 flex items-center gap-1 transition">
+                    <button onclick="playTurnAudioSlow('${t.id}')" class="text-slate-400 hover:text-slate-200 flex items-center gap-1 transition" title="Nghe chậm với tốc độ 0.75x">
                       <span>🐢</span> <span>Chậm (0.75x)</span>
                     </button>
-                    <button onclick="toggleTurnTranslate('${t.id}')" class="text-amber-400 hover:text-amber-300 flex items-center gap-1 transition">
-                      <span>🌐</span> <span>Dịch nghĩa</span>
+                    <button onclick="toggleTurnTranslate('${t.id}')" class="text-amber-400 hover:text-amber-300 font-medium flex items-center gap-1 transition" title="Bấm để xem hoặc ẩn bản dịch tiếng Việt">
+                      <span>🌐</span> <span>Dịch nghĩa (Bấm xem/ẩn)</span>
                     </button>
                   </div>
                 </div>
-                <div id="trans-${t.id}" class="hidden text-xs text-slate-300 italic pt-1 border-t border-slate-800/80">
-                  💡 ${escapeHtml(t.trans)}
-                </div>
-                ${t.suggestedReplies && t.suggestedReplies.length > 0 ? `
-                  <div class="pt-2 border-t border-slate-800/80 space-y-1.5">
-                    <div class="text-[11px] text-cyan-300 font-semibold flex items-center gap-1">
-                      <span>💬</span> <span>Gợi ý đối đáp phản xạ (Bấm 1 chạm để nói):</span>
+
+                <!-- Suggested Replies Section (Bilingual, Audio, Practice & 1-tap Send) -->
+                ${hasSuggestions ? `
+                  <div id="suggestions-${t.id}" class="pt-3 border-t border-slate-800/80 space-y-2.5">
+                    <div class="flex items-center justify-between text-xs">
+                      <div class="font-bold text-amber-300 flex items-center gap-1.5">
+                        <span>💡</span> <span>Gợi ý câu trả lời phản xạ (Bấm khi bí ý tưởng):</span>
+                      </div>
+                      <span class="text-[10px] text-slate-400">Chọn câu hợp ý bạn</span>
                     </div>
-                    <div class="flex flex-wrap gap-1.5">
-                      ${t.suggestedReplies.map(r => `
-                        <button onclick="sendQuickReplyText('${escapeHtml(r).replace(/'/g, "\\'")}')" class="text-left text-xs px-2.5 py-1.5 rounded-xl bg-slate-800/90 hover:bg-cyan-900/60 border border-slate-700 hover:border-cyan-400 text-slate-200 hover:text-white transition flex items-center gap-1.5">
-                          <span>➤</span> <span>${escapeHtml(r)}</span>
-                        </button>
-                      `).join('')}
+                    <div class="grid grid-cols-1 gap-2">
+                      ${t.suggestedReplies.map((r, rIdx) => {
+                        const enText = typeof r === 'string' ? r : (r.en || '');
+                        const viText = typeof r === 'string' ? '' : (r.vi || '');
+                        const escapedEn = escapeHtml(enText).replace(/'/g, "\\'");
+                        return `
+                          <div class="p-3 rounded-xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-400/60 transition group space-y-2 shadow-sm">
+                            <div class="space-y-0.5">
+                              <div class="text-xs sm:text-sm font-semibold text-white leading-relaxed flex items-start gap-1.5">
+                                <span class="text-cyan-400 font-bold shrink-0">${rIdx + 1}.</span>
+                                <span>${escapeHtml(enText)}</span>
+                              </div>
+                              ${viText ? `<div class="text-[11px] text-amber-200/90 pl-4 italic">💡 ${escapeHtml(viText)}</div>` : ''}
+                            </div>
+                            <div class="flex items-center gap-2 pt-1 border-t border-slate-700/50 text-[11px] flex-wrap">
+                              <button onclick="speakText('${escapedEn}', 0.95, 'en-US')" class="px-2.5 py-1 rounded-lg bg-slate-700/80 hover:bg-slate-700 text-cyan-300 font-medium flex items-center gap-1 transition" title="Nghe người bản xứ đọc mẫu câu này">
+                                <span>🔊</span> <span>Nghe mẫu</span>
+                              </button>
+                              <button onclick="practiceSpeakingSuggested('${escapedEn}')" class="px-2.5 py-1 rounded-lg bg-indigo-900/60 hover:bg-indigo-800/80 border border-indigo-500/40 text-indigo-200 font-semibold flex items-center gap-1 transition" title="Luyện tập tự nói câu này vào mic">
+                                <span>🎙️</span> <span>Luyện nói câu này</span>
+                              </button>
+                              <button onclick="sendQuickReplyText('${escapedEn}')" class="ml-auto px-3 py-1 rounded-lg bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold flex items-center gap-1 transition shadow hover:scale-105 active:scale-95" title="Gửi câu này ngay để tiếp tục hội thoại">
+                                <span>➤</span> <span>Gửi ngay</span>
+                              </button>
+                            </div>
+                          </div>
+                        `;
+                      }).join('')}
                     </div>
                   </div>
                 ` : ''}
@@ -9248,7 +9771,7 @@
             </div>
           `;
         } else {
-          // User turn with Real Voice Audio + ELSA Pronunciation Card
+          // User Turn Card with Real Voice Audio, ELSA Pronunciation & Native Polish
           const elsa = t.elsaData || analyzeElsaPronunciation(t.text);
           const scoreColor = elsa.score >= 85 ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' : 'bg-amber-500/20 text-amber-300 border-amber-500/40';
 
@@ -9273,7 +9796,7 @@
             `;
           }).join('');
 
-          const spellingHtml = elsa.spellingCorrections.length > 0
+          const spellingHtml = elsa.spellingCorrections && elsa.spellingCorrections.length > 0
             ? `<div class="p-2.5 rounded-xl bg-rose-950/40 border border-rose-500/30 text-xs text-rose-200 space-y-2">
                 <div class="font-bold text-rose-300 flex items-center gap-1">
                   <span>🔤</span> <span>Sửa chính tả &amp; khẩu hình:</span>
@@ -9300,8 +9823,11 @@
             </div>
           `).join('');
 
+          const escapedNativePolish = escapeHtml(elsa.nativePolish || t.text).replace(/'/g, "\\'");
+          const userTransText = t.trans || generateUserSentenceTrans(t.text);
+
           return `
-            <div class="space-y-2 animate-fadeIn">
+            <div class="space-y-2 animate-fadeIn" id="turn-card-${t.id}">
               <div class="flex items-center justify-end gap-2 text-[11px] text-slate-400">
                 <span class="text-[10px] text-slate-500">${t.time}</span>
                 <span class="font-bold text-emerald-400">Bạn</span>
@@ -9310,16 +9836,30 @@
               <div class="p-3.5 sm:p-4 rounded-2xl rounded-tr-sm bg-slate-900 border border-slate-700/80 text-white space-y-3 shadow-md">
                 <!-- Spoken text and Audio comparison action bar -->
                 <div class="space-y-2">
-                  <p class="text-sm sm:text-base font-semibold text-emerald-200">"${escapeHtml(t.text)}"</p>
-                  <div class="flex items-center gap-2 flex-wrap pt-0.5">
+                  <p onclick="toggleTurnUserTranslate('${t.id}')" class="text-sm sm:text-base font-semibold text-emerald-200 cursor-pointer hover:text-emerald-100 transition" title="Bấm để xem bản dịch tiếng Việt của câu bạn vừa nói">
+                    "${escapeHtml(t.text)}"
+                  </p>
+
+                  <div class="flex items-center gap-2 flex-wrap pt-0.5 text-xs">
                     ${t.audioUrl ? `
                       <button onclick="playUserRecordedAudio('${t.id}')" class="px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/50 text-emerald-300 font-bold text-xs flex items-center gap-1.5 transition shadow" title="Bấm để nghe lại file âm thanh micro thực tế bạn vừa nói">
                         <span>🎧</span> <span>Nghe lại giọng thật của bạn</span>
                       </button>
                     ` : ''}
-                    <button onclick="speakText('${t.text.replace(/'/g, "\\'")}', 1.0, 'en-US')" class="text-slate-400 hover:text-white text-xs flex items-center gap-1 shrink-0 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 transition" title="Nghe giáo viên bản xứ đọc lại câu này để đối chiếu">
+                    <button onclick="speakText('${t.text.replace(/'/g, "\\'")}', 1.0, 'en-US')" class="text-slate-300 hover:text-white text-xs flex items-center gap-1 shrink-0 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 transition" title="Nghe giáo viên bản xứ đọc lại câu này để đối chiếu">
                       <span>🔊</span> <span>Mẫu bản xứ</span>
                     </button>
+                    <button onclick="toggleTurnUserTranslate('${t.id}')" class="text-amber-400 hover:text-amber-300 text-xs flex items-center gap-1 shrink-0 px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 transition" title="Xem bản dịch câu bạn vừa nói sang tiếng Việt">
+                      <span>🌐</span> <span>Dịch / Đối chiếu</span>
+                    </button>
+                  </div>
+
+                  <!-- In-place User Translation Box -->
+                  <div id="trans-u-${t.id}" class="hidden p-2.5 rounded-xl bg-slate-950/90 border border-emerald-500/40 text-xs text-emerald-200 leading-relaxed shadow-inner space-y-1">
+                    <div class="font-bold text-emerald-300 flex items-center gap-1">
+                      <span>🇻🇳</span> <span>Nghĩa tiếng Việt câu của bạn:</span>
+                    </div>
+                    <p class="text-slate-200">${escapeHtml(userTransText)}</p>
                   </div>
                 </div>
 
@@ -9358,10 +9898,23 @@
                     </div>
                   </div>
 
-                  <!-- Native Polish -->
-                  <div class="text-[11px] text-indigo-300 pt-1 border-t border-slate-800/80 flex items-start gap-1.5">
-                    <span class="shrink-0">✨</span>
-                    <span><b>Bản xứ diễn đạt tự nhiên hơn:</b> "${escapeHtml(elsa.nativePolish)}"</span>
+                  <!-- Native Polish with Action Buttons -->
+                  <div class="p-2.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-xs text-indigo-200 space-y-2 pt-2">
+                    <div class="font-bold text-indigo-300 flex items-center gap-1.5">
+                      <span>✨</span> <span>Cách người bản xứ diễn đạt tự nhiên hơn:</span>
+                    </div>
+                    <p class="text-white font-medium text-xs sm:text-sm">"${escapeHtml(elsa.nativePolish || t.text)}"</p>
+                    <div class="flex items-center gap-2 pt-1 border-t border-indigo-900/40 flex-wrap">
+                      <button onclick="speakText('${escapedNativePolish}', 0.95, 'en-US')" class="px-2 py-0.5 rounded-md bg-indigo-600/40 hover:bg-indigo-600/60 border border-indigo-500/40 text-indigo-200 text-[10px] font-semibold flex items-center gap-1 transition">
+                        <span>🔊</span> <span>Nghe cách nói chuẩn</span>
+                      </button>
+                      <button onclick="practiceSpeakingSuggested('${escapedNativePolish}')" class="px-2 py-0.5 rounded-md bg-cyan-600/40 hover:bg-cyan-600/60 border border-cyan-500/40 text-cyan-200 text-[10px] font-semibold flex items-center gap-1 transition">
+                        <span>🎙️</span> <span>Thử nói lại câu này</span>
+                      </button>
+                      <button onclick="addWordToVault('${escapedNativePolish}', '', '', 'Cách nói bản xứ tự nhiên hơn')" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold hover:bg-amber-500/40 transition flex items-center gap-1">
+                        <span>⭐</span> <span>Lưu sổ tay</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -9370,9 +9923,113 @@
         }
       }).join('');
 
-      // Auto scroll to bottom
+      // Auto scroll to bottom smoothly
       feed.scrollTop = feed.scrollHeight;
     }
+
+    // Smart In-Place Translation Toggles
+    function toggleTurnTranslate(turnId) {
+      const el = document.getElementById('trans-' + turnId);
+      if (el) {
+        el.classList.toggle('hidden');
+        if (!el.classList.contains('hidden')) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    }
+
+    function toggleTurnUserTranslate(turnId) {
+      const el = document.getElementById('trans-u-' + turnId);
+      if (el) {
+        el.classList.toggle('hidden');
+        if (!el.classList.contains('hidden')) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    }
+
+    // Smart Assist: Help With Reply Suggestions (When Stuck)
+    function helpWithReplySuggestions() {
+      // Find the latest AI turn with suggestions
+      const aiTurns = dialogueTurns.filter(t => t.sender === 'ai');
+      if (aiTurns.length === 0) {
+        showToast('Hãy bắt đầu cuộc đàm thoại để nhận gợi ý phản xạ!', '💡');
+        return;
+      }
+      const latestAi = aiTurns[aiTurns.length - 1];
+      const card = document.getElementById('turn-card-' + latestAi.id);
+      const suggestions = document.getElementById('suggestions-' + latestAi.id);
+
+      if (suggestions) {
+        suggestions.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        suggestions.classList.add('ring-2', 'ring-amber-400', 'rounded-2xl', 'p-2', 'bg-amber-950/20', 'transition-all');
+        setTimeout(() => {
+          suggestions.classList.remove('ring-2', 'ring-amber-400', 'rounded-2xl', 'p-2', 'bg-amber-950/20');
+        }, 2500);
+
+        // Preview the top suggestion audio
+        if (latestAi.suggestedReplies && latestAi.suggestedReplies.length > 0) {
+          const top = latestAi.suggestedReplies[0];
+          const topText = typeof top === 'string' ? top : (top.en || '');
+          showToast('💡 Đã hiển thị các gợi ý câu trả lời mẫu. Bạn có thể nghe thử hoặc bấm [Luyện nói]!', '💡');
+        }
+      } else if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        showToast('💡 Gợi ý: Hãy trả lời câu hỏi của ' + latestAi.charName, '💡');
+      }
+    }
+
+    // Smart Assist: Toggle Translation of Latest AI Turn
+    function toggleLatestAiTranslate() {
+      const aiTurns = dialogueTurns.filter(t => t.sender === 'ai');
+      if (aiTurns.length === 0) return;
+      const latestAi = aiTurns[aiTurns.length - 1];
+      toggleTurnTranslate(latestAi.id);
+      showToast('Đã bật/ẩn bản dịch tiếng Việt của AI 🌐', '🌐');
+    }
+
+    // Smart Assist: Ask AI to Simplify
+    function askAiToSimplify() {
+      handleUserSpokenMessage("Could you please rephrase that in simpler English for me?");
+      showToast('Đang yêu cầu AI diễn đạt bằng từ vựng đơn giản hơn... 🔄', '🔄');
+    }
+
+    // Smart Assist: Practice Speaking Suggested Response
+    function practiceSpeakingSuggested(text) {
+      if (!text) return;
+      const input = document.getElementById('callQuickInput');
+      if (input) input.value = text;
+
+      showToast('Chuẩn bị luyện nói: "' + text.substring(0, 35) + '..." (Đang bật mic)', '🎙️');
+
+      // Speak native audio first so user hears correct cadence
+      speakText(text, 0.95, 'en-US');
+
+      // Turn on microphone after speech completes
+      setTimeout(() => {
+        if (!isCallRecActive) {
+          toggleCallMicrophone();
+        }
+      }, 1600);
+    }
+
+    // Smart Assist: Fast User Sentence Translation Rule-Engine
+    function generateUserSentenceTrans(text) {
+      const lower = (text || '').toLowerCase().trim();
+      if (/hello emma/i.test(lower)) return 'Xin chào Emma, rất vui được gặp bạn.';
+      if (/how are you/i.test(lower)) return 'Bạn cảm thấy thế nào hôm nay?';
+      if (/productive day/i.test(lower)) return 'Tôi đã có một ngày làm việc rất năng suất.';
+      if (/exhausting|tired/i.test(lower)) return 'Hôm nay tôi thấy khá mệt sau một ngày dài.';
+      if (/relaxing/i.test(lower)) return 'Ngày hôm nay của tôi khá thư thái và nhẹ nhàng.';
+      if (/payment gateway/i.test(lower)) return 'Cổng thanh toán đang xử lý lưu lượng giao dịch.';
+      if (/latency/i.test(lower)) return 'Độ trễ hệ thống đang ở mức an toàn.';
+      if (/server outage|incident/i.test(lower)) return 'Chúng tôi phát hiện sự cố hệ thống và đang họp xử lý.';
+      if (/failover/i.test(lower)) return 'Kích hoạt chuyển đổi dự phòng sang cụm máy chủ standby.';
+      if (/agree/i.test(lower)) return 'Tôi hoàn toàn đồng ý với ý kiến của bạn.';
+      if (/explain/i.test(lower)) return 'Bạn có thể giải thích chi tiết hơn cho tôi không?';
+      return 'Nội dung đàm thoại tiếng Anh của bạn.';
+    }
+
 
     // ==================== 60FPS LIVE HARMONIC SOUNDWAVE VISUALIZER ====================
     class ActiveWaveVisualizer {
@@ -9784,16 +10441,19 @@
 
       // 1. Analyze with ELSA Pronunciation & Spelling Engine
       const elsaData = analyzeElsaPronunciation(cleanText);
+      const userTrans = generateUserSentenceTrans(cleanText);
 
       // 2. Add User Turn to Dialogue Feed
       const userTurn = {
         id: 'turn-u-' + Date.now(),
         sender: 'user',
         text: cleanText,
+        trans: userTrans,
         audioUrl: pendingRecordedAudioUrl || null,
         elsaData: elsaData,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
+      pendingRecordedAudioUrl = null;
       dialogueTurns.push(userTurn);
       renderDialogueFeed();
 
@@ -9801,14 +10461,32 @@
       addChatBubble('user', escapeHtml(cleanText));
       chatHistory.push({ role: 'user', parts: [{ text: cleanText }] });
 
+      const char = AI_CHARACTERS[currentAiChar] || AI_CHARACTERS.emma;
+
       // Set Avatar State to Thinking
-      setAiAvatarState('thinking', AI_CHARACTERS[currentAiChar].name + ' đang phân tích phát âm & suy nghĩ câu đối đáp...');
+      setAiAvatarState('thinking', char.name + ' đang phân tích phát âm & suy nghĩ câu đối đáp...');
 
       // 3. Process reply via Master Teacher Tri-Engine (Groq -> Gemini -> Master ESL Tree)
       const aiResult = await dispatchAiTeacherTurn(cleanText);
       const replyText = aiResult.text;
       const replyTrans = aiResult.trans;
       const teacherTip = aiResult.teacherTip || '';
+      const suggestedReplies = aiResult.suggestedReplies || [];
+      const correction = aiResult.correction || null;
+
+      // If AI detected an error, enrich userTurn.elsaData
+      if (correction && correction.hasError && userTurn.elsaData) {
+        if (!userTurn.elsaData.spellingCorrections.some(s => s.wrong.toLowerCase() === (correction.original || '').toLowerCase())) {
+          userTurn.elsaData.spellingCorrections.push({
+            wrong: correction.original || 'Chưa tự nhiên',
+            right: correction.corrected || correction.betterWay,
+            reason: correction.explanation || 'Quy tắc ngữ pháp / phản xạ bản xứ'
+          });
+        }
+        if (correction.betterWay) {
+          userTurn.elsaData.nativePolish = correction.betterWay;
+        }
+      }
 
       scenarioTurnCount++;
       updateTurnBadge();
@@ -9822,6 +10500,8 @@
         text: replyText,
         trans: replyTrans,
         teacherTip: teacherTip,
+        suggestedReplies: suggestedReplies,
+        correction: correction,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       dialogueTurns.push(aiTurn);
@@ -9852,13 +10532,17 @@ PEDAGOGICAL TEACHING MANDATES (CRITICAL):
 2. Natural Industry Dialogue: Answer their remark directly using authentic, real-world Banking / DevOps / Corporate phrasing.
 3. The 10-Year Teacher's Native Touch: If the learner used awkward phrasing, Vietnamese-literal translation, or a minor grammatical slip, provide a friendly 1-sentence teaching note in Vietnamese: "💡 Mẹo bản xứ: [explain briefly how native speakers say it naturally and why]".
 4. Always End with ONE Focused Question: Conclude with a clear, easy-to-answer follow-up question that guides the learner to reply smoothly.
-5. Keep the total English response concise (2-3 sentences max) for easy shadowing.
+5. Provide 2-3 suggested replies with both English and Vietnamese translation.
 
 RESPONSE FORMAT (JSON ONLY):
 {
   "en": "2-3 natural sentences responding to the user and ending with 1 clear follow-up question.",
   "vi": "Bản dịch tiếng Việt chuẩn xác và tự nhiên của câu trả lời tiếng Anh.",
-  "teacherTip": "Lời khuyên sư phạm ngắn gọn bằng tiếng Việt về cách người bản xứ hay diễn đạt tự nhiên hơn trong ngữ cảnh này."
+  "teacherTip": "Lời khuyên sư phạm ngắn gọn bằng tiếng Việt.",
+  "suggestedReplies": [
+    { "en": "Natural reply 1", "vi": "Bản dịch tiếng Việt 1" },
+    { "en": "Natural reply 2", "vi": "Bản dịch tiếng Việt 2" }
+  ]
 }`;
     }
 
@@ -9879,7 +10563,7 @@ RESPONSE FORMAT (JSON ONLY):
               parts: [{ text: h.parts ? h.parts[0].text : (h.text || msg) }]
             })),
             generationConfig: {
-              maxOutputTokens: 250,
+              maxOutputTokens: 300,
               temperature: 0.7,
               response_mime_type: "application/json"
             }
@@ -9922,7 +10606,7 @@ RESPONSE FORMAT (JSON ONLY):
             ],
             response_format: { type: "json_object" },
             temperature: 0.7,
-            max_tokens: 250
+            max_tokens: 300
           })
         });
         clearTimeout(timeoutId);
@@ -9944,10 +10628,16 @@ RESPONSE FORMAT (JSON ONLY):
         if (jsonMatch) {
           const parsed = JSON.parse(jsonMatch[0]);
           if (parsed.en) {
+            const replies = (parsed.suggestedReplies || []).map(r => {
+              if (typeof r === 'string') return { en: r, vi: '' };
+              return { en: r.en || '', vi: r.vi || '' };
+            });
             return {
               text: parsed.en.trim(),
               trans: parsed.vi ? parsed.vi.trim() : 'Đàm thoại tiếng Anh thực tế',
-              teacherTip: parsed.teacherTip ? parsed.teacherTip.trim() : ''
+              teacherTip: parsed.teacherTip ? parsed.teacherTip.trim() : '',
+              suggestedReplies: replies,
+              correction: parsed.correction || null
             };
           }
         }
@@ -9957,7 +10647,9 @@ RESPONSE FORMAT (JSON ONLY):
       return {
         text: raw.replace(/[*_#`]/g, '').trim(),
         trans: '(Bản dịch tự động được tạo từ nội dung đàm thoại)',
-        teacherTip: ''
+        teacherTip: '',
+        suggestedReplies: [],
+        correction: null
       };
     }
 
@@ -9993,11 +10685,17 @@ RESPONSE FORMAT (JSON ONLY):
           const json = await resp.json();
           if (json && json.en) {
             updateAiEngineLiveBadge(json.source || 'cloud');
+            const normReplies = (json.suggestedReplies || []).map(r => {
+              if (typeof r === 'string') return { en: r, vi: '' };
+              return { en: r.en || '', vi: r.vi || '' };
+            });
+
             return {
               text: json.en,
               trans: json.vi || 'Bản dịch đàm thoại thực tế',
               teacherTip: json.teacherTip || '',
-              suggestedReplies: json.suggestedReplies || []
+              suggestedReplies: normReplies,
+              correction: json.correction || null
             };
           }
         }
@@ -10026,11 +10724,17 @@ RESPONSE FORMAT (JSON ONLY):
       // 4. Built-in Master ESL Teacher Pedagogical Engine (0ms, 100% reliable)
       updateAiEngineLiveBadge('autonomous-master-esl-v2');
       const localRes = sc.respond(cleanText, scenarioTurnCount);
+      const normLocalReplies = (localRes.suggestedReplies || []).map(r => {
+        if (typeof r === 'string') return { en: r, vi: '' };
+        return { en: r.en || '', vi: r.vi || '' };
+      });
+
       return {
         text: localRes.text,
         trans: localRes.trans,
         teacherTip: localRes.teacherTip || 'Tập trung bật rõ âm đuôi (Ending Sounds) và giữ nhịp thở đều đặn khi nói nhé!',
-        suggestedReplies: []
+        suggestedReplies: normLocalReplies,
+        correction: localRes.correction || null
       };
     }
 
@@ -10045,6 +10749,7 @@ RESPONSE FORMAT (JSON ONLY):
         statusEl.innerHTML = '<span class="text-indigo-300 font-bold">🧠 Đang dùng: Giảng Viên Bản Xứ 10 Năm (Serverless NLP)</span>';
       }
     }
+
 
     function toggleAiSettingsModal() {
       const modal = document.getElementById('aiSettingsModal');
