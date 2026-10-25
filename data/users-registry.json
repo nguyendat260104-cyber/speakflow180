@@ -18,5 +18,15 @@
     "vocabCount": 3,
     "lastSynced": "2026-10-25T12:37:41.458Z",
     "dataPath": "data/users/usr_1792929865242.json"
+  },
+  "usr_1792931998792": {
+    "name": "Nguyen Huu Dat",
+    "email": "nguyendat2612004@gmail.com",
+    "role": "🏦 Tài Chính & Ngân Hàng",
+    "streak": 1,
+    "xp": 120,
+    "vocabCount": 3,
+    "lastSynced": "2026-10-25T12:39:58.970Z",
+    "dataPath": "data/users/usr_1792931998792.json"
   }
 }
