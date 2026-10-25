@@ -25,6 +25,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* 0ms Touch Optimization & Native iOS Feel */
+    *, *::before, *::after {
+      -webkit-tap-highlight-color: transparent;
+    }
+    button, a, input, select, textarea, .glass-card, [role="button"], .tab-btn {
+      touch-action: manipulation;
+    }
+    button:active:not(:disabled) {
+      transform: scale(0.97);
+      transition: transform 0.05s ease;
+    }
+
     body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
     .glass-card { background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(148, 163, 184, 0.16); backdrop-filter: blur(12px); }
     .tab-active { background: linear-gradient(135deg, #4f46e5, #06b6d4); color: #ffffff; font-weight: 600; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35); }
@@ -295,6 +307,9 @@
           <span>⭐ Sổ từ:</span>
           <strong id="headerVocabCount" class="text-amber-200">0 từ</strong>
         </button>
+        <button id="btnWakeLock" onclick="toggleScreenWakeLock()" class="px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs sm:text-sm font-medium flex items-center gap-1 transition cursor-pointer" title="Bật/Tắt giữ sáng màn hình trong khi học">
+          <span>💡</span> <span class="hidden sm:inline">Màn hình:</span> <span>Sáng</span>
+        </button>
         <button id="btnSoundToggle" onclick="toggleSound()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs sm:text-sm text-slate-200 transition" title="Bật/Tắt âm báo">
           🔊 Âm báo: Bật
         </button>
@@ -395,6 +410,9 @@
               <div class="flex items-center justify-between">
                 <h4 class="text-sm font-bold text-slate-200">✅ Checklist 4 Bước Bắt Buộc Tối Nay (Tích vào khi hoàn thành)</h4>
                 <span id="dailyChecklistProgress" class="text-xs font-semibold text-emerald-400">0 / 4 hoàn thành</span>
+              <button onclick="resetDayChecklist(state.currentDay)" class="text-[11px] px-2.5 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white border border-slate-700 transition cursor-pointer flex items-center gap-1" title="Bỏ chọn để học lại ca tối nay">
+                <span>🔄</span> <span>Bỏ tick học lại</span>
+              </button>
               </div>
               <div id="dailyChecklistContainer" class="space-y-2"></div>
             </div>
@@ -1409,6 +1427,7 @@
       fcFlipped: false,
       dictationIndex: 0
     };
+    loadState(); // Early cache hydration
 
     function loadState() {
       try {
@@ -1417,17 +1436,29 @@
           const parsed = JSON.parse(raw);
           state = Object.assign({}, state, parsed);
         }
+        // Backup restore in case primary key was cleared
+        const rawBackup = localStorage.getItem('speakflow_180_state_backup');
+        if (rawBackup) {
+          try {
+            const bParsed = JSON.parse(rawBackup);
+            if (bParsed.completedTasks && Object.keys(bParsed.completedTasks).length > 0) {
+              state.completedTasks = Object.assign({}, bParsed.completedTasks, state.completedTasks || {});
+            }
+          } catch(be) {}
+        }
+        if (!state.completedTasks) state.completedTasks = {};
       } catch (e) {
-        // Fallback to in-memory state inside restricted sandboxes
+        console.warn('loadState warning:', e);
       }
     }
 
     function saveState() {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        localStorage.setItem('speakflow_180_state_backup', JSON.stringify(state));
         if (typeof triggerAutoSyncDebounced === "function") triggerAutoSyncDebounced();
       } catch (e) {
-        // Ignore storage errors in sandboxed iframes
+        console.warn('saveState warning:', e);
       }
     }
 
@@ -1694,26 +1725,43 @@
 
     function toggleChecklistStep(dayNum, stepId) {
       const key = 'd' + dayNum + '_step' + stepId;
+      const steps = getStepsForMode(state.studyMode, ALL_DAYS.find(d => d.day === dayNum) || ALL_DAYS[0]);
+      const currentStep = steps.find(s => s.id === stepId) || { title: 'Bước ' + (stepId + 1) };
+
       if (state.completedTasks[key]) {
         delete state.completedTasks[key];
         state.xp = Math.max(0, state.xp - 25);
+        showToast('🔄 Đã bỏ chọn [' + currentStep.title + '] để bạn học lại! Cache đã cập nhật.', '🔄');
       } else {
         state.completedTasks[key] = true;
         state.xp += 25;
         playBeep('ding');
-        // Check if all 4 steps of today are completed
-        const allDone = [0, 1, 2, 3].every(i => state.completedTasks['d' + dayNum + '_step' + i]);
+
+        // Check if all steps of today are completed
+        const allDone = steps.every(s => state.completedTasks['d' + dayNum + '_step' + s.id]);
         if (allDone) {
           state.streak += 1;
           state.xp += 50;
-          showToast('Chúc mừng! Bạn đã hoàn thành trọn vẹn Ca học Ngày ' + dayNum + ' (+50 XP thưởng)!', '🎉');
+          showToast('🎉 Chúc mừng! Bạn đã hoàn thành toàn bộ Ca học Ngày ' + dayNum + ' (+50 XP thưởng)!', '🎉');
         } else {
-          showToast('Đã hoàn thành 1 mục trong Checklist (+25 XP)!', '✅');
+          showToast('✅ Đã xong [' + currentStep.title + '] (+25 XP)! Tiến trình đã lưu.', '✅');
         }
       }
       saveState();
       renderDashboard();
       renderRoadmap(currentRoadmapMonthFilter);
+    }
+
+    function resetDayChecklist(dayNum) {
+      if (!confirm('Bạn có muốn bỏ chọn tất cả các mục của Ngày ' + dayNum + ' để học lại từ đầu?')) return;
+      const steps = [0, 1, 2, 3];
+      steps.forEach(i => {
+        delete state.completedTasks['d' + dayNum + '_step' + i];
+      });
+      saveState();
+      renderDashboard();
+      renderRoadmap(currentRoadmapMonthFilter);
+      showToast('Đã xóa dấu tick Ngày ' + dayNum + '! Bạn có thể bắt đầu học lại ca này.', '🔄');
     }
 
     function changeDay(delta) {
@@ -4921,12 +4969,12 @@
             // Auto-submit on silence
             if (callSilenceTimer) clearTimeout(callSilenceTimer);
             callSilenceTimer = setTimeout(() => {
-              if (isCallRecActive && activeCallTranscript.trim().length > 0) {
-                const captured = activeCallTranscript.trim();
-                stopCallMicrophone();
-                handleUserSpokenMessage(captured);
-              }
-            }, 1500);
+                if (isCallRecActive && activeCallTranscript.trim().length > 0) {
+                  const captured = activeCallTranscript.trim();
+                  stopCallMicrophone();
+                  handleUserSpokenMessage(captured);
+                }
+              }, 900); // Snappy VAD 900ms silence detection
           }
         };
 
@@ -6187,9 +6235,87 @@ function sendChatMessage() {
       reader.readAsText(file);
     }
 
+    
+    // ==================== WAKE LOCK & 0MS AUDIO PRE-WARMING ====================
+    let screenWakeLock = null;
+
+    async function requestScreenWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          screenWakeLock = await navigator.wakeLock.request('screen');
+          updateWakeLockUI(true);
+          screenWakeLock.addEventListener('release', () => {
+            screenWakeLock = null;
+            updateWakeLockUI(false);
+          });
+        }
+      } catch (err) {
+        console.warn('Screen WakeLock error:', err.message);
+      }
+    }
+
+    async function releaseScreenWakeLock() {
+      if (screenWakeLock) {
+        try { await screenWakeLock.release(); } catch(e) {}
+        screenWakeLock = null;
+        updateWakeLockUI(false);
+      }
+    }
+
+    async function toggleScreenWakeLock() {
+      if (screenWakeLock) {
+        await releaseScreenWakeLock();
+        showToast('Đã tắt chế độ giữ sáng màn hình.', '💡');
+      } else {
+        await requestScreenWakeLock();
+        showToast('Đã bật giữ sáng màn hình (không tự tắt khi học)!', '💡');
+      }
+    }
+
+    function updateWakeLockUI(isActive) {
+      const btn = document.getElementById('btnWakeLock');
+      if (btn) {
+        if (isActive) {
+          btn.innerHTML = '<span>💡</span> <span class="hidden sm:inline">Màn hình:</span> <span class="text-amber-300 font-bold">Sáng</span>';
+          btn.className = 'px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-500/50 text-amber-300 text-xs sm:text-sm font-semibold flex items-center gap-1 transition shadow cursor-pointer';
+        } else {
+          btn.innerHTML = '<span>💡</span> <span class="hidden sm:inline">Màn hình:</span> <span>Tắt</span>';
+          btn.className = 'px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs sm:text-sm font-medium flex items-center gap-1 transition cursor-pointer';
+        }
+      }
+    }
+
+    document.addEventListener('visibilitychange', async () => {
+      if (document.visibilityState === 'visible' && !screenWakeLock) {
+        // Auto re-acquire wake lock when returning to app
+        await requestScreenWakeLock();
+      }
+    });
+
+    // Audio Pre-warming on first touch (bypasses iOS 0.5s audio startup delay)
+    function prewarmAudioEngine() {
+      if (window._audioPrewarmed) return;
+      window._audioPrewarmed = true;
+      try {
+        if (window.speechSynthesis) {
+          const u = new SpeechSynthesisUtterance('');
+          u.volume = 0;
+          window.speechSynthesis.speak(u);
+        }
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (AudioCtx) {
+          const ctx = new AudioCtx();
+          if (ctx.state === 'suspended') ctx.resume();
+        }
+      } catch(e) {}
+    }
+    window.addEventListener('touchstart', prewarmAudioEngine, { once: true, passive: true });
+    window.addEventListener('click', prewarmAudioEngine, { once: true, passive: true });
+
     // ==================== INITIALIZATION ====================
     window.addEventListener('DOMContentLoaded', () => {
       initAuthSystem();
+      setTimeout(requestScreenWakeLock, 1000);
       checkIosBanner();
       initVocabVault();
       loadState();
