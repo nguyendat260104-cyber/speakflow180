@@ -1,0 +1,65 @@
+{
+  "userId": "usr_nguyendat2612004_gmail_com",
+  "user": {
+    "id": "usr_nguyendat2612004_gmail_com",
+    "name": "nguyendat2612004",
+    "email": "nguyendat2612004@gmail.com",
+    "role": "💻 IT Vận Hành Hệ Thống & DevOps",
+    "avatar": "👨‍💻",
+    "lastSyncedAt": "2026-10-26T04:20:50.150Z"
+  },
+  "lastSynced": "2026-10-26T04:20:56.957Z",
+  "stats": {
+    "streak": 1,
+    "xp": 120,
+    "vocabCount": 3,
+    "activeTab": "tab-dashboard"
+  },
+  "state": {
+    "currentDay": 1,
+    "studyMode": 45,
+    "xp": 120,
+    "streak": 1,
+    "soundEnabled": true,
+    "reminderTime": "21:00",
+    "completedTasks": {},
+    "selectedIpaIndex": 20,
+    "fcIndex": 0,
+    "fcFlipped": false,
+    "dictationIndex": 0,
+    "vocabVault": [
+      {
+        "id": "v_def_1",
+        "word": "comfortable",
+        "ipa": "/ˈkʌm.fət.ə.bəl/",
+        "meaning": "thoải mái, tiện nghi (tính từ)",
+        "note": "Nuốt âm \"or\": Chỉ đọc 3 âm tiết /ˈkʌmf.tə.bl/, tránh đọc thành 4 âm \"com-for-ta-ble\".",
+        "level": 2,
+        "dateAdded": "Mặc định",
+        "reviewCount": 1
+      },
+      {
+        "id": "v_def_2",
+        "word": "resilience",
+        "ipa": "/rɪˈzɪl.jəns/",
+        "meaning": "sự kiên cường, khả năng phục hồi",
+        "note": "Trọng âm rơi vào âm tiết thứ 2. Thường dùng trong phỏng vấn khi chia sẻ cách vượt qua khó khăn.",
+        "level": 1,
+        "dateAdded": "Mặc định",
+        "reviewCount": 0
+      },
+      {
+        "id": "v_def_3",
+        "word": "pronunciation",
+        "ipa": "/prəˌnʌn.siˈeɪ.ʃən/",
+        "meaning": "cách phát âm, ngữ âm",
+        "note": "Danh từ đọc là \"nun\" /nʌn/, không phải \"noun\" như động từ pronounce.",
+        "level": 3,
+        "dateAdded": "Mặc định",
+        "reviewCount": 2
+      }
+    ],
+    "streakShields": 1,
+    "lastActiveDate": "2026-10-26"
+  }
+}
