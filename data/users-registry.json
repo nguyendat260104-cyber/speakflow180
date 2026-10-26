@@ -38,5 +38,15 @@
     "vocabCount": 3,
     "lastSynced": "2026-10-25T16:17:35.818Z",
     "dataPath": "data/users/usr_nguyendat260104_gmail_com.json"
+  },
+  "usr_nguyendat2612004_gmail_com": {
+    "name": "nguyendat2612004",
+    "email": "nguyendat2612004@gmail.com",
+    "role": "💻 IT Vận Hành Hệ Thống & DevOps",
+    "streak": 1,
+    "xp": 120,
+    "vocabCount": 3,
+    "lastSynced": "2026-10-26T04:20:56.957Z",
+    "dataPath": "data/users/usr_nguyendat2612004_gmail_com.json"
   }
 }
